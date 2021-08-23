@@ -45,4 +45,4 @@ function vip (firstName) {
     console.log("You get the VIP table");
   };
 }
-vip("Ann");
+vip("Bertie");
