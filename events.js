@@ -1,4 +1,4 @@
-/*const myDiv = document.getElementById("mydiv");
+const myDiv = document.getElementById("mydiv");
 function changeText () {
   myDiv.innerHTML = "new text";
 }
@@ -32,7 +32,7 @@ hideBtn.addEventListener("click", () => {
 });
 showBtn.addEventListener("click", () => {
   btnDiv.style.display = "block";
-});*/
+});
 
 const classBtn = document.getElementById("class");
 const div3 = document.getElementById("div3");
@@ -41,6 +41,19 @@ classBtn.addEventListener("click", () => {
     div3.className = "hide";
   } else {
     div3.remove("hide");
+  }
+});
+
+
+
+const btnIncrease = document.getElementById("btnincrease");
+let count = 0;
+
+btnIncrease.addEventListener("click", function () {
+  let div4 = document.getElementById("div4");
+  div4.innerHTML = count ++;
+  if (count >= 5) {
+    div4.innerText = "Game over";
   }
 });
 
