@@ -49,26 +49,24 @@ red.addEventListener("click", function () {
   carDiv.innerHTML += this.value; 
 });
 
-const select = document.getElementById("myselect");
-select.addEventListener("change", function (e) {
-  //console.log(e.target.value);
-  console.log(this.value);
+const span = document.getElementById("color");
+const dropdown = document.getElementById("colorselect");
+span.innerHTML = "";
+dropdown.addEventListener("change", function (e) {
+ const userInput = this.value;
+  //console.log(userInput)
+  if (userInput === "Blue") {
+    span.innerText = "blue";
+  } else if (userInput ==="Red") {
+    span.innerText = "red";
+  } else if (userInput === "Black") {
+    span.innerText = "black";
+  } 
 });
 
-const colorDiv = document.getElementById("color");
-const dropdown = document.getElementById("colorselect");
-let selection = "red";
-dropdown.addEventListener("change", function (e) {
-  selection = e.target.value;
-  if(selection === "red") {
-    colorDiv.innerText += "red"
-  } else if (selection === "blue") {
-    colorDiv.innerText  += "blue";
-  }
-   else if (selection === "black") {
-    colorDiv.innerText  += "black";
-  }
-});
+
+
+
 
 
 
