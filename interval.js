@@ -33,6 +33,19 @@ function changeColor () {
   if(i > validColors.length) {
     i = 0;
   }
-}*/
+}
+
+const div2 = document.getElementById("div2");
+let count = 11;
+const counter = setInterval (countDown, 1000);
+
+function countDown  () {
+  count = count -1;
+  
+  if (count <= 0) {
+    clearInterval(counter);
+  }
+  div2.innerHTML = count;
+};*/
 
 
