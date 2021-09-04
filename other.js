@@ -1,4 +1,4 @@
-const array = ["blue", "purple", "red", "black"];
+/*const array = ["blue", "purple", "red", "black"];
 function containsPurple (array) {
   for(let color of array) {
     if (color === "purple" || color === "magenta") {
@@ -168,7 +168,44 @@ for(let i = 0; i < girls.length; i++) {
 
 for (let girl of girls) {
   console.log(`The girl names are: ${girl}`)
-}
+}*/
+
+const showList = document.getElementById("showlist");
+const items = document.querySelectorAll("li");
+showList.remove();
+
+const timeOfDay = [6, "noon", 9, "morning", "afternoon", 7];
+timeOfDay.forEach(function(time, index) {
+ console.log(`The ${time} is at index number ${index}.`);
+});
+
+const newArray = [];
+const dressSizes = [8, 10, 12, 14, 16];
+//dressSizes.forEach(function (dress, index) {
+  //console.log(`${index + 1}. Size: ${dress}`);
+//});
+
+
+
+
+
+const filterDresses = dressSizes.filter(function (dress) {
+ return dress > 10;
+ 
+});
+console.log(filterDresses);
+
+
+const mapDresses = dressSizes.map(function (dress) {
+ return dress * 2;
+});
+console.log(mapDresses);
+
+
+
+
+
+
 
 
 
