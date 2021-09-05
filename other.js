@@ -168,7 +168,7 @@ for(let i = 0; i < girls.length; i++) {
 
 for (let girl of girls) {
   console.log(`The girl names are: ${girl}`)
-}*/
+}
 
 const showList = document.getElementById("showlist");
 const items = document.querySelectorAll("li");
@@ -179,13 +179,13 @@ timeOfDay.forEach(function(time, index) {
  console.log(`The ${time} is at index number ${index}.`);
 });
 
-const newArray = [];
+
 const dressSizes = [8, 10, 12, 14, 16];
 //dressSizes.forEach(function (dress, index) {
   //console.log(`${index + 1}. Size: ${dress}`);
 //});
-
-
+const newArray = [...dressSizes];
+console.log(newArray);
 
 
 
@@ -201,9 +201,47 @@ const mapDresses = dressSizes.map(function (dress) {
 });
 console.log(mapDresses);
 
+const cars = ["volvo", "nissan", "rangerover", "fiat"];
+cars.forEach(function (car, index) {
+  console.log(`${index +1}. ${car}`);
+});
 
+for (let car of cars) {
+  console.log(car);
+}
 
+const years = function (year1, year2) {
+  //console.log(`They have ${year1 + year2} years of experience!`);
+  return `They have${year1 + year2} years of experience!`;
+}
+years(5, 3);
 
+const ticket = prompt(`Do you have a ticket for the ballet?  yes or no`);
+const ballet = function () {
+  if(ticket === "yes") {
+    //return `Exellent! Doors open at 9`;
+    console.log(`Exellent! Doors open at 9`);
+  } else if (ticket === "no") {
+    //return `Sorry, you have to buy a ticket first`;
+    console.log(`Sorry, you have to buy a ticket first`);
+  }
+}*/
+
+function addTogether (num3, num4) {
+  console.log(num3 + num4);
+}
+addTogether(6, 8);
+
+const h2 = document.querySelector("h2");
+
+h2.innerText = "Aisha's Apple orchid";
+h2.innerHTML = "Aisha's <strong>Apple</strong> orchid";
+console.log(h2);
+
+const birthdayWish = document.querySelector("#birthdaywish");
+const accentText = document.querySelector(".accent");
+birthdayWish.innerHTML = `Today is your <span class="accent">Big Day!</span>`;
+console.log(birthdayWish);
 
 
 
