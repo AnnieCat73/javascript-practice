@@ -225,7 +225,7 @@ const ballet = function () {
     //return `Sorry, you have to buy a ticket first`;
     console.log(`Sorry, you have to buy a ticket first`);
   }
-}*/
+}
 
 function addTogether (num3, num4) {
   console.log(num3 + num4);
@@ -242,6 +242,56 @@ const birthdayWish = document.querySelector("#birthdaywish");
 const accentText = document.querySelector(".accent");
 birthdayWish.innerHTML = `Today is your <span class="accent">Big Day!</span>`;
 console.log(birthdayWish);
+
+const firstImg = document.querySelector("img");
+firstImg.src = "img/Lulu.jpg";
+firstImg.alt ="Lulu's bouquet";
+
+const link = document.querySelector("a");
+link.href = "https:/.....";
+
+const button1 = document.getElementById("button1");
+
+button1.addEventListener("click", function () {
+  button1.innerText = "Let's party!";
+  if (!button1.classList.contains("accent")) {
+    button1.classList.add("accent");
+
+  } else {
+    button1.classList.remove("accent");
+  }
+});
+
+const body = document.querySelector("body");
+document.addEventListener("keyup", function (e) {
+ //console.log(e);
+ if(e.key === "l") {
+   body.classList.add("accent");
+ } else if (e.key === "d") {
+   if (body.classList.contains("accent")) {
+    body.classList.remove("accent");
+    body.classList.add("background");
+   } 
+   }
+});
+
+const dogNames = document.getElementById("dog-names");
+const heading = document.querySelector("h3");
+let selection = "Rigatoni";
+
+dogNames.addEventListener("change", function (e) {
+  selection = e.target.value;
+  console.log(selection)
+  if (selection === "Dave") {
+    heading.innerText = "You selected Dave!";
+    heading.style.color = "green";
+  } else if (selection === "Reeses") {
+    heading.innerText = "Party Reeses!";
+  } else {
+    heading.innerText ="Pick me!"
+  }
+  
+});*/
 
 
 
