@@ -291,13 +291,111 @@ dogNames.addEventListener("change", function (e) {
     heading.innerText ="Pick me!"
   }
   
-});*/
+});
+
+const cat = {
+  firstName: "Floof",
+  color: "black",
+  isFriendly: true,
+  age: 5,
+  favoriteToy: ["ball", "bird", "mouse"],
+  pet: function () {
+    console.log("purr");
+  },
+  isSleeping: true,
+  play: function () {
+    this.isSleeping = false;
+    console.log(`${this.firstName} is awake!`);
+  }
+}
+console.log(cat.play());
+
+console.log(cat);
+console.log(cat.firstName);
+console.log(cat.isFriendly);
+console.log(cat.favoriteToy[2]);
+console.log(cat.age);
+console.log(cat.pet());
+cat.breed = "Siamese";
+console.log(cat);
+console.log(cat["color"]);
 
 
 
 
+let paperclips = 10;
+//paperclips = paperclips + 2;
+paperclips += 2;
+console.log(paperclips);
+
+const dog = {
+  firstName: "Gibson",
+  petName: "Gibs",
+  color: "white",
+  isScary: true,
+  play: function () {
+    this.isScary = false;
+    console.log(`${this.firstName} is biting!`);
+  }
+}
+console.log(dog.play());
+console.log(dog["firstName"]);
+console.log(dog.petName);
+dog.breed = "Cocker Spaniel";
+console.log(dog)
+dog.color = "black";
+console.log(dog);
+
+const createOutfit = function () {
+  const outfit = {
+    shirt: "green",
+    pants: "blue",
+    isNew: false,
+    showOff: function () {
+      this.isNew = true;
+      console.log(`Show your nice new outfit`);
+    }
+  };
+  return outfit;
+};
+console.log(createOutfit());
+
+const monday = createOutfit();
+monday.shirt = "red";
+monday.isNew = true;
+money.pants = "black";
+console.log(monday);
 
 
 
+const createOutfit = function (shirt, pants) {
+  const outfit = {
+    shirt: shirt,
+    pants: pants,
+    isNew: false,
+    showOff: function () {
+      this.isNew = true;
+      console.log(`Show your nice new outfit`);
+    }
+  };
+  return outfit;
+};
 
+
+//console.log(createOutfit());
+
+const tuesday = createOutfit("yellow", "silver");
+//console.log(tuesday)
+
+/*for (let key in tuesday) {
+  console.log(key, tuesday[key]);
+}
+
+const outfitArray = ["monday", "tuesday"];
+for (let outfit of outfitArray) {
+  //console.log(outfit);
+  for (let key in outfit) {
+    console.log(key, outfit[key])
+  }
+}*/
 
