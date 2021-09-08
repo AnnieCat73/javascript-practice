@@ -398,4 +398,48 @@ for (let outfit of outfitArray) {
     console.log(key, outfit[key])
   }
 }*/
+const h2 = document.getElementById("h2");
+const div = document.getElementById("div");
+const headingTop = document.createElement("h1");
+headingTop.textContent = "Cool things";
+div.insertAdjacentElement("beforeend",headingTop);
+
+const body = document.querySelector("body");
+const list = document.createElement("ul");
+const li = document.createElement("li");
+li.textContent = "Three";
+body.appendChild(list);
+list.appendChild(li);
+
+const li5 = document.createElement("li");
+li5.textContent = "Five";
+list.appendChild(li5);
+
+const li4 = document.createElement("li");
+li4.textContent = "Four";
+li5.insertAdjacentElement("beforebegin", li4);
+
+
+
+const li1 = document.createElement("li");
+li1.textContent = "One";
+list.insertAdjacentElement("afterbegin", li1);
+
+const li2 = document.createElement("li");
+li2.textContent = "Two";
+li1.insertAdjacentElement("afterend", li2)
+
+
+//const array = [2, 4, 3, 7, 10, 44];
+function averageArr (array) {
+  let total = 0;
+  for (let num of array) {
+    total += num;
+    Math.round(total);
+  }
+  console.log(total / array.length);
+}
+averageArr([0, 50]);
+averageArr([3, 6, 8, 32]);
+averageArr([3, 5, 7, 9, 10]);
 

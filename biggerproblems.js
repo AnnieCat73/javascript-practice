@@ -12,7 +12,8 @@ function hideLightbox(){
 //document.getElementById('hide').onclick = hideLightbox;*/
 
 const lightbox = document.getElementById('lightbox');
-const show = document.getElementById("show");
+const container = document.getElementById("lightbox_container");//get the lightbox 
+const show = document.getElementById("show");									//added to html in step 3
 const hide = document.getElementById("hide");
 
 function showLightbox(){

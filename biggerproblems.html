@@ -3,13 +3,44 @@
 <head>
 	<title></title>
 	<meta charset="UTF-8">
+  <style>
+
+    #lightbox_container{
+      position: fixed;
+      text-align: center;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+    }
+    #lightbox{
+      width: 400px;
+      height: 300px;
+      background-color: #f8f7f3;
+      border-radius: 5px;
+      padding: 20px;
+      display: inline-block;
+	    margin-top: 20px;
+      position: relative;
+    }
+    
+    #hide{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <button id="show">Show lightbox</button>
-  <div id="lightbox">
-	  <div id="hide">[hide]</div>
-	  Lightbox content
+  <div id="lightbox_container">
+    <div id="lightbox">
+      <div id="hide">[hide]</div>
+      Lightbox content
+    </div>
   </div>
+  
 
 
   <script src="biggerproblems.js"></script>
