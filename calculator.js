@@ -19,17 +19,33 @@ priceSpan.innerHTML = price;
 // when user clicks sunroof, handle it properly
 const sunroofOption = document.getElementById("sunroof");
 
-sunroofOption.addEventListener("click", function () {
-  handleOption();
-});
+//sunroofOption.addEventListener("click", function () {
+  //handleOption();
+//});
 
 // when user clicks an option...
 function handleOption () {
   //convert value from string to number
-  const sunroofPrice = Number(sunroofOption.value);//can't use (this.value)
-  //console.log(sunroofPrice)
+  const gpsPrice = Number(gpsOption.value);//can't use (this.value?)
+  //console.log(gpsPrice);
   //if checked, add to total price
-  if(sunroofPrice) {
+  if(gpsOption.checked) {
+      price += gpsPrice;
+    } 
+    //otherwise subtract from total price
+    else {
+      price -= gpsPrice;
+    }
+  //show price*/
+  priceSpan.innerHTML = `$${price}`
+};
+function handleOption () {
+  //convert value from string to number
+  const sunroofPrice = Number(sunroofOption.value);//can't use (this.value?)
+  //console.log(gpsPrice);
+  
+  //if checked, add to total price
+  if(sunroofOption.checked) {
       price += sunroofPrice;
     } 
     //otherwise subtract from total price
@@ -39,3 +55,20 @@ function handleOption () {
   //show price*/
   priceSpan.innerHTML = `$${price}`
 };
+
+//add another option
+const gpsOption = document.getElementById("gps");
+//and
+gpsOption.addEventListener("click", function () {
+ handleOption();
+});
+
+//better code with this loop
+const form = document.getElementById("carform");
+const inputsAll = document.querySelectorAll("input");
+for(let input of inputsAll) {
+  input.addEventListener("click", function () {
+    handleOption()
+  })
+}
+
