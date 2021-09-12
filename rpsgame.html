@@ -5,8 +5,31 @@
 	<meta charset="UTF-8">
 </head>
 <body>
-  <h1>Rock-Paper-Scissors</h1>
-  
+  <div class="container">
+    <header>
+      <h1>Rock-Paper-Scissors</h1>
+      <div class="score-container">
+        <h4>Score</h4>
+        <p id="score">0</p>
+      </div>
+    </header>
+
+    <main>
+      <button class="btn-rock pick">Rock</button>
+      <button class="btn-paper pick">Paper</button>
+      <button class="btn-scissors pick">Scissors</button>
+    </main>
+
+    <div class="selection" id="selection">
+      <h2 id="you">You picked: </h2>
+      <h2 id="house">The house picked:</h2>
+      <p>The winner is: </p>
+      <button id="reset">Play again</button>
+    </div>
+    
+
+
+  </div>
 
 
   <script src="rpsgame.js"></script>
