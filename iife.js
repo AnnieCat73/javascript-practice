@@ -32,3 +32,15 @@ function(){}
 })(document);
 //To this <h3 id="whatever">something!</h3>
 
+(function () {
+  console.log("It worked!")
+})();
+
+(function (num1, num2) {
+  console.log(num1 * num2)
+})(7, 7);//49
+
+(function () {
+  const anotherMessage = "Trying another message!";
+  console.log(anotherMessage);
+})();
