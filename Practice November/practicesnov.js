@@ -37,12 +37,36 @@ greetAgain("Ben");
 greetAgain("Tara");
 
 //
-
-const div = document.querySelector("#div");
-
-function showColor(color) {
+const div2 = document.querySelector("#div2");
+const showColor = function (color) {
   return `Your shirt color is ${color}`;
 }
-div.innerHTML = showColor("pink");
+div2.innerText = showColor("red");
+
+function sum(a, b) {
+  return a + b;
+}
+console.log(`The sum of a and b is ${sum(5, 7)}!`)
+
+const div3 = document.getElementById("div3");
+function add(num1, num2, num3) {
+  return num1 + num2 + num3;
+}
+div3.innerHTML = add(4, 6, 10);
+
+const div5 = document.querySelector("#div5");
+function total(num) {
+  const mealCost = 10;
+  const total = mealCost + num;
+  div5.innerHTML = total;
+}
+total(5);
+
+const myCat = "Simon";
+const div6 = document.getElementById("div6");
+div6.innerText = `My cat's name is ${myCat}`;
+
+
+
 
 
