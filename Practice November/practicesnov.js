@@ -66,6 +66,63 @@ const myCat = "Simon";
 const div6 = document.getElementById("div6");
 div6.innerText = `My cat's name is ${myCat}`;
 
+const x = 5;
+if (x !== 5) {
+  console.log("true");
+} else {
+  console.log("false");
+}
+
+const div7 = document.getElementById("div7");
+
+const checkAge = function (age) {
+  if (age < 10) {
+    div7.innerText = "No rollercoaster for you!";
+  } else if (age >= 10) {
+    div7.textContent = "You can go on the rollercoaster!";
+  }
+}
+checkAge(9);
+
+const div8 = document.getElementById("div8");
+const skill = 91;
+const firstName = "Falco";
+
+if (skill > 90 && firstName === "Falco") {
+  div8.innerHTML = "Falco wins!";
+} else {
+  div8.innerText = "Who are you?";
+}
+
+
+const p = document.getElementById("p");
+const score = 5;
+const timeLeft = 0;
+if (score == 5 || timeLeft === 5) {
+  p.innerHTML = "Game Over";
+}
+
+const div9 = document.getElementById("div9");
+const didPractice = false;
+if (didPractice) {
+  div9.innerText = "You did practice!";
+} else {
+  div9.innerText = "You did NOT practice!";
+}
+
+const div10 = document.getElementById("div10");
+const isCelebrity = true;
+const validTicket = true;
+const bribe = 9001;
+
+if ((isCelebrity == true && validTicket == true) || bribe > 9000) {
+  div10.innerHTML = "Welcome to the concert";
+} else {
+  div10.innerHTML = "No concert for you!";
+}
+
+
+
 
 
 
