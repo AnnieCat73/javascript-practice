@@ -115,10 +115,10 @@ const isCelebrity = true;
 const validTicket = true;
 const bribe = 9001;
 
-if ((isCelebrity == true && validTicket == true) || bribe > 9000) {
-  div10.innerHTML = "Welcome to the concert";
+if ((isCelebrity === true && validTicket === true) || bribe > 9000) {
+  div10.innerText = "Welcome to the concert!";
 } else {
-  div10.innerHTML = "No concert for you!";
+  div10.textContent = "No concert for you";
 }
 
 
