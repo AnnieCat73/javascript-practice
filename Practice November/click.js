@@ -1,4 +1,4 @@
-const output = document.getElementById("output");
+/*const output = document.getElementById("output");
 const button = document.getElementById("mybutton");
 
 function showSum(a, b) {
@@ -52,18 +52,46 @@ btn2.addEventListener("click", () => {
 const btn3 = document.getElementById("btn3");
 const div3 = document.getElementById("div3");
 
+const txt = document.getElementById("mytext");
+const click = document.getElementById("click");
+const output1 = document.getElementById("output1");
 
-btn3.addEventListener("click", () => {
-  let increment = div3;
-  increment.value = div3;
-
-
-  if (div3 <= 5) {
-    div3++;
-  } else {
-    div3.innerText = "Game over!";
-  }
+const txtInput = txt.value;
+console.log(txtInput)
+click.addEventListener("click", () => {
+  output1.innerHTML = `Hello ${txtInput}!`;
 });
+
+const body = document.querySelector("body");
+const input = document.getElementById("t-input");
+const btn5 = document.getElementById("btn5");
+const outputDiv = document.getElementById("output");
+
+btn5.addEventListener("click", () => {
+  const noTshirt = input.value;
+  outputDiv.innerText = noTshirt;
+  let sum = noTshirt * 2;
+  outputDiv.innerHTML = sum;
+});
+
+const input = document.getElementById("name-input");
+const outputDiv = document.getElementById("div7");
+
+input.addEventListener("keyup", function () {
+  outputDiv.innerText = "Hello! Name goes here:";
+});*/
+
+const input = document.getElementById("focus");
+
+input.addEventListener("focus", function () {
+
+  input.style.border = "solid green 3px";
+
+});
+
+
+
+
 
 
 
