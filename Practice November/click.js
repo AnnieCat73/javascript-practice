@@ -79,7 +79,7 @@ const outputDiv = document.getElementById("div7");
 
 input.addEventListener("keyup", function () {
   outputDiv.innerText = "Hello! Name goes here:";
-});*/
+});
 
 const input = document.getElementById("focus");
 
@@ -87,7 +87,25 @@ input.addEventListener("focus", function () {
 
   input.style.border = "solid green 3px";
 
+});*/
+
+const textInput = document.getElementById("input");
+
+function colorRed() {
+  if (textInput === "") {
+    textInput.style.borderColor = "green";
+  } else {
+    textInput.style.borderColor = "none";
+  }
+}
+textInput.addEventListener("keyup", () => {
+  colorRed();
 });
+
+
+
+
+
 
 
 
