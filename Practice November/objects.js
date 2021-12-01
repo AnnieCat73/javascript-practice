@@ -36,3 +36,24 @@ const person = {
 }
 person.greet("Hans");
 
+const div3 = document.getElementById("div3");
+const shoe = {
+  size: 5,
+  bigger: function () {
+    this.size++;
+
+
+  },
+  smaller: function () {
+    this.size -= 1;
+  }
+}
+console.log(shoe.smaller());
+
+const div4 = document.getElementById("div4");
+div4.addEventListener("click", function () {
+  this.style.backgroundColor = "green";
+});
+
+
+
