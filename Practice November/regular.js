@@ -37,3 +37,22 @@ console.log(result);*/
 const str = "Hi, here's some text. Hi again. Also, hi.";
 const result = str.match(/hi/gi);
 console.log(result);
+
+const str1 = "taht taht taht taht taht That!"
+const correct = str1.replace(/taht/gi, "that");
+
+
+const input = document.getElementById("text");
+const btn = document.getElementById("btn");
+const div = document.querySelector(".div");
+
+const email = input.value;
+
+btn.addEventListener("click", function () {
+  if (email.match(/@/ig)) {
+    div.innerText = "Valid email";
+  } else {
+    div.innerText = "Invalid email";
+  }
+});
+
