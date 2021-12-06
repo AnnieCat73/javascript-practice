@@ -32,21 +32,21 @@ function addPremium() {
 const radioA = document.getElementById("radioa");
 const radioB = document.getElementById("radiob");
 
-/*radioA.addEventListener("click", () => {
-  console.log(this.value);
+radioA.addEventListener("click", (e) => {
+  console.log(e.currentTarget);
 });
 
-radioB.addEventListener("click", () => {
-  console.log(this.value);
-});*/
+radioB.addEventListener("click", (e) => {
+  console.log(e.currentTarget);
+});
 
-document.getElementById('radioa').onclick = function () {
+/*document.getElementById('radioa').onclick = function () {
   console.log(this.value);
 };
 
 document.getElementById('radiob').onclick = function () {
   console.log(this.value);
-};
+};*/
 
 const green = document.getElementById("green");
 const blue = document.getElementById("blue");
@@ -59,6 +59,33 @@ green.addEventListener("click", function () {
 blue.addEventListener("click", function () {
   spanDiv.innerHTML = "blue";
 });
+
+const dropdown = document.getElementById("myselect");
+
+dropdown.addEventListener("change", function (e) {
+  console.log(e.target.value);
+});
+
+const shoeSpan = document.getElementById("color");
+const dropdownMenu = document.getElementById("mycolor");
+let defaultValue = "Yellow";
+const blueCar = document.getElementById("blue");
+
+dropdownMenu.addEventListener("change", function (e) {
+  defaultValue = e.target.value;
+  //console.log(defaultValue)
+  if (defaultValue === "Blue") {
+    shoeSpan.innerText = "Blue";
+  } else if (defaultValue === "Red") {
+    shoeSpan.innerText = "Red";
+  } else {
+    shoeSpan.innerText = "Yellow";
+  }
+
+});
+
+
+
 
 
 
