@@ -57,7 +57,19 @@ console.log(d)
 console.log(d.getTime());
 
 const div3 = document.getElementById("div3");
-div3.innerHTML =
+div3.innerHTML = new Date().getDate();
+
+const div4 = document.getElementById("div4");
+const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+function getDayOfWeek() {
+  const d = new Date();
+  const n = d.getDay();
+  div4.innerHTML = n;
+}
+getDayOfWeek();//gets 2
+
+div4.innerHTML = daysOfWeek[2];//gets Tuesday
 
 
 
