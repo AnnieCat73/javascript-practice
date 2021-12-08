@@ -8,14 +8,59 @@
     .close {
       display: none;
     }
+
+    #lightbox-container {
+      position: fixed;
+      text-align: center;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+    }
+
+    #lightbox {
+      width: 400px;
+      height: 300px;
+      background-color: #f8f7f3;
+      border-radius: 5px;
+      padding: 20px;
+      position: relative;
+      display: inline-block;
+      margin-top: 20px;
+      display: none;
+    }
+
+    #overlay {
+      background: rgba(33, 33, 33, 0.8);
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+    }
+
+    #hide {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
   </style>
 </head>
 
 <body>
 
-  <div id="div">Hi I am a div!</div>
-  <button id="open">Open</button>
-  <button class="close">Close</button>
+
+  <button id="show">Show</button>
+  <!--<div id="overlay"></div>-->
+  <div id="lightbox-container">
+    <div id="lightbox">
+      <div id="hide">[Hide]</div>
+      Lightbox
+    </div>
+  </div>
+
+
 
 
   <script src="./bigger.js"></script>
