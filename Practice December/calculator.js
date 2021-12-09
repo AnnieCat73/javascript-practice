@@ -10,3 +10,9 @@
   - handling the display:
     - we want to show a list of selections, not just price
 */
+
+let price = 2000;
+let priceSpan = document.getElementById("price");
+priceSpan.innerHTML = price;
+
+
