@@ -56,6 +56,10 @@ for (let outfit of outfitArray) {
 }
 
 const div = document.getElementById("div");
+const div1 = document.getElementById("div1");
+const div3 = document.getElementById("div3");
+const div2 = document.getElementById("div2");
+
 const createUser = function (name, city, hobby) {
   const user = {
     name: name,
@@ -66,11 +70,15 @@ const createUser = function (name, city, hobby) {
       console.log(`this.name will only participate in this.golf!`)
     },
     showProfile: function () {
-      div.innerHTML = this.user;
+      div.innerText = `Name: ${this.name}`;
+      div1.innerText = `City: ${this.city}`;
+      div2.innerText = `Hobby: ${this.hobby}`;
     }
   }
   return user;
 }
+createUser();
+
 
 /*console.log(createUser());
 const user1 = createUser();
@@ -86,4 +94,17 @@ const user1 = createUser("Sally", "Dublin", "golf");
 const user2 = createUser("Henry", "Paris", "tennis");
 const user3 = createUser("John", "London", "football");
 
+user2.showProfile();
+user1.showProfile();
+user3.showProfile();
+
 //console.log(user3)
+
+window.addEventListener("click", function (e) {
+  div3.innerHTML = e.target;
+})
+
+//4
+const div4 = document.getElementById("div4");
+div4.style.backgroundColor = "orange";
+div4.style.display = "inline-block";
