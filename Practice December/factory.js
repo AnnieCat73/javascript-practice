@@ -108,3 +108,37 @@ window.addEventListener("click", function (e) {
 const div4 = document.getElementById("div4");
 div4.style.backgroundColor = "orange";
 div4.style.display = "inline-block";
+
+const btn = document.getElementById("btn");
+const btn1 = document.getElementById("btn1");
+const btn3 = document.getElementById("btn3");
+const btn4 = document.getElementById("btn4");
+function doSomething() {
+  console.log("I am cleaning my room!");
+};
+
+btn.addEventListener("click", doSomething);
+
+function add(a, b) {
+  console.log(a + b);
+}
+
+btn1.addEventListener("click", function () {
+  add(5, 9);
+});
+
+btn3.addEventListener("click", function () {
+  console.log("Here I am!")
+});
+
+function respondOnlyOnce() {
+  console.log("You should see this only once!");
+  btn4.removeEventListener("click", respondOnlyOnce);
+}
+
+btn4.addEventListener("click", respondOnlyOnce);
+
+
+
+
+
