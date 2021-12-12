@@ -113,6 +113,9 @@ const btn = document.getElementById("btn");
 const btn1 = document.getElementById("btn1");
 const btn3 = document.getElementById("btn3");
 const btn4 = document.getElementById("btn4");
+const btn5 = document.getElementById("btn5");
+const btn6 = document.getElementById("btn6");
+const btn7 = document.getElementById("btn7");
 function doSomething() {
   console.log("I am cleaning my room!");
 };
@@ -138,6 +141,42 @@ function respondOnlyOnce() {
 
 btn4.addEventListener("click", respondOnlyOnce);
 
+const doThing = function () {
+  console.log("do thing!");
+}
+
+btn6.addEventListener("click", doThing);
+
+
+const outputDiv = document.getElementById('output');
+
+
+function showSuccessMessage() {
+  outputDiv.innerHTML = 'Success!';
+}
+
+function turnGreen() {
+  outputDiv.style.color = "green";
+}
+
+
+btn7.addEventListener('click', showSuccessMessage);
+btn7.addEventListener('click', turnGreen);
+
+const btn8 = document.getElementById("btn8");
+const outputDiv2 = document.getElementById('output2');
+function turnVisible() {
+  outputDiv2.style.opacity = "1";
+};
+
+btn8.addEventListener("click", turnVisible);
+
+
+function clickAnywhere(e) {
+  console.log("x=" + e.clientX + " , y=" + e.clientY);
+};
+
+window.addEventListener("click", clickAnywhere);
 
 
 
