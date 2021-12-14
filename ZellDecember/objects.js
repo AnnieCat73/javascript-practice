@@ -27,5 +27,29 @@ if (annie < james) {
   console.log(`Annie is the same age as Kenneth!`);
 }
 
+console.log(document)
+
+const p = document.querySelector("p");
+p.style.color = "yellow";
+
+const dataRocket = document.querySelector("[data-type=rocket]");
+console.log(dataRocket)
+
+const humans = document.querySelector(".humans");
+//const gandalf = humans.querySelector("li");
+//console.log(gandalf)
+
+const allHumans = document.querySelectorAll("li");
+const boromir = allHumans[3];
+boromir.style.fontSize = "2rem";
+const saruman = allHumans[1];
+saruman.style.fontSize = "3rem";
+const aragorn = saruman.nextElementSibling;
+aragorn.style.fontStyle = "italic";
+const gandalf = allHumans[0];
+const mainParent = gandalf.parentElement;
+console.log(mainParent)
+
+
 
 
