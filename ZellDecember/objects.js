@@ -48,7 +48,43 @@ const aragorn = saruman.nextElementSibling;
 aragorn.style.fontStyle = "italic";
 const gandalf = allHumans[0];
 const mainParent = gandalf.parentElement;
-console.log(mainParent)
+console.log(mainParent);
+
+const characters = document.querySelector("#star-wars-characters");
+const starWarsCharacters1 = document.querySelector("ul");
+
+const luke = characters.querySelector(".luke");
+const luke1 = characters.querySelector("li");
+const luke2 = characters.querySelector("[data-type=hero]");
+
+const yoda = characters.querySelector(".yoda");
+const yoda1 = characters.querySelector("[data-type=master]");
+console.log(yoda1)
+
+const vader = characters.querySelector(".badboy");
+const vader1 = characters.querySelector("[data-type=villain]");
+console.log(vader)
+
+const addDiv = document.querySelector(".add");
+addDiv.classList.add("red");
+
+const removeDiv = document.querySelector(".remove");
+removeDiv.classList.remove("remove");
+
+const toggle = document.querySelector(".toggle");
+toggle.classList.toggle("red");
+
+const contains1 = document.querySelector(".contains1");
+contains1.classList.contains("blue");
+
+const contains2 = document.querySelector(".contains2");
+contains2.classList.contains("blue");
+
+
+
+
+
+
 
 
 
