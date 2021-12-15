@@ -80,8 +80,29 @@ contains1.classList.contains("blue");
 const contains2 = document.querySelector(".contains2");
 contains2.classList.contains("blue");
 
+const button = document.querySelector("#btn");
+const body = document.body;
+
+button.addEventListener("click", () => {
+  if (body.classList.contains("button-is-clicked")) {
+    body.classList.remove("button-is-clicked");
+    button.classList.remove("is-clicked");
+  } else {
+    body.classList.add("button-is-clicked");
+    button.classList.add("is-clicked");
+  }
+});
 
 
+const button1 = document.querySelector("#btn1");
+
+button1.addEventListener("click", () => {
+  if (boromir.classList.contains("pink")) {
+    boromir.classList.remove("pink");
+  } else {
+    boromir.classList.add("pink");
+  }
+});
 
 
 
