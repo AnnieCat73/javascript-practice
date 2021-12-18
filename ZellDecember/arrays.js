@@ -1,4 +1,4 @@
-const numbers = [1, 12, 4, 18, 9, 7, 11, 3, 50, 5, 6];
+/*const numbers = [1, 12, 4, 18, 9, 7, 11, 3, 50, 5, 6];
 
 for (let i = 0; i < numbers.length; i++) {
   console.log(numbers[i]);
@@ -65,7 +65,30 @@ people.forEach((person, index) => {
     darwinIndex = index;
   }
 });
-console.log(darwinIndex);
+console.log(darwinIndex);*/
 
 
 
+
+const goodGuys = document.querySelectorAll("[data-type='good-guy']");
+//console.log(goodGuys)
+
+Array.from(goodGuys).forEach(goodGuy => {
+  goodGuy.classList.add("yay");
+});
+console.log(goodGuys);
+
+const villains = document.querySelectorAll("[data-type='villain']");
+Array.from(villains).forEach(villain => {
+  villain.classList.add("nay");
+});
+console.log(villains);
+
+const characters = document.querySelectorAll(".character");
+/*Array.from(characters).forEach(character => {
+  character.classList.add("star-wars");
+});*/
+for (let character of characters) {
+  character.classList.add("star-wars");
+}
+console.log(characters);
