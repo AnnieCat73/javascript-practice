@@ -92,3 +92,41 @@ for (let character of characters) {
   character.classList.add("star-wars");
 }
 console.log(characters);
+
+const btn = document.querySelector("#btn");
+
+btn.addEventListener("click", () => {
+  btn.style.backgroundColor = "green";
+  btn.style.setProperty("color", "#fff");
+  btn.style.width = "20rem";
+  btn.style.setProperty("height", "20rem");
+
+});
+
+const element = document.getElementById("element");
+element.style.fontSize = "5rem";
+const elementStyle = getComputedStyle(element);
+//console.log(style);
+
+const fontSize = elementStyle.fontSize;
+console.log(fontSize)
+
+const div = document.getElementById("div");
+/*const divStyle = div.style.fontSize;
+console.log(divStyle);*/
+
+//const divAgain = getComputedStyle(div);
+//const computedDivStyle = divAgain.fontSize;
+//console.log(computedDivStyle);
+//console.log(divAgain);
+
+const divstyle1 = div.style.backgroundColor;
+console.log(divstyle1);
+
+const divMore = document.getElementById("div");
+const getStyles = getComputedStyle(divMore);
+console.log(getStyles);
+
+
+
+
