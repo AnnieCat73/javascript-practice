@@ -6,7 +6,7 @@ const numOfStripes = parseInt(clownHat.getAttribute("data-num-stripes"));
 clownHat.dataset.clownHatColor = "blue";
 //console.log(clownHat);
 
-
+//////////////////////////////////////////////////////
 //setAttribute
 const div = document.getElementById("div");
 div.setAttribute("data-color", "pink");
@@ -22,6 +22,13 @@ console.log(stripes);
 //removeAttribute
 div.removeAttribute("data-stripes");/////
 console.log(div);
+////////////////////////////////////////////////////
+
+const domRect = div.getBoundingClientRect();
+console.log(domRect);
+
+
+
 
 
 
