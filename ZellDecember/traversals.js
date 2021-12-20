@@ -25,7 +25,15 @@ const firstLink = document.querySelector("a");
 const list1 = firstLink.closest(".list");
 console.log(list1);
 
-//LAST EXAMPLE BEFORE WRAPPING UP
+//LAST EXAMPLE
 
+const firstItem = document.querySelector("li");
+const parent1 = firstItem.parentElement;
+console.log(parent1);
+const allItems = parent1.children;
+console.log(allItems);
+const fourthItem = allItems[3];
+const fifthItem = firstItem.parentElement.children[4];
+console.log(fifthItem);
 
 
