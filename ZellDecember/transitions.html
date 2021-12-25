@@ -24,10 +24,17 @@
         .is-active {
             background-color: #1ce;
         }
+
+        .element:hover {
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.57,-0.43, 0.27, 1.11);
+        }
     </style>
 </head>
 <body>
     <button class="button">HELLO!</button>
+
+    <h3 class="element">I am an element!</h3>
     
     <script src="transitions.js"></script>
 </body>
