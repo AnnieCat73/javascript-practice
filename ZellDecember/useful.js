@@ -27,4 +27,6 @@ const num = 5
 const square = num => num * num
 const add = num => num + num
     
+
 const finalNum = num > 5 ? square(num) : add(num)
+
