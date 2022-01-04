@@ -1,4 +1,4 @@
-/*Ternary
+//Ternary
 //condition ? truthyExp : falseyExp
 //from
 if (isLightGreen) {
@@ -21,15 +21,7 @@ lightColor === green
 //here says if lightColor is strictly green but 
 //it isn't, it's red
 
-const fruitBasket = ['apple', 'pear', 'orange'];
-const appleIndex = fruitBasket.indexOf("apple");
-console.log(appleIndex);//0
-
-appleIndex === 2
-    ? eat()
-    : wash()*/
-
-/*The AND operator (&&) is used to check if all expressions that are 
+The AND operator (&&) is used to check if all expressions that are 
 truthy.
 && returns the first falsey expression if any expressions is falsey
 && returns the last expression if all expressions are truthy.
