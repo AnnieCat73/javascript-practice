@@ -90,3 +90,88 @@ createUser({
     lastName: 'Liew',
     location: 'Singapore'
 });
+
+
+//ES6 Property value shorthands
+const fullName = 'Zell Liew'
+const Zell = {
+  fullName
+}
+
+//ES6 Method shorthands
+//from this
+const Zell = {
+  sayMyName: function () { 
+    console.log("I'm Zell"); 
+  }
+}
+//to
+const Zell = {
+  sayMyName () { 
+    console.log("I'm Zell");
+  }
+}
+
+//...spread
+const array = [2, 3];
+// adding 4 and 5 without spread
+const combinedArray = array.concat(4, 5);
+// adding 4 and 5 with spread
+const combinedArray = [...array, 4, 5];
+
+//spreading instead of Array.from
+const items = document.querySelectorAll('.item')
+// These two give the same results
+const array = Array.from(items)
+const array2 = [...items]
+
+//Array rest-so pack all names into an argument with ...
+const logNames = (...names) => {
+  names.forEach(name => console.log(name));
+}
+logNames('Zell', 'Thomas', 'Jacin', 'Vincy', 'Jing', 
+'Soares', 'Gabrielle', 'Justin');
+
+//When you destructure an array you can pack the “rest of 
+//the array” into a variable with the rest operator.
+const scores = [100, 99, 98];
+const [first, ...restOfScores] = scores;
+
+//Object Spread
+//You can use the spread operator to spread an object’s 
+//properties into another object.
+const fruitBlender = {
+  blendKiwi: true,
+  blendMango: true
+}
+const megaBlender = {
+  blendGuava: true,
+  ...fruitBlender
+}
+
+//Object Rest
+//You can pack remaining properties into a variable with 
+//the rest operator.
+const fruitBlender = {
+  blendKiwi: true,
+  blendMango: true,
+  blendOrange: true,
+  blendPapaya: true
+}
+const { blendKiwi, ...otherProps} = fruitBlender
+console.log(otherProps)
+// {
+//   blendMango: true,
+//   blendOrange: true,
+//   blendPapaya: true
+// }
+
+
+//...spread as a function argument
+const spreads  = [10, 11,12];
+const spreading = (tenth, eleventh, twelth) => {
+  console.log(tenth);
+  console.log(eleventh);
+  console.log(twelth);
+}
+spreading(...spreads);//10, 10, 12

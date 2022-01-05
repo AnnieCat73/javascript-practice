@@ -101,7 +101,7 @@ const firstThree = ([first, second, third]) => {
     third: third
   }
 }
-console.log(firstThree(scores));*/
+console.log(firstThree(scores));
 
 const posts = [{
     id: 800,
@@ -139,4 +139,31 @@ createUser({
     lastName: 'Liew',
     location: 'Singapore'
 });
+
+//const createEmployee = (firstName, lastName, age, gender, position="associate") => {
+
+//}
+//to*/
+const createEmployee = (employee) => {
+  const { firstName, lastName, age, gender, position="associate" } = employee;
+}
+console.log(createEmployee({
+  firstName: 'Hans',
+  lastName: 'Larsen',
+  age: 28,
+  gender: 'male',
+  position: 'associate'
+}));
+
+const array = [1,2,3];
+const array2 = [...array, 5, 6];
+console.log(array2);
+
+const spreads  = [10, 11,12];
+const spreading = (tenth, eleventh, twelth) => {
+  console.log(tenth);
+  console.log(eleventh);
+  console.log(twelth);
+}
+spreading(...spreads);//10, 10, 12
 
