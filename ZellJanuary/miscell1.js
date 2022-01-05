@@ -46,3 +46,97 @@ is truthy.
 '' || null. Answer: null
 2550284 && 0. Answer: 0
 2550284 || 0. Answer: 2550284
+
+//EARLY RETURNS
+
+const multiply = (num1, num2) => {
+    return num1 * num2;
+    console.log('This statement will never be read!')
+}
+//Code after the return statement is not read.
+//has return and {}
+
+container.addEventListener('click', e => {
+    const el = e.target.closest('.some-element')
+    if (el) {
+      // Rest of the code here
+    }
+  });
+  //to
+  container.addEventListener('click', e => {
+    const el = e.target.closest('.some-element')
+    if (!el) { return }
+  
+    // Rest of the code here
+  });
+
+//DESTRUCTURING
+
+//OBJECTS
+// Getting values from objects
+const person = {
+    firstName: 'Zell',
+    lastName: 'Liew'
+}
+const firstName = person.firstName;
+const lastName = person.lastName;
+//to
+const {firstName, lastName} = person
+console.log(firstName); // Zell
+console.log(lastName); // Liew
+
+//ARRAYS
+const numbers = [22, 99, 100];
+//to first item, second item etc:
+const [firstNumber, secondNumber] = numbers;
+console.log(firstNumber);// 22
+console.log(secondNumber); // 99
+
+//FUNCTION ARGUMENTS-if argument is an array or object
+const scores = [100, 99, 98];
+const firstThree = ([first, second, third]) => {
+  return {
+    first: first,
+    second: second,
+    third: third
+  }
+}
+console.log(firstThree(scores));*/
+
+const posts = [{
+    id: 800,
+    title: 'This is 💩'
+  }, {
+    id: 801,
+    title: 'Pooing is a natural thing.'
+  }, {
+    id: 802,
+    title: 'Poo jokes are getting irritating'
+}];
+
+const [firstPost, secondPost] = posts;
+console.log(firstPost)
+
+const [firstPost] = posts
+const {id, title} = firstPost
+
+//DESTRUCTURED PARAMETERS-if too many parameters
+//from:
+const createUser = (firstName, lastName, email, password, location) => {
+    // ...
+}
+createUser('Zell', 'Liew', 'zell@zellwk.com', '12345678', 'Singapore')
+//to-pass an object instead
+const createUser = (user) => {
+    const { firstName, lastName, email, password, location } = user
+    // ...
+}
+  
+createUser({
+    email: 'zell@zellwk.com',
+    password: '12345678',
+    firstName: 'Zell',
+    lastName: 'Liew',
+    location: 'Singapore'
+});
+
