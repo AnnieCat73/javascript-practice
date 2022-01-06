@@ -190,3 +190,46 @@ console.log(casper);//Object { name: "Casper" }
 //findIndex
 const casperIndex = people.findIndex(person => person.name === 'Casper');
 console.log(casperIndex);//2
+
+//map
+const newArray = Array.map((currentItem, index) => {
+  // return the transformed value in a new array/all of them
+});
+const numbers = [1, 12, 4, 18, 9, 7, 11, 3, 50, 5, 6]
+const multipliedBy5 = numbers.map(num => {
+  return num * 5;
+});
+//or
+const multipliedBy5 = numbers.map(num => num * 5);
+
+//BETTER-add string: 'I need to' before each todo
+const todos = ['buy eggs', 'feed my cat', 'water plants'];
+const toDoStrings = todos.map(todo => `I need to ${todo}!`);
+console.log(toDoStrings)
+
+//IMP SIMPLIFYING ARRAYS WITH MAP
+/*fx From a list of people, you need to get an array of firstNames. 
+To get this array, you can use map to loop through the array and return 
+person.firstName*/
+
+const people = [{
+  firstName: 'Zell',
+  lastName: 'Liew'
+}, {
+  firstName: 'Vincy',
+  lastName: 'Zhang'
+}];
+const firstNames = people.map(person => person.firstName);
+
+map vs forEach
+
+Use map when you want to return a new array
+Use forEach when you want to do stuff
+
+Chaining array methods EX
+const numbers = [1, 12, 4, 18, 9, 7, 11, 3, 50, 5, 6];
+const multipliedBy5 = numbers.map(num => num * 5);
+const between30And40 = multipliedBy5.filter(num => num >= 30 && num <= 40);
+//or
+const result = numbers.map(num => num * 5)
+  .filter(num => num >= 30 && num <= 40);
