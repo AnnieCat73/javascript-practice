@@ -175,3 +175,18 @@ const spreading = (tenth, eleventh, twelth) => {
   console.log(twelth);
 }
 spreading(...spreads);//10, 10, 12
+
+//Array methods
+
+const people = [
+  {name: 'Zell'},
+  {name: 'Vincy'},
+  {name: 'Casper'}
+]
+//find
+const casper = people.find(person => person.name === 'Casper');
+console.log(casper);//Object { name: "Casper" }
+
+//findIndex
+const casperIndex = people.findIndex(person => person.name === 'Casper');
+console.log(casperIndex);//2

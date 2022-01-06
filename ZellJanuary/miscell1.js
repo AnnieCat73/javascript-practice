@@ -143,7 +143,7 @@ createUser({
 //const createEmployee = (firstName, lastName, age, gender, position="associate") => {
 
 //}
-//to*/
+//to
 const createEmployee = (employee) => {
   const { firstName, lastName, age, gender, position="associate" } = employee;
 }
@@ -167,3 +167,47 @@ const spreading = (tenth, eleventh, twelth) => {
 }
 spreading(...spreads);//10, 10, 12
 
+const arrayConcat = array.concat(array2);
+console.log(arrayConcat)
+
+const scores = ['first', 'second', 'fourth', 'fifth', 'seventh'];
+const [first, ...restOfScores] = scores;
+console.log(first);
+console.log(restOfScores);
+
+const zell = {
+  firstName: 'Zell',
+  lastName: 'Liew',
+  gender: 'male'
+}
+
+const {firstName, ...rest} = zell;
+console.log(rest);*/
+
+const person = {
+  firstName: 'Zell',
+  lastName: 'Liew',
+}
+
+const male = {
+  gender: 'male'
+}
+
+const zell = {...person, ...male};
+console.log(zell)
+
+
+//Array methods
+
+const people = [
+  {name: 'Zell'},
+  {name: 'Vincy'},
+  {name: 'Casper'}
+]
+//find
+const casper = people.find(person => person.name === 'Casper');
+console.log(casper);//Object { name: "Casper" }
+
+//findIndex
+const casperIndex = people.findIndex(person => person.name === 'Casper');
+console.log(casperIndex);//2
