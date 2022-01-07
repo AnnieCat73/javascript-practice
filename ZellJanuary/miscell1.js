@@ -248,3 +248,13 @@ console.log(diedBefore1940);
 
 const aliveBtwn18501970 = people.filter(person => person.yearBorn >=1850 && person.yearOfDeath <= 1970);
 console.log(aliveBtwn18501970);
+
+const morePeople = people.map(person => {
+  const yearsLived = person.yearOfDeath - person.yearBorn;
+  return {
+    firstName: person.firstName,
+    lastName: person.lastName,
+    yearsLived
+  }
+})
+console.log(morePeople)

@@ -233,3 +233,72 @@ const between30And40 = multipliedBy5.filter(num => num >= 30 && num <= 40);
 //or
 const result = numbers.map(num => num * 5)
   .filter(num => num >= 30 && num <= 40);
+
+
+//Reduce
+reduce is an array method that helps you convert an array into a single value
+
+const numbers = [1, 2, 3, 4, 5];
+const total = numbers.reduce((0, num) => {
+  return acc + num;
+}, 0);
+//to or first iteration
+const total = numbers.reduce((0, 1) => {
+  return 0 + 1;
+}, 0);
+//then second etx
+const total = numbers.reduce((1, 2) => {
+  return 1;
+}, 0);
+
+//Looping through objects
+1) Convert object into an array with Object.keys, Object.values, Object.entries
+2)Then loop through the array
+
+1)
+Object.keys
+const fruits = {
+  apple: 28,
+  orange: 17,
+  pear: 54,
+}
+const keys = Object.keys(fruits)
+console.log(keys) // [apple, orange, pear]
+
+Object.values
+
+const fruits = {
+  apple: 28,
+  orange: 17,
+  pear: 54,
+}
+const values = Object.values(fruits)
+console.log(values) // [28, 17, 54]
+
+Object.entries-creates an array of arrays
+const fruits = {
+  apple: 28,
+  orange: 17,
+  pear: 54,
+}
+const entries = Object.entries(fruits)
+console.log(entries)
+// [
+//   [apple, 28],
+//   [orange, 17],
+//   [pear, 54]
+// ]
+
+
+2)
+// Looping through arrays created from Object.keys
+const keys = Object.keys(fruits)
+for (const key of keys) {
+  console.log(key)
+}//apple, orange, pear
+
+// Looping through arrays created from Object.entries
+const entries = Object.entries(fruits)
+for (const [fruit, count] of entries) {
+  console.log(`There are ${count} ${fruit}s`)
+}//There are 28 apples etc
