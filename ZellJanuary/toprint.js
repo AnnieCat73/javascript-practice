@@ -303,3 +303,14 @@ const entries = Object.entries(fruits)
 for (const [fruit, count] of entries) {
   console.log(`There are ${count} ${fruit}s`)
 }//There are 28 apples etc
+
+//RETURNING OBJECTS WITH IMPLICIT RETURN
+
+//no implicit return ex
+const functionName = _ => {
+  return {
+    prop: 'value'
+  }
+}
+//implicit
+const functionName = _ => ({prop: 'value'});

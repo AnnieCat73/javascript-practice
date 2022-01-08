@@ -344,3 +344,11 @@ const entries = Object.entries(fruitBasket);
 entries.forEach(([fruit, value])=> {
   console.log(`There are ${value} ${fruit}s in the fruitbasket!`);
 })
+
+const cat = {
+  name: 'Nelson',
+  age: 9,
+  breed: 'Siamese'
+}
+const implicit = _ => ({name: 'Nelson'});
+console.log(implicit());
