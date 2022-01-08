@@ -219,7 +219,7 @@ console.log(toDoStrings)
 
 
 const firstNames = people.map(person => person.name);
-console.log(firstNames)*/
+console.log(firstNames)
 
 const people = [
   { firstName: 'Benjamin', lastName: 'Franklin', yearBorn: 1706, yearOfDeath: 1790 },
@@ -258,3 +258,89 @@ const morePeople = people.map(person => {
   }
 })
 console.log(morePeople)
+
+//Looping through objects
+1) Convert object into an array with Object.keys, Object.values, Object.entries
+2)Then loop through the array
+
+1)
+Object.keys()
+
+const fruits = {
+  apple: 28,
+  orange: 17,
+  pear: 54,
+}
+const keys = Object.keys(fruits)
+console.log(keys) // [apple, orange, pear]
+
+Object.values()
+
+const fruits = {
+  apple: 28,
+  orange: 17,
+  pear: 54,
+}
+const values = Object.values(fruits)
+console.log(values) // [28, 17, 54]
+
+Object.entries()-creates an array of arrays
+const fruits = {
+  apple: 28,
+  orange: 17,
+  pear: 54,
+}
+const entries = Object.entries(fruits)
+console.log(entries)
+// [
+//   [apple, 28],
+//   [orange, 17],
+//   [pear, 54]
+// ]
+
+
+2)
+// Looping through arrays created from Object.keys
+const keys = Object.keys(fruits)
+for (const key of keys) {
+  console.log(key)
+}//apple, orange, pear
+
+// Looping through arrays created from Object.entries
+const entries = Object.entries(fruits)
+for (const [fruit, count] of entries) {
+  console.log(`There are ${count} ${fruit}s`)
+}//There are*/
+
+const pets = ["cat", "dog", "rabbit", "rat"];
+
+const petsKeys = Object.keys(pets);
+console.log(petsKeys);
+
+const petsValues= Object.values(pets);
+console.log(petsValues);
+
+const petsEntries = Object.entries(petsValues);
+console.log(petsValues);
+
+const fruitBasket = {
+  apple: 28,
+  orange: 17,
+  pear: 54
+}
+
+const keys = Object.keys(fruitBasket);
+console.log(keys);
+keys.forEach(fruit => {
+  console.log(`There are ${fruit}s in the fruitbasket!`);
+})
+
+const values = Object.values(fruitBasket);
+values.forEach(value => {
+  console.log(value);
+})
+
+const entries = Object.entries(fruitBasket);
+entries.forEach(([fruit, value])=> {
+  console.log(`There are ${value} ${fruit}s in the fruitbasket!`);
+})

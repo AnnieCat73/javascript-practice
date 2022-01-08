@@ -251,6 +251,7 @@ const total = numbers.reduce((1, 2) => {
   return 1;
 }, 0);
 
+ 28 apples etc
 //Looping through objects
 1) Convert object into an array with Object.keys, Object.values, Object.entries
 2)Then loop through the array
