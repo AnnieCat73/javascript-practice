@@ -310,7 +310,7 @@ for (const key of keys) {
 const entries = Object.entries(fruits)
 for (const [fruit, count] of entries) {
   console.log(`There are ${count} ${fruit}s`)
-}//There are*/
+}//There are
 
 const pets = ["cat", "dog", "rabbit", "rat"];
 
@@ -351,4 +351,32 @@ const cat = {
   breed: 'Siamese'
 }
 const implicit = _ => ({name: 'Nelson'});
-console.log(implicit());
+console.log(implicit());*/
+
+const people = [
+  'Benjamin Franklin',
+  'Thomas Edison',
+  'Franklin Roosevelt',
+  'Mahatma Gandhi',
+  'Napoleon Bonaparte',
+  'Abraham Lincoln'
+]
+
+people.unshift('Winston Churchill','Albert Einstein');
+
+
+people.push('Charles Darwin','Walt Disney');
+
+
+people.splice(6, 0, 'Pablo Picasso', 'Ludwig van Beethoven');
+console.log(people);
+
+people.splice(2, 2);
+
+
+people.splice(6, 2);
+console.log(people);
+
+const removeMahatma = people.splice(3, 1);
+console.log(people)
+console.log(removeMahatma);

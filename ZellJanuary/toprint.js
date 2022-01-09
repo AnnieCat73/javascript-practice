@@ -314,3 +314,50 @@ const functionName = _ => {
 }
 //implicit
 const functionName = _ => ({prop: 'value'});
+
+//REASSINGMENTS
+let firstName = 'Zell';
+firstName = 'Vincy'; //also state of program changes as name is now Vincy
+
+//Best not to reassign so instead try to:
+//1) Use const
+const newVariable = 'some value';
+//2) Use ternary operator instead of if/else
+const toy = gender === 'boy' ? 'toy car' : 'doll';
+//3) if need 3 plus if statements use a function with early return
+const getGift = score => {
+  if (score === 100) return 'Xbox';
+  if (score > 75) return 'new phone';
+  if (score > 50) return 'meal';
+  return null;
+}
+const gift = getGift(70);
+/*SO:
+Data types that are known as primitive values in JavaScript are numbers, 
+strings, booleans, null, undefined. Objects such as functions and arrays 
+are referred to as non-primitive values. The fundamental difference 
+between primitives and non-primitives is that primitives are immutable 
+and non-primitives are mutable.
+
+Object.assign can be used to prevent objects from mutating.
+*/
+
+//PREVENTING ARRAYS FROM MUTATING
+//1) Copy your arrays before working on them - slice()
+const array = [1, 2, 3];
+const copy = array.slice();//then work on copy
+
+//2) Use array methods that create a new array - slice(), concat()
+//Examples
+// slice() - Copies up to (not including) the last item
+const array = [1, 2, 3]
+const copy = array.slice();//[1, 2, 3]
+const copy = array.slice(0, array.length - 1);//[1, 2] or]
+const copy = array.slice(1);//[2,3]
+const copy = array.slice(0, -1)//[1,2]- copies up to (not inclu) last item
+//-1 = last item, -2 = second last item, -3 = third last item etc
+
+//concat()
+const first = [1, 2]
+const second = [3, 4]
+const combined = first.concat(second)
