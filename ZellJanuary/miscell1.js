@@ -351,7 +351,7 @@ const cat = {
   breed: 'Siamese'
 }
 const implicit = _ => ({name: 'Nelson'});
-console.log(implicit());*/
+console.log(implicit());
 
 const people = [
   'Benjamin Franklin',
@@ -379,4 +379,18 @@ console.log(people);
 
 const removeMahatma = people.splice(3, 1);
 console.log(people)
-console.log(removeMahatma);
+console.log(removeMahatma);*/
+
+const heading = document.getElementById("heading");
+heading.textContent = "Hello Little World!!";
+
+const ul = document.querySelector("ul");
+console.log(ul);
+
+ul.innerHTML = `<ul>
+    <li>Pizza</li>
+    <li>Bread</li>
+    <li>Onion</li>
+    <li>Broccoli</li>
+  </ul>`;
+

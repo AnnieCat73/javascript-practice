@@ -358,6 +358,48 @@ const copy = array.slice(0, -1)//[1,2]- copies up to (not inclu) last item
 //-1 = last item, -2 = second last item, -3 = third last item etc
 
 //concat()
-const first = [1, 2]
-const second = [3, 4]
-const combined = first.concat(second)
+const first = [1, 2];
+const second = [3, 4];
+const combined = first.concat(second);
+
+//PURE FUNCTIONS
+/*When you pass a set of input values into a pure function, it should always 
+return the same output value.
+const sum = (n1, n2) => n1 + n2;
+If you pass 3 and 5 into sum, you will get 8. It doesn’t matter how many 
+times you run sum(3, 5). You will always get 8. The output remains unchanged 
+given the same input.
+sum(3, 5); // 8
+sum(3, 5); // 8
+sum(3, 5); // 8
+sum(3, 5); // 8
+
+//IMPURE FUNCTION
+An impure function’s value can change given the same input.
+const random = _ => Math.random();
+random(); // 0.4656
+random(); // 0.0037
+random(); // 0.4346
+
+
+textContent vs innerHTML
+If you want to change text, always use textContent because textContent is 
+faster than innerHTML.
+If you want to change the HTML inside an element, use innerHTML.*/
+
+//textContent - change text of an element
+const element = document.querySelector('div');
+element.textContent = 'Hello world!';
+
+//innerHTML - lets you change the HTML inside an element
+const element = document.querySelector('div');
+element.innerHTML = '<p class="red">The quick brown fox ...</p>';
+//or
+const element = document.querySelector('div');
+element.innerHTML =
+  `<ol>
+    <li>Pizza</li>
+    <li>Bread</li>
+    <li>Onion</li>
+    <li>Broccoli</li>
+  </ol>`;
