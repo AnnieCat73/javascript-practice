@@ -403,3 +403,48 @@ element.innerHTML =
     <li>Onion</li>
     <li>Broccoli</li>
   </ol>`;
+
+
+//1) CREATING HTML ELEMENTS 
+const paragraph = document.createElement('p');
+const div = document.createElement('div');
+paragraph.classList.add('red');
+paragraph.textContent = `I'm red!`;
+
+//2a) Add to DOM with appenChild-appendChild adds your 
+//element as the final child of the specified element
+// Create Strawberry
+const li = document.createElement('li');
+li.textContent = 'Strawberry';
+// Append Strawberry
+const list = document.querySelector('ol');
+list.appendChild(li);
+//looks like:
+<ol>
+  <li>Banana</li>
+  <li>Pineapple</li>
+  <li>Orange</li>
+  <li>Strawberry</li>
+</ol>
+
+//2b) Add to DOM with insertBefore-insertBefore 
+/*adds an element before another element
+parentElement.insertBefore(newElement, referenceElement);
+-newElement is the element you want to insert.
+-referenceElement tells browsers where to insert newElement. 
+-newElement will be inserted just before referenceElement.*/
+
+// Create strawberry node
+const strawberry = document.createElement('li');
+strawberry.textContent = 'Strawberry';
+// Add strawberry node before banana
+const list = document.querySelector('ol');
+const banana = list.children[0];
+list.insertBefore(strawberry, banana);
+//looks like
+<ol>
+  <li>Strawberry</li>
+  <li>Banana</li>
+  <li>Pineapple</li>
+  <li>Orange</li>
+</ol>

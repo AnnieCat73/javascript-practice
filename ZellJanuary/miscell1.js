@@ -379,7 +379,7 @@ console.log(people);
 
 const removeMahatma = people.splice(3, 1);
 console.log(people)
-console.log(removeMahatma);*/
+console.log(removeMahatma);
 
 const heading = document.getElementById("heading");
 heading.textContent = "Hello Little World!!";
@@ -392,5 +392,27 @@ ul.innerHTML = `<ul>
     <li>Bread</li>
     <li>Onion</li>
     <li>Broccoli</li>
-  </ul>`;
+  </ul>`;*/
+
+//EXERCISE
+//1
+const characters = document.querySelector(".characters");
+const bilboBaggins = document.createElement("li");
+bilboBaggins.textContent = "Bilbo Baggins";
+console.log(bilboBaggins)
+const hobbits = characters.querySelector(".hobbits");
+hobbits.appendChild(bilboBaggins);
+console.log(hobbits);
+
+//2
+const elves = characters.querySelector(".elves");
+const glorfindel = elves.children[0];
+console.log(glorfindel);
+const legolas= document.createElement("li");
+legolas.textContent = "Legolas";
+elves.insertBefore(legolas, glorfindel);
+console.log(elves);
+
+//3
+
 
