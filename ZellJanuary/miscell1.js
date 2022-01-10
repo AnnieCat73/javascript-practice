@@ -392,7 +392,7 @@ ul.innerHTML = `<ul>
     <li>Bread</li>
     <li>Onion</li>
     <li>Broccoli</li>
-  </ul>`;*/
+  </ul>`;
 
 //EXERCISE
 //1
@@ -414,5 +414,31 @@ elves.insertBefore(legolas, glorfindel);
 console.log(elves);
 
 //3
+const humans = characters.querySelector(".humans");
+const boromir = humans.children[2];
+const aragorn = document.createElement("li");
+aragorn.textContent = "Aragorn";
+humans.insertBefore(aragorn, boromir);*/
+
+
+const characters = document.querySelector(".characters");
+const humans = document.createElement("ul");
+humans.classList.add("humans");
+
+//console.log(characters);
+
+
+humans.innerHTML = `
+    <li>Gandalf</li>
+    <li>Gandalf</li>
+    <li>Gandalf</li>
+    <li>Gandalf</li>
+    <li>Gandalf</li>
+  `;
+characters.appendChild(humans);
+
+//const hobbitChildren = [Gandalf, Saruman, Argorn, Boromir, Faramir];
+
+
 
 

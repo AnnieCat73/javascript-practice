@@ -448,3 +448,74 @@ list.insertBefore(strawberry, banana);
   <li>Pineapple</li>
   <li>Orange</li>
 </ol>
+
+//ADDING MULTIPLE ELEMENTS TO THE DOM - DO THIS:
+
+//1) innerHTML
+const ol = document.querySelector('ol');
+ol.innerHTML = `
+  <li>Addy Osmani</li>
+  <li>Vitaly Friedman</li>
+  <li>Chris Coyier</li>
+`;//get this:
+<ol>
+  <li>Addy Osmani</li>
+  <li>Vitaly Friedman</li>
+  <li>Chris Coyier</li>
+</ol>
+//OR BETER EX
+// Method 1: Replacing innerHTML
+const characters = document.querySelector('.characters');
+const humans = document.createElement('ul');
+humans.classList.add('humans');
+humans.innerHTML = `
+  <li>Gandalf</li>
+  <li>Saruman</li>
+  <li>Aragorn</li>
+  <li>Boromir</li>
+  <li>Faramir</li>
+`;
+characters.appendChild(humans);///THIS IMP
+
+// or if you have an array like and use map or join:
+const devs = [
+  'Addy Osmani',
+  'Vitaly Friedman',
+  'Chris Coyier'
+];
+
+//join()
+const string = devs.join()
+console.log(string) // AddyOsmani,Vitaly Friedman,Chris Coyier or no ,
+const string = devs.join('')
+console.log(string) // Addy OsmaniVitaly FriedmanChris Coyier
+
+// map()
+const string =
+  devs.map(dev => `<li>${dev}</li>`).join('');
+console.log(string);
+ol.innerHTML = string//then change/add it to html
+// <li>Addy Osmani</li><li>Vitaly Friedman</li><li>Chris Coyier</li>
+//join() here converts array into a string
+
+//IF YOU ALREADY HAVE EXISTING ITEMS AND WANT TO ADD NEW ONES TO IT
+//have this
+<ol>
+  <li>Rachel Andrew</li>
+  <li>Jen Simmons</li>
+  <li>Una Kravets</li>
+</ol>
+// but add thes Devs to <ol>
+const devs = [
+  'Addy Osmani',
+  'Vitaly Friedman',
+  'Chris Coyier'
+];
+//USE DOCUMENT FRAGMENT-ONLY UPDATES THE 3 NEW DEVS-kind like virtual DOM
+const fragment = document.createDocumentFragment();
+devs.forEach(dev => {
+  const li = document.createElement('li')
+  li.innerHTML = dev
+  fragment.appendChild(li)
+});
+ol.appendChild(fragment);
