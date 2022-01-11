@@ -519,3 +519,33 @@ devs.forEach(dev => {
   fragment.appendChild(li)
 });
 ol.appendChild(fragment);
+
+//REMOVE ELEMENT FROM THE DOM -parentNode.removeChild
+<ol>
+  <li>Rachel Andrew</li>
+  <li>Jen Simmons</li>
+  <li>Una Kravets</li>
+</ol>
+const jen = document.querySelectorAll('li')[1];
+jen.parentNode.removeChild(jen); //becomes this
+<ol>
+  <li>Rachel Andrew</li>
+  <li>Una Kravets</li>
+</ol>
+
+//THEN CAN MOVE THE REMOVEDCHILD WITH appendChild/insertBefore
+<ol>
+  <li>Rachel Andrew</li>
+  <li>Jen Simmons</li>
+  <li>Una Kravets</li>
+</ol>
+const list = document.querySelector('ol');
+const rachel = list.children[0];
+
+const jen = list.removeChild(list.children[1]);//removed it then
+list.insertBefore(jen, rachel);//becomes this:
+<ol>
+  <li>Jen Simmons</li>
+  <li>Rachel Andrew</li>
+  <li>Una Kravets</li>
+</ol>

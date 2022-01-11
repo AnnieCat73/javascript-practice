@@ -421,14 +421,12 @@ aragorn.textContent = "Aragorn";
 humans.insertBefore(aragorn, boromir);*/
 
 
-const characters = document.querySelector(".characters");
-const humans = document.createElement("ul");
-humans.classList.add("humans");
+
 
 //console.log(characters);
 
 
-humans.innerHTML = `
+/*humans.innerHTML = `
     <li>Gandalf</li>
     <li>Gandalf</li>
     <li>Gandalf</li>
@@ -436,9 +434,25 @@ humans.innerHTML = `
     <li>Gandalf</li>
   `;
 characters.appendChild(humans);
+const characters = document.querySelector(".characters");
+const humans = document.createElement("ul");
+humans.classList.add("humans");
+const hobbitChildren = [Gandalf, Saruman, Argorn, Boromir, Faramir];
+const frag = document.createDocumentFragment();
 
-//const hobbitChildren = [Gandalf, Saruman, Argorn, Boromir, Faramir];
+hobbitChildren.forEach(hobbit => {
+  const li = document.createElement("li");
+  li.innerHTML = hobbit;
+  frag.appendChild(li);
+});
+humans.appendChild(frag);*/
 
+const humans = document.querySelector(".humans");
+const aragorn = humans.children[2];
+aragorn.parentNode.removeChild(aragorn);
+//humans.appendChild(aragorn);
+const faramir = humans.children[3];
+humans.insertBefore(aragorn, faramir);
 
 
 
