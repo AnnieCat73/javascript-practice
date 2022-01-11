@@ -445,14 +445,23 @@ hobbitChildren.forEach(hobbit => {
   li.innerHTML = hobbit;
   frag.appendChild(li);
 });
-humans.appendChild(frag);*/
+humans.appendChild(frag);
 
 const humans = document.querySelector(".humans");
 const aragorn = humans.children[2];
 aragorn.parentNode.removeChild(aragorn);
 //humans.appendChild(aragorn);
 const faramir = humans.children[3];
-humans.insertBefore(aragorn, faramir);
+humans.insertBefore(aragorn, faramir);*/
+
+const form = document.querySelector("form");
+form.addEventListener("click", (e) => {
+  e.preventDefault();
+  console.log("I am a form!");
+  form.submit();
+});
+
+console.log(form.elements)
 
 
 

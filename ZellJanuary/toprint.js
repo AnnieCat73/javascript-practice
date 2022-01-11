@@ -549,3 +549,82 @@ list.insertBefore(jen, rachel);//becomes this:
   <li>Rachel Andrew</li>
   <li>Una Kravets</li>
 </ol>
+
+//SWITCH
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+/*When JavaScript reaches a break keyword, it breaks out 
+of the switch block. The default keyword specifies the code to run 
+if there is no case match
+I only use switch when I want to use early returns, but I can’t.*/
+
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+}//Today is Tuesday
+
+//FORMS
+/*
+<form method="post" action="/some-url">
+  <label for="first-name">First name</label>
+  <input type="text" name="first-name" id="first-name">
+  <button type="submit">Submit form</button>
+</form>
+
+method tells the browser which HTTP method to use to 
+submit the form. You can choose from get and post.
+action tells the browser what URL to submit the information 
+to. In this case, it’s /some-url. If you want to process 
+the information in the frontend, you don’t need the action 
+attribute.
+
+The name attribute lets servers extract values from fields
+The label describes what a field is about.
+When a user clicks on a label, you’ll want the browser to 
+focus on a field. To do so, you need to provide the label 
+with a for attribute; this for attribute should match the 
+id of the targeted field.
+
+The submit button lets users submit a form.*/
+
+form.addEventListener('submit', e => {
+  e.preventDefault();//prevent it from navigating to URL in action
+
+  // Do stuff here
+  console.log('Change stuff here');
+
+  // Continues the submission
+  form.submit();
+});
+
+
+//FORM ELEMENTS
+console.log(form.elements);//get this
+HTMLFormControlsCollection { 0: input#first-name, 2: button, length: 3,}
