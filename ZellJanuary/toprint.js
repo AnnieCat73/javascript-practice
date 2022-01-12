@@ -628,3 +628,67 @@ form.addEventListener('submit', e => {
 //FORM ELEMENTS
 console.log(form.elements);//get this
 HTMLFormControlsCollection { 0: input#first-name, 2: button, length: 3,}
+
+//1) Selecting a field
+const input1 = form.elements.first-name;//the id of first input
+console.log(input1) // <input type="text" name="input1" id="idForInput1">
+
+//2 Input - to collect all sorts of info
+<input type="text" name="first-name" id="first-name">//text most commom but
+Email
+Number
+Password
+Tel
+Search
+Url
+
+//TO GET VALUE FROM AN INPUT USE VALUE Property
+<input type="text" name="text" value="Hello world!">
+const input = document.querySelector('input');
+console.log(input.value) // Hello world!;
+
+//REMOVE ANY POSS WHITESPACE - trim();
+<input type="text" name="text" value="    Hello world!     ">
+console.log(input.value); // "    Hello world!    "
+console.log(input.value.trim()); // "Hello world!"
+
+//INPUT EVENTS - LISTEN TO 4 TYPES OF EVENTS
+input - fires when a user types info in field
+input.addEventListener('input', e => {
+  console.log(e.target.value)
+});
+
+focus or focusin - a user activates field/focusin bubbles
+input.addEventListener('focus', e => {
+  console.log(`Focus on! Value is: ${e.target.value}`)
+});
+
+blur or focusout - activates when field loses focus/focusout bubbles
+input.addEventListener('blur', e => {
+  console.log(`Focus off! Value is: ${e.target.value}`)
+});
+
+change - checkboxes, radio buttons, selected elements
+
+//CHEKCBOXES
+<form action="#" method="post">
+  <p>Do you like these fruits?</p>
+
+  <div class="checkbox">
+    <input type="checkbox" name="apple" id="apple">
+    <label for="apple">🍎 Apples</label>
+  </div>
+  <div class="checkbox">
+    <input type="checkbox" name="grape" id="grape">
+    <label for="grape">🍇 Grapes</label>
+  </div>
+  <div class="checkbox">
+    <input type="checkbox" name="lemon" id="lemon">
+    <label for="lemon">🍋 Lemons</label>
+  </div>
+</form>
+
+You tell a user what the checkbox is for through a label
+
+//GETTING VALUES FROM CHEKCBOXES
+

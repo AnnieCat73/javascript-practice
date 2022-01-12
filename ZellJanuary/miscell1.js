@@ -462,6 +462,7 @@ form.addEventListener("click", (e) => {
 });
 
 console.log(form.elements)
-
+const input1 = form.elements.firstname;
+console.log(input1)
 
 
