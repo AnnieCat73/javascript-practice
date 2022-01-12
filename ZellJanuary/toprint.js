@@ -691,4 +691,91 @@ change - checkboxes, radio buttons, selected elements
 You tell a user what the checkbox is for through a label
 
 //GETTING VALUES FROM CHEKCBOXES
+<input type="checkbox" name="checkbox" id="checkbox" value="Have I been checked?">
+<label for="checkbox">Label for the checkbox</label>
+const checkbox = document.querySelector('input');
+console.log(checkbox.value) // Have I been checked?
 
+//SELECTING CHECKED CHEKCBOXES
+//1) Selecting checked checkboxes through querySelector;
+const checkedCheckboxes = document.querySelectorAll('input:checked');
+
+console.log(checkedCheckboxes) // NodeList(2) [input#apple, input#grape];
+//2) Selecting checked checkboxes through the checked property
+const checkboxes = Array.from(document.querySelectorAll('input'));
+const checkedCheckboxes = checkboxes.filter(checkbox => checkbox.checked);
+console.log(checkedCheckboxes) // [input#apple, input#grape];
+
+//CHECKBOX EVENTS
+You can listen to one event on checkboxes—change. change fires whenever a 
+checkbox gets checked or unchecked. Note: you can use an event delegation 
+pattern since change bubbles.
+
+form.addEventListener('change', e => {
+  const checkbox = e.target
+  console.log(checkbox.checked)
+});
+
+//RADIO BUTTONS
+Radio buttons are used when you want a user to select one option 
+from many options. To create a radio button, you use an
+
+<input> element with type="radio"
+
+make sure all radio buttons have the same name property.
+
+<form action="#" method="post">
+  <p>Select your favorite fruit</p>
+
+  <div class="radio">
+    <input type="radio" name="fav-fruit" id="apple" value="apple">
+    <label for="apple">🍎 Apple</label>
+  </div>
+  <div class="radio">
+    <input type="radio" name="fav-fruit" id="grape" value="grape">
+    <label for="grape">🍇 Grape</label>
+  </div>
+  <div class="radio">
+    <input type="radio" name="fav-fruit" id="lemon" value="lemon">
+    <label for="lemon">🍋 Lemon</label>
+  </div>
+  <div class="radio">
+    <input type="radio" name="fav-fruit" id="none" value="none">
+    <label for="none">😝 None of the above</label>
+  </div>
+</form>
+
+//GETTING VALUES FROM RADIO BUTTONS
+const radio = document.querySelector('input');
+console.log(radio.value);
+
+//SELECTING VALUES
+
+//1) Selecting checked radio through querySelector
+const checkedRadios = document.querySelector('input:checked');
+console.log(checkedRadios);// <input id="grape" name="grape" ... >
+
+//2) Selecting checked radios through the checked property
+const radios = Array.from(document.querySelectorAll('input'));
+const radio = radios.find(radio => radio.checked);
+console.log(radio); // <input id="grape" name="grape" ... >
+
+//RADIO EVENTS
+const radios = document.querySelectorAll('input');
+radios.addEventListener('change', e => {
+  if (e.target.checked) {
+    console.log(e.target.value);
+  }
+});
+
+//TEXTAREA
+<label for="long-text">Enter some text: </label>
+<textarea name="long-text" id="long-text"></textarea>
+
+<label for="long-text">Enter some text: </label>
+<textarea name="long-text" id="long-text" value="    
+something goes here     "></textarea>
+const textarea = document.querySelector('textarea');
+console.log(textarea.value.trim()) // something goes here;
+
+Listen to textarea events through input, focus, blur, change
