@@ -452,7 +452,7 @@ const aragorn = humans.children[2];
 aragorn.parentNode.removeChild(aragorn);
 //humans.appendChild(aragorn);
 const faramir = humans.children[3];
-humans.insertBefore(aragorn, faramir);*/
+humans.insertBefore(aragorn, faramir);
 
 const form = document.querySelector("form");
 form.addEventListener("click", (e) => {
@@ -464,5 +464,29 @@ form.addEventListener("click", (e) => {
 console.log(form.elements)
 const input1 = form.elements.firstname;
 console.log(input1)
+
+const petInput = document.querySelector("input");
+console.log(petInput.value);
+
+petInput.addEventListener("input", e => {
+  console.log(e.target.value);
+});
+
+petInput.addEventListener("focus", e => {
+  console.log(e.target.value);
+});
+petInput.addEventListener("focusout", e => {
+  console.log(e.target.value);
+});
+petInput.addEventListener("blur", e => {
+  console.log(e.target.value);
+});*/
+
+const checkedCheckBoxes = document.querySelectorAll("input:checked")
+console.log(checkedCheckBoxes);
+
+//2.2
+
+
 
 

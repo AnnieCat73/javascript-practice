@@ -340,7 +340,7 @@ between primitives and non-primitives is that primitives are immutable
 and non-primitives are mutable.
 
 Object.assign can be used to prevent objects from mutating.
-*/
+*//////////////////////////////////////////////////////////////////////////////
 
 //PREVENTING ARRAYS FROM MUTATING
 //1) Copy your arrays before working on them - slice()
@@ -591,7 +591,7 @@ switch (new Date().getDay()) {
 }//Today is Tuesday
 
 //FORMS
-/*
+
 <form method="post" action="/some-url">
   <label for="first-name">First name</label>
   <input type="text" name="first-name" id="first-name">
@@ -612,7 +612,7 @@ focus on a field. To do so, you need to provide the label
 with a for attribute; this for attribute should match the 
 id of the targeted field.
 
-The submit button lets users submit a form.*/
+The submit button lets users submit a form.
 
 form.addEventListener('submit', e => {
   e.preventDefault();//prevent it from navigating to URL in action
@@ -699,8 +699,8 @@ console.log(checkbox.value) // Have I been checked?
 //SELECTING CHECKED CHEKCBOXES
 //1) Selecting checked checkboxes through querySelector;
 const checkedCheckboxes = document.querySelectorAll('input:checked');
-
 console.log(checkedCheckboxes) // NodeList(2) [input#apple, input#grape];
+
 //2) Selecting checked checkboxes through the checked property
 const checkboxes = Array.from(document.querySelectorAll('input'));
 const checkedCheckboxes = checkboxes.filter(checkbox => checkbox.checked);
