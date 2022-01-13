@@ -714,7 +714,16 @@ pattern since change bubbles.
 form.addEventListener('change', e => {
   const checkbox = e.target
   console.log(checkbox.checked)
-});
+});//better code:
+const checkboxes = Array.from(document.querySelectorAll("input"));
+const checkedCheckBoxes = checkboxes.filter(checkbox => checkbox.checked);
+console.log(checkedCheckBoxes);
+
+document.addEventListener("change", e => {
+  const checkboxes = [...document.querySelectorAll('input')]
+  const checkedCheckboxes = checkboxes.filter(checkbox => checkbox.checked)
+  console.log(checkedCheckboxes)
+});//input#pear
 
 //RADIO BUTTONS
 Radio buttons are used when you want a user to select one option 

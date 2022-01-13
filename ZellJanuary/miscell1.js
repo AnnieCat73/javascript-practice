@@ -480,12 +480,22 @@ petInput.addEventListener("focusout", e => {
 });
 petInput.addEventListener("blur", e => {
   console.log(e.target.value);
-});*/
+});
 
 const checkedCheckBoxes = document.querySelectorAll("input:checked")
-console.log(checkedCheckBoxes);
+console.log(checkedCheckBoxes);*/
 
 //2.2
+
+const checkboxes = Array.from(document.querySelectorAll("input"));
+const checkedCheckBoxes = checkboxes.filter(checkbox => checkbox.checked);
+console.log(checkedCheckBoxes);
+
+document.addEventListener("change", e => {
+  const checkboxes = [...document.querySelectorAll('input')]
+  const checkedCheckboxes = checkboxes.filter(checkbox => checkbox.checked)
+  console.log(checkedCheckboxes)
+});//input#pear
 
 
 
