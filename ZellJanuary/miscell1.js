@@ -483,7 +483,7 @@ petInput.addEventListener("blur", e => {
 });
 
 const checkedCheckBoxes = document.querySelectorAll("input:checked")
-console.log(checkedCheckBoxes);*/
+console.log(checkedCheckBoxes);
 
 //2.2
 
@@ -495,7 +495,22 @@ document.addEventListener("change", e => {
   const checkboxes = [...document.querySelectorAll('input')]
   const checkedCheckboxes = checkboxes.filter(checkbox => checkbox.checked)
   console.log(checkedCheckboxes)
-});//input#pear
+});//input#pear*/
+
+const checkedRadio = document.querySelector('input:checked');
+console.log(checkedRadio);
+
+const radios = document.querySelector('input');
+radios.addEventListener("change", e => {
+  if (e.target.checked) {
+    console.log(e.target.value);
+  }
+})
+
+const textarea = document.querySelector("textarea");
+textarea.addEventListener('input', e => {
+  console.log(e.target.value)
+})
 
 
 
