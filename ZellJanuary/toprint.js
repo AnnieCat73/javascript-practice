@@ -788,3 +788,47 @@ const textarea = document.querySelector('textarea');
 console.log(textarea.value.trim()) // something goes here;
 
 Listen to textarea events through input, focus, blur, change
+const textarea = document.querySelector("textarea");
+textarea.addEventListener('input', e => {
+  console.log(e.target.value);//logs what's typed
+});
+textarea.addEventListener('focus', e => {
+  console.log(e.target.value);//logs value when focus
+});
+textarea.addEventListener('blur', e => {
+  console.log(e.target.value);//logs value when focus out
+});
+
+//SANITIZE YOUR INPUT
+Hackers can attack your website from running their JSON. So 
+NEED TO PREVENT HACKERS FRO< RUNING JS IN YOUR WEBSITE
+THEY CAN DO THIS VIA
+URL
+TEXT field
+
+HOW TO PREVENT IT:
+
+1) USE textContent- only output text so no HTML generated
+form.addEventListener('submit', event => {
+  // ...
+  output.textContent = value;
+})
+
+
+2) Use a sanitizer-if need to write HTML use this instead
+
+Many libraries but one ex is DOMPurify
+<!-- Link to DOMPurify -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/1.0.7/purify.min.js"></script>
+
+<!-- Your main JavaScript comes next -->
+<script src="js/main.js"></script>
+
+//in js
+form.addEventListener('submit', event => {
+  // ...
+  output.innerHTML = DOMPurify.sanitize(value)
+})
+
+
+//GENERATING UNIQUE IDs

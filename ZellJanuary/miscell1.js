@@ -510,7 +510,15 @@ radios.addEventListener("change", e => {
 const textarea = document.querySelector("textarea");
 textarea.addEventListener('input', e => {
   console.log(e.target.value)
-})
+});
+textarea.addEventListener('focus', e => {
+  console.log(e.target.value)
+});
+textarea.addEventListener('blur', e => {
+  console.log(e.target.value)
+});
+
+
 
 
 
