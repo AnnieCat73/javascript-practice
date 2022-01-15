@@ -495,7 +495,7 @@ document.addEventListener("change", e => {
   const checkboxes = [...document.querySelectorAll('input')]
   const checkedCheckboxes = checkboxes.filter(checkbox => checkbox.checked)
   console.log(checkedCheckboxes)
-});//input#pear*/
+});//input#pear
 
 const checkedRadio = document.querySelector('input:checked');
 console.log(checkedRadio);
@@ -516,7 +516,18 @@ textarea.addEventListener('focus', e => {
 });
 textarea.addEventListener('blur', e => {
   console.log(e.target.value)
-});
+});*/
+
+const date = new Date();
+//console.log(date);//fx Wed Jan 23 2019 17:21:13 GMT+0800 
+//(Singapore Standard Time)
+
+const day = today.getDate();
+console.log(day); 
+
+const year = today.getFullYear();
+console.log(year); // 2019
+
 
 
 

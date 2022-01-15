@@ -1,4 +1,4 @@
-//Ternary
+/*Ternary
 //condition ? truthyExp : falseyExp
 //from
 if (isLightGreen) {
@@ -210,7 +210,7 @@ console.log(toDoStrings)
 //IMP SIMPLIFYING ARRAYS WITH MAP
 /*fx From a list of people, you need to get an array of firstNames. 
 To get this array, you can use map to loop through the array and return 
-person.firstName*/
+person.firstName*
 
 const people = [{
   firstName: 'Zell',
@@ -340,7 +340,7 @@ between primitives and non-primitives is that primitives are immutable
 and non-primitives are mutable.
 
 Object.assign can be used to prevent objects from mutating.
-*//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 
 //PREVENTING ARRAYS FROM MUTATING
 //1) Copy your arrays before working on them - slice()
@@ -385,7 +385,7 @@ random(); // 0.4346
 textContent vs innerHTML
 If you want to change text, always use textContent because textContent is 
 faster than innerHTML.
-If you want to change the HTML inside an element, use innerHTML.*/
+If you want to change the HTML inside an element, use innerHTML.
 
 //textContent - change text of an element
 const element = document.querySelector('div');
@@ -432,7 +432,7 @@ list.appendChild(li);
 parentElement.insertBefore(newElement, referenceElement);
 -newElement is the element you want to insert.
 -referenceElement tells browsers where to insert newElement. 
--newElement will be inserted just before referenceElement.*/
+-newElement will be inserted just before referenceElement.
 
 // Create strawberry node
 const strawberry = document.createElement('li');
@@ -565,7 +565,7 @@ switch(expression) {
 /*When JavaScript reaches a break keyword, it breaks out 
 of the switch block. The default keyword specifies the code to run 
 if there is no case match
-I only use switch when I want to use early returns, but I can’t.*/
+I only use switch when I want to use early returns, but I can’t.
 
 switch (new Date().getDay()) {
   case 0:
@@ -801,7 +801,7 @@ textarea.addEventListener('blur', e => {
 
 //SANITIZE YOUR INPUT
 Hackers can attack your website from running their JSON. So 
-NEED TO PREVENT HACKERS FRO< RUNING JS IN YOUR WEBSITE
+NEED TO PREVENT HACKERS FRO< RUNNING JS IN YOUR WEBSITE
 THEY CAN DO THIS VIA
 URL
 TEXT field
@@ -827,8 +827,87 @@ Many libraries but one ex is DOMPurify
 //in js
 form.addEventListener('submit', event => {
   // ...
-  output.innerHTML = DOMPurify.sanitize(value)
+  output.innerHTML = DOMPurify.sanitize(value);
 })
 
 
-//GENERATING UNIQUE IDs
+//GENERATING UNIQUE IDs/Identifier
+
+What happens if you need to delete the second fruit? Will you be 
+comfortable having a list with a missing number?
+
+<ul>
+  <li id="fruit-0">Apple</li>
+  <li id="fruit-2">Orange</li>
+</ul>
+This shows a flaw in the numbering system.
+
+A more robust system uses unique strings. We don’t care if elements 
+are added or deleted. They’re going to be unique anyway.
+
+How to generate unique string:
+const generateUniqueString = length =>
+Math.random().toString(36).substring(2, 2 + length);
+////////////////
+const fruits = ['Apple', 'Banana', 'Orange'];
+const ul = document.querySelector('.ul');
+
+fruits.forEach((fruit, index) => {
+  const li = document.createElement('li');
+  li.textContent = fruit;
+  li.id = generateUniqueString(5);
+  ul.appendChild('li');
+})
+<ul>
+  <li id="v00o0">Apple</li>
+  <li id="6k9fz">Banana</li>
+  <li id="j41vt">Orange</li>
+</ul>*/
+
+
+//THE DATE Object
+
+const date = new Date();
+//console.log(date);//fx Wed Jan 23 2019 17:21:13 GMT+0800 
+//(Singapore Standard Time)
+
+const day = today.getDate();
+console.log(day); 
+
+const year = today.getFullYear();
+console.log(year); // 2019
+
+const monthsInAYear = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+]
+
+const monthIndex = today.getMonth()
+const monthName = monthsInAYear[monthIndex]
+console.log(monthName) // January
+
+const dateString = `${day} ${month}, ${year}`
+console.log(dateString) // 23 January, 2019
+
+const daysInAWeek = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday'
+]
+
+const dayString = daysInAWeek[today.getDay()]
+console.log(dayString) // Wednesday
