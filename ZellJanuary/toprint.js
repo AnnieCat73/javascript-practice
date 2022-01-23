@@ -892,12 +892,12 @@ const monthsInAYear = [
   'December'
 ]
 
-const monthIndex = today.getMonth()
-const monthName = monthsInAYear[monthIndex]
-console.log(monthName) // January
+const monthIndex = today.getMonth();
+const monthName = monthsInAYear[monthIndex];
+console.log(monthName); // January
 
-const dateString = `${day} ${month}, ${year}`
-console.log(dateString) // 23 January, 2019
+const dateString = `${day} ${month}, ${year}`;
+console.log(dateString);// 23 January, 2019
 
 const daysInAWeek = [
   'Sunday',
@@ -909,5 +909,73 @@ const daysInAWeek = [
   'Saturday'
 ]
 
-const dayString = daysInAWeek[today.getDay()]
-console.log(dayString) // Wednesday
+const dayString = daysInAWeek[today.getDay()];
+console.log(dayString); // Wednesday
+
+//practice - get:
+//Wednesday, 23 January, 2019:
+
+const monthsInAYear = [
+  { shortname: 'Jan', longname: 'January' },
+  { shortname: 'Feb', longname: 'February' },
+  { shortname: 'Mar', longname: 'March' },
+  { shortname: 'Apr', longname: 'April' },
+  { shortname: 'May', longname: 'May' },
+  { shortname: 'Jun', longname: 'June' },
+  { shortname: 'Jul', longname: 'July' },
+  { shortname: 'Aug', longname: 'August' },
+  { shortname: 'Sep', longname: 'September' },
+  { shortname: 'Oct', longname: 'October' },
+  { shortname: 'Nov', longname: 'November' },
+  { shortname: 'Dec', longname: 'December' }
+]
+
+const daysInAWeek = [
+  { shortname: 'Sun', longname: 'Sunday' },
+  { shortname: 'Mon', longname: 'Monday' },
+  { shortname: 'Tue', longname: 'Tuesday' },
+  { shortname: 'Wed', longname: 'Wednesday' },
+  { shortname: 'Thu', longname: 'Thursday' },
+  { shortname: 'Fri', longname: 'Friday' },
+  { shortname: 'Sat', longname: 'Saturday' }
+]
+
+const today = new Date();
+const day = today.getDate();
+const month = monthsInAYear[today.getMonth()].longname;
+const dayString = daysInAWeek[today.getDay()].longname;
+const year = today.getFullYear();
+const dateString = `${dayString}, ${day} ${month}, ${year}`;
+
+/*Time
+
+getHours(): Gets hours (0-23) according to local time.
+getMinutes(): Gets minutes (0-59) according to local time.
+getSeconds(): Gets seconds (0-59) according to local time.
+getMilliseconds(): Gets milliseconds (0-999) according to local time.
+
+getUTCHours(): Gets hours (0-23) according to universal time.
+
+Setting a specific time
+
+const Christmas = new Date('2019-12-25');pass in the date value
+console.log(Christmas) // Wed Dec 25 2019 08:00:00 GMT+0800 
+(Singapore Standard Time)
+
+Using the set methods
+You can use any method here to change a date. 
+
+const date = new Date(2019, 10)//10 is November
+console.log(date) // 01 Nov 2019
+
+date.setMonth(11)
+console.log(date) // 01 Dec 2019
+
+If you want to use setDate, make sure you’re don’t mutate the original date. To do so, you can create a temporary date:
+
+const date = new Date(2019, 1, 25)
+const tempDate = new Date(date)
+const threeDaysLater = tempDate.setDate(tempDate.getDate() + 3)
+
+console.log(date) // 25 February 2019
+console.log(threeDaysLater) // 28 February 2019
