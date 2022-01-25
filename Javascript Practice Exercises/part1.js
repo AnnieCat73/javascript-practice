@@ -18,6 +18,12 @@ const checkNumbers = (num1, num2) => {
 
 console.log(checkNumbers(50, 50));
 
+//or
+
+const isEqualTo100 = (a, b) => a === 100 || b === 100;
+
+//fx console.log(isEqualTo100(100, 0))
+
 /*Exercise 2:
 Write a JavaScript exercise to get the extension of a filename*/
 
