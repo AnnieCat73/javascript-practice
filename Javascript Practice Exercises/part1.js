@@ -20,9 +20,11 @@ console.log(checkNumbers(50, 50));
 
 //or
 
-const isEqualTo100 = (a, b) => a === 100 || b === 100;
+const isEqualTo100 = (a, b) => a === 100 || b === 100 || (a + b) ===100;
 
-//fx console.log(isEqualTo100(100, 0))
+//console.log(isEqualTo100(100, 0))//true
+//console.log(isEqualTo100(50,50));//true
+//console.log(isEqualTo100(0,50));//false
 
 /*Exercise 2:
 Write a JavaScript exercise to get the extension of a filename*/
@@ -47,10 +49,19 @@ let fileName = "animation.html";
 let fileExtension = getExtension(fileName);
 console.log(fileExtension);//html
 
+//or
+const getfileExtension = (str) => str.slice(str.lastIndexOf('.'));
+console.log(getfileExtension('methods.html'));//.html
+
 /*Exercise 3:
 Write a JavaScript program to replace every character in a given string with the character
 following it in the alphabet*/
 
+//use String.fromCharCode and charCodeAt
+
+const moveCharsForward = (str) => str.split('').map(char => String.fromCharCode(charCodeAt(0) + 1)).join('');
+console.log(moveCharsForward('abcd'));//bcde
+//so turn str into an array then mutate with start index of 0 and add 1, then turn into a string again
 
 /*Exercise 4:
 Write a JavaScript program to get the current date.
@@ -85,3 +96,11 @@ console.log(today);
 today = dd+'/'+mm+'/'+yyyy;
 console.log(today);
 
+//or
+const formatDate = (date = new Date()) => {
+    const days = date.getDate() + 1;
+    const months = date.getMonth() + 1;
+    const years = date.getFullYear();
+    return `${days}/${months}/${years}`;
+}
+console.log(formatDate());
