@@ -70,7 +70,7 @@ console.log(tricky.split("sh", 7));/*[
   ]*/
 
 
-//Day #2 - slice(start, end) - slices out what you tell it to
+//Day #2 - slice(start, end) - ARRAYS -slices out what you tell it to
 
 //NB (start, end)- start inclusive in what you get but end isn't
 //so slices right before it ended
@@ -97,5 +97,25 @@ function myFunction(num1, num2) {
 }
 console.log(myFunction(1, 2));
 
-//Substrings
+/*Substrings
+
+A substring is a part or a portion of a string. For example, "rain"
+is a substring of the string "brain" because you can get "rain" by
+taking the last 4 characters.
+
+someString.substring(indexStart, indexEnd); //first character you like
+
+to include and last character you like to ignore SO like slice()
+
+Do not use the .substr method as it's deprecated and works differently. Always use the
+.substring method.
+
+The indexEnd parameter is optional, which means you can pass the indexStart and it'll assume the indexEnd to be the same as the string length. Here's an example:
+language.substring(4); //"Script"*/
+
+//Day #4 - slice() as a string method/slicing characters
+//slice(startchar, endcharnotincluded) - whitespaces counts
+
+
+//substring() - same as slice but can't accept negative values
 
