@@ -67,7 +67,7 @@ console.log(tricky.split("sh", 7));/*[
     "go",
     "go",
     "go"
-  ]*/
+  ]*
 
 
 //Day #2 - slice(start, end) - ARRAYS -slices out what you tell it to
@@ -117,5 +117,28 @@ language.substring(4); //"Script"*/
 //slice(startchar, endcharnotincluded) - whitespaces counts
 
 
-//substring() - same as slice but can't accept negative values
+//substring() - same as slice but can't accept negative values*/
 
+const string = "This is day three";
+
+const string2 = "Now it's my turn to try it out!";
+console.log(string2.slice(27, 30));//out
+console.log(string2.slice(-2));//t
+console.log(string2.substring(0, 7));//Now it'
+
+
+//Good one so capitalise a name
+function capitalize(word) {
+  return word[0].toUpperCase() + word.substring(1).toLowerCase();
+
+}
+
+// Sample usage - do not modify
+console.log(capitalize("sam")); // "Sam"
+console.log(capitalize("ALEX")); // "Alex"
+console.log(capitalize("chARLie")); // "Charlie"
+
+
+//Day #4
+//reverse()
+//join()
