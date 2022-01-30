@@ -140,5 +140,86 @@ console.log(capitalize("chARLie")); // "Charlie"
 
 
 //Day #4
-//reverse()
-//join()
+//reverse() - reverses an array with no parameters
+//join() - joins elements of an array into a string and returns a string
+//one parameter, separator so join(&) //default is ,
+
+const array3 = ["r", "e", "t", "u", "p", "m", "o", "c"];
+console.log(array3.reverse());//computer
+
+console.log(array3.join());//c,o,m,p,u,t,e,r = into string sep by ,
+console.log(array3.join("-"));//c-o-m-p-u-t-e-r
+console.log(array3.join("&"));//c&o&m&p&u&t&e&r
+console.log(array3.join(", and"));//c, ando, andm, andp, andu, andt, ande, andr
+console.log(array3.join(" "));//c o m p u t e r
+console.log(array3.join("] ["));//c] [o] [m] [p] [u] [t] [e] [r
+
+
+//reverse this string
+const task = "tnellecxe";
+
+//1 turn into an array as reverse only for array
+const taskArray = task.split("");//want no space between
+console.log(taskArray);// [ "t", "n", "e", "l", "l", "e", "c", "x", "e" ]
+
+//2 Reverse the new array with reverse()
+const taskReverse = taskArray.reverse();
+console.log(taskReverse);// [ "e", "x", "c", "e", "l", "l", "e", "n", "t" ]
+
+//3 Then join it into a string
+const taskFinalString = taskReverse.join("");
+console.log(taskFinalString);//excellent
+
+
+
+//Turn into "Great work today!"
+const today = "today work Great!";
+
+//1 - split every word into an array
+const splitArray = today.split(" ");
+console.log(splitArray);// Array [ "today", "work", "Great!" ]
+
+//2 then reverse the Array
+const reverseSplitArray = splitArray.reverse();
+console.log(reverseSplitArray);//Array  [ "Great!", "work", "today" ]
+
+//3 Then join it into a string
+const splitArrayString = reverseSplitArray.join(" ");
+console.log(splitArrayString);
+
+//GOOD EXERCISES
+function getNumberOfChars(name) {
+  // number of characters in: name
+  return name.length;
+}
+
+
+function getFirstChar(name) {
+  // first character of: name
+  return name[0];
+}
+
+function getFirstChar(name) {
+  // last character of: name
+  return name[name.length - 1];
+}
+
+
+function getLower(name) {
+  // name all in lower case (example: "ABC" becomes "abc")
+  return name.toLowerCase();
+}
+
+function getUpper(name) {
+  // name all in upper case (example: "abc" becomes "ABC")
+  return name.toUpperCase();
+}
+
+function getCapitalized(name) {
+  // capitalized version of name (example: "alEX" becomes "Alex")
+  return name[0].toUpperCase() + name.substring(1).toLowerCase();
+}
+
+//Day #5 shift(), unshift(), pop(), push()
+
+
