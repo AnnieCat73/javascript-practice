@@ -220,6 +220,30 @@ function getCapitalized(name) {
   return name[0].toUpperCase() + name.substring(1).toLowerCase();
 }
 
-//Day #5 shift(), unshift(), pop(), push()
+//Day #5 shift(), unshift(), pop(), push() - array
+//shift and pop -removes
+//unshift and pop - adds
+
+//NB
+
+const array = [1, 2, 3, 4, 5];
+const storedShiftElement = array.shift();
+console.log(storedShiftElement);//1 so shift creates a new array with '1'and can store that in a variable
+(array.unshift(1));//adds it back again
+console.log(array)//[ 1, 2, 3, 4, 5 ]
+console.log(array.unshift());//5 - returns the amount of elements in the array
+
+array.pop();//takes 5 out of array and can store it
+const poppedElement = array.pop();
+console.log(poppedElement);//5
+array.push(5);// pushes it back onto the array
+array.push();//returns 5 elements in the array
+
+//The parseInt() function parses a string argument and returns an integer of the specified radix (the base in mathematical numeral systems)
+export function getNextAge(age) {
+  return Number.parseInt(age, 10) + 1; //10 is radix
+}
 
 
+
+//Day #6 - charAt(), indexOf(), lastIndexOf()
