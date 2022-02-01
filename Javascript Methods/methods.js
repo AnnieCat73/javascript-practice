@@ -117,7 +117,7 @@ language.substring(4); //"Script"*/
 //slice(startchar, endcharnotincluded) - whitespaces counts
 
 
-//substring() - same as slice but can't accept negative values*/
+/*substring() - same as slice but can't accept negative values
 
 const string = "This is day three";
 
@@ -242,8 +242,39 @@ array.push();//returns 5 elements in the array
 //The parseInt() function parses a string argument and returns an integer of the specified radix (the base in mathematical numeral systems)
 export function getNextAge(age) {
   return Number.parseInt(age, 10) + 1; //10 is radix
-}
+}*/
 
 
 
-//Day #6 - charAt(), indexOf(), lastIndexOf()
+//Day #6 - charAt(), indexOf(), lastIndexOf()- STRINGS ONLY
+//charAt(index) - returns the char at specified index of a string
+//charAt(15); - returns letter at index 15
+//SO WHICH POSITIONS IS A CHARACTER AT - USE charAt() method
+
+const position = "I want to search for positions within this string.";
+position.charAt(15);//h
+//or store it in a variable
+const position15 = position.charAt(15);
+console.log(position15);
+
+//indexOf() - gives us the position of the value so opposite of charAt()
+//indexOf(what you are searching for, startingindex - optional)
+
+const sleep = "I am going to go to sleep after this.";
+sleep.indexOf("g");
+const indexG = sleep.indexOf("g");
+console.log(indexG);//5 - includes whitespace 
+
+console.log(sleep.indexOf("after"));//26
+console.log(sleep.indexOf("to", 5));//11
+
+//lastIndexOf(as indexOf) - finding the last occurence of f.ex to above string
+sleep.lastIndexOf("to");//17
+
+//NB IT COUNTS BACKWARDS BUT RETURNS TO US THE INDEX STARTING AT THE BEGINNING IF USING STARTING INDEX
+sleep.lastIndexOf("g", 2);//-1 - as so starts counting from index 2 but counts from left and no g so returns -1
+
+sleep.lastIndexOf("g", 28);//14
+
+
+String(), toString(), toFixed(), Number(), parseFloat(), parseInt()
