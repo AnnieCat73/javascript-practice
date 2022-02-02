@@ -277,4 +277,62 @@ sleep.lastIndexOf("g", 2);//-1 - as so starts counting from index 2 but counts f
 sleep.lastIndexOf("g", 28);//14
 
 
-String(), toString(), toFixed(), Number(), parseFloat(), parseInt()
+//String(), toString(), toFixed(), Number(), parseFloat(), parseInt()
+
+//Numbers to strings - toString(), String(), toFixed()
+
+const numberToString = 500;
+const newString = numberToString.toString();//"500" = string 500
+console.log(typeof newString);//string
+
+String(numberToString);//"500" - this is a method
+
+const money = 3;
+const moneyString = money.toFixed(2);//"3.00"
+
+const money1 = 3.22
+money.toFixed(4);//3.2200
+money.toFixed(0);//"3" - rounds down
+
+const money3 = 3.75;
+money3.toFixed(0);//4 - rounds up
+
+//Strings to numbers
+
+Number("10"); //10 - number
+const number2 = "45";
+Number(number);//45
+
+//parseInt() - parses a string and returns a whole no//NB ONLY ROUNDS DOWN
+
+const decimal = "3.22";
+parseInt(decimal);//3 - number 3
+
+//parseFloat() - parses a string and returns a number//NB USE THIS ONE IF WANT TO KEEP DECIMAL PLACES 
+
+parseFloat("3.45");//3.45 - the number but keeps decimals
+
+
+//GOOD EXERCISE
+export function getNextAge(age) {
+  return Number(age) + 1;
+}//so if your are 10 then next year you are 11
+
+export function getNextAge(age) {
+  if (age === "") {
+    return 0;
+  }
+
+  return Number.parseInt(age, 10) + 1;
+}//same as above but if you entered empty string it will return 0
+
+function getDescription(text) {
+  if (text.length > 10) {
+    return text.substring(0, 10) + "...";
+  }
+  return text;
+}//RETURNS FIRST 10 CHARACTERS BUT IF LESS THAN 10 RETURNS SHORT STRING
+
+
+
+// Day # 8 Math.round(), Math.ceil(), Math.floor(), Math.max(), Math.min()
