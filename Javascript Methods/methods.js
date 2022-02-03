@@ -242,7 +242,7 @@ array.push();//returns 5 elements in the array
 //The parseInt() function parses a string argument and returns an integer of the specified radix (the base in mathematical numeral systems)
 export function getNextAge(age) {
   return Number.parseInt(age, 10) + 1; //10 is radix
-}*/
+}
 
 
 
@@ -335,4 +335,44 @@ function getDescription(text) {
 
 
 
-// Day # 8 Math.round(), Math.ceil(), Math.floor(), Math.max(), Math.min()
+// Day #8 Math.round(), Math.ceil(), Math.floor(), Math.max(), Math.min()
+//Math methods that you can call on this object 
+
+const number12 = 12.8;
+Math.round(number12);//13 - round to nearest integer
+Math.ceil(number12)//13 - rounds up
+console.log(Math.floor(number12));//12 - rounds down
+
+
+Math.min(4, 2, 9);//2
+Math.max(4, 2, 9);//9
+
+const array12 = [3, 2, 5.4, 10, 3.2, 11, 20, 1, 0];
+Math.min(array12);//nan but in es6 use spread operator
+Math.min(...array12);//0
+Math.max(...array12);//20
+
+//GOOD EXERCISE
+
+function evenOrOdd(number) {
+    if (number % 2 === 0) {
+        return "even";
+    } else {
+        return "odd";
+    }
+}
+
+sumGrades(grades) {
+    let sum = 0;
+    grades.forEach(function(grade) {
+        sum = sum + grade;
+        // or
+        // sum += grade
+    });
+    return sum;
+}
+// Sample usage - do not modify
+console.log(sumGrades([15, 5, 10])); // 30
+console.log(sumGrades([12, 10, 13, 19])); // 54
+
+// Day #9 - forEach*/
