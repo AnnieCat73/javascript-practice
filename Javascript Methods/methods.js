@@ -263,7 +263,7 @@ console.log(position15);
 const sleep = "I am going to go to sleep after this.";
 sleep.indexOf("g");
 const indexG = sleep.indexOf("g");
-console.log(indexG);//5 - includes whitespace 
+console.log(indexG);//5 - includes whitespace
 
 console.log(sleep.indexOf("after"));//26
 console.log(sleep.indexOf("to", 5));//11
@@ -308,7 +308,7 @@ Number(number);//45
 const decimal = "3.22";
 parseInt(decimal);//3 - number 3
 
-//parseFloat() - parses a string and returns a number//NB USE THIS ONE IF WANT TO KEEP DECIMAL PLACES 
+//parseFloat() - parses a string and returns a number//NB USE THIS ONE IF WANT TO KEEP DECIMAL PLACES
 
 parseFloat("3.45");//3.45 - the number but keeps decimals
 
@@ -336,7 +336,7 @@ function getDescription(text) {
 
 
 // Day #8 Math.round(), Math.ceil(), Math.floor(), Math.max(), Math.min()
-//Math methods that you can call on this object 
+//Math methods that you can call on this object
 
 const number12 = 12.8;
 Math.round(number12);//13 - round to nearest integer
@@ -376,3 +376,91 @@ console.log(sumGrades([15, 5, 10])); // 30
 console.log(sumGrades([12, 10, 13, 19])); // 54
 
 // Day #9 - forEach*/
+
+//forEach() method executes a provided function once for each array element
+
+//const numbers14 = [5, 4, 3, 2, 1, 0];
+
+//Step 1
+//numbers14.forEach()
+
+//step 2 - insert a callback function i.e the function we are calling on each element
+//numbers14.forEach(function () {
+
+//})
+
+//step 3 - pass the element as the iterator, i.e what represents each element here it's number but can call it anything like element
+//numbers14.forEach(function (number) {
+
+//})
+
+//step 4 - make our function do something
+//numbers14.forEach(function (number) {
+// console.log(number);
+//})//5, 4, 3, 2, 1, 0
+
+const numbers14 = [5, 4, 3, 2, 1, 0];
+const newNumbers = [];
+
+numbers14.forEach(function (number) {
+  newNumbers.push(number);
+})
+
+console.log(newNumbers);//[5, 4, 3, 2, 1, 0]
+
+function sumFunction(x) {
+  x = x * 3;
+  console.log(x);
+}
+
+numbers14.forEach(sumFunction);//should multiply all numbers in numbers14 array by 3
+//15, 12, 9, 6, 3, 0
+
+//ADVANCED forEach() - with 2 more arguments so 3 parameters
+
+//1 element as used above
+//2 index - the array index of the current element - optional
+//3 arr - the original array object - optional/rarely used
+
+const numbers15 = [5, 4, 3, 2, 1, 0];
+numbers15.forEach(function (number, index, arr) {
+  //console.log(number, index, arr)
+  console.log('Element: ' + number + 'Index: ' + index + 'arr:' + arr)
+})//f.ex Element: 4 Index: 1 arr:5,4,3,2,1,0
+
+const fruit = ["kiwi", "apple", "banana", "pear", "grapes", "lime", "orange", "lemon"];
+fruit.forEach(function (fruit, index) {
+  console.log(`${fruit} is in index ${index}`);
+})//so orange is in index 5
+
+//GOOD EXERCISES
+function sumPositiveNumbers(numbers) {
+  let sum = 0;
+  numbers.forEach(function (number) {
+    if (number >= 0) {
+      sum = sum + number;
+    }
+  });
+  return sum;
+}
+console.log(sumPositiveNumbers([15, -5, 10])); // 25
+console.log(sumPositiveNumbers([-3, 4, -2, 1])); // 5
+
+
+//it returns the sum of all the odd numbers from the numbers 
+//parameter it receives. The function should also work for negative numbers.
+function sumOddNumbers(numbers) {
+  let sum = 0;
+  numbers.forEach(function (number) {
+    if (number % 2 !== 0) {
+      sum = sum + number;
+    }
+  });
+  return sum;
+
+}
+console.log(sumOddNumbers([15, 5, 10])); // 20
+console.log(sumOddNumbers([2, 3, 4, 5, 6])); // 8
+console.log(sumOddNumbers([-2, -3, 4, 5, 6])); // 2
+
+//Day #10 - filter
