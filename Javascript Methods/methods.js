@@ -375,7 +375,7 @@ sumGrades(grades) {
 console.log(sumGrades([15, 5, 10])); // 30
 console.log(sumGrades([12, 10, 13, 19])); // 54
 
-// Day #9 - forEach*/
+// Day #9 - forEach
 
 //forEach() method executes a provided function once for each array element
 
@@ -433,6 +433,13 @@ fruit.forEach(function (fruit, index) {
   console.log(`${fruit} is in index ${index}`);
 })//so orange is in index 5
 
+.forEach(callback) iterates over every item in an array.
+A callback is a function definition passed as an argument to another function.
+Always start with a console.log() inside the .forEach() to visualize the shift from array to array item (you can skip that when you become used to it).
+The .forEach() method will take your function definition and call it for every item of the array. Every time it calls it, it will replace the first parameter with the corresponding array item.
+Name your arrays in plural and the array item (inside the .forEach()) in singular.
+Make sure to correctly place the return inside a function that contains a .forEach().
+
 //GOOD EXERCISES
 function sumPositiveNumbers(numbers) {
   let sum = 0;
@@ -447,7 +454,7 @@ console.log(sumPositiveNumbers([15, -5, 10])); // 25
 console.log(sumPositiveNumbers([-3, 4, -2, 1])); // 5
 
 
-//it returns the sum of all the odd numbers from the numbers 
+//it returns the sum of all the odd numbers from the numbers
 //parameter it receives. The function should also work for negative numbers.
 function sumOddNumbers(numbers) {
   let sum = 0;
@@ -463,4 +470,67 @@ console.log(sumOddNumbers([15, 5, 10])); // 20
 console.log(sumOddNumbers([2, 3, 4, 5, 6])); // 8
 console.log(sumOddNumbers([-2, -3, 4, 5, 6])); // 2
 
-//Day #10 - filter
+//Day #10 - filter()
+//creates a new array from the original array elements that have passed a condition, leaving out the ones that fail
+//takes same parameter as forEach()
+
+const age = [35, 14, 52, 21, 80, 18, 17];
+const adult = age.filter(function (age) {
+  return age >= 18;
+
+})
+console.log(adult);//[ 35, 52, 21, 80, 18]
+
+//between 18 - 60
+const btwnAge = age.filter(age => {
+  return age >= 18 && age <= 60;
+})
+console.log(btwnAge);[35, 52, 21, 18];
+//OR
+function btwnAge1(age) {
+  return age >= 18 && age <= 60;
+}
+const adult1 = age.filter(btwnAge1);
+
+//with more parameters
+//filter(element, index, arr)
+
+//get index position for all elements 18 and up
+const age3 = [35, 14, 52, 21, 11, 80, 18, 17];
+age3.filter(function (age, index) {
+  if (age >= 18) {
+    console.log(index)
+  }
+})//0, 2, 3, 5, 6
+
+//return all the days of the month after 15 - ex 22 has an index of 2
+const dayOfTheMonth = [3, 15, 22, 2, 8, 30, 23];
+const monthAfter15 = dayOfTheMonth.filter(function (day, index) {
+  if (day > 15) {
+    console.log(`${day} has an index of ${index}`);
+  }
+})
+//22 has an index of 2 etc
+//OR
+function secondHalf(day, index) {
+  if (day > 15) {
+    console.log(`${day} has an index of ${index}`);
+  }
+}
+dayOfTheMonth.filter(secondHalf);
+
+//GOOD EXERCISES
+function getDropdown(countries) {
+  let html = `<option value="">Please select</option>`;
+  countries.forEach(function (country) {
+    html += `<option value="${country.toLowerCase()}">${country}</option>`;
+  });
+  return html;
+}//fex [Netherlands, Japan, Mongolia]*/
+
+
+
+
+
+
+// Day #11 - map()
