@@ -526,11 +526,77 @@ function getDropdown(countries) {
     html += `<option value="${country.toLowerCase()}">${country}</option>`;
   });
   return html;
-}//fex [Netherlands, Japan, Mongolia]*/
+}//fex [Netherlands, Japan, Mongolia]
 
+//GOOD EXERCISE 
 
+function getFreezingTemperatures(temperatures) {
+  return temperatures.filter(function (temperature) {
+      return temperature < 0;
+  });
 
+}
+console.log(getFreezingTemperatures([-5, 12, 3])); // [-5]
+console.log(getFreezingTemperatures([1, -3, -2, 4, 10])); // [-3, -2]
 
+let numbers = [9, 5, 14, 3, 11];
 
+// filter() ALWAYS returns an array
+numbers.filter(function(number) {
+    return number >= 12;
+}); // [14]
 
-// Day #11 - map()
+// .find() returns the first match or undefined
+numbers.find(function(number) {
+    return number >= 12;
+}); // 14
+
+let numbers = [9, 5, 14, 3, 11];
+
+// filter() ALWAYS returns an array (even if it's empty)
+numbers.filter(function(number) {
+    return number >= 15;
+}); // []
+
+// .find() returns the first match or undefined (when none of the items satisfy the condition)
+numbers.find(function(number) {
+    return number >= 15;
+}); // undefined
+
+function getYear(years, searchYear) {
+  return years.find(function(year) {
+    return year === searchYear;
+  });
+}
+console.log(getYear([2019, 2020, 2021], 2020)); // 2020
+console.log(getYear([2019, 2020, 2021], 1990)); // undefined
+
+// Day #11 - map()*/
+//Creates a new array and the results are going to be the results of calling a function for every array element
+//like forEach??? but an important difference:
+//forEach just iterates over an array and mutates things and doesn't return anything
+//1)map() iterates over an array, transforms each element of the array and returns a new array with the transformed values
+//Unlike filter() it is the same size and doesn't discard any elements
+
+//map(element, index, arr)
+const numbers17 = [0, 1, 2, 3, 4, 5];
+const numbersMap = numbers17.map(function (number) {
+  return number * 2;
+})
+console.log(numbersMap)//[1, 2, 4, 6, 8, 10]
+
+//get squareroot of each number - Math.sqrt()
+const numbers18 = [9, 16, 25, 400, 900];
+const numbersSquare = numbers18.map(function (number) {
+  return Math.sqrt(number);
+})
+console.log(numbersSquare);//[3,4,5,20, 30]
+//or
+const squareRootArray = numbers18.map(Math.sqrt);
+console.log(squareRootArray);
+
+const people = [
+  { firstName: 'Jimmy', lastName: 'Brown' },
+  { firstName: 'Mia', lastName: 'Knapp' },
+  { firstName: 'Eloise', lastName: 'Kennedy' }
+]
