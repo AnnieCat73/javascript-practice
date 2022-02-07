@@ -599,4 +599,20 @@ const people = [
   { firstName: 'Jimmy', lastName: 'Brown' },
   { firstName: 'Mia', lastName: 'Knapp' },
   { firstName: 'Eloise', lastName: 'Kennedy' }
-]
+];
+
+function listNames(name, index) {
+  const fullNames = [name.firstName, name.Lastname];
+  return fullNames;
+}
+
+people.map(listNames);
+console.log(people);//get 3 arrays, 1 for each
+//OR BETTER
+
+function listNames(name, index) {
+  const fullNames = [index + " : " + name.firstName, name.Lastname].join(" ");
+  return fullNames;
+}
+
+const names = people.map(listNames);//Array(3)[0 : Jimmy Brown, 1 : Cindy Malcolm, 2 : Timothy Stumps]
