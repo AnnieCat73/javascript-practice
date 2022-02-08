@@ -67,10 +67,17 @@ console.log(tricky.split("sh", 7));/*[
     "go",
     "go",
     "go"
-  ]*
+]*/
 
+const newString = "I am an example right here! Hello! Hello!";
+console.log(newString.split());//["I am an example right here!]
+console.log(newString.split(""));//
+console.log(newString.split(" "));//
+console.log(newString.split(" ", 4));//["I", "am", "an", "example"]
+console.log(newString.split("x"));//["I am an e", "ample right here"]
+console.log(newString.split(","));
 
-//Day #2 - slice(start, end) - ARRAYS -slices out what you tell it to
+/*Day #2 - slice(start, end) - ARRAYS -slices out what you tell it to
 
 //NB (start, end)- start inclusive in what you get but end isn't
 //so slices right before it ended
@@ -571,7 +578,7 @@ function getYear(years, searchYear) {
 console.log(getYear([2019, 2020, 2021], 2020)); // 2020
 console.log(getYear([2019, 2020, 2021], 1990)); // undefined
 
-// Day #11 - map()*/
+// Day #11 - map()
 //Creates a new array and the results are going to be the results of calling a function for every array element
 //like forEach??? but an important difference:
 //forEach just iterates over an array and mutates things and doesn't return anything
@@ -616,3 +623,54 @@ function listNames(name, index) {
 }
 
 const names = people.map(listNames);//Array(3)[0 : Jimmy Brown, 1 : Cindy Malcolm, 2 : Timothy Stumps]
+
+//Day #12 - reduce() - executes a function for each value of the array, from left to right and reduces the array to a single value
+//so iterates over an array and takes each element and reduces it to 1 value
+//intial value is the value by which the accumulator will start on i.e it's specified
+//if not inital value, the accumulator starts at the value of the first element
+
+arrayExample.reduce(function (accumulator, element, index, array) {
+
+}, initialValue);
+
+//accumulator or acc  - a value that totals up the changes into a single value
+
+//examples*/
+
+const numbers20 = [0, 1, 2, 3, 4, 5, 6];
+numbers20.reduce(function (acc, element) {
+  return acc + element;
+}, 8);//OR 
+const numbers20Reduce = numbers20.reduce(function (acc, element) {
+  return acc + element;
+}, 8);
+console.log(numbers20Reduce);//29
+
+const population = [
+  {
+    state: "California",
+    pop: 3978000,
+  },
+
+  {
+    state: "Virginia",
+    pop: 84112000,
+  },
+
+  {
+    state: "Florida",
+    pop: 20610000,
+  },
+
+  {
+    state: "Maine",
+    pop: 1331000,
+  },
+]
+
+//Get total population of these 4 states
+population.reduce(function (acc, element) {
+  return element.pop + acc;
+}, 0);//70133000
+
+//reduceRight() - same as reduce but reduces the array elements from right to left instead of left to right
