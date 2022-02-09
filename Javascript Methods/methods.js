@@ -67,7 +67,7 @@ console.log(tricky.split("sh", 7));/*[
     "go",
     "go",
     "go"
-]*/
+]
 
 const newString = "I am an example right here! Hello! Hello!";
 console.log(newString.split());//["I am an example right here!]
@@ -192,9 +192,19 @@ console.log(reverseSplitArray);//Array  [ "Great!", "work", "today" ]
 
 //3 Then join it into a string
 const splitArrayString = reverseSplitArray.join(" ");
-console.log(splitArrayString);
+console.log(splitArrayString);*/
 
-//GOOD EXERCISES
+const myString = "tnellecxe";
+const intoArray = myString.split("");//HAS TO HAVE THIS TO REVERSE IT!
+console.log(intoArray);//["t", "n", "e", "l", "l", "e", "c", "x","e"]
+const intoReverse = intoArray.reverse();//["e","x","c", "e", "l", "l", "e", "n", "t"]
+console.log(intoReverse);
+const intoString = intoReverse.join("");
+console.log(intoString);//excellent
+
+
+
+/*GOOD EXERCISES
 function getNumberOfChars(name) {
   // number of characters in: name
   return name.length;
@@ -246,11 +256,12 @@ console.log(poppedElement);//5
 array.push(5);// pushes it back onto the array
 array.push();//returns 5 elements in the array
 
+/************************************************************ *
 //The parseInt() function parses a string argument and returns an integer of the specified radix (the base in mathematical numeral systems)
 export function getNextAge(age) {
   return Number.parseInt(age, 10) + 1; //10 is radix
 }
-
+/************************************************************ 
 
 
 //Day #6 - charAt(), indexOf(), lastIndexOf()- STRINGS ONLY
@@ -275,8 +286,10 @@ console.log(indexG);//5 - includes whitespace
 console.log(sleep.indexOf("after"));//26
 console.log(sleep.indexOf("to", 5));//11
 
+/************************************************************ 
 //lastIndexOf(as indexOf) - finding the last occurence of f.ex to above string
 sleep.lastIndexOf("to");//17
+
 
 //NB IT COUNTS BACKWARDS BUT RETURNS TO US THE INDEX STARTING AT THE BEGINNING IF USING STARTING INDEX
 sleep.lastIndexOf("g", 2);//-1 - as so starts counting from index 2 but counts from left and no g so returns -1
@@ -296,7 +309,7 @@ String(numberToString);//"500" - this is a method
 
 const money = 3;
 const moneyString = money.toFixed(2);//"3.00"
-
+/************************************************************ 
 const money1 = 3.22
 money.toFixed(4);//3.2200
 money.toFixed(0);//"3" - rounds down
@@ -308,8 +321,8 @@ money3.toFixed(0);//4 - rounds up
 
 Number("10"); //10 - number
 const number2 = "45";
-Number(number);//45
-
+Number(number2);//45
+/************************************************************ 
 //parseInt() - parses a string and returns a whole no//NB ONLY ROUNDS DOWN
 
 const decimal = "3.22";
@@ -318,7 +331,7 @@ parseInt(decimal);//3 - number 3
 //parseFloat() - parses a string and returns a number//NB USE THIS ONE IF WANT TO KEEP DECIMAL PLACES
 
 parseFloat("3.45");//3.45 - the number but keeps decimals
-
+/************************************************************ 
 
 //GOOD EXERCISE
 export function getNextAge(age) {
@@ -353,7 +366,7 @@ console.log(Math.floor(number12));//12 - rounds down
 
 Math.min(4, 2, 9);//2
 Math.max(4, 2, 9);//9
-
+/************************************************************ 
 const array12 = [3, 2, 5.4, 10, 3.2, 11, 20, 1, 0];
 Math.min(array12);//nan but in es6 use spread operator
 Math.min(...array12);//0
@@ -362,21 +375,21 @@ Math.max(...array12);//20
 //GOOD EXERCISE
 
 function evenOrOdd(number) {
-    if (number % 2 === 0) {
-        return "even";
-    } else {
-        return "odd";
-    }
+  if (number % 2 === 0) {
+    return "even";
+  } else {
+    return "odd";
+  }
 }
-
+/************************************************************ 
 sumGrades(grades) {
-    let sum = 0;
-    grades.forEach(function(grade) {
-        sum = sum + grade;
-        // or
-        // sum += grade
-    });
-    return sum;
+  let sum = 0;
+  grades.forEach(function (grade) {
+    sum = sum + grade;
+    // or
+    // sum += grade
+  });
+  return sum;
 }
 // Sample usage - do not modify
 console.log(sumGrades([15, 5, 10])); // 30
@@ -439,13 +452,13 @@ const fruit = ["kiwi", "apple", "banana", "pear", "grapes", "lime", "orange", "l
 fruit.forEach(function (fruit, index) {
   console.log(`${fruit} is in index ${index}`);
 })//so orange is in index 5
-
-.forEach(callback) iterates over every item in an array.
+/************************************************************ 
+  .forEach(callback) iterates over every item in an array.
 A callback is a function definition passed as an argument to another function.
-Always start with a console.log() inside the .forEach() to visualize the shift from array to array item (you can skip that when you become used to it).
-The .forEach() method will take your function definition and call it for every item of the array. Every time it calls it, it will replace the first parameter with the corresponding array item.
-Name your arrays in plural and the array item (inside the .forEach()) in singular.
-Make sure to correctly place the return inside a function that contains a .forEach().
+Always start with a console.log() inside the.forEach() to visualize the shift from array to array item(you can skip that when you become used to it).
+  The.forEach() method will take your function definition and call it for every item of the array.Every time it calls it, it will replace the first parameter with the corresponding array item.
+Name your arrays in plural and the array item(inside the.forEach()) in singular.
+Make sure to correctly place the return inside a function that contains a.forEach().
 
 //GOOD EXERCISES
 function sumPositiveNumbers(numbers) {
@@ -459,7 +472,7 @@ function sumPositiveNumbers(numbers) {
 }
 console.log(sumPositiveNumbers([15, -5, 10])); // 25
 console.log(sumPositiveNumbers([-3, 4, -2, 1])); // 5
-
+/************************************************************ 
 
 //it returns the sum of all the odd numbers from the numbers
 //parameter it receives. The function should also work for negative numbers.
@@ -539,7 +552,7 @@ function getDropdown(countries) {
 
 function getFreezingTemperatures(temperatures) {
   return temperatures.filter(function (temperature) {
-      return temperature < 0;
+    return temperature < 0;
   });
 
 }
@@ -547,31 +560,31 @@ console.log(getFreezingTemperatures([-5, 12, 3])); // [-5]
 console.log(getFreezingTemperatures([1, -3, -2, 4, 10])); // [-3, -2]
 
 let numbers = [9, 5, 14, 3, 11];
-
+/************************************************************ 
 // filter() ALWAYS returns an array
-numbers.filter(function(number) {
-    return number >= 12;
+numbers.filter(function (number) {
+  return number >= 12;
 }); // [14]
 
 // .find() returns the first match or undefined
-numbers.find(function(number) {
-    return number >= 12;
+numbers.find(function (number) {
+  return number >= 12;
 }); // 14
 
 let numbers = [9, 5, 14, 3, 11];
 
 // filter() ALWAYS returns an array (even if it's empty)
-numbers.filter(function(number) {
-    return number >= 15;
+numbers.filter(function (number) {
+  return number >= 15;
 }); // []
 
 // .find() returns the first match or undefined (when none of the items satisfy the condition)
-numbers.find(function(number) {
-    return number >= 15;
+numbers.find(function (number) {
+  return number >= 15;
 }); // undefined
-
+/************************************************************ 
 function getYear(years, searchYear) {
-  return years.find(function(year) {
+  return years.find(function (year) {
     return year === searchYear;
   });
 }
@@ -635,7 +648,7 @@ arrayExample.reduce(function (accumulator, element, index, array) {
 
 //accumulator or acc  - a value that totals up the changes into a single value
 
-//examples*/
+//examples
 
 const numbers20 = [0, 1, 2, 3, 4, 5, 6];
 numbers20.reduce(function (acc, element) {
@@ -673,4 +686,4 @@ population.reduce(function (acc, element) {
   return element.pop + acc;
 }, 0);//70133000
 
-//reduceRight() - same as reduce but reduces the array elements from right to left instead of left to right
+//reduceRight() - same as reduce but reduces the array elements from right to left instead of left to right*/
