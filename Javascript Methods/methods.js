@@ -150,6 +150,9 @@ console.log(capitalize("chARLie")); // "Charlie"
 //reverse() - reverses an array with no parameters
 //join() - joins elements of an array into a string and returns a string
 //one parameter, separator so join(&) //default is ,
+const groceries = ["Apple", "Peach", "Tomato"];
+groceries.join("; "); // "Apple; Peach; Tomato"
+groceries.join(" . "); // "Apple . Peach . Tomato"
 
 const array3 = ["r", "e", "t", "u", "p", "m", "o", "c"];
 console.log(array3.reverse());//computer
@@ -597,6 +600,10 @@ console.log(getYear([2019, 2020, 2021], 1990)); // undefined
 //forEach just iterates over an array and mutates things and doesn't return anything
 //1)map() iterates over an array, transforms each element of the array and returns a new array with the transformed values
 //Unlike filter() it is the same size and doesn't discard any elements
+//The .map(callback) method allows you to transform an array into another one. Here are some common examples:
+
+[4, 2, 5, 8] transformed to [8, 4, 10, 16]. We doubled every item in the original array.
+["sam", "Alex"] transformed to ["SAM", "ALEX"]. We upper cased every item in the original array.
 
 //map(element, index, arr)
 const numbers17 = [0, 1, 2, 3, 4, 5];
