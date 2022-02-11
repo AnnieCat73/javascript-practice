@@ -694,3 +694,48 @@ population.reduce(function (acc, element) {
 }, 0);//70133000
 
 //reduceRight() - same as reduce but reduces the array elements from right to left instead of left to right*/
+
+
+//GOOD EXERCICE
+
+export function getNumberOfGrades(grades) {
+  return grades.length;
+}
+
+/** return number of grades */
+export function getSumGrades(grades) {
+  let sum = 0;
+  grades.forEach(function(grade) {
+      sum += grade
+  });
+  return sum;
+}
+
+/** return sum of grades */
+export function getAverageValue(grades) {
+  return getSumGrades(grades) / grades.length;
+}
+
+/** get average value of grades */
+export function getPassingGrades(grades) {
+  return grades.filter(function(grade) {
+      return grade >= 10;
+  });
+}
+
+/** return all fainling grades 9 and below*/
+export function getFailingGrades(grades) {
+  return grades.filter(function(grade) {
+      return grade < 10;
+  });
+}
+
+/** return all the grades raised by 1 */
+export function getRaisedGrades(grades) {
+  return grades.map(function(grade) {
+      if (grade + 1 > 20) {
+          return 20;
+      }
+      return grade + 1;
+  });
+}
