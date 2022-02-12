@@ -739,3 +739,13 @@ export function getRaisedGrades(grades) {
       return grade + 1;
   });
 }
+
+
+// return number of citizens that are allowed to vote. It's data from 2 arrays chain .length to get arrays of all ages =abpve 18
+export function getVotersCount(ages) {
+  console.log(ages);
+  return ages.filter(function(age) {
+      return age >= 18;
+  }).length;
+
+}

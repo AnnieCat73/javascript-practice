@@ -114,7 +114,7 @@ Promise.all([promise1, promise2, promise3]).then((data) => {
 
 //Fetch -JSON -Fetching data from a server 
 //fetch() returns a promise - inside (url) it you will fetch a url
-//Take the data that is coming back and put it in into a value we understand like json (promise 1)...then get that data/json (promise2 - both promises chained together with .then). Once we returned this value then do this and we get an js object we can work with
+//Take the data that is coming back and put it in into a value we understand like json (promise 1)...then get that data/json (promise2 - both promises chained together with .then). Once we returned this value then do this and we get a js object we can work with
 fetch("https://jsonplaceholder.typicode.com/posts")
 .then((response) => {
     console.log(response); 
@@ -124,11 +124,39 @@ fetch("https://jsonplaceholder.typicode.com/posts")
     console.log(json);//then get that data/json
 });
 
+//Async/Await - HOW TO REWRITE THE ABOVE WITH THESE KEYWORDS
+//async is a way to get data
+
+async function getPosts() {
+    const response =  await fetch("https://jsonplaceholder.typicode.com/posts");//so get the data
+    const json = await response.json();//call json on the data
+    //console.log(json);//gets the data
+}
+getPosts();
+
+//BUT WITH ASYNC/AWAIT NOT CATCHING ERROR SO TO DO THAT DO THIS:
+
+async function getPosts() {
+    try {
+        const response =  await fetch("https://jsonplaceholder.typicode.com/posts");//so get the data
+        const json = await response.json();//call json on the data
+        //console.log(json);//gets the data
+    }   catch (e) { //catch the error
+        console.log(e);
+    }   finally { //so after our 'try' resolves and after our catch rejects if any we are finally going to do this
+        console.log('Always runs');
+    }
 
 
-
-
-
+    //THIS WOULD BE THE SAME AS ABOVE BUT IN THE Async getPosts():
+    fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((response) => response.json())
+    .then((json) => json)
+    .finally(() => {
+        console.log('Always....')
+    })
+}
+getPosts();
 
 
 
