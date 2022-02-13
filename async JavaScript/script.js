@@ -159,6 +159,93 @@ async function getPosts() {
 getPosts();
 
 
+//EXAMPLE with options appended
+
+async function addPost() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: 'POST',
+        body: JSON.stringify({
+            firstName: "Dylan",
+            lastName: "Israel",
+            title: "My Blog Post"
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    });
+
+    const json = await response.json();
+    console.log(json)
+}
+
+addPost();//Object { firstName: "Dylan", lastName: "Israel", title: "My Blog Post", id: 101 }
+//script.js:178:13
+
+
+//fetch() - Working with Data and API's in JS
+
+
+//fetch can do both:
+//get request - please get some information
+//post request - can I send some info to you
+
+//Ex simple get request with fetch()
+//1 call fetch(path to the resourse)
+//2 deal with the response back. This involves with the idea of a promise. A promnise is a way in js to handle asynchronous events. It gets resolved when the event is over
+//3 the response is data back but need to get it in a format we understand/work with - json, text, blob(image)
+//4 got data back and completed the data stream
+//5 Do something with that data f.ex make an <img>
+
+/*in html
+
+<img src="" id="rainbow" />*/
+
+fetch('rainbow.jpg').then(response => {
+    //console.log(response);
+    return response.blob();
+})
+.then(blob => {
+    console.log(blob);
+    document.getElementById('rainbos').src = URL.createObjectURL(blob);
+})
+.catch(error => {
+    console.log(error);
+})
+
+//as ASYNC AWAIT
+
+async function catchRainbow() {
+    const response = await fetch ('rainbow.jpg');
+    const blob = await response.blob();
+    document.getElementById('rainbos').src = URL.createObjectURL(blob);
+}
+
+catchRainbow();
+
+//NET NINJA ASYNC JAVASCRIPT
+
+// Imp as governs how we perform tasks which take some time to complete (f.ex getting data from a database)
+//Start something and finish it later
+//JS is normally synchronous i.e run one statement at a time like console.log(1) then console.log(2) - so no 2 has to wait for 1 to finish
+//BUT then if have statement 3 wanting to make a request to a database which can take some time (10 secs??) to complete. Because of this it will stall the data and blocking the code i.e statement 4
+//So Asynchrounus comes in here for tasks that take some time to do like network request for data from a database or api
+//This means the function can start now and finish later once the data has come back
+
+/*so have 
+statement 1
+statement 2 - from database so takes time which means the browser takes the request and handles it outside of the scope of the statements in another part of the browser. Then takes a callback function so it knows to execute it later on when data comes back. As this statement is taken out of the queue js can carry on an go down the queue and run the remaining functions/statements while statement 2 still goes on. Once all statements finished and retrieved data the callback function gets called and finish the statement2. IE SON NO BLOCKING
+statement 3
+statment 4
+
+console.log(1)
+console.log(2)
+setTimeout(() => {
+    console.log('callback function fired'); //SO HERE CONSOLE.LOG(CALLBACK..) WILL BE CALLED AT THE END OF ALL CONSOLE LOGS AS IT'S THE CALLBACK FUNCTION
+}, 2000);
+console.log(3)
+console.log(4)
+
+
 
 
 
