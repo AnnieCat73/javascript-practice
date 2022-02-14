@@ -245,6 +245,46 @@ setTimeout(() => {
 console.log(3)
 console.log(4)
 
+//HTTP Requests - make HTTP requests to get data from another server
+//Make those requests to (an) API endpoint(s) - f.ex http://www.musicapi.com/artist/moby - returns a list of Moby songs
+//So make an HTTTP request to a server, the server says ok and returns the data to us - it's called a response(data) in the form of json so we can do something with the data
+//also known as a GET request
+
+//USE jsonplaceholder.typicode.com to play around with endpoints for practice
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
+
+//returns json data as below
+{
+	"userId": 1,
+	"id": 1,
+	"title": "delectus aut autem",
+	"completed": false
+}
+
+//1 MAKE A REQUEST 
+
+//BELOW MEANS: THIS IS WHERE WE CAN DO SOMETHING WITH THE RESPONSE/DATA - HERE AT STAGE 4 OR'READYSTATECHANGE'/and everything/all ok with the 200 
+//STATUS CODES status: 404 =error so get {} - SO IF ANY ERRORS (eg endpoint that doesn't exist)MADE NEED TO CHECK STATUS IF THERE ARE ANY
+//status: 200 - all ok! --SEE DEVELOPER.MOZILLA.ORG for 'HTTP response status codes' for more in depth about all error msgs
+
+const request = new XMLHttpRequest();
+
+request.addEventlistener('readystatechange', () => {  //find out/get the state of which the current request is in
+    //console.log(request, request.readyState);
+    if(request.readyState === 4 && request.status === 200) { 
+        console.log(request.responseText);
+    }
+});
+
+request.open('GET', 'https://jsonplaceholder.typicode.com/todos/')// So setting up a get request to get all data for todos
+request.send();//This sends the request to server
+
+
+
+
 
 
 
