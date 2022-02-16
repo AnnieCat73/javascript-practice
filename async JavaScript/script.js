@@ -284,6 +284,85 @@ request.addEventlistener('readystatechange', () => {  //find out/get the state o
 request.open('GET', 'https://jsonplaceholder.typicode.com/todos/')// So setting up a get request to get all data for todos
 request.send();//This sends the request to server
 
+//CALLBACKS - good if we could wrap up all of the code above inside a function so we could call that function whenever we need to make request
+//WE COULD ALSO ADD A CALLBACK FUNTION INSIDE  getTodos() so we can specify something different to do each time SO HOW:
+//f.ex:
+
+const getTodos = (callback) => }
+
+    const request = new XMLHttpRequest();
+
+    request.addEventlistener('readystatechange', () => {  
+        //console.log(request, request.readyState);
+        if(request.readyState === 4 && request.status === 200) { 
+           callback(undefined, request.responseText);//i.e error,data
+        } else if(request.readyState === 4) {
+            callback('could not fetch data', undefined); //i.e error, data
+        }
+    });
+
+    request.open('GET', 'https://jsonplaceholder.typicode.com/todos/')
+    request.send();
+};
+
+getTodos();//Fire as many times as you need it to 
+getTodos();
+
+
+
+getTodos((error, data) => {
+    console.log('callback fired');
+    console.log(error, data);
+    if(error){
+        console.log(error);
+    } esle {
+        console.log(data);
+    }
+});
+
+//JSON DATA data we get back from an API - looks like an array with js objects inside it but IT'S NOT. IT'S JUST STRINGS .ie text
+//so need to figure out what to do with the JSON string we get back and turning it into a real js object so that we can access the data
+//How?
+
+const getTodos = (callback) => }
+
+    const request = new XMLHttpRequest();
+
+    request.addEventlistener('readystatechange', () => {  
+        //console.log(request, request.readyState);
+        if(request.readyState === 4 && request.status === 200) { 
+            const data = JSON.parse(request.responseText); //HERE
+           callback(undefined, data);//i.e error,data //HERE
+        } else if(request.readyState === 4) {
+            callback('could not fetch data', undefined); //i.e error, data
+        }
+    });
+
+    request.open('GET', 'https://jsonplaceholder.typicode.com/todos/')
+    request.send();
+};
+
+getTodos();//Fire as many times as you need it to 
+getTodos();
+
+
+
+getTodos((error, data) => {
+    console.log('callback fired');
+    console.log(error, data);
+    if(error){
+        console.log(error);
+    } esle {
+        console.log(data);
+    }
+});
+
+/////////////FETCH API - better way than above http requests
+
+
+
+
+
 
 
 
