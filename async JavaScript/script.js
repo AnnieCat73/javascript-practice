@@ -357,7 +357,15 @@ getTodos((error, data) => {
     }
 });
 
-/////////////FETCH API - better way than above http requests
+/////////////FETCH API - better way than above http requests - newer and simplified
+
+fetch('todos/luigi.json').then((response) => { //then if success/resolve
+    console.log('resolved', response);
+}).catch((err) => { //catch if error/reject
+    console.log('rejected' err);
+});
+
+
 
 
 
