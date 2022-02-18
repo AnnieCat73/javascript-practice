@@ -359,11 +359,40 @@ getTodos((error, data) => {
 
 /////////////FETCH API - better way than above http requests - newer and simplified
 
+//ONLY EVER REJECTED WHEN GET A NETWORK ERROR
+//IF WE TYPE A WRONG ENDPOINT OR ERROR THERE IT'S STILL RESOLVED BUT IF YOU LOOK IN DEV TOOLS
+SEE UNDER resolved: status: 404 which means resource can't be found
+
 fetch('todos/luigi.json').then((response) => { //then if success/resolve
-    console.log('resolved', response);
+    console.log('resolved', response); //see inside the console what's happening
+    return response.json();/ //to return the data
+}).then(data => {
+    console.log(data);//now we have access to data in console
 }).catch((err) => { //catch if error/reject
     console.log('rejected' err);
 });
+
+/////ASYNC AND AWAIT - cleaner and more readable way than above
+
+const getTodos = async () => {                      //await stops js from assigning a value to const response until 
+    const response = await fetch('todos/luigi.json');//the promise has resolved i.e await is like then/catch(). NB only stalling inside the async function
+    //console.log(response);//see the response object
+    const data = await response.json();//gets json
+    console.log(data);//see the data
+    return data;//so get access the data
+};
+getTodos().then(data => {
+    console.log('resolved:' , data);
+});//returned data so can do something with it here
+
+//OR BETTER ES6
+console.log(1)
+console.log(2)
+getTodos()
+    .then(data => console.log('resolved:' , data));
+console.log(3)
+console.log(4)   
+
 
 
 
