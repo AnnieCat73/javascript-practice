@@ -612,10 +612,10 @@ https://quote-garden.herokuapp.com/api/v3/quotes?author=maya%20angelou&limit=1
 FETCHING THE DATA - WITH FETCH()/ASYNC/AWAIT
 
 const getData = async function () {
-  const res = await fetch(
+  const response = await fetch(
     "https://quote-garden.herokuapp.com/api/v3/quotes?author=beyonce"
   );
-  const data = await res.json();
+  const data = await response.json();
   console.log(data);
 };
 getData();
