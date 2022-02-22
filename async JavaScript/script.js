@@ -611,14 +611,36 @@ https://quote-garden.herokuapp.com/api/v3/quotes?author=maya%20angelou&limit=1
 
 FETCHING THE DATA - WITH FETCH()/ASYNC/AWAIT
 
+You’ll use the keyword to create a special type of function, called an async function, 
+to get data from the API and then wait for the completed response. Once the response 
+is complete, you can work with that data in your program. 
+
+- const getData - a variable created to hold the response from the API
+- When fetching the data, your program needs to wait for the function to resolve before 
+assigning its value to the response variable, that’s why you’ll add the await keyword before fetch()
+- The await keyword tells the program to wait on that line in the function until the API data are received.
+- Now your response variable has captured the API call response, which contains all sorts of data
+-  Call the .json() method on the response to transform the JSON data into a proper JavaScript object, 
+which you can use in your code. So let’s grab your response  and call the .json() method. 
+Calling .json() on the response is also an asynchronous action, so you’ll need to use the await keyword once more
+- To view the data you pulled, log out the data variable. Outside the function, call the getData() function
+
 const getData = async function () {
   const response = await fetch(
     "https://quote-garden.herokuapp.com/api/v3/quotes?author=beyonce"
   );
   const data = await response.json();
   console.log(data);
+  //DO STUFF WITH DATA
+  //return data;
 };
 getData();
+
+SAME AS
+
+fetch("https://quote-garden.herokuapp.com/api/v3/quotes?author=beyonce").then(response => {
+
+});
 
 
 
