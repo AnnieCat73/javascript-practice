@@ -209,11 +209,43 @@ list.insertBefore(jen, rachel);
   <li>Jen Simmons</li>
   <li>Rachel Andrew</li>
   <li>Una Kravets</li>
-</ol>*/
+</ol>
 
 //EXERCISES
 
 const characters = document.querySelector(".characters");
+
+const humans = document.createElement("ul");
+humans.classList.add("humans");
+humans.innerHTML = `
+  <li>Gandalf</li>
+  <li>Saruman</li>
+  <li>Aragorn</li>
+  <li>Boromir</li>
+  <li>Faramir</li>
+  `;
+characters.appendChild(humans);
+
+const glorofindel = document.createElement("li");
+glorofindel.textContent = "Glorofindel";
+const elrond = document.createElement("li");
+elrond.textContent = "Elrond";
+
+const elves = characters.querySelector(".elves");
+const arwen = elves.children[1];
+elves.insertBefore(glorofindel, arwen);
+elves.insertBefore(elrond, glorofindel);
+
+elves.removeChild(elrond);*/
+
+const humanList = document.querySelector(".humans");
+const aragorn = humanList.children[2];
+humanList.removeChild(aragorn);
+
+humanList.appendChild(aragorn);
+
+
+
 /*const humans = document.createElement("ul");
 humans.classList.add('humans')
 
@@ -241,11 +273,11 @@ console.log(elvesList);
   <li>Legolas</li>
   <li>Arwen</li>
   `;
-*/
+*
 
 const humans = document.querySelector(".humans");
 const aragorn = humans.children[2];
 humans.removeChild(aragorn);
-humans.appendChild(aragorn);
+humans.appendChild(aragorn);*/
 
 
