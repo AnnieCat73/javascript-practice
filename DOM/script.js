@@ -30,7 +30,7 @@ element.innerHTML =
 CREATING HTML ELEMENTS
 
 1) Before adding elements like p to the dom you need to create them
-first:*/
+first:*
 
 const paragraph = document.createElement('p');
 const div = document.createElement('div');
@@ -89,7 +89,7 @@ fruitParent.insertBefore(pear, banana);
 1. Pear
 2. Banana
 3. Pineapple
-4. Orange*/
+4. Orange*
 
 
 //Exercise
@@ -134,7 +134,7 @@ or on your webpage
   1. Helena
   2. Sam
   3. Pedro
-*/
+*
 
 //In reality you will propably have an array of devs to add to the DOM
 const devs = [
@@ -212,3 +212,40 @@ list.insertBefore(jen, rachel);
 </ol>*/
 
 //EXERCISES
+
+const characters = document.querySelector(".characters");
+/*const humans = document.createElement("ul");
+humans.classList.add('humans')
+
+humans.innerHTML = `
+  <li>Gandalf</li>
+  <li>Saruman</li>
+  <li>Aragorn</li>
+  <li>Boromir</li>
+  <li>Faramir</li>`;
+characters.appendChild(humans);*
+
+const elvesList = characters.querySelector(".elves");
+const arwen = elvesList.children[1];
+const glorofindel = document.createElement("li");
+glorofindel.textContent = "Glorofindel";
+const elrond = document.createElement("li");
+elrond.textContent = "Elrond";
+
+elvesList.insertBefore(glorofindel, arwen);
+console.log(elvesList);
+
+/*elvesList.innerHTML = `
+  <li>GloroFindel</li>
+  <li>Elrond</li>
+  <li>Legolas</li>
+  <li>Arwen</li>
+  `;
+*/
+
+const humans = document.querySelector(".humans");
+const aragorn = humans.children[2];
+humans.removeChild(aragorn);
+humans.appendChild(aragorn);
+
+
