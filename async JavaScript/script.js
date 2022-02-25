@@ -80,7 +80,7 @@ promise.then((data) => {
     console.log(error);//error
 });
 
- */
+ *
 
 const promise1 = new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -198,7 +198,7 @@ addPost();//Object { firstName: "Dylan", lastName: "Israel", title: "My Blog Pos
 
 /*in html
 
-<img src="" id="rainbow" />*/
+<img src="" id="rainbow" />*
 
 fetch('rainbow.jpg').then(response => {
     //console.log(response);
@@ -224,7 +224,7 @@ catchRainbow();
 
 
 
-/*/////////////////////FROM HERE//////////////////////*
+/*/////////////////////FROM HERE//////////////////////
 Sync = happening now in order instantanously like:
 console.log(1);
 console.log(2);
@@ -306,7 +306,7 @@ promise.then((data) => {
     console.log(error);//error
 });
 
- */
+ 
 
 const promise1 = new Promise((resolve, reject) => {
     setTimeout(() => {
