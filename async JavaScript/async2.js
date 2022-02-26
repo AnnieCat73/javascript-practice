@@ -72,4 +72,94 @@ fetch('https://api.github.com/users/zellwk/repos')
   .then(response => response.json())
   .then(data => {
     // Massage data and output to DOM here
+})*/
+
+
+//HOW TO FETCH YOUR REPOS WITH (no) STARS
+fetch('https://api.github.com/users/AnnieCat73/repos')
+  .then(r => r.json())
+  .then(repos => {
+    const htmlString = repos.map(repo => {
+      return {
+        name: repo.name,
+        url: repo['html_url'],
+        stars: repo['stargazers_count']
+      }
+    })
+      .filter(repo => repo.stars < 50)
+      .map(repo => `<li>${repo.name}: ${repo.stars} stars</li>`)
+      .join('')
+
+    const ol = document.createElement('ol')
+    ol.innerHTML = htmlString
+    document.body.appendChild(ol)
+  });
+
+//THE ABOVE CODE WITH .then or chained .then calls
+  fetch('https://api.github.com/users/zellwk/repos')
+  .then(response => response.json())
+  .then(data => data.map(repo => {
+    return {
+      name: repo.name,
+      url: repo['html_url'],
+      stars: repo['stargazers_count']
+    }
+  }))
+  .then(data => data.map(repo =>
+    `<li><a href="${repo.url}">${repo.name} (${repo.stars} stars)</a></li>`
+  ).join(''))
+  .then(HTMLString => {
+    const ol = document.createElement('ol')
+    ol.innerHTML = HTMLString
+    document.body.append(ol)
   })
+
+/*IF SOMETHING GOES WRONG
+If an error occurs on a promise chain, the error will be passed into the catch call. Any then methods that are not called yet will be skipped.
+
+fetch('https://api.github.com/users/zellwk/repos')
+  .then(response => response.json())
+  .then(data => {
+    // An error occurs!
+    return new Error('Something went wrong!')
+  })
+  // JavaScript skips these 'then' methods
+  .then(massageData)
+  .then(convertDataToHTMLString)
+  .then(createList)
+  // JavaScript calls this catch method
+  .catch(e => console.log(e)) // Error: Something went wrong!
+
+
+/*PROMISES
+
+In JavaScript, a promise is an object that will return a value in future. 
+
+When a promise gets fulfilled, you carry out the next set of instructions in a then method
+
+When a promise gets rejected, you perform a contingency plan in a catch method.
+
+//We promise to buy a black forest cake
+buyCake('black forest')
+  .then(reaction => console.log(reaction)) // 😁
+  .catch(reaction => console.log(reaction)) // Skipped
+
+//if put something else in then gets rejected
+buyCake('pikachu cake')
+  .then(reaction => console.log(reaction)) // Skipped
+  .catch(reaction => console.log(reaction)) // 😢
+
+A Fetch request is a promise. You can see it if you log it into the console.
+
+const promise = fetch('https://api.github.com/users/zellwk/repos')
+console.log(promise)
+
+
+Finally
+
+Promises also have a finally method. This method will be called after all then and catch calls.
+
+buyCake('black forest')
+  .then(celebrateBirthday)
+  .catch(postponeCelebration)
+  .finally(goToBed)
