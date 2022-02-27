@@ -231,3 +231,75 @@ fetch('https://api.github.com/user/repos')
   })
   .then(body => console.log(`body is `, body))
   .catch(error => console.log(`error is`, error))
+
+//READING API DOCUMENTATION
+
+Pay attention to seven things when you read an API.
+
+1) Authentication
+
+Do you need to authenticate yourself to use an API? 
+If yes, how do you perform the authentication?
+
+Do you need to sign up for their service first?
+
+Do you need an API key?
+
+Do you use basic authentication?
+
+Do you need OAuth?
+
+This information will tell you if it’s possible to send requests 
+through your browser. If you need to protect your credentials, 
+you’ll have to authenticate through a server.
+
+
+
+2) CORS SUPPORT
+
+Cross-origin resource sharing (CORS) is a mechanism that allows restricted 
+resources on a web page to be requested from another domain outside the 
+domain from which the first resource was served.
+CORS is safer and more flexible than earlier techniques such as JSONP.
+
+You can only send requests through a browser if the API supports CORS. 
+If they don’t support cross-origin requests, you’ll get a 
+No Access-Control-Allow-Origin error.
+
+If the API doesn’t support CORS, you’ll have two ways to make 
+a request:
+
+A) Send it through a server
+B) Use JSONP
+
+3) JSONP
+
+CORS is safer and more flexible than earlier techniques such as JSONP.
+
+4) Pagination
+
+When you request for a list of items, many APIs respond with an incomplete 
+list. For example, Github sends you 30 repositories even if the user 
+has more than 30 repositories.
+
+5) Content types
+
+What content should you expect from the server? Are you expecting JSON?
+
+6) API Versions
+
+If you did not specify a version, APIs will point you to the latest stable version.
+
+You can see Twitter’s API is at version 1.1 through its endpoint.
+https://api.twitter.com/1.1/account/settings.json
+
+To tell Github to use version 3 (the current version), you need to set an Accept header.
+
+fetch ('https://api.github.com', {
+  headers: { 'Accept': 'application/vnd.github.v3+json' }
+})
+
+
+7) Rate limits
+
+Rate limits will tell you how many requests you can send per hour or per day. 
