@@ -373,7 +373,7 @@ Math.max(4, 2, 9);//9
 const array12 = [3, 2, 5.4, 10, 3.2, 11, 20, 1, 0];
 Math.min(array12);//nan but in es6 use spread operator
 Math.min(...array12);//0
-Math.max(...array12);//20
+Math.max(...array12);//20 *****************
 
 //GOOD EXERCISE
 
