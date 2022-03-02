@@ -238,46 +238,16 @@ elves.insertBefore(elrond, glorofindel);
 
 elves.removeChild(elrond);*/
 
-const humanList = document.querySelector(".humans");
-const aragorn = humanList.children[2];
-humanList.removeChild(aragorn);
 
-humanList.appendChild(aragorn);
+const nav = document.querySelector("nav");
+const personlist = nav.querySelector(".personlist");
 
+const contact = document.createElement("li");
+contact.textContent = "Contact";
 
+const address = personlist.children[2];
 
-/*const humans = document.createElement("ul");
-humans.classList.add('humans')
+personlist.insertBefore(contact, address);
 
-humans.innerHTML = `
-  <li>Gandalf</li>
-  <li>Saruman</li>
-  <li>Aragorn</li>
-  <li>Boromir</li>
-  <li>Faramir</li>`;
-characters.appendChild(humans);*
-
-const elvesList = characters.querySelector(".elves");
-const arwen = elvesList.children[1];
-const glorofindel = document.createElement("li");
-glorofindel.textContent = "Glorofindel";
-const elrond = document.createElement("li");
-elrond.textContent = "Elrond";
-
-elvesList.insertBefore(glorofindel, arwen);
-console.log(elvesList);
-
-/*elvesList.innerHTML = `
-  <li>GloroFindel</li>
-  <li>Elrond</li>
-  <li>Legolas</li>
-  <li>Arwen</li>
-  `;
-*
-
-const humans = document.querySelector(".humans");
-const aragorn = humans.children[2];
-humans.removeChild(aragorn);
-humans.appendChild(aragorn);*/
-
+//personlist.appendChild(contact);//if at end of list
 
