@@ -10,13 +10,13 @@ const dog_btn = document.getElementById('dog_btn');
 cat_btn.addEventListener("click", getRandomCatFact);
 dog_btn.addEventListener("click", getRandomDog);
 
-function getRandomCatFact () {
+/*function getRandomCatFact () {
   fetch('https://meowfacts.herokuapp.com')
     .then(response => response.json())
     .then(data => {
       cat_result.innerHTML = `<p>${data.data}</p>`
     })
-}
+}*/
 function getRandomDog () {
   fetch('https://randomfox.ca/floof/')
     .then(response => response.json())
@@ -26,3 +26,10 @@ function getRandomDog () {
 }
 
 //with async await
+
+const getData = async function () {
+  const response = await fetch('https://meowfacts.herokuapp.com');
+  const data = await response.json();
+  return cat_result.innerHTML = `<p>${data.data}</p>`
+};
+getData();
