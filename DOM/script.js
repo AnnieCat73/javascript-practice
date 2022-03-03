@@ -251,3 +251,16 @@ personlist.insertBefore(contact, address);
 
 //personlist.appendChild(contact);//if at end of list
 
+const animalList = document.createElement("ul");
+animalList.classList.add("animalList");
+//console.log(animalList);
+
+animalList.innerHTML = `
+  <li>Name</li>
+  <li>Breed</li>
+  <li>Type</li>
+  <li>Owner</li>
+  <li>Colour</li>
+`;
+
+nav.appendChild(animalList);
