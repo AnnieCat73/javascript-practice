@@ -59,3 +59,29 @@ button3.addEventListener("click", e => {
     e.target.style.color = "green";
   }
 })//span text turns green
+
+
+const button4 = document.querySelector(".button");
+
+/*button4.addEventListener("click", function() {
+  const body = document.body;
+  if(button4.classList.contains("is-clicked")) {
+    button4.classList.remove("is-clicked");
+  } else {
+    body.classList.add("button-is-clicked");
+    button4.classList.add("is-clicked");
+  }
+})*/
+
+//or
+button4.addEventListener("click", function() {
+  const body = document.body;
+  body.classList.toggle("is-clicked");
+  button4.classList.toggle("is-clicked")
+})
+
+//or
+
+
+
+
