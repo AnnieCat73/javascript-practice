@@ -1,5 +1,5 @@
 
-//this can't be used with =>
+//this keyword can't be used with =>
 const button = document.querySelector("button");
 
 button.addEventListener("click", function (e) {
@@ -24,3 +24,38 @@ checkbox.addEventListener("click", e => {
 });
 
 //HERE STOPS DEFAULT BEHAVIOUR AND CHECKBOX DOESN'T UNCHECK
+
+
+//Event delegation with nested elements
+const list =  document.querySelector("ul");
+
+list.addEventListener("click", e => {
+ //console.log(e.target);
+ if(e.target.matches("li")) {
+   e.target.style.color = "red";
+ }
+});
+
+//still nesting but no ul/li f.ex
+
+/*<button id="button">
+  <svg></svg>
+  <span>Click me</span>
+</button>*/
+
+const button3 = document.querySelector("#button");
+
+/*1 in css to prevent events bubbling  can do
+
+#button * {
+  pointer-events: none;
+} OR*/
+
+//2 use closest
+
+button3.addEventListener("click", e => {
+  const button3 = e.target.closest("#button");
+  if(button3) {
+    e.target.style.color = "green";
+  }
+})//span text turns green
