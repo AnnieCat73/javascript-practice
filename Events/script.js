@@ -82,6 +82,18 @@ button4.addEventListener("click", function() {
 
 //or
 
+const btn5 = document.querySelector("#btn5");
+btn5.addEventListener("click", e => {
+  btn5.classList.toggle("blue");
+});
+
+const ul = document.querySelector(".list");
+
+ul.addEventListener("click", e => {
+  if(e.target.matches("li")) {
+    e.target.classList.add("blue");
+  }
+})
 
 
 
