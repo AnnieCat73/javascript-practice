@@ -62,6 +62,15 @@ const jsMac = JSON.parse(jsonMac);
 
 THE FETCH API
 
+API (Application programming interface) is just an organised
+way for one application to communicate with a separate and totally
+different application. So we can work with an API on Dogs f.ex fromour
+application. Request data from the Dog Api.
+
+Promises i.e fetch - they take un unknown amount of time and once
+they complete we want to do something with them
+
+
 fetch(url, options) - to send a request use fetch()
 fetch() - url of zells repos
 .then() - to convert it into JSON so we can read it
