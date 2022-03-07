@@ -19,5 +19,12 @@ async function start() {//response from the dog server
 start();//must do this see the data
 
 function createBreedList(breedList) {
+  document.getElementById("breed").innerHTML = `
+    <select>
+      <option>Choose a dog breed</option>
+        ${Object.keys(breedList).map(function (breed) {
+          return `<option>${breed}</option>`
+        })}
+    </select>`;
 
 }
