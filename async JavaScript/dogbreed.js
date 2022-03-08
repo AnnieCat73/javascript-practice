@@ -32,7 +32,7 @@ function createBreedList(breedList) {
 async function loadByBreed(breed) {
   if (breed != "Choose a dog breed") {
    const response = await fetch(`https://dog.ceo/api/breed/${breed}/images`)
-   const data = await response.json()
-   console.log(data)
+   const data = await response.json();
+   console.log(data);
   }
 }
