@@ -13,3 +13,23 @@ body {
   flex: 1;
   background-color: bisque;
 }
+
+.slide {
+  position: absolute;
+  top: 200px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: blueviolet;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  opacity: 0;
+  transform: scale(1);
+  transition: all 0.9s ease-out;
+}
+
+.slide:nth-last-child(2) {
+  opacity: 1;
+  transform: scale(1.08);
+}
