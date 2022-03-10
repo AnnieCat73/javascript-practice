@@ -43,6 +43,7 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 5px;
 }
 
 body {
@@ -56,4 +57,52 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 5em;
+}
+
+header {
+  height: 30%;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 20%;
+  gap: 3em;
+}
+
+.img-wrapper {
+  height: 70%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blanchedalmond;
+  padding: 2em;
+  border-radius: 20px;
+}
+h1 {
+  margin-bottom: 0.5em;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1em 2em;
+  align-self: flex-start;
+  background-color: blanchedalmond;
+  border: 0;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
 }
