@@ -80,7 +80,7 @@ header {
   gap: 3em;
 }
 
-.img-wrapper {
+/*.img-wrapper {
   height: 70%;
   width: 40%;
   display: flex;
@@ -89,6 +89,22 @@ header {
   background-color: blanchedalmond;
   padding: 2em;
   border-radius: 20px;
+}*/
+
+.result {
+  background-color: blanchedalmond;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  height: 400px;
+  width: 300px;
+}
+
+.result img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 h1 {
   margin-bottom: 0.5em;
