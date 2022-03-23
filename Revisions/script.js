@@ -129,4 +129,225 @@ if (a === true) {
 
 Strings
 
+const name = 'Flavio'
+You can determine the length of a string using the length property of it:
+
+'Flavio'.length //6
+const name = 'Flavio'
+name.length //6
+
+This is an empty string: '' . Its length property is 0:
+''.length //0
+
+Two strings can be joined using the + operator:
+"A " + "string
+
+Arrays
+
+An array is a collection of elements.
+Arrays in JavaScript are not a type on their own.
+Arrays are objects.
+We can initialize an empty array in these 2 different ways:
+const a = []
+const a = Array()
+
+You can access any element of the array by referencing its index, which starts
+from zero:
+a[0] //1
+a[1] //2
+a[2] //3
+
+You can join multiple arrays by using concat() :
+
+const a = [1, 2]
+const b = [3, 4]
+const c = a.concat(b) //[1,2,3,4]
+a //[1,2]
+b //[3,4]
+
+You can also use the spread operator ( ... ) in this way:
+const a = [1, 2]
+const b = [3, 4]
+const c = [...a, ...b]
+c //[1,2,3,4]
+
+You can use the find() method of an array:
+array.find((element, index, array) => {
+//return true or false
+})
+
+Another method is includes() :
+array.includes(value)
+Returns true if a contains value .
+
+Loops
+
+Loops are one of the main control structures of JavaScript.
+With a loop we can automate and repeat indefinitely a block of code, for how many times we want it to run.
+
+while
+
+The while loop is the simplest looping structure that JavaScript provides us. We add a condition after the while keyword, and we provide a block that is run until the condition evaluates to true .
+
+Example:
+const list = ['a', 'b', 'c']
+let i = 0
+while (i < list.length) {
+console.log(list[i]) //value
+console.log(i) //index
+i = i + 1
+}
+
+You can interrupt a while loop using the break keyword, like this:
+while (true) {
+if (somethingIsTrue) break
+}
+
+//The break statement terminates the current loop
+
+and if you decide that in the middle of a loop you want to skip the current iteration, you can jump to the next iteration using continue :
+
+while (true) {
+if (somethingIsTrue) continue
+//do something else
+}
+
+for
+The second very important looping structure in JavaScript is the for loop.
+
+We use the for keyword and we pass a set of 3 instructions: the
+initialization, the condition, and the increment part.
+
+Example:
+const list = ['a', 'b', 'c']
+
+for (let i = 0; i < list.length; i++) {
+console.log(list[i]) //value
+console.log(i) //index
+}
+
+Just like with while loops, you can interrupt a for loop using break and you can fast forward to the next iteration of a for loop using continue .
+
+for...of
+This loop is relatively recent (introduced in 2015) and it's a simplified version of
+the for loop:
+
+const list = ['a', 'b', 'c']
+for (const value of list) {
+console.log(value) //value
+}
+
+Functions
+
+A function is a block of code, self contained.
+Here's a function declaration:
+
+function getData() {
+// do something
+}
+
+A function can be run any times you want by invoking it, like this:
+getData()
+
+A function can have one or more argument:
+
+function getData() {
+//do something
+}
+
+function getData(color) {
+//do something
+}
+
+function getData(color, age) {
+//do something
+}
+
+When we can pass an argument, we invoke the function passing parameters:
+
+function getData(color, age) {
+//do something
+}
+getData('green', 24)
+getData('black')
+
+Note that in the second invokation I passed the black string parameter as the color argument, but no age . In this case, age inside the function is undefined .
+We can check if a value is not undefined using this conditional:
+
+function getData(color, age) {
+//do something
+if (typeof age !== 'undefined') {
+//...
+}
+}
+
+typeof is a unary operator that allows us to check the type of a variable.
+
+A function has a return value. By default a function returns undefined , unless you add a return keyword with a value:
+
+function getData() {
+// do something
+return 'hi!'
+}
+
+We can assign this return value to a variable when we invoke the function:
+
+function getData() {
+// do something
+return 'hi!'
+}
+
+let result = getData()
+
+Arrow Functions
+
+function getData() {
+//...
+}
+
+to
+() => {
+  //...
+}
+
+But.. notice that we don't have a name here. Arrow functions are anonymous. We must assign them to a variable.
+We can assign a regular function to a variable, like this:
+
+let getData = function getData() {
+  //...
+}
+
+When we do so, we can remove the name from the function:
+let getData = function() {
+  //...
+}
+and invoke the function using the variable name:
+
+let getData = function() {
+  //...
+}
+getData()
+
+That's the same thing we do with arrow functions:
+
+let getData = () => {
+  //...
+}
+getData()
+
+const getData = () => console.log('hi!')
+const getData = param => console.log(param)
+const getData = (param1, param2) =>
+console.log(param1, param2)
+
+Objects
+
+Any value that's not of a primitive type (a string, a number, a boolean, a symbol, null, or undefined) is an object.
+Here's how we define an object:
+
+const car = {
+}
+
+Object Properties
+
 */
