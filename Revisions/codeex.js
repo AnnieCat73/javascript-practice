@@ -1,3 +1,5 @@
+/*Understanding DOM
+
 var colors = [
   "#C94C24", //orange
   "#268BD2", //blue
@@ -9,17 +11,19 @@ var colors = [
   "#F0AD4E" //yellow
 ];
 
-function makeBoxes(howMany) {
-  var colorAmt = colors.length;
-  var currColor = 0;
-  var myElement;
-  var myNode = document.querySelector(".boxes");
+function makeBoxes(howMany) {//howmany is a parameter for makeBoxes()
+  var colorAmt = colors.length;//how many colors
+  var currColor = 0;//starting index
+  var myElement;//the element you are creating
+  var myNode = document.querySelector(".boxes");//where will put myElement in, the node
 
+
+  //generating the myElement
   for (var i = 0; i < howMany; i++) {
     myElement = document.createElement("div");
     myElement.className = "box";
-    myElement.style = "background-color: " + colors[currColor];
-    myNode.appendChild(myElement);
+    myElement.style = "background-color: " + colors[currColor];//the index we are in colors array
+    myNode.appendChild(myElement);//add it to the dom
 
     if (currColor === colorAmt - 1) {
       currColor = 0;
@@ -34,7 +38,30 @@ function makeBoxes(howMany) {
       e.target.parentNode.removeChild(e.target);
     },
     false
-  );
+  );//false makes it bobble properly
 }
 
-makeBoxes(10);
+makeBoxes(30);*/
+
+/**CONSTRUCTOR */
+function Hamburger(nodeName) {
+  var myNode = document.querySelector(nodeName + ' .hamburger');
+
+  return {
+    activate: function() {
+      myNode.addEventListener('click', function(e) {
+      myNode.parentNode.querySelector('.navbar').classList.toggle('hidden');
+      }, false);
+    }, // activate
+    hide: function() {
+      myNode.parentNode.querySelector('.navbar').classList.add('hidden');
+    } // hide
+  } //return
+} //Hamburger
+
+var topMenu = new Hamburger('#topMenu');
+topMenu.activate();
+
+var bottomMenu = new Hamburger('#bottomMenu');
+bottomMenu.activate();
+bottomMenu.hide();

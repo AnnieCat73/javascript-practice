@@ -350,4 +350,276 @@ const car = {
 
 Object Properties
 
+Objects have properties, which are composed by a label associated with a
+value. The value of a property can be of any type, which means that it can be an
+array, a function, and it can even be an object, as objects can nest other
+objects.
+
+const car = {
+  color: 'blue'
+}
+
+As you see, when we have multiple properties, we separate each property with
+a comma. We can retrieve the value of a property using 2 different syntaxes.
+
+The first is dot notation:
+car.color //'blue'
+
+The second (which is the only one we can use for properties with invalid
+names), is to use square brackets:
+car['the color'] //'blue'
+
+If you access an unexisting property, you'll get the undefined value:
+car.brand //undefined
+
+As said, objects can have nested objects as properties:
+const car = {
+  brand: {
+  name: 'Ford'
+  },
+  color: 'blue'
+}
+
+In this example, you can access the brand name using
+car.brand.name
+
+or
+
+car['brand']['name']
+
+And you can also add new properties to an object:
+car.model = 'Fiesta'
+car.model //'Fiesta'
+
+Given the object
+
+const car = {
+color: 'blue',
+  brand: 'Ford'
+}
+
+you can delete a property from this object using
+delete car.brand
+
+OBJECT METHODS
+
+const car = {
+  brand: 'Ford',
+  model: 'Fiesta',
+  start: function() {
+    console.log('Started')
+  }
+}
+car.start()
+
+Inside a method defined using a function() {} syntax we have access to the
+object instance by referencing this .
+In the following example, we have access to the brand and model
+properties values using this.brand and this.model :
+
+const car = {
+  brand: 'Ford',
+  model: 'Fiesta',
+  start: function() {
+    console.log(`Started
+    ${this.brand} ${this.model}`)
+  }
+}
+car.start()
+
+It's important to note this distinction between regular functions and arrow
+functions: we don't have access to this if we use an arrow function:
+
+This is the reason why regular functions are often used as object methods.
+Methods can accept parameters, like regular functions:
+
+const car = {
+  brand: 'Ford',
+  model: 'Fiesta',
+  goTo: function(destination) {
+    console.log(`Going to ${destination}`)
+  }
+}
+car.goTo('Rome')
+
+CLASSES
+
+What are classes? They are a way to define a common pattern for multiple
+objects.
+Let's take a person object:
+
+const person = {
+  name: 'Flavio'
+}
+
+We can create a class named Person 
+
+class Person {
+  name
+}
+
+Now from this class, we initialize a flavio object like this:
+
+const flavio = new Person()
+
+flavio is called an instance of the Person class.
+
+We can set the value of the name property:
+flavio.name = 'Flavio'
+
+and we can access it using
+flavio.name
+
+Classes can hold properties, like name , and methods.
+
+Methods are defined in this way:
+class Person {
+  hello() {
+    return 'Hello, I am Flavio'
+  }
+}
+
+and we can invoke methods on an instance of the class:
+class Person {
+  hello() {
+    return 'Hello, I am Flavio'
+  }
+}
+const flavio = new Person()
+flavio.hello()
+
+There is a special method called called constructor() that we can use to
+initialize the class properties when we create a new object instance.
+It works like this:
+
+class Person {
+  constructor(name) {
+    this.name = name
+  }
+  hello() {
+    return 'Hello, I am ' + this.name + '.'
+  }
+}
+
+Note how we use this to access the object instance.
+Now we can instantiate a new object from the class, passing a string, and
+when we call hello , we'll get a personalized message:
+
+const flavio = new Person('flavio')
+flavio.hello() //'Hello, I am flavio.'
+
+When the object is initialized, the constructor method is called, with any
+parameters passed.
+
+INHERITANCE
+
+A class can extend another class, and objects initialized using that class
+inherit all the methods of both classes.
+Suppose we have a class Person :
+
+class Person {
+  hello() {
+    return 'Hello, I am a Person'
+  }
+}
+
+We can define a new class Programmer that extends Person :
+class Programmer extends Person {
+
+}
+
+Now if we instantiate a new object with class Programmer , it has access to the
+hello() method:
+
+const flavio = new Programmer()
+flavio.hello() //'Hello, I am a Person'
+
+Inside a child class, you can reference the parent class calling super() :
+
+class Programmer extends Person {
+hello() {
+  return super.hello() +
+    '. I am also a programmer.'
+  }
+}
+
+const flavio = new Programmer()
+flavio.hello()
+The above program prints Hello, I am a Person. I am also a programmer..
+
+ASYNCHRONOUS PROGRAMMING AND CALLBACKS
+
+Most of the time, JavaScript code is ran synchronously.
+This means that a line of code is executed, then the next one is executed, and
+so on.Everything is as you expect, and how it works in most programming
+languages.
+However there are times when you cannot just wait for a line of code to
+execute.
+You can't just wait 2 seconds for a big file to load, and halt the program
+completely.
+You can't just wait for a network resource to be downloaded, before doing
+something else.
+JavaScript solves this problem using callbacks.
+One of the simplest examples of how to use callbacks is timers.
+
+The setTimeout() function accepts 2 arguments: a function, and a number.
+The number is the milliseconds that must pass before the function is ran.
+Example:
+
+setTimeout(() => {
+  // runs after 2 seconds
+  console.log('inside the function')
+}, 2000)
+
+console.log('before')
+setTimeout(() => {
+  // runs after 2 seconds
+  console.log('inside the function')
+}, 2000)
+console.log('after')
+
+You will see this happening in your console:
+
+before
+after
+inside the function
+
+Here's how we can implement callbacks in our code.
+We define a function that accepts a callback parameter, which is a function.
+When the code is ready to invoke the callback, we invoke it passing the result:
+const doSomething = callback => {
+  //do things
+  //do things
+  const result = /* .. *
+  callback(result)
+}
+
+Code using this function would use it like this:
+doSomething(result => {
+  console.log(result)
+})
+
+PROMISES
+
+Promises are an alternative way to deal with asynchronous code.
+As we saw in the previous chapter, with callbacks we'd be passing a function
+to another function call, that would be called when the function has finished
+processing.
+Like this:
+doSomething(result => {
+  console.log(result)
+})
+
+When  the doSomething() code ends, it calls the function received as a a
+parameter:
+
+const doSomething = callback => {
+  //do things
+  //do things
+  const result = /* .. 
+  callback(result)
+}
+
+
+The main problem...
 */
