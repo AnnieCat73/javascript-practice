@@ -44,6 +44,7 @@ let a = 0
 a = 1
 
 NB CONST DOESN'T MEAN 'CONSTANT', IT DOES NOT MEAN THE VALUE CAN'T CHANGE - IT MEANS IT CAN'T BE REASSIGNED
+MEANING HERE F.EX THE VALUE IN AN ARRAY OR OBJECT CAN CHANGE BUT F.EX CONST A = 0 THEN A = 2 CAN'T BE REASSIGNED
 
 Const variables must be initialized at the declaration time:
 
@@ -172,7 +173,7 @@ const c = [...a, ...b]
 c //[1,2,3,4]
 
 You can use the find() method of an array:
-array.find((element, index, array) => {
+  array.find((element, index, array) => {
 //return true or false
 })
 
@@ -193,14 +194,14 @@ Example:
 const list = ['a', 'b', 'c']
 let i = 0
 while (i < list.length) {
-console.log(list[i]) //value
-console.log(i) //index
-i = i + 1
+  console.log(list[i]) //value
+  console.log(i) //index
+  i = i + 1
 }
 
 You can interrupt a while loop using the break keyword, like this:
 while (true) {
-if (somethingIsTrue) break
+  if (somethingIsTrue) break
 }
 
 //The break statement terminates the current loop
@@ -209,7 +210,7 @@ and if you decide that in the middle of a loop you want to skip the current iter
 
 while (true) {
 if (somethingIsTrue) continue
-//do something else
+  //do something else
 }
 
 for
@@ -222,8 +223,8 @@ Example:
 const list = ['a', 'b', 'c']
 
 for (let i = 0; i < list.length; i++) {
-console.log(list[i]) //value
-console.log(i) //index
+  console.log(list[i]) //value
+  console.log(i) //index
 }
 
 Just like with while loops, you can interrupt a for loop using break and you can fast forward to the next iteration of a for loop using continue .
@@ -234,7 +235,7 @@ the for loop:
 
 const list = ['a', 'b', 'c']
 for (const value of list) {
-console.log(value) //value
+  console.log(value) //value
 }
 
 Functions
@@ -243,7 +244,7 @@ A function is a block of code, self contained.
 Here's a function declaration:
 
 function getData() {
-// do something
+  // do something
 }
 
 A function can be run any times you want by invoking it, like this:
@@ -252,21 +253,21 @@ getData()
 A function can have one or more argument:
 
 function getData() {
-//do something
+  //do something
 }
 
 function getData(color) {
-//do something
+  //do something
 }
 
 function getData(color, age) {
-//do something
+  //do something
 }
 
 When we can pass an argument, we invoke the function passing parameters:
 
 function getData(color, age) {
-//do something
+  //do something
 }
 getData('green', 24)
 getData('black')
@@ -275,10 +276,10 @@ Note that in the second invokation I passed the black string parameter as the co
 We can check if a value is not undefined using this conditional:
 
 function getData(color, age) {
-//do something
-if (typeof age !== 'undefined') {
-//...
-}
+  //do something
+  if (typeof age !== 'undefined') {
+    //...
+  }
 }
 
 typeof is a unary operator that allows us to check the type of a variable.
@@ -286,15 +287,15 @@ typeof is a unary operator that allows us to check the type of a variable.
 A function has a return value. By default a function returns undefined , unless you add a return keyword with a value:
 
 function getData() {
-// do something
-return 'hi!'
+  // do something
+  return 'hi!'
 }
 
 We can assign this return value to a variable when we invoke the function:
 
 function getData() {
-// do something
-return 'hi!'
+  // do something
+  return 'hi!'
 }
 
 let result = getData()
@@ -302,7 +303,7 @@ let result = getData()
 Arrow Functions
 
 function getData() {
-//...
+  //...
 }
 
 to
@@ -766,4 +767,78 @@ It's important to understand that a block does not define a new scope for var ,
 but it does for let and const .
 
 
+Suppose you define a var variable inside an if conditional in a function
+
+function getData() {
+  if (true) {
+    var data = 'some data'
+    console.log(data)
+  }
+}
+
+If you call this function, you'll get some data printed to the console.
+
+If you try to move console.log(data) after the if , it still works:
+function getData() {
+  if (true) {
+    var data = 'some data'
+  }
+  console.log(data)
+}
+
+But if you switch var data to let data :
+
+function getData() {
+  if (true) {
+    let data = 'some data'
+  }
+  console.log(data)
+}
+You'll get an error: ReferenceError: data is not defined .
+
+This is because var is function scoped, and there's a special thing
+happening here, called hoisting. In short, the var declaration is moved to the
+top of the closest function by JavaScript, before it runs the code. More or less
+this is what the function looks like to JS, internally:
+
+function getData() {
+  var data
+  if (true) {
+    data = 'some data'
+  }
+  console.log(data)
+}
+
+This is why you can also console.log(data) at the top of a function, even
+before it's declared, and you'll get undefined as a value for that variable:
+
+function getData() {
+  console.log(data)
+  if (true) {
+    var data = 'some data'
+  }
+}
+
+but if you switch to let , you'll get an error ReferenceError: data is not
+defined , because hoisting does not happen to let declarations.
+
+const follows the same rules as let : it's block scoped.
+
+Var variable they do have
+less moving parts, and their scope is limited to the block, which also makes
+them very good as loop variables, because they cease to exist after a loop has
+ended:
+
+function doLoop() {
+  for (var i = 0; i < 10; i++) {
+    console.log(i)
+  }
+  console.log(i)
+}
+
+doLoop()
+
+When you exit the loop, i will be a valid variable with value 10.
+If you switch to let , if you try to console.log(i) will result in an error
+ReferenceError: i is not defined .
 */
