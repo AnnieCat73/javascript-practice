@@ -621,5 +621,149 @@ const doSomething = callback => {
 }
 
 
-The main problem...
+The main problem is that if we need to use the result of this
+function in the rest of our code, all our code must be nested inside the
+callback, and if we have to do 2-3 callbacks we enter in what is usually defined
+"callback hell" with many levels of functions indented into other functions
+
+Promises are one way to deal with this.
+
+Instead of doing:
+doSomething(result => {
+console.log(result)
+})
+
+We call a promise-based function in this way:
+doSomething()
+.then(result => {
+console.log(result)
+})
+
+We first call the function, then we have a then() method that is called when
+the function ends.
+
+It's common to detect errors using a catch() method:
+doSomething()
+  .then(result => {
+  console.log(result)
+  })
+  .catch(error => {
+  console.log(error)
+  })
+
+Now, to be able to use this syntax, the doSomething() function
+implementation must be a little bit special. It must use the Promises API.
+Instead of declaring it as a normal function:
+const doSomething = () => {
+
+}
+
+We declare it as a promise object:
+const doSomething = new Promise()
+and we pass a function in the Promise constructor:
+
+const doSomething = new Promise(() => {
+
+})
+
+This function receives 2 parameters. The first is a function we call to resolve
+the promise, the second a function we call to reject the promise.
+
+const doSomething = new Promise(
+  (resolve, reject) => {
+})
+
+Resolving a promise means complete it successfully (which results in calling
+the then() method in who uses it).
+Rejecting a promise means ending it with an error (which results in calling the
+catch() method in who uses it).
+
+Here's how:
+
+const doSomething = new Promise(
+  (resolve, reject) => {
+    //some code
+    const success = /* ... 
+    if (success) {
+      resolve('ok')
+    } else {
+      reject('this error occurred')
+    }
+  }
+)
+
+
+ASYNC AND AWAIT
+
+const doSomething = async () => {
+  const data = await getData()
+  console.log(data)
+}
+
+The Async/await duo allows us to have a cleaner code and a simple mental
+model to work with asynchronous code.
+
+As you can see in the example above, our code looks very simple. Compare it
+to code using promises, or callback functions.
+And this is a very simple example, the major benefits will arise when the code
+is much more complex.
+
+As an example, here's how you would get a JSON resource using the Fetch
+API, and parse it, using promises:
+
+const getFirstUserData = () => {
+  // get users list
+  return fetch('/users.json')
+    // parse JSON
+    .then(response => response.json())
+    // pick first user
+    .then(users => users[0])
+    // get user data
+    .then(user =>
+    fetch(`/users/${user.name}`))
+    // parse JSON
+    .then(userResponse => response.json())
+}
+getFirstUserData()
+
+And here is the same functionality provided using await/async:
+
+const getFirstUserData = async () => {
+  // get users list
+  const response = await fetch('/users.json')
+  // parse JSON
+  const users = await response.json()
+  // pick first user
+  const user = users[0]
+  // get user data
+  const userResponse =
+  await fetch(`/users/${user.name}`)
+  // parse JSON
+  const userData = await user.json()
+  return userData
+}
+
+getFirstUserData()
+
+VARIABLES SCOPE - global scope, block scope and function scope
+
+If a variable is defined outside of a function or block, it's attached to the global
+object and it has a global scope, which mean it's available in every part of a
+program.
+
+There is a very important difference between var , let and const
+declarations.
+
+A variable defined as var inside a function is only visible inside that function.
+Similarly to a function arguments:
+
+A variable defined as const or let on the other hand is only visible inside
+the block where it is defined.
+
+A block is a set of instructions grouped into a pair of curly braces, like the ones
+we can find inside an if statement or a for loop. And a function, too.
+It's important to understand that a block does not define a new scope for var ,
+but it does for let and const .
+
+
 */
