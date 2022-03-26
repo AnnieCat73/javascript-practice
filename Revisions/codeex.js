@@ -65,3 +65,22 @@ topMenu.activate();
 var bottomMenu = new Hamburger('#bottomMenu');
 bottomMenu.activate();
 bottomMenu.hide();
+
+//Array that becomes mutable /immutability = an element is unchangeable
+
+const myArr = [5, 6, 7];
+
+myArr.forEach(function(item,index) {
+  myArr[index] = item + 1;
+})
+console.log(myArr);//6, 7, 8 - so items in array have changed/mutated
+
+//better use map as it's an imutable function/doesn't modify it but return an new array that we can use in a variable
+const myArray = [5, 6, 7];
+
+function inc(item) {
+  return item + 1;
+}
+
+var modArr = myArray.map(inc);
+console.log(modArr);
