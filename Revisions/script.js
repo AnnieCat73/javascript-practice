@@ -841,4 +841,176 @@ doLoop()
 When you exit the loop, i will be a valid variable with value 10.
 If you switch to let , if you try to console.log(i) will result in an error
 ReferenceError: i is not defined .
+
+
+//MORE ON SCOPE
+
+The scope is the portion of code where the variable is visible.
+A variable initialized with var outside of any function is assigned to the global object, has a global scope and is visible everywhere. A variable initialized with var inside a function is assigned to that function, it's local and is visible only inside it, just like a function parameter.
+
+Any variable defined in a function with the same name as a global variable takes precedence
+over the global variable, shadowing it.
+It's important to understand that a block (identified by a pair of curly braces) does not define a new scope. A new scope is only created when a function is created, because var does not have block scope, but function scope.
+
+Inside a function, any variable defined in it is visible throughout all the function code, even if the variable is declared at the end of the function it can still be referenced in the beginning, because JavaScript before executing the code actually moves all variables on top (something that is called hoisting). To avoid confusion, always declare variables at the beginning of a function.
+
+USING let
+let is a new feature introduced in ES2015 and it's essentially a block scoped version of
+var . Its scope is limited to the block, statement or expression where it's defined, and all the contained inner blocks.
+
+Modern JavaScript developers might choose to only use let and completely discard the use
+of var .
+
+If let seems an obscure term, just read let color = 'red' as let the color be red and it
+all makes much more sense
+Defining let outside of any function - contrary to var - does not create a global variable.
+
+USING const
+Variables declared with var or let can be changed later on in the program, and
+reassigned. Once a const is initialized, its value can never be changed again, and it can't be reassigned to a different value.
+
+const a = 'test'
+
+We can't assign a different literal to the a const. We can however mutate a if it's an object
+that provides methods that mutate its contents.
+
+const does not provide immutability, just makes sure that the reference can't be changed.
+const has block scope, same as let .
+
+Modern JavaScript developers might choose to always use const for variables that don't
+need to be reassigned later in the program, because we should always use the simplest
+construct available to avoid making errors down the road.
+
+TYPES OF SCOPE FROM SKILLCRUSH
+
+Global scope is the context for the whole program. Variables that are global scoped aren’t located inside a function or another block of code, like an if statement. Global scoped variables are available to any part of your program. 
+
+For example, the value for the variable numOfDrinks is available for functions and blocks of code to use:
+
+
+var numOfDrinks = 5;
+ 
+var drinks = function () {
+  var tea = 6 + numOfDrinks;
+  console.log(tea);
+};
+ 
+drinks();
+// 11
+ 
+if (numOfDrinks === 5) {
+  var soda = "lemon-lime";
+  console.log(soda);
+}
+//lemon-lime
+
+FUNCTION SCOPE
+
+Function scope is the context inside a function. The curly braces define the function scope beginning and end. Variables defined within a function are scoped to that function only.
+
+For example, the tea variable can’t be accessed or changed outside of the drinks function. If you use console.log() with the tea variable outside the function, you’ll receive a “not defined” error message in the console:
+
+var drinks = function () {
+  var tea = 6 + numOfDrinks;
+  console.log(tea);
+};
+ 
+console.log(tea);
+// ReferenceError: tea is not defined
+
+BLOCK SCOPE
+
+Block scope is the context inside a block of code, like an if statement or loops. Like function scope, the curly braces define the block scope beginning and end. Here, the soda variable is block scoped to the if statement:
+
+
+if (numOfDrinks === 5) {
+  var soda = "lemon-lime";
+  console.log(soda);
+}
+// lemon-lime
+
+While you might think you wouldn’t be able to use or change the soda variable outside the block, there’s a flaw in JavaScript that lets you call or change a variable declared with var outside the block of code:
+
+if (numOfDrinks === 5) {
+  var soda = "lemon-lime";
+  console.log(soda);
+}
+// lemon-lime
+ 
+soda = "cola";
+console.log(soda);
+// cola
+
+Reassigning a variable outside the intended scope could be a real problem by introducing all kinds of errors and hard-to-debug problems. 🚨😧
+
+Fortunately, modern JavaScript standards have introduced a solution to this issue: declaring your variables with let and const instead of var.
+
+LET & CONST
+Declaring variables with var has been your go-to approach so far, which is fine when you’re a JavaScript beginner. But now that you have experience with JavaScript, you’re ready to transition your variable writing away from var and towards let and const.
+
+LET KEYWORD
+
+Use the let keyword to constrain a variable to block scope. Using let prevents the variable from being accessed outside the block where it was declared.
+
+For instance, the soda variable in the previous example could be used outside the if statement block. If you replace the var with let, that’s no longer possible:
+
+
+if (numOfDrinks === 5) {
+  let soda = "lemon-lime";
+  console.log(soda);
+}
+// lemon-lime
+ 
+console.log(soda);
+// ReferenceError: soda is not defined
+
+The value of the soda variable is now protected from being accessed outside the code block. Rejoice!
+
+CONST KEYWORD
+
+The const keyword will constrain a variable to block scope AND prevent the value from being reassigned. You’ll use const with most variables, including variables used to declare functions:
+
+
+const numOfDrinks = 5;
+ 
+const drinks = function () {
+  const tea = 6 + numOfDrinks;
+  console.log(tea);
+};
+ drinks();
+// 11
+
+If you tried to reassign any of the variables declared with const, like numOfDrinks, you’d receive an error that the value is read-only:
+
+const numOfDrinks = 5;
+numOfDrinks = 7;
+ 
+console.log(numOfDrinks);
+// SyntaxError: /script.js: "numOfDrinks" is read-only
+
+You may also see an error in the console like “TypeError: Assignment to constant variable” when attempting to reassign a variable declared with const.
+
+A note on reassigning: Using const will prevent data types like strings, booleans, and numbers from being reassigned to a different value. For data types like arrays and objects (coming soon!), const will prevent reassigning the variable but still allow you to modify the elements inside the array/object.
+
+let vs. const
+
+Here are some quick guidelines to help you decide when to use let or const in your code:
+
+Use const for most of your variables. Like 95% of the time, really!
+Use let for inside code blocks (e.g., loops, if/else if statements).
+Use let when you might want to reassign the value of a variable.
+
+GATHER INPUT & CREATE ELEMENTS
+To gather input from a user and generate a list on screen, you’ll need to add a few new tools to your JS toolbox: value, createElement(), append(), and querySelectorAll().
+
+value Property
+
+Up until now, you’ve only used prompt() to gather input from the user. But you can also gather input using a text box and the value property. The value property will capture the content entered into the input box:
+
+
+addShowButton.addEventListener("click", function () {
+  const show = showInput.value;
+});
+
+
 */
