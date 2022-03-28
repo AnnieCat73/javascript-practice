@@ -1012,5 +1012,75 @@ addShowButton.addEventListener("click", function () {
   const show = showInput.value;
 });
 
+HOW this WORKS IN ARROW FUNCTIONS
+
+'this' is a concept that can be complicated to grasp, as it varies a lot depending on the
+context and also varies depending on the mode of JavaScript (strict mode or not).
+
+It's important to clarify this concept because arrow functions behave very differently compared to regular functions.
+When defined as a method of an object, in a regular function this refers to the object, so you can do:
+
+const car = {
+  model: 'Fiesta',
+  manufacturer: 'Ford',
+  fullName: function() {
+    return `${this.manufacturer} ${this.model}`
+  }
+}
+calling car.fullName() will return "Ford Fiesta" .
+
+The this scope with arrow functions is inherited from the execution context. An arrow
+function does not bind this at all, so its value will be looked up in the call stack, so in this code car.fullName() will not work, and will return the string "undefined undefined" :
+
+const car = {
+  model: 'Fiesta',
+  manufacturer: 'Ford',
+    fullName: () => {
+    return `${this.manufacturer} ${this.model}`
+  }
+}
+
+Due to this, arrow functions are not suited as object methods.
+Arrow functions cannot be used as constructors either, when instantiating an object will raise a TypeError .
+
+This is where regular functions should be used instead, when dynamic context is not
+needed.This is also a problem when handling events. DOM Event listeners set this to be the target element, and if you rely on this in an event handler, a regular function is necessary:
+
+const link = document.querySelector('#link')
+
+link.addEventListener('click', () => {
+  // this === window
+})
+
+const link = document.querySelector('#link')
+
+link.addEventListener('click', function() {
+  // this === link
+})
+
+
+DESTRUCTURING ASSIGNMENTS
+
+Given an object, you can extract just some values and put them into named variables:
+
+const person = {
+  firstName: 'Tom',
+  lastName: 'Cruise',
+  actor: true,
+  age: 54, //made up
+}
+
+const {firstName: name, age} = person
+
+name and age contain the desired values.
+
+The syntax also works on arrays:
+
+const a = [1,2,3,4,5]
+const [first, second] = a
+
+This statement creates 3 new variables by getting the items with index 0, 1, 4 from the array
+a :
+const [first, second, , , fifth] = a
 
 */
