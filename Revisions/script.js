@@ -1083,4 +1083,35 @@ This statement creates 3 new variables by getting the items with index 0, 1, 4 f
 a :
 const [first, second, , , fifth] = a
 
+----------------------------------------------------
+<div class="greeting">
+	<style type="text/css">
+		p {
+			color: rebeccapurple;
+		}
+	</style>
+	<p hidden>This is not rendered.</p>
+	<p>Hello world!</p>
+</div>
+
+let greeting = document.querySelector('.greeting');
+
+// Get text content
+// returns "p {color: rebeccapurple;} This is not rendered. Hello world!"
+let text = greeting.textContent;
+
+// Set text content
+// This completely replaces whats there, including any HTML elements
+greeting.textContent = 'We can dynamically change the content.';
+
+// Add text to the end of an element's existing content
+greeting.textContent += ' Add this after what is already there.';
+
+// Add text to the beginning of an element's existing content
+greeting.textContent = 'We can add this to the beginning. ' + greeting.textContent;
+
+// HTML elements are automatically encoded and rendered as-is
+greeting.textContent = '<p>See you later!</p>';
+
+------------------------------------------------------------------
 */
