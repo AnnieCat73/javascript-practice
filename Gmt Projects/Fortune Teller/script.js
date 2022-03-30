@@ -26,6 +26,13 @@ let responses = [
 	'Very doubtful.'
 ];
 
+// Loading messages
+let loading = [
+	'Consulting the spirits...',
+	'Gazing into the depths of the future...',
+	'BRB, jumping into my time machine...',
+	'I see... I see...'
+];
 /*btn.addEventListener("click", function () {
   fortune.textContent = "You're going to have a wonderful day!";
 })
