@@ -1114,4 +1114,24 @@ greeting.textContent = 'We can add this to the beginning. ' + greeting.textConte
 greeting.textContent = '<p>See you later!</p>';
 
 ------------------------------------------------------------------
+.REPLACE(), .REPLACEALL()
+
+
+By default, the String.replace() method replaces the first match. To replace all matches, you’ll need to pass in a regular expression with the global flag (g).
+
+let chips = 'Cape Cod potato chips are my favorite brand of chips.';
+
+// Only replaces the first instance of the word "chips"
+chips.replace('chips', 'deep fried potato slices');
+
+// Replaces all instances of the word "chips"
+chips.replace(new RegExp('chips', 'g'), 'deep fried potato slices');
+
+The String.replaceAll() method replaces all instances of a string inside another string, without the need for a regular expression.The String.replaceAll() method accepts two arguments: the string to find, and the string to replace it with.
+
+// Awkwardly worded, but roll with it
+let wizards = 'Of all the wizards in Lord of the Rings, Radagast is my favorite of the wizards.';
+
+// returns "Of all the sorcerers in Lord of the Rings, Radagast is my favorite of the sorcerers."
+let sorcerers = wizards.replaceAll('wizards', 'sorcerers');
 */

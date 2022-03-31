@@ -25,3 +25,4 @@ for (let h2 of h2s) {
 tOfC.innerHTML = `
   <h3><strong>Table of Contents</strong></h3>
   <ol>${html}</ol>`;
+
