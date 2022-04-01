@@ -1134,4 +1134,40 @@ let wizards = 'Of all the wizards in Lord of the Rings, Radagast is my favorite 
 
 // returns "Of all the sorcerers in Lord of the Rings, Radagast is my favorite of the sorcerers."
 let sorcerers = wizards.replaceAll('wizards', 'sorcerers');
+
+
+get/sethasATTRIBUTE()
+
+let elem = document.querySelector('#lunch');
+
+// Get the value of the [data-sandwich] attribute
+let sandwich = elem.getAttribute('data-sandwich');
+
+// Set a value for the [data-sandwich] attribute
+elem.setAttribute('data-sandwich', 'turkey');
+
+// Remove the [data-chips] attribute
+elem.removeAttribute('data-chips');
+
+// Check if an element has the `[data-drink]` attribute
+if (elem.hasAttribute('data-drink')) {
+	console.log('Add a drink!');
+}
+
+TERNARY OPERATOR
+
+let someVar = [the condition] ? [the value if true] : [the value if false];
+
+let num = 0;
+let answer = num > 10 ? num : 42;
+It’s the same as doing this.
+
+let num = 0;
+let answer;
+
+if (num > 10) {
+	answer = num;
+} else {
+	num = 42;
+}
 */

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>GitHub API</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<style type="text/css">
+			body {
+				margin: 0 auto;
+				max-width: 40em;
+				width: 88%;
+			}
+
+			img {
+				height: auto;
+				max-width: 100%;
+			}
+
+			@media (min-width: 40em) {
+				.gh-grid {
+					display: grid;
+					grid-template-columns: 1fr 3fr;
+					grid-template-rows: 1fr;
+					grid-column-gap: 1em;
+					grid-row-gap: 1em;
+				}
+
+				.gh-avatar { grid-area: 1 / 1 / 2 / 2; }
+				.gh-details { grid-area: 1 / 2 / 2 / 3; }
+			}
+		</style>
+	</head>
+	<body>
+
+		<h1>GitHub API</h1>
+
+		<div id="github">
+			<p><a href="https://github.com/cferdinandi">View my GitHub Profile</a></p>
+		</div>
+
+
+		<script src="script.js"></script>
+	</body>
+</html>
