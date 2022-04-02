@@ -1170,4 +1170,60 @@ if (num > 10) {
 } else {
 	num = 42;
 }
+
+CONVERTING ARRAYS INTO HTML
+
+let wizards = ['Gandalf', 'Radagast', 'Merlin'];
+And I want to create an unordered list from it, like this.
+
+<ul>
+	<li>Gandalf</li>
+	<li>Radagast</li>
+	<li>Merlin</li>
+</ul>
+
+My favorite way to do this is with the .map() and .join() methods.
+
+wizards.map(function (wizard) {
+	return '<li>' + wizard + '</li>';
+});
+
+At this point, we have a new array that looks like this.
+
+['<li>Gandalf</li>', '<li>Radagast</li>', '<li>Merlin</li>']
+
+Next, we need each of those list items combined into a single string.
+
+We can use the join() method for that. It normally separates each item with a comma (,), but we can pass in an empty string to use as a delimiter instead.
+
+wizards.map(function (wizard) {
+	return '<li>' + wizard + '</li>';
+}).join('');
+
+We now have a string that looks like this.
+
+'<li>Gandalf</li><li>Radagast</li><li>Merlin</li>'
+
+//ADD IT TO THE DOM
+
+let app = document.querySelector('#app');
+app.innerHTML = '<ul>' + wizards.map(function (wizard) {
+	return '<li>' + wizard + '</li>';
+}).join('') + '</ul>';
+
+ALTERNATIVE:
+
+let html = '';
+for (let wizard of wizards) {
+	html += '<li>' + wizard + '</li>';
+}
+
+Finally, inject your markup into the DOM.
+
+let html = '';
+for (let wizard of wizards) {
+	html += '<li>' + wizard + '</li>';
+}
+
+app.innerHTML = '<ul>' + html + '</ul>';
 */
