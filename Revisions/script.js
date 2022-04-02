@@ -1226,4 +1226,53 @@ for (let wizard of wizards) {
 }
 
 app.innerHTML = '<ul>' + html + '</ul>';
+
+DESTRUCTURING
+
+let [entree, drink, side, desert] = lunch;
+
+// logs "turkey sandwich"
+console.log(entree);
+
+// logs "chips"
+console.log(side);
+
+INNERHTML AND CROSS-SITE SCRIPTING ATTACK
+
+// The element to inject content into
+var app = document.querySelector('#app');
+
+// Some API data
+var newsStories = [
+	//...
+];
+
+// Inject the articles into the DOM
+
+app.innerHTML = newsStories.map(function (story) {
+	return `
+		<h1>${story.title}</h1>
+		<p>By ${story.author} on ${story.date}</p>
+		${story.content}`;
+}).join('');
+
+While the Element.innerHTML property is convenient and easy ways to inject markup into the DOM, they can expose you to cross-site scripting (or XSS) attacks when used with third-party content.
+
+There is a built-in safeguard in place, though.
+
+Just injecting a script element won’t expose you to attacks, because the section of the DOM you’re injecting into has already been parsed and run.
+
+// This won't execute
+let div = document.querySelector('#app');
+div.innerHTML = '<script>alert("XSS Attack");</script>';
+
+Links are another potential attack vector. If an href attribute is set from third-party data, a user with malicious intent can prefix the URL with javascript: to run code when the user clicks the link.
+
+div.innerHTML = `<a href="javascript:alert('Another XSS Attack')">Click Me</a>`;
+
+When is this an issue?
+
+If you’re injecting your own markup into a page, there’s little cause for concern. The danger comes from injecting third-party or user-generated content into the DOM.
+
+If you’re adding content to a page that you didn’t write, you should sanitize and encode it to protect yourself from XSS attacks.
 */
