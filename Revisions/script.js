@@ -1275,4 +1275,83 @@ When is this an issue?
 If you’re injecting your own markup into a page, there’s little cause for concern. The danger comes from injecting third-party or user-generated content into the DOM.
 
 If you’re adding content to a page that you didn’t write, you should sanitize and encode it to protect yourself from XSS attacks.
+
+One common solution is to use Node.textContent or Element.innerText instead of Element.innerHTML or Element.outerHTML. HTML injected using one of the text properties is automatically encoded.
+
+// Renders a string with encoded characters
+// This would show up in the DOM as an encoded string (&lt;img src=x onerror="alert('XSS Attack')"&gt;) instead of as an image element
+div.textContent = '<img src=x onerror="alert(\'XSS At
+
+document.createElement('')
+
+let div = document.createElement('div');
+div.textContent = 'Hello, world!';
+div.className = 'new-div';
+div.id = 'new-div';
+div.setAttribute('data-div', 'new');
+div.style.color = '#fff';
+div.style.backgroundColor = 'rebeccapurple';
+
+Insert one or more elements or strings at the end of a set elements inside a shared parent. Call the Element.append() method on the target node, and pass in one or more new elements or strings as arguments.
+
+<ul id="list">
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+</ul>
+
+// Create a new element
+let li = document.createElement('li');
+li.textContent = 'I am new here.';
+
+// Create another new element
+let liToo = document.createElement('li');
+liToo.textContent = `I'm new, too!`;
+
+// Get the parent node
+let list = document.querySelector('#list');
+
+// Insert the new node after the last element in the parent node
+// ...<li>Item 3</li><li>I am new here.</li>
+list.append(li);
+
+// You can inject more than one item by passing in multiple arguments
+// ...<li>Item 3</li><li>I am new here.</li><li>I'm new, too!</li>
+list.append(li, liToo);
+
+CONVERTING A NODELIST TO AN ARRAY
+
+You can use the Array.from() method to create a new array from an existing one, or transform an array-like object (like a NodeList) into an array. Pass the array (or array-like object) to copy in as an argument.
+
+let sandwiches = ['turkey', 'tuna', 'ham', 'pb&j'];
+let sandwichesCopy = Array.from(sandwiches);
+
+The Array.from() method also accepts an optional second method, a callback function that it will behave like the Array.map() method, transforming the values in your object while creating an array.
+
+// Get all of the button elements
+let btns = document.querySelectorAll('button');
+
+// Create an array of their text content
+let btnsArr = Array.from(btns, function (btn) {
+	return btn.textContent;
+});
+
+
+WINDOW.LOCALSTORAGE
+
+You can use the window.localStorage object to store data locally that the browser can access later. Data is stored indefinitely, and must be a string.
+
+The setItem() method saves a value, and accepts a key and the value as arguments. The getItem() method retrieves an item, and accepts its key as an argument. It will return null if no item with that key is found.
+
+The removeItem() method removes an item, and accepts the key as an argument.
+
+// Store data
+let data = 'The data that I want to store for later.';
+localStorage.setItem('myDataKey', data);
+
+// Get data
+let savedData = localStorage.getItem('myDataKey');
+
+// Remove data
+localStorage.removeItem('myDataKey');
 */
