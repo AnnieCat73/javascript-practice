@@ -1354,4 +1354,44 @@ let savedData = localStorage.getItem('myDataKey');
 
 // Remove data
 localStorage.removeItem('myDataKey');
-*/
+
+
+MISCELL*/
+
+const range = 5.67;
+console.log(Math.ceil(range));
+
+const body = document.querySelector("body");
+const link = document.createElement("a");
+const link1 = document.createElement("a");
+link.href = "https://example.com";
+link.textContent = "Click me";
+link.style.padding = "4px";
+link.style.backgroundColor = "green";
+link.style.color = "black";
+link.style.fontWeight = "bold";
+body.appendChild(link)
+
+link1.textContent = "Turn me red"
+body.appendChild(link1)
+
+link1.addEventListener("click", () => link1.style.backgroundColor = "red" );
+
+let piecesOfChocs = Number(prompt("How many have you eaten?"));
+console.log(piecesOfChocs);
+
+const array = ["blue", "purple", "red", "green"];
+
+function containsPurple(array) {
+  for(let color of array) {
+    if(color === "purple" || color === "magenta") {
+      return true;
+    }
+    
+  }
+  return false;
+}
+
+containsPurple(["blue", "purple", "red", "green"])
+
+
