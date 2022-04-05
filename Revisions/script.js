@@ -1356,7 +1356,7 @@ let savedData = localStorage.getItem('myDataKey');
 localStorage.removeItem('myDataKey');
 
 
-MISCELL*/
+MISCELL
 
 const range = 5.67;
 console.log(Math.ceil(range));
@@ -1377,21 +1377,72 @@ body.appendChild(link1)
 
 link1.addEventListener("click", () => link1.style.backgroundColor = "red" );
 
-let piecesOfChocs = Number(prompt("How many have you eaten?"));
-console.log(piecesOfChocs);
 
-const array = ["blue", "purple", "red", "green"];
 
-function containsPurple(array) {
-  for(let color of array) {
-    if(color === "purple" || color === "magenta") {
-      return true;
-    }
-    
+*/
+
+//Event bubbling with boxes 
+
+/*
+  <div class="boxes">
+    <div class="box"></div>
+    <div class="box" id="special-box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+
+const boxes = document.querySelector(".boxes");
+const specialBox = document.querySelector("#special-box");
+
+
+boxes.addEventListener("click", function (e) {
+  //console.log(e);
+  if (e.target.className === "box") {
+    e.target.parentNode.removeChild(e.target);
   }
-  return false;
+}, false);
+
+specialBox.addEventListener("click", function (e) {
+  e.target.style.backgroundColor = "green";
+  e.stopPropagation();
+}, false);
+
+
+
+//bind()
+
+const myDetails = {
+  firstName: "Annie",
+  getName: function () {
+    console.log(this.firstName);
+  }
 }
+myDetails.getName();
 
-containsPurple(["blue", "purple", "red", "green"])
+const bindName = myDetails.getName.bind({firstName: "Annie"});
+bindName();
+*/
 
+//Callbacks
+
+/**
+ <div class="tooltips">
+    <div class="tooltip"></div>
+    <div class="tooltip"></div>
+    <div class="tooltip"></div>
+    <div class="tooltip"></div>
+    <div class="tooltip"></div>
+  </div>
+*/
+
+const tooltips = document.querySelectorAll(".tooltip");
+
+
+
+for (let i = 0; i < tooltips.length; i++) {
+  tooltips[i].addEventListener("click", function (e) {
+    e.target.classList.add("active")
+  }, false);
+}
 
