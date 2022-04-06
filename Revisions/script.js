@@ -1434,7 +1434,7 @@ bindName();
     <div class="tooltip"></div>
     <div class="tooltip"></div>
   </div>
-*/
+
 
 const tooltips = document.querySelectorAll(".tooltip");
 
@@ -1442,7 +1442,32 @@ const tooltips = document.querySelectorAll(".tooltip");
 
 for (let i = 0; i < tooltips.length; i++) {
   tooltips[i].addEventListener("click", function (e) {
-    e.target.classList.add("active")
+    e.target.classList.toggle("active")
   }, false);
 }
+*/
+
+//HOW TO USE MAP
+
+//js has a lot of methods for moving through a list, forEach/for loops ex
+
+//forEach f.ex
+
+const list = [5, 6, 7, 8];
+list.forEach(function(item, index) {
+  list[index] = item + 1;
+})
+console.log(list);
+
+//then in map withough mutating the original array
+
+const listMap = list.map(function (item, index) {
+  return item + 1;
+});
+console.log(listMap);
+
+
+
+
+
 
