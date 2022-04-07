@@ -1408,6 +1408,22 @@ specialBox.addEventListener("click", function (e) {
   e.stopPropagation();
 }, false);
 
+//or
+
+const boxes = document.querySelector(".boxes");
+const special = document.querySelector("#special-box");
+boxes.addEventListener("click", (e) => {
+  if (e.target.className === "box") {
+    e.target.parentNode.removeChild(e.target);
+  }
+}, false);
+
+special.addEventListener("click", (e) => {
+  e.target.style.backgroundColor = "pink";
+  e.stopPropagation();
+}, false);
+
+
 
 
 //bind()
@@ -1445,7 +1461,16 @@ for (let i = 0; i < tooltips.length; i++) {
     e.target.classList.toggle("active")
   }, false);
 }
-*/
+//or
+
+for(let tooltip of tooltips) {
+  tooltip.addEventListener("click", function(e) { 
+    e.target.style.backgroundColor = "purple";
+    tooltip.classList.add("active");
+    //e.target.parentNode.removeChild(e.target);
+  }, false)
+}
+
 
 //HOW TO USE MAP
 
@@ -1467,6 +1492,30 @@ const listMap = list.map(function (item, index) {
 console.log(listMap);
 
 
+
+let numbers = [1,2,3,4,5,6,7];
+
+numbers.forEach(function (number, index) {
+  numbers[index] = number + 1;
+});
+console.log(numbers)
+
+const mapNumbers = numbers.map(function (number, index) {
+  return number ++;
+});
+
+console.log(mapNumbers)*/
+
+//Closure
+
+function outer() {
+  const b = 5;
+  function inner() {
+    const a = 47;
+    console.log(a + b)
+  }
+  return inner;
+}
 
 
 
