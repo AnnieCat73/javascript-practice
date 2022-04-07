@@ -1504,7 +1504,7 @@ const mapNumbers = numbers.map(function (number, index) {
   return number ++;
 });
 
-console.log(mapNumbers)*/
+console.log(mapNumbers)
 
 //Closure
 
@@ -1517,6 +1517,35 @@ function outer() {
   return inner;
 }
 
+//CREATE  A LIST OF URLs  FROM THESE LINKS?
+const myTarget = document.querySelector("#mylinks");
+//console.log(myTarget)
+let arr = [
+  { name: "Twitter", link: "https://twitter.com/" },
+  { name: "Facebook", link: "https://www.facebook.com/" },
+  { name: "Instagram", link: "https://www.instagram.com/" }
+];
 
+//Display list in html target id of "my-links"
+// <div id="my-links"></div>
 
+arr.forEach(function (item) {
+  let el = document.createElement('a');
+  el.href = item.link;
+  el.innerText = item.name;
+  
+  myTarget.appendChild(el);
+});
 
+//MAP and FOREACH again
+const numbersArray = [2, 5, 7, 8];
+
+numbersArray.forEach(function (number, index) {
+  numbersArray[index] = number + 1;
+})
+console.log(numbersArray)//3,6,8,9
+
+/*const numbersMapArray = numbersArray.map(function (number) {
+  return number + 1;
+});
+console.log(numbersMapArray);//3, 6 8, 9*/
