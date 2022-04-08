@@ -1506,7 +1506,68 @@ const mapNumbers = numbers.map(function (number, index) {
 
 console.log(mapNumbers)
 
-//Closure
+
+//TYPES OF SCOPE
+
+Global scope is the context for the whole program. Variables that are global scoped aren’t located inside a function or another
+block of code, like an if statement. Global scoped variables are available to any part of your program. 
+
+For example, the value for the variable numOfDrinks is available for functions and blocks of code to use:
+
+
+const numOfDrinks = 5;
+ 
+const drinks = function () {
+  const tea = 6 + numOfDrinks;
+  console.log(tea);
+};
+ 
+drinks();
+// 11
+ 
+if (numOfDrinks === 5) {
+  const soda = "lemon-lime";
+  console.log(soda);
+}
+//lemon-lime
+
+Function Scope
+
+Function scope is the context inside a function. The curly braces define the function scope beginning and end. Variables defined within a function are scoped to that function only.
+const drinks = function () {
+  const tea = 6 + numOfDrinks;
+  console.log(tea);
+};
+console.log(tea);
+// ReferenceError: tea is not defined
+
+
+Block scope is the context inside a block of code, like an if statement or loops. Like function scope, the curly braces define the block scope beginning and end. Here, the soda variable is block scoped to the if statement:
+
+if (numOfDrinks === 5) {
+  const soda = "lemon-lime";
+  console.log(soda);
+}
+// lemon-lime
+
+Use the let keyword to constrain a variable to block scope. Using let prevents the variable from being accessed outside the block where it was declared.
+
+For instance, the soda variable in the previous example could be used outside the if statement block with var. If you replace the var with let, that’s no longer possible
+
+The const keyword will constrain a variable to block scope AND prevent the value from being reassigned. You’ll use const with most variables, including variables used to declare functions
+
+
+Use let for inside code blocks (e.g., loops, if/else if statements).
+Use let when you might want to reassign the value of a variable. 
+
+VAR
+if a variable is defined in a loop or in an if statement it can be accessed outside the block and accidentally redefined leading to a buggy program.
+
+
+
+A lexical scope in JavaScript means that a variable defined outside a function can be accessible inside another function defined after the variable declaration. But the opposite is not true; the variables defined inside a function will not be accessible outside that function. SO CLOSURE
+
+/*Closure
 
 function outer() {
   const b = 5;
