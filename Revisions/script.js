@@ -1454,8 +1454,6 @@ bindName();
 
 const tooltips = document.querySelectorAll(".tooltip");
 
-
-
 for (let i = 0; i < tooltips.length; i++) {
   tooltips[i].addEventListener("click", function (e) {
     e.target.classList.toggle("active")
@@ -1469,6 +1467,24 @@ for(let tooltip of tooltips) {
     tooltip.classList.add("active");
     //e.target.parentNode.removeChild(e.target);
   }, false)
+}
+
+tooltips.forEach(function (tooltip) {
+  tooltip.addEventListener("click", e => {
+    e.target.style.backgroundColor = "green";
+  })
+})
+//or
+for(let i = 0; i < tooltips.length; i++) {
+  tooltips[i].addEventListener("click", function (e) {
+    tooltips[i].style.backgroundColor = "red";//or e.target
+  })
+}
+//or
+for(let tooltip of tooltips) {
+  tooltip.addEventListener("click", function (e) {
+    tooltip.style.backgroundColor = "red";
+  })
 }
 
 
@@ -1610,3 +1626,86 @@ console.log(numbersArray)//3,6,8,9
   return number + 1;
 });
 console.log(numbersMapArray);//3, 6 8, 9*/
+
+//THIS KEYWORD
+
+/*This refers to the listening element if use a normal
+function:
+
+const button = document.querySelector("button");
+button.addEventListener("click", function(e) {
+  console.log(this);
+});
+
+//NB NOT WORK IF ARROW FUNCTION so => is lexically scope bound
+uses this from the code that contains arrow function
+
+//can get it through e.currentTarget
+
+const button = document.querySelector("button");
+button.addEventListener("click", e => {
+  console.log(e.currentTarget)
+})
+
+const boxes = document.querySelector(".boxes");
+console.log(boxes)
+boxes.addEventListener("click", function (e) {
+  if (e.target.classList.contains(box)) {
+    e.target.parentNode.removeChild(e.target);
+  }
+}, false);
+
+
+//Animation with JS f.ex
+<p id="color" >I am changing my color every 3 seconds...</p>
+p {
+  color: black;
+}
+.animation {
+  animation-name: color;
+  animation-direction: alternate-reverse;
+  animation-duration: 3s;
+  animation-play-state: running;
+
+}
+
+@keyframes color {
+  0% {
+    color: red;
+  }
+  30% {
+    color: yellow;
+  }
+  60% {
+    color: green;
+  }
+  70% {
+    color: blueviolet;
+  }
+  100% {
+    color: blue;
+  }
+}
+const color = document.querySelector("#color");
+color.addEventListener("mouseover", function (e) {
+  color.classList.add('animation');
+})*/
+
+const pets = document.querySelector("#my-pets");
+const array = [
+  {pet: "cat", name: "Charlie"},
+  {pet: "dog", name: "Barney"},
+  {pet: "rabbit", name: "Freya"},
+  {pet: "hamster", name: "Robin"}
+];
+
+array.forEach(function (animal) {
+  const el = document.createElement("p");
+  el.innerText = `Here we have a ${animal.pet} called ${animal.name}!`;
+
+  pets.appendChild(el);
+})
+
+
+
+

@@ -34,6 +34,35 @@
       outline: 2px solid blue;
 
     }
+
+    p {
+      color: black;
+    }
+    .animation {
+      animation-name: color;
+      animation-direction: alternate-reverse;
+      animation-duration: 3s;
+      animation-play-state: running;
+    
+    }
+
+    @keyframes color {
+      0% {
+        color: red;
+      }
+      30% {
+        color: yellow;
+      }
+      60% {
+        color: green;
+      }
+      70% {
+        color: blueviolet;
+      }
+      100% {
+        color: blue;
+      }
+    }
   </style>
 </head>
 <body>
@@ -53,6 +82,10 @@
   </div>
 
   <div id="mylinks"></div>
+
+  <p id="color" >I am changing my color every 3 seconds...</p>
+
+  <div id="my-pets"></div>
 
   
   
