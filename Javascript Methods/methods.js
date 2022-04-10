@@ -696,7 +696,7 @@ population.reduce(function (acc, element) {
 //reduceRight() - same as reduce but reduces the array elements from right to left instead of left to right*/
 
 
-//GOOD EXERCICE
+//GOOD EXERCISE
 
 export function getNumberOfGrades(grades) {
   return grades.length;

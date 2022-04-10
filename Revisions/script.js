@@ -1379,9 +1379,83 @@ link1.addEventListener("click", () => link1.style.backgroundColor = "red" );
 
 
 
-*/
+*
 
-//Event bubbling with boxes 
+Event bubbling with boxes
+
+Event bubbling relates to the order in which event handlers
+are called when one element is nested inside a second element
+and both have a registered a listener for the same event a la a
+click.
+
+1) Capturing phase
+From the window to the event target parent
+The listeners that have the value of 'true' get captured
+If has false then the listener is not captured
+
+2) Target phase
+Event target itself. All listeners registered on the event target
+will be invoked - Js reaches the element that fired the event and
+triggers all eventlistener attached to it
+
+3) Bubbling phase
+From event target parent back to window. It goes up the dom tree and
+all eventlisteners with the value of false will be triggered
+So js goes through every HTML eelement, starting from target back to
+window
+
+To stop bubbling up:
+
+1) e.stopPropagation();
+2) event delegation pattern - only works on events that bubbles
+Attach one event listener to an ancestor element that listens to
+all events in descendant elements
+
+<ul>//SO UL IS ANCESTOR ELEMENT
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+</ul>
+
+const list = document.querySelector("ul");
+list.addEventListener('click', e => {
+  console.log(e.target);
+});
+
+NB e.target is sensitive and can misfire so best to use it
+with matches()
+
+list.addEventListener('click', e => {
+  if(e.target.matches('li) {
+    //do sth
+  })
+})
+
+
+IF NO NESTED ELEMENTS i.e here want only button
+
+<button>
+  <svg>
+  <span>Click</span>
+</button>
+
+
+set pointer-events to none in css
+button * {
+  pointer-events: none;
+}
+
+//or
+
+Closest - searches DOM upwards for an element that
+matches selector. If can't find it returns undefined
+
+button.addEventListener("click", e => {
+  const button = e.target.closest('button');
+  if(button) {
+    //do sth
+  }
+})
 
 /*
   <div class="boxes">
@@ -1614,7 +1688,7 @@ arr.forEach(function (item) {
   myTarget.appendChild(el);
 });
 
-//MAP and FOREACH again
+//MAP and for.Each again
 const numbersArray = [2, 5, 7, 8];
 
 numbersArray.forEach(function (number, index) {
