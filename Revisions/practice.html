@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice</title>
+  <style>
+    .box {
+      min-height: 2rem;
+      width: 2rem;
+      border: 1 px solid black;
+      margin: 1em;
+    }
+
+    /*
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+*/
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  line-height: 1;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  height: 100vh;
+}
+
+#swatch-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  height: 100%;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+
+  height: 16rem;
+  width: 12rem;
+}
+
+.color {
+  flex-grow: 1;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.pink {
+  background-color: #fde2e4;
+}
+.green {
+  background-color: #e2ece9;
+}
+.blue {
+  background-color: #bee1e6;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.purple {
+  background-color: #cddafd;
+}
+.swatch:nth-of-type(3) {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.content {
+  padding: 1em;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  text-align: left;
+  background-color: rgb(247, 243, 243);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.content p {
+  letter-spacing: 1px;
+}
+  </style>
+</head>
+<body>
+  <div id="my-node"></div>
+
+  <!--Swatches-->
+  <div id="swatch-container">
+    <div class="swatch">
+      
+    </div>
+    
+  </div>
+
+  <script src="practice.js"></script>
+</body>
+</html>
