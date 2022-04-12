@@ -1763,7 +1763,7 @@ p {
 const color = document.querySelector("#color");
 color.addEventListener("mouseover", function (e) {
   color.classList.add('animation');
-})*/
+})
 
 const pets = document.querySelector("#my-pets");
 const array = [
@@ -1778,7 +1778,57 @@ array.forEach(function (animal) {
   el.innerText = `Here we have a ${animal.pet} called ${animal.name}!`;
 
   pets.appendChild(el);
+})*/
+
+
+/** 
+ * <div id="star-wars">
+    <div class="character" data-type="good-guy">Luke Skywalker</div>
+    <div class="character" data-type="good-guy">Yoda</div>
+    <div class="character" data-type="villain">Darth Vader</div>
+  </div>
+  
+<style>
+  .goodguy {
+    color: green;
+    font-style: bold;
+  }
+</style>*/
+
+
+//If get a node list use Array.from  
+/*const characters = document.querySelectorAll(".character");
+console.log(characters)//get a node list in an array OR CAN DO*/
+const container = document.querySelector("#star-wars");
+const characters = container.querySelectorAll(".character");
+
+
+Array.from(characters).forEach(character => {
+  character.style.fontSize = "2rem";
 })
+
+const goodGuys = document.querySelectorAll("[data-type='good-guy']");
+for(let goodGuy of goodGuys) {
+  goodGuy.classList.add("goodguy");
+}
+
+/**
+<p>Paragraph 1</p>
+<p>Paragraph 2</p>
+<p>Paragraph 3</p>
+ */
+
+const paragraphs = document.querySelectorAll("p")
+console.log(paragraphs);
+
+Array.from(paragraphs).forEach(function (p) {
+  p.style.fontSize = "4rem";
+})
+
+for (let p of paragraphs) {
+  p.style.color = "magenta";
+}
+
 
 
 

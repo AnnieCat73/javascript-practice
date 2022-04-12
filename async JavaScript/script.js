@@ -225,7 +225,7 @@ catchRainbow();
 
 
 /*/////////////////////FROM HERE//////////////////////
-Sync = happening now in order instantanously like:
+ASync = happening now in order instantanously like:
 console.log(1);
 console.log(2);
 
