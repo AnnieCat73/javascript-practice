@@ -1781,7 +1781,7 @@ array.forEach(function (animal) {
 })*/
 
 
-/** 
+/**********************************************************************
  * <div id="star-wars">
     <div class="character" data-type="good-guy">Luke Skywalker</div>
     <div class="character" data-type="good-guy">Yoda</div>
@@ -1828,6 +1828,56 @@ Array.from(paragraphs).forEach(function (p) {
 for (let p of paragraphs) {
   p.style.color = "magenta";
 }
+
+for (let i = 0; i < paragraphs.length; i++ ) {
+  paragraphs[i].style.backgroundColor = "red";
+}
+
+/*ATTRIBUTES
+
+1)Built in:
+
+- they are always set to true in JS unless you set them to false
+
+<input type="checkbox" checked>
+id, class are built in f.ex
+
+
+2)Data attribute - make your own attributes
+
+<div class="clown-hat" data-color="red" data-num-stripes="3">A Clown hat</div>
+
+const clownHat = document.querySelector(".clown-hat");
+
+const clownHatColor = clownHat.dataset.color
+console.log(clownHatColor)//red
+const clownHatSize = clownHat.dataset.numStripes
+console.log(clownHatSize)//3
+
+const clownHatColorMore = clownHat.dataset.color = "pink";
+console.log(clownHatColorMore)//pink
+
+//setting attributes
+const element = document.querySelector(".element");
+element.setAttribute('cheked', 'true');//so which attr then value
+
+//Reading attributes
+const element1 = document.querySelector(".element1");
+element1.getAtrribute("data-color")//name of attr eg data-color="red"
+
+//all attributes are strings so if need to convert it into a num f.ex
+const clownHatStripes = parseInt(clownHat.getAttribute('data-num-stripes'));
+console.log(clownHatStripes);// 3
+
+//removing attributes 
+const clownHat = document.querySelector("clown-hat");
+clownHat.removeAttribute("data-color");*/
+
+
+
+
+
+
 
 
 
