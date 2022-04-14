@@ -1793,12 +1793,12 @@ array.forEach(function (animal) {
     color: green;
     font-style: bold;
   }
-</style>*/
+</style>
 
 
 //If get a node list use Array.from  
 /*const characters = document.querySelectorAll(".character");
-console.log(characters)//get a node list in an array OR CAN DO*/
+console.log(characters)//get a node list in an array OR CAN DO
 const container = document.querySelector("#star-wars");
 const characters = container.querySelectorAll(".character");
 
@@ -1816,7 +1816,7 @@ for(let goodGuy of goodGuys) {
 <p>Paragraph 1</p>
 <p>Paragraph 2</p>
 <p>Paragraph 3</p>
- */
+ 
 
 const paragraphs = document.querySelectorAll("p")
 console.log(paragraphs);
@@ -1872,6 +1872,21 @@ console.log(clownHatStripes);// 3
 //removing attributes 
 const clownHat = document.querySelector("clown-hat");
 clownHat.removeAttribute("data-color");*/
+
+/*HOISTING
+
+refers to the process of moving all declarations to the top of the current scope before code execution
+
+no matter where functions and variables are declared they are moved to the top of their scope regardless of whether they are locally or globally scoped before code execution
+
+It allows us to call functions before even writing them in our code
+
+The Javascript engine hoists the variables declared using let but doesn't initialize them as they would width var
+
+To stop hoisting use let and const, use function declarations instead of function declartions
+By enabling strict mode, we opt into a restricted variant of JavaScript that will not tolerate the usage of variables before they are declared.
+
+
 
 
 
