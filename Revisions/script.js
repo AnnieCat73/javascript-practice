@@ -1884,8 +1884,33 @@ It allows us to call functions before even writing them in our code
 The Javascript engine hoists the variables declared using let but doesn't initialize them as they would width var
 
 To stop hoisting use let and const, use function declarations instead of function declartions
-By enabling strict mode, we opt into a restricted variant of JavaScript that will not tolerate the usage of variables before they are declared.
+By enabling strict mode, we opt into a restricted variant of JavaScript that will not tolerate the usage of variables before they are declared.*/
 
+function sayHello () {
+  console.log('Hello world');
+}
+sayHello();
+
+//becomes
+sayHello();
+function sayHello () {
+  console.log('Hello world');
+}
+
+//functon expression do not get hoisted so
+const sayHello1 = function () {
+  console.log('Hello world');
+}
+sayHello1()
+
+//The Event Object
+/*All event listener callbacks accept an argument
+This argument is the e object (event)*/
+
+const button = document.querySelector("#button");
+button.addEventListener("click", e  => {
+  console.log(e);
+})//get click { target: button #button etc once click on it in console}
 
 
 
