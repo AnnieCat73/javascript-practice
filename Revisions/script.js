@@ -1912,6 +1912,53 @@ button.addEventListener("click", e  => {
   console.log(e);
 })//get click { target: button #button etc once click on it in console}
 
+//DOM TRAVERSALS
+
+//1) Downwards
+
+/*
+a)
+
+<div class="component">
+  <h2 class="component__title">Component title</h2>
+</div>
+
+const component = document.querySelector('.component');
+const title = component.querySelector('.component__title');
+
+//b Children - select immediate nested elements
+
+<ul class="list">
+  <li><a href="#">Link 1</a></li>
+  <li><a href="#">Link 1</a></li>
+  <li><a href="#">Link 1</a></li>
+</ul>
+
+const list = document.querySelector(".list");
+const listItems = list.children
+
+NB They return an HTML collection and can't use for.Each
+method on them so if need to then use Array.from(listItems)
+
+const array = Array.from(listItems)
+array.forEach(el => {
+
+})
+
+c) Selecting a specific child
+
+const listItems = document.querySelectorAll('li');
+
+const firstItem = listItems[0]
+const secondItem = listItems[1]
+const thirdItem = listItems[2] etc
+
+d) firstElementChild
+
+const list = document.querySelector('.list');
+const firstItem = list.firstElementChild
+
+
 
 
 
