@@ -1958,6 +1958,45 @@ d) firstElementChild
 const list = document.querySelector('.list');
 const firstItem = list.firstElementChild
 
+//2 SIDEWAYS
+
+a) nextElementSibling 
+
+<ul class="list">
+  <li><a href="#">Link 1</a></li>
+  <li><a href="#">Link 1</a></li>
+  <li><a href="#">Link 1</a></li>
+</ul>
+
+const firstItem = document.querySelector("li");
+const secondItem = firstItem.nextElementSibling
+
+b) previousElementSibling
+
+const secondListItem = document.querySelector("li")[1];
+const firstListItem = secondListItem.previousElementSibling
+
+c) parentElement, children and index
+
+const list = firstItem.parentElement
+const allItems = list.children
+const fourthItem = allItems[3]
+
+const firstItem = document.querySelector("li");
+const fourthItem = firstItem.parentElement.children[3]
+
+//3) UPWARDS
+
+a) parentElement
+
+const firstItem = document.querySelector("li")
+const list = firstItem.parentElement
+
+b) closest
+
+const firstLink = document.querySelector('a');
+const list = firstLink.closest('.list')
+
 
 
 
