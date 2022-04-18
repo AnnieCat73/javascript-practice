@@ -1998,7 +1998,38 @@ const firstLink = document.querySelector('a');
 const list = firstLink.closest('.list')
 
 
+//Loops
 
+const numbers = [1, 12, 14, 16, 20, 65, 100];
+
+for (let i = 0; i < numbers.length; i++) {
+  const overFive = numbers[i];
+  if (overFive > 5) {
+    console.log(`This number is over 5: ${overFive}`);
+  }
+}
+
+for (let number of numbers) {
+  if (number > 5) {
+    console.log(number)
+  }
+}
+
+let newNumbers = [];
+
+for (const number of numbers) {
+  if(number = 10) {
+    newNumbers.push(number);
+  }
+}
+
+const numbers = [1, 12, 14, 16, 20, 65, 100];
+for (let i = 0; i < numbers.length; i++) {
+  const num = numbers[i];
+  if (num < 20) {
+    console.log(num)
+  }
+}
 
 
 
