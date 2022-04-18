@@ -1085,13 +1085,13 @@ const [first, second, , , fifth] = a
 
 ----------------------------------------------------
 <div class="greeting">
-	<style type="text/css">
-		p {
-			color: rebeccapurple;
-		}
-	</style>
-	<p hidden>This is not rendered.</p>
-	<p>Hello world!</p>
+  <style type="text/css">
+    p {
+      color: rebeccapurple;
+    }
+  </style>
+  <p hidden>This is not rendered.</p>
+  <p>Hello world!</p>
 </div>
 
 let greeting = document.querySelector('.greeting');
@@ -1151,7 +1151,7 @@ elem.removeAttribute('data-chips');
 
 // Check if an element has the `[data-drink]` attribute
 if (elem.hasAttribute('data-drink')) {
-	console.log('Add a drink!');
+  console.log('Add a drink!');
 }
 
 TERNARY OPERATOR
@@ -1166,9 +1166,9 @@ let num = 0;
 let answer;
 
 if (num > 10) {
-	answer = num;
+  answer = num;
 } else {
-	num = 42;
+  num = 42;
 }
 
 CONVERTING ARRAYS INTO HTML
@@ -1177,15 +1177,15 @@ let wizards = ['Gandalf', 'Radagast', 'Merlin'];
 And I want to create an unordered list from it, like this.
 
 <ul>
-	<li>Gandalf</li>
-	<li>Radagast</li>
-	<li>Merlin</li>
+  <li>Gandalf</li>
+  <li>Radagast</li>
+  <li>Merlin</li>
 </ul>
 
 My favorite way to do this is with the .map() and .join() methods.
 
 wizards.map(function (wizard) {
-	return '<li>' + wizard + '</li>';
+  return '<li>' + wizard + '</li>';
 });
 
 At this point, we have a new array that looks like this.
@@ -1197,7 +1197,7 @@ Next, we need each of those list items combined into a single string.
 We can use the join() method for that. It normally separates each item with a comma (,), but we can pass in an empty string to use as a delimiter instead.
 
 wizards.map(function (wizard) {
-	return '<li>' + wizard + '</li>';
+  return '<li>' + wizard + '</li>';
 }).join('');
 
 We now have a string that looks like this.
@@ -1208,21 +1208,21 @@ We now have a string that looks like this.
 
 let app = document.querySelector('#app');
 app.innerHTML = '<ul>' + wizards.map(function (wizard) {
-	return '<li>' + wizard + '</li>';
+  return '<li>' + wizard + '</li>';
 }).join('') + '</ul>';
 
 ALTERNATIVE:
 
 let html = '';
 for (let wizard of wizards) {
-	html += '<li>' + wizard + '</li>';
+  html += '<li>' + wizard + '</li>';
 }
 
 Finally, inject your markup into the DOM.
 
 let html = '';
 for (let wizard of wizards) {
-	html += '<li>' + wizard + '</li>';
+  html += '<li>' + wizard + '</li>';
 }
 
 app.innerHTML = '<ul>' + html + '</ul>';
@@ -1244,16 +1244,16 @@ var app = document.querySelector('#app');
 
 // Some API data
 var newsStories = [
-	//...
+  //...
 ];
 
 // Inject the articles into the DOM
 
 app.innerHTML = newsStories.map(function (story) {
-	return `
-		<h1>${story.title}</h1>
-		<p>By ${story.author} on ${story.date}</p>
-		${story.content}`;
+  return `
+    <h1>${story.title}</h1>
+    <p>By ${story.author} on ${story.date}</p>
+    ${story.content}`;
 }).join('');
 
 While the Element.innerHTML property is convenient and easy ways to inject markup into the DOM, they can expose you to cross-site scripting (or XSS) attacks when used with third-party content.
@@ -1295,9 +1295,9 @@ div.style.backgroundColor = 'rebeccapurple';
 Insert one or more elements or strings at the end of a set elements inside a shared parent. Call the Element.append() method on the target node, and pass in one or more new elements or strings as arguments.
 
 <ul id="list">
-	<li>Item 1</li>
-	<li>Item 2</li>
-	<li>Item 3</li>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
 </ul>
 
 // Create a new element
@@ -1333,7 +1333,7 @@ let btns = document.querySelectorAll('button');
 
 // Create an array of their text content
 let btnsArr = Array.from(btns, function (btn) {
-	return btn.textContent;
+  return btn.textContent;
 });
 
 
@@ -1886,14 +1886,14 @@ The Javascript engine hoists the variables declared using let but doesn't initia
 To stop hoisting use let and const, use function declarations instead of function declartions
 By enabling strict mode, we opt into a restricted variant of JavaScript that will not tolerate the usage of variables before they are declared.*/
 
-function sayHello () {
+function sayHello() {
   console.log('Hello world');
 }
 sayHello();
 
 //becomes
 sayHello();
-function sayHello () {
+function sayHello() {
   console.log('Hello world');
 }
 
@@ -1908,7 +1908,7 @@ sayHello1()
 This argument is the e object (event)*/
 
 const button = document.querySelector("#button");
-button.addEventListener("click", e  => {
+button.addEventListener("click", e => {
   console.log(e);
 })//get click { target: button #button etc once click on it in console}
 
@@ -2031,12 +2031,84 @@ for (let i = 0; i < numbers.length; i++) {
   }
 }
 
+/*Fundamentals of JS in Bootcamp
+
+A variable is a value assigned to an identifier, so you can reference and use it later in the program.
+
+let a = 0
+a = 1
+
+const defines a constant reference to a value. This means the reference cannot be changed.
+
+The remainder operator
+4 % 2 //0
+
+An array is a collection of elements.
+
+You can access any element of the array by referencing its index. The first item has index zero:
+
+const a = [1, 2, 3]
+
+a[0] //1
+a[1] //2
+a[2] //3
+
+const fruits = ['banana', 'pear', 'apple']
+
+const morefruits = [...fruits]
+
+console.log(morefruits)
+//[ 'banana', 'pear', 'apple' ];
+
+const list = [1, 2]
+const [first, second] = list
+
+console.log(first) //1
+console.log(second) //2
 
 
+//Conditionals - do one thing or a different thing based on the 
+state of our variables
+
+Comparison operators always returns a boolean, a value that's `true` or `false`, and they are divided in 2 groups: **equality operators** , and **disequality comparison operators**.
+
+These are equality operators:
+
+- `===` checks for equality
+- `!==` checks for inequality
+
+These are disequality comparison operators:
+
+- `<` means "less than"
+- `<=` means "less than, or equal to"
+- `>` means "greater than"
+- `>=` means "greater than, or equal to"
+
+An `if` statement is used to make the program take a route, or another, depending on the result of the evaluation of an expression.
+
+This is the simplest example, which always executes:
 
 
+if (true) {
+  //do something
+}
+
+on the contrary, this is never executed:
+
+if (false) {
+  //do something (? never ?)
+}
 
 
+The conditional checks the expression you pass to it for true or false value. If you pass a number, that always evaluates to true unless it's 0. If you pass a string, it always evaluates to true unless it's an empty string. Those are general rules of casting types to a boolean.
+
+Did you notice the curly braces? That is called a **block**, and it is used to group a list of different statements.
 
 
+Ternary
 
+isTrue ? /* do this / : /* do that /
+
+const running = true
+
+(running === true) ? console.log('stop') : console.log('run')
