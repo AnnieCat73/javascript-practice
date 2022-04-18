@@ -2112,3 +2112,350 @@ isTrue ? /* do this / : /* do that /
 const running = true
 
 (running === true) ? console.log('stop') : console.log('run')
+
+
+//FUNCTIONS - core of JS
+
+A function is a block of code, self contained, and we can tell our program to ran that code when we need it.
+
+Here's a **function declaration**:
+
+function test() {
+  // do something
+}
+
+The `// do something` comment is a placeholder for a set of instructions that can be long as much as you want.
+
+When you want to run this function, you "call it" or "invoke it", like this:
+
+test()
+
+The difference between arguments and parameters is this: you define the parameters and that's what you see inside the function. Arguments are passed by the program when you call the function.
+
+They are basically the value assigned to the parameter.
+
+Functions can have default values for the parameters that are not passed by the caller:
+
+## Returning values from a function
+
+A function can have a return value.
+
+By default a function returns `undefined`.
+
+If you want to return a value from it, you add a `return` keyword with a value:
+
+function test() {
+  // do something
+  return "hi!"
+}
+
+
+In your program you can assign the return value of the function to a variable, when you invoke the function:
+
+
+function test() {
+  // do something
+  return "hi!"
+}
+
+const result = test()
+result now holds a string with the hi! value.
+//
+You can only return one value from a function.
+
+A "trick" to return multiple values from a function is to return an object, or an array, like this:
+
+
+function test() {
+  return ["Flavio", 37]
+}
+
+Then you can call the function and save your array to a variable, or use array destructuring like this:
+
+const [name, age] = test()
+
+function increment(num) {
+  if(num === undefined) {
+  return `Please pass a number`;//early return i.e return not at end
+  }                           //of function but at the beginning when
+  return num + 1;             //when validating data function        
+}
+increment()
+
+//function ends at first return as that's true 
+
+//Arrow functions 
+
+function test() {
+  //...
+}
+
+to
+
+() => {
+  //...
+}
+
+
+But.. notice that we don't have a name here.
+
+Arrow functions are anonymous. We must assign them to a variable.
+
+We can assign a regular function to a variable, and invoke the function using the variable name:
+
+let test = () => {
+  //...
+}
+test()
+
+Parameters are passed in the parentheses:
+
+
+const test = (param1, param2) => console.log(param1, param2)
+
+If you have one (and just one) parameter, you could omit the parentheses completely:
+
+const test = param => console.log(param)
+
+//MAP
+
+the *callback function* (the function we pass to `map()`) receives each item's value, and you can do many things now.
+
+To start with, you can return the item, so you basically clone the original array, provided it's filled with primitive values:
+
+const a = [1, 2, 3]
+const b = a.map(item => item * 10)
+
+//OBJECTS
+
+Object oriented programming is one of the most important concepts in JavaScript.
+
+Any value that's not of a primitive type (a string, a number, a boolean, a symbol, null, or undefined) is an **object**.
+
+const car = {}
+
+or
+
+const car = new Object() or const car = Object.create({})
+
+const car = {
+  color: 'blue'
+}
+
+If you want to use a label name not valid as a variable name, you can use quotes around it. Here's an example with a space in the property label:
+
+const car = {
+  color: 'blue',
+  'the color': 'blue'
+}
+
+car.color //'blue'
+car['the color'] //'blue'
+
+const car = {
+  color: 'blue'
+}
+
+car.color = 'yellow'
+car['color'] = 'red'
+
+//Delete a property
+const car = {
+  model: 'Fiesta',
+  color: 'green'
+}
+
+delete car.model
+
+//With objects instead, you copy a reference to the same object:
+
+const car = {
+  color: "blue",
+}
+
+const anotherCar = car
+anotherCar.color = "yellow"
+car.color //'yellow'
+
+//Mehods
+
+const car = {
+  start: function () {
+    console.log("Car engine started")
+  },
+}
+car.start()
+
+const car = {
+  brand: "Ford",
+  model: "Fiesta",
+  goTo: function (destination) {
+    console.log(`Going to ${destination}`)
+  },
+}
+const car = {
+  brand: "Ford",
+  model: "Fiesta",
+  goTo: function (destination) {
+    console.log(`Going to ${destination}`)
+  },
+}
+
+const car = {
+  brand: "Ford",
+  model: "Fiesta",
+  goTo: function (destination) {
+    console.log(`Going to ${destination}`)
+  },
+}
+car.goTo("Rome")
+// Going to Rome
+
+//this 
+
+`this` is a keyword that has different values depending on where it's used, but there's just one place where it makes sense to use `this`: INSIDE OBJECT METHODS.
+
+A method, as you know, is a function attached to an object.
+
+You know that functions have two forms:
+
+- regular functions
+- arrow functions
+
+If you need to reference the object instance from within a method, you can't use arrow functions. You have to use regular functions.
+Arrow functions are not bound to the object, and that's why regular functions are often used as object methods.
+
+const car = {
+  brand: "Ford",
+  model: "Fiesta",
+  start: function () {
+    console.log(`Started
+          ${this.brand} ${this.model}`)
+  },
+}
+
+car.start()
+//Started Ford Fiesta
+
+//Array of objects
+
+const list = [
+  { color: 'white', size: 'XXL' },
+  { color: 'red', size: 'XL' },
+  { color: 'black', size: 'M' }
+]
+
+You want to order it by the color name, in alphabetical order: black, red, white.
+
+You can use the sort() method of Array, which takes a callback function, which takes as parameters 2 objects contained in the array (which we call a and b):
+
+When we return 1, the function communicates to sort() that the object b takes precedence in sorting over the object a. Returning -1 would do the opposite.
+
+list.sort((a, b) => {
+  if(a.size > b.size) {
+    return 1;
+  } else {
+    return -1;
+  }
+}) //or better
+
+
+list.sort((a, b) => {
+  if(a.size > b.size) {
+    return 1;
+  } 
+  return -1;
+}) //or better
+
+//or ternary
+
+list.sort((a, b) => (a.color > b.color) ? 1 : -1)
+
+list.sort((a, b) => (a.color > b.color) ? 1 : (a.color === b.color) ? ((a.size > b.size) ? 1 : -1) : -1 )
+
+
+//Object destructuring
+
+const person = {
+  firstName: 'Tom',
+  lastName: 'Cruise',
+  actor: true,
+  age: 54, //made up
+}
+
+You can extract just some of the object properties and put them into named variables:
+const { firstName, age } = person
+
+Now we have 2 new variables, firstName and age, that contain the desired values:
+console.log(firstName) // 'Tom'
+console.log(age) // 54
+
+You can also automatically assign a property to a variable with another name:
+const { firstName: name, age } = person
+
+//Passing objects as function arguments or returning objects from a function
+
+const printNameAndAge = ({ name, age }) => {
+  console.log(name, age)
+}
+
+const person = {
+  name: 'Flavio',
+  age: 38
+}
+
+printNameAndAge(person)
+
+//or
+
+printNameAndAge({ name: 'Roger', age: 9 })
+
+//another ex
+
+function test() {
+  const name = 'Flavio'
+  const age = 38
+
+  return { name, age }
+}
+const { name, age }= test()
+
+
+//Cloning objects / a new object from another object
+
+const a = { test: 'test' }
+const b = { ...a }
+
+older way: //not works if objects has methods
+const b = object.assign({}, a)
+
+const car = {
+  owner: {
+    name: "Flavio"
+  }
+}
+
+//so
+const newCar = {...car}
+newCar.owner = {...car.owner}
+
+
+//ASYNCHRONOUS CODE
+
+JavaScript was born inside the browser, its main job, in the beginning, was to respond to user actions, like mouse clicks.
+
+We needed a way to say "do this when the user clicks that button".
+
+That’s done using **callbacks**
+
+document.querySelector('#button').addEventListener('click', () => {
+  //this function is executed when the mouse is clicked
+})
+
+() => {
+  //this function is executed when the mouse is clicked
+}
+We call this a **callback function**.
+
+It is only executed when the browser decides it should run, which in this case is when the user clicks the button.
+And in the meantime it will keep executing other lines of JavaScript in our program, without stopping to wait when the user will click the button.
