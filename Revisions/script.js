@@ -2459,3 +2459,285 @@ We call this a **callback function**.
 
 It is only executed when the browser decides it should run, which in this case is when the user clicks the button.
 And in the meantime it will keep executing other lines of JavaScript in our program, without stopping to wait when the user will click the button.
+
+//TIMERS
+
+Event handlers are just one possible use case for callbacks.
+
+Another quite useful one are timers.
+
+But I mention them because they are perfect to explain callbacks and asynchronous code.
+
+We have 2 kinds of timers:
+
+- `setTimeout()`
+- `setInterval()`
+
+With `setTimeout` you specify a callback function to execute later, and a value expressing how later you want it to run, in milliseconds:
+
+setTimeout(() => {
+  // runs after 2 seconds
+}, 2000)
+
+//or can do with variable 
+const timer = setTimeout(() => {
+  // runs after 2 seconds
+}, 2000)
+clearTimeOut(timer);//stops the above code from running
+
+setTimeout(() => {
+  // runs after 50 milliseconds
+}, 50)
+
+
+setInterval() is a function similar to setTimeout, with a difference: instead of running the callback function once, it will run it forever, at the specific time interval you specify (in milliseconds):
+
+setInterval(() => {
+  // runs every 2 seconds
+}, 2000)
+
+The function above runs every 2 seconds unless you tell it to stop, using clearInterval, passing it the interval id that setInterval returned:
+
+const id = setInterval(() => {
+  // runs every 2 seconds
+}, 2000)
+
+clearInterval(id)
+
+It's useful to call clearInterval inside the setInterval callback function, to let it auto-determine if it should run again or stop. For example, this code runs something unless status has the value done:
+
+const interval = setInterval(() => {
+  if (status === 'done') {
+    clearInterval(interval)
+    return
+  }
+  // otherwise do things
+}, 100)
+
+
+//PROMISES
+
+Promises are another way to handle asynchronous code.
+
+let done = true
+
+const isFinished = new Promise((resolve, reject) => {
+  if (done) {
+    resolve('Here is the thing I built')
+  } else {
+    reject('Still working on something else')
+  }
+})
+
+//or with .then etc
+
+isFinished.then(() => {
+  console.log('resolved')
+  }).catch(() => {
+  console.log('rejected')
+})
+//or similar
+isFinished.then((msg) => {
+  console.log(msg)
+  }).catch((e) => {
+  console.log(e)
+})
+
+You create a promise using the `new Promise()` syntax, which accepts a function.
+
+That function gets two parameters, `resolve` and `reject`:
+
+The promise is either fulfilled, or rejected.
+
+In the above example, we call `resolve()` when `done` is `true`. You can change `done` to `false`, and the promise will fail.
+
+What does it mean? It means that when we'll use the promise, we'll be able to handle a different scenario.
+
+
+
+ASYNC
+
+Suppose you have an isFinished function. And we can await until it’s finished using the keyword await.
+When the JavaScript engine sees the await keyword, the execution of the current function will halt until isFinished is resolved.
+
+const doSomething = async () => {
+  await isFinished
+  console.log(`ok it's finished!`)
+}
+doSomething();
+
+//USING THE FETCH API
+
+JavaScript provides a fetch() API we use to perform network requests.
+
+const url = `http://api.github.com/users/flaviocopes`
+fetch(url)
+const response = await fetch(url)
+const data = await response.json()
+console.log(data)
+
+Of course this code, using `await` must run in an async function. 
+
+Here for example it's wrapped in an immediately-invoked async function:
+
+(async () => {
+  const response = await fetch(url)
+  const data = await response.json()
+  console.log(data)
+})()
+
+We can use a try/catch block to intercept any error occurring during the execution of the request:
+
+try {
+  const response = await fetch(url)
+  const data = await response.json()
+  console.log(data)
+} catch (error) {
+  console.error(error)
+}
+
+OTHER HTTP METHOD THAN GET REQUESTS: POST, PUT, DELETE or OPTIONS.
+
+Specify the method in the method property of the request, and pass additional parameters in the header and in the request body:
+
+Example of a POST request:
+
+const options = {
+  method: "post",
+  headers: {
+    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+  },
+  body: "color=green&test=1",
+}
+
+try {
+  fetch(url, options)
+} catch (err) {
+  console.error("Request failed", err)
+}
+
+
+USING JAVASCRIPT IN THE BROWSER I.E THE DOM
+
+The DOM is the browser internal representation of a web page.
+
+When the browser retrieves your HTML from your server, the internal parser analyzes the structure of your code, and creates a model of it.
+
+Based on this model, the browser then renders the page on the screen.
+Js is the de-fact standard to access the DOM  since it's the only
+language the browsers can run.
+
+The DOM is a tree of elements, with the Document node at the root, which points to the `html` Element node, which in turn points to its child element nodes `head` and `body`, and so on.
+
+From each of those elements, you can navigate the DOM structure and move to different nodes.
+
+## The `window` object
+
+The `window` object represents the window that contains the DOM document.
+
+With JavaScript you can interact with the DOM to:
+
+- inspect the page structure
+- access the page metadata and headers
+- edit the CSS styling
+- attach or remove event listeners
+- edit any node in the page
+- change any node attribute
+
+Properties and methods of the `window` object can be called without referencing `window` explicitly, because it represents the **global object**.
+
+For example, the property `window.document` can also be referenced using `document`.
+
+Long list of properties but f.ex console.log, document, localStorage
+Methods: alert(), setInterval(), addEventListener() etc
+Type window in console to see all
+
+The Document object can be accessed from window.document, and since window is the global object, you can use the shortcut document object directly from the browser console, or in your JavaScript code.
+
+- `document.getElementById()` accepts an `id` attribute value and returns the element (only one, as `id` cannot be repeated in the page according to the HTML standard)
+- `document.getElementsByTagName()` accepts a `tag` element name and returns all the elements that match it
+- `document.getElementsByClassName()` accepts a `class` attribute name and returns all the elements that match it
+- `document.querySelector()`
+- `document.querySelectorAll()`
+`querySelectorAll()` and `querySelector()` 
+
+A NodeList object is not an array, but you can iterate it with forEach or for..of, or you can transform it to an array with Array.from() if you want.
+
+The easiest way to loop over the results is to use the for..of loop:
+
+for (const item of document.querySelectorAll('.buttons')) {
+  //...do something
+}
+
+- `element.prepend(newChild)` alters the tree under "element", adding a new child Node "newChild" to it, before other child elements. You can pass one or more child Nodes, or even a string which will be interpreted as a Text node.
+- `element.replaceChild(newChild, existingChild)` alters the tree under "element", replacing "existingChild" with a new Node "newChild".
+- `element.insertAdjacentElement(position, newElement)` inserts "newElement" in the DOM, positioned relatively to "element" depending on "position" parameter value.
+- first.removeChild(second) removes the child node "second" from the node "first"
+
+//EVENT HANDLERS
+
+**Event Handler**, which is a function that's called when an event occurs.
+
+You can register multiple handlers for the same event, and they will all be called when that event happens.
+
+JavaScript offer three ways to register an event handler:
+
+- Inline event handlers
+- DOM on-event handlers
+- addEventListener
+
+## Inline event handlers
+
+This style of event handlers is very rarely used today
+
+<a href="#" onclick="alert('link clicked')">A link</a>
+
+## DOM on-event handlers
+
+This is common when an object has at most one event handler, as there is no way to add multiple handlers in this case:
+
+document.querySelector('a').onclick = () => {
+  alert('link clicked')
+}
+
+if ('onclick' in document.querySelector('a')) {
+  alert('onclick handler already registered')
+}
+
+## Using addEventListener
+
+Using addEventListener is the modern way. This method allows to register as many handlers as we need, and it's the one you will find mostly used in the wild
+
+window.addEventListener('load', () => {
+  //window loaded
+})
+
+document.querySelector('div').addEventListener('click', () => {
+  //
+})
+
+## The Event object
+
+An event handler gets an `Event` object as the first parameter:
+This object contains a lot of useful properties and methods, like:
+
+- `target`, the DOM element that originated the event
+- `type`, the type of event
+- `stopPropagation()`,
+
+const link = document.getElementById('my-link')
+link.addEventListener('click', event => {
+  // link clicked
+})
+
+const link = document.getElementById('my-link')
+link.addEventListener('mousedown', event => {
+  // process the event
+  // ...
+
+  event.stopPropagation()
+})
+
+See list of mouse events, touch events, keyboard events
+
+//
