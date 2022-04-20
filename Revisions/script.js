@@ -2740,4 +2740,47 @@ link.addEventListener('mousedown', event => {
 
 See list of mouse events, touch events, keyboard events
 
-//
+//FLAVIO JS BITS
+
+const list = [
+  { color: 'white', size: 'XXL' },
+  { color: 'red', size: 'XL' },
+  { color: 'black', size: 'M' }
+]
+
+list.sort((a, b) => (a.color > b.color) ? 1 : -1)
+
+//becomes this
+
+[
+  { color: 'black', size: 'M' },
+  { color: 'red', size: 'XL' },
+  { color: 'white', size: 'XXL' }
+]
+
+
+
+const person = {
+  firstName: 'Tom',
+  lastName: 'Cruise',
+  actor: true,
+  age: 54, //made up
+}
+
+const { firstName, actor, age } = person
+console.log(firstName)
+
+const printNameAndAge = ({ name,age }) => {
+  console.log(name,age)
+}
+
+const man = {
+  name: 'Harry',
+  age: 65
+}
+//printNameAndAge(man)
+printNameAndAge({name: 'Harry', age: 70})//Harry 70
+
+const numbers = [8, 9, 6,10, 3];
+const clonedNumbers = [...numbers]
+console.log(clonedNumbers);//[8, 9, 6,10, 3];"*/
