@@ -2783,4 +2783,58 @@ printNameAndAge({name: 'Harry', age: 70})//Harry 70
 
 const numbers = [8, 9, 6,10, 3];
 const clonedNumbers = [...numbers]
-console.log(clonedNumbers);//[8, 9, 6,10, 3];"*/
+console.log(clonedNumbers);//[8, 9, 6,10, 3];"
+
+********************
+
+const id = setTimeout(() => {
+  console.log("Hi!");
+}, 2000)//says Hi once after 2 s
+
+clearTimeout(id);//stops it doing so
+
+setTimeout(() => {
+  console.log(5+3)
+}, 3000);//8
+
+const timer = setInterval(() => {
+  console.log(40 * 90)
+}, 3000)//3600 every 3s unless below
+
+clearInterval(timer)
+
+
+//PROMISES
+
+let done = false;
+const isFinished = new Promise ((resolve, reject) => {
+  if(done) {
+    const workDone = "work done";
+    resolve(workDone);
+  } else {
+    const notDone = "still working on it...";
+    reject(notDone);
+  }
+})
+isFinished//Promise { <rejected> 'still working on it...' }
+//isFinished() doesn't work but without does
+
+let happy = true;
+const mood = new Promise((resolve, reject) => {
+  if(happy) {
+    resolve("Happy face!");
+  } else {
+    reject ("Sad face");
+  }
+})
+mood//Promise { 'Happy face!' }
+
+
+*/
+
+const btn = document.querySelector("#button");
+
+//nb e object has methods/properties like target and type
+btn.addEventListener("click", e => console.log(e));
+btn.addEventListener("click", e => console.log(e.target));//button
+btn.addEventListener("mousedown", e => console.log(e.type));//click
