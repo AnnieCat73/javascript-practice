@@ -68,6 +68,34 @@
         color: blue;
       }
     }
+
+    .events {
+      width: 100%;
+      background-color: #F1C40F;
+      text-align: center;
+      font-family: "Courier New";
+      min-height: 20rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    table {
+      border: 30px solid white;
+      margin: 0px;
+      padding: 0px;
+      color: white;
+      font-size: 1.5rem;
+      outline: none;
+      cursor: pointer;
+      background-color: #2274A5;
+      
+    }
+
+    th, td {
+      padding: 20px
+    }
+
   </style>
 </head>
 <body>
@@ -104,6 +132,24 @@
 
   <div class="clown-hat" data-color="red" data-num-stripes="3">A Clown hat</div>
   <button id="button"></button>
+
+  <section class="events">
+    <table>
+      <thead>
+        <th>Key</th>
+        <th>Code</th>
+        <th>Alt</th>
+        <th>Ctrl</th>
+        <th>Meta</th>
+        <th>Shift</th>
+        <th>Repeat</th>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </section>
+
+  <div id="github"></div>
 
 
   <script src="script.js"></script>

@@ -2830,7 +2830,7 @@ const mood = new Promise((resolve, reject) => {
 mood//Promise { 'Happy face!' }
 
 
-*/
+
 
 const btn = document.querySelector("#button");
 
@@ -2838,3 +2838,94 @@ const btn = document.querySelector("#button");
 btn.addEventListener("click", e => console.log(e));
 btn.addEventListener("click", e => console.log(e.target));//button
 btn.addEventListener("mousedown", e => console.log(e.type));//click
+
+
+//LOGGING KEY EVENTS
+
+const log = e => {
+  //create a tr element
+  const tr = document.createElement('tr');
+  //create a td element/let as need multiple 
+  let td = document.createElement('td');
+  //what is inside td
+  td.innerHTML = e.key;
+  //append td to tr
+  tr.appendChild(td);
+  //append it all to tbody
+
+  td = document.createElement('td');
+  td.innerHTML = e.code;
+  tr.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerHTML = e.altKey ? ':)' : ':(';
+  tr.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerHTML = e.code;
+  tr.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerHTML = e.ctrlKey ? ':)' : ':(';
+  tr.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerHTML = e.metaKey ? ':)' : ':(';
+  tr.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerHTML = e.shiftKey ? ':)' : ':(';
+  tr.appendChild(td);
+
+  td = document.createElement('td');
+  td.innerHTML = e.repeat ? ':)' : ':(';
+  tr.appendChild(td);
+
+
+
+  document.querySelector('tbody').appendChild(tr);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  document.addEventListener('keyup', e => {
+    log(e)
+  })
+})*/
+
+const url = `http://api.github.com/users/flaviocopes`;
+const github = document.querySelector("#github");
+
+/*const getData = async () => {
+  try {
+    const response = await fetch(url);
+    console.log(response.headers.get('Content-Type'));//json utf-8
+    console.log(response.headers.get('Date'));//null body status
+    console.log(response.status);//200 - ok status
+    console.log(response.url);//get the url above
+    const data = await response.json();
+    console.log(data)
+    github.innerHTML = data.avatar_url;
+
+
+  } catch (e) {
+    console.log(e)
+  }
+}
+getData()//or
+
+fetch('http://api.github.com/users/AnnieCat73').then((response) => {
+  response.json().then((data) => {
+    console.log(data)
+  })
+})//or*/
+
+(async () => {
+  try {
+    const response = await fetch('http://api.github.com/users/AnnieCat73');
+    const data = await response.json();
+    console.log(data);
+  } catch (e) {
+    console.log(e);
+  }
+})()
