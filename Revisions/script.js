@@ -2891,7 +2891,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keyup', e => {
     log(e)
   })
-})*/
+})
 
 const url = `http://api.github.com/users/flaviocopes`;
 const github = document.querySelector("#github");
@@ -2918,7 +2918,7 @@ fetch('http://api.github.com/users/AnnieCat73').then((response) => {
   response.json().then((data) => {
     console.log(data)
   })
-})//or*/
+})//or
 
 (async () => {
   try {
@@ -2928,4 +2928,10 @@ fetch('http://api.github.com/users/AnnieCat73').then((response) => {
   } catch (e) {
     console.log(e);
   }
-})()
+})()*/
+
+const clickBtn = document.querySelector("#click");
+
+clickBtn.addEventListener('click', e => {
+  console.log(e)
+})
