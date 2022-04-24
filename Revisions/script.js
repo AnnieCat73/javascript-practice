@@ -2928,10 +2928,67 @@ fetch('http://api.github.com/users/AnnieCat73').then((response) => {
   } catch (e) {
     console.log(e);
   }
-})()*/
+})()
 
 const clickBtn = document.querySelector("#click");
 
 clickBtn.addEventListener('click', e => {
   console.log(e)
 })
+
+const catImage = document.querySelector("#cat_result");
+const dogImage = document.querySelector("#dog_result");
+
+const catBtn = document.querySelector("#cat_btn");
+const DogBtn = document.querySelector("#dog_btn");
+
+DogBtn.addEventListener('click', e => {
+  getDog();
+})
+
+catBtn.addEventListener('click', e => {
+  getCat();
+})
+
+const getDog = async function () {
+  const response = await fetch('https://random.dog/woof.json');
+  console.log(response);
+  const data = await response.json();
+  //console.log(data.url)
+  dogImage.innerHTML = `<img src=${data.url} >`;
+}
+
+const getCat = async () => {
+  const response = await fetch('https://aws.random.cat/meow')
+  const data = await response.json();
+  console.log(response)
+  catImage.innerHTML = `<img src=${data.file} >`;
+}*/
+
+/******************************* */
+
+const gitImg = document.querySelector("#git-img")
+const gitInfo = document.querySelector('#info')
+
+const getMyGithub = async () => {
+  try {
+    const response = await fetch('http://api.github.com/users/AnnieCat73');
+    console.log(response);
+    const data = await response.json();
+    console.log(data)
+    gitImg.innerHTML = `<img src=${data.avatar_url} >`
+    gitInfo.innerHTML = `
+      <h2>${data.name}</h2>
+      <p>${data.blog}</p>
+      <p>${data.bio}</p>
+      <p>${data.location}</p> `
+
+  } catch (e) {
+    console.log(e)
+  }
+}
+getMyGithub()
+
+
+
+
