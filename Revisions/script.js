@@ -2965,7 +2965,7 @@ const getCat = async () => {
   catImage.innerHTML = `<img src=${data.file} >`;
 }*/
 
-/******************************* */
+/******************************* 
 
 const gitImg = document.querySelector("#git-img")
 const gitInfo = document.querySelector('#info')
@@ -2979,7 +2979,7 @@ const getMyGithub = async () => {
     gitImg.innerHTML = `<img src=${data.avatar_url} >`
     gitInfo.innerHTML = `
       <h2>${data.name}</h2>
-      <p>${data.blog}</p>
+      <a>${data.blog}</a>
       <p>${data.bio}</p>
       <p>${data.location}</p> `
 
@@ -2988,6 +2988,73 @@ const getMyGithub = async () => {
   }
 }
 getMyGithub()
+
+
+const text = document.querySelector("#text");
+const styleBtn = document.querySelector("#jsstyle");
+
+styleBtn.addEventListener('click', e => {
+  console.log(e.currentTarget)
+  text.style.fontSize = "2rem";
+  text.style.color = "green";
+  text.style.fontWeight = "bold";
+
+})
+
+//const lname = document.querySelector("#lname")
+const fname = document.querySelector("#fname")
+
+function getInputValue() {
+  let lname = document.querySelector("#lname").value;
+  alert(lname)
+  console.log(lname)
+}
+getInputValue()
+
+const paragraph = document.querySelector('#para');
+
+function setBackground() {
+  if (paragraph.style.backgroundColor = "transparent") {
+    setInterval(() => {
+      paragraph.style.backgroundColor = "green";
+    }, 10000)
+  } else {
+    paragraph.style.backgroundColor = "transparent";
+  }
+}
+setBackground()
+
+const table = document.querySelector('#sampleTable');
+console.log(table)
+
+function addRow(row) {
+  let tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td>Row3 Cell1</td>
+    <td>Row3 Cell2</td>`;
+  table.appendChild(tr);
+
+}
+addRow()*/
+
+//Array
+
+const array = [];
+let newArray = ["pots", "pan", "knives"];
+
+let people = [
+  'Franklin Roosevelt',
+  'Thomas Edison',
+  'Benjamin Franklin'
+]
+
+const franklin = people[0];
+let thomas = people[1];
+thomas = "Thomas Edison, Iventor of the lightbulb"
+//Thomas Edison, Iventor of the lightbulb
+
+
+
 
 
 
