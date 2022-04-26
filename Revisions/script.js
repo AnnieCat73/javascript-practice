@@ -2936,6 +2936,8 @@ clickBtn.addEventListener('click', e => {
   console.log(e)
 })
 
+
+
 const catImage = document.querySelector("#cat_result");
 const dogImage = document.querySelector("#dog_result");
 
@@ -3054,8 +3056,34 @@ thomas = "Thomas Edison, Iventor of the lightbulb"
 //Thomas Edison, Iventor of the lightbulb
 
 
+//Destructuring
 
+// Getting values from objects
+const person = {
+  firstName: 'Zell',
+  lastName: 'Liew'
+}
 
+const firstName = person.firstName
+const lastName = person.lastName
 
+const person = {
+  firstName: 'Zell',
+  lastName: 'Liew'
+}
+
+const { firstName, lastName } = person
+
+//Arrays
+
+const numbers = [22, 99, 100]
+const [firstNumber, secondNumber] = numbers
+
+/*If there are not enough items in the array, the destructured variable will remain undefined.*/
+
+const numbers = [22]
+const [firstNumber, secondNumber] = numbers
+
+console.log(secondNumber) // undefined
 
 
