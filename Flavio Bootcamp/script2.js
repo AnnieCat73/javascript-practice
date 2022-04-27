@@ -36,11 +36,18 @@ username.addEventListener("paste", () => {
 
 username.addEventListener("focus", (e) => {
   console.log('focus');//logs focus
-})//logs <empty string> if use e.target.value*/
+})//logs <empty string> if use e.target.value
 
 username.addEventListener("blur", (e) => {
   console.log('blur');//logs blur when click out of input field
-})//with e.target.value logs <empty string>
+})//with e.target.value logs <empty string>*/
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert('Submitted');
+})
 
 
 
