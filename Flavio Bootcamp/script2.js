@@ -40,13 +40,39 @@ username.addEventListener("focus", (e) => {
 
 username.addEventListener("blur", (e) => {
   console.log('blur');//logs blur when click out of input field
-})//with e.target.value logs <empty string>*/
+})//with e.target.value logs <empty string>
 
 const form = document.querySelector("form");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   alert('Submitted');
+})*/
+
+const form = document.querySelector("form");
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    console.log('submit');
+  })
+
+  const inputField = document.querySelector("input[type=text]");
+  inputField.addEventListener("input", e => {
+    console.log(`The value entered is ${inputField.value}!`);
+  })
+
+  inputField.addEventListener("cut", e => {
+    console.log(`The value entered is cut!`);
+  })
+
+  inputField.addEventListener("copy", e => {
+    console.log(`The value entered is copied!`);
+  })
+
+
+
 })
 
 
