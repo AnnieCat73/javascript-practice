@@ -47,7 +47,7 @@ function getMilk(money) {
   let numBottles = money / cost;
   console.log(`Buy ${Math.floor(numBottles)} bottles of milk`);//3
 }
-getMilk(5);*/
+getMilk(5);
 
 
 
@@ -59,4 +59,39 @@ function lifeInWeeks(age) {
   const months = yearsRemaining * 12;//80 * 12
   console.log(`You have ${days} days, ${weeks} weeks, and ${months} months left.`)
 }
-lifeInWeeks(10);//You have 29200, 4160, and 960 months left.
+lifeInWeeks(10);//You have 29200, 4160, and 960 months left.*/
+
+
+function getMilk(money) {//money = input
+  return money % 1.5;//output = return
+}
+const change = getMilk(4);
+
+console.log(change);//so get $1 change back
+
+function calcBottles(startingMoney, costPerBottle) {
+  const numberOfBottles = Math.floor(startingMoney / costPerBottle);
+  return numberOfBottles;
+}
+const totalBottles = calcBottles(5, 1.5);
+console.log(totalBottles);//3
+
+function calcChange(startingAmount, costPerBottle) {
+  const changeFromBottles = startingAmount % costPerBottle;
+  return changeFromBottles;
+}
+const totalChange = calcChange(10, 1.5);
+console.log(totalChange);
+
+
+
+//Create your function below this line.
+//The first parameter should be the weight and the second should be the height.
+
+/* If my weight is 65Kg and my height is 1.8m, I should be able to call your function like this:
+
+var bmi = bmiCalculator(65, 1.8); 
+
+bmi should equal 20 when it's rounded to the nearest whole number.
+
+*/
