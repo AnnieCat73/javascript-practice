@@ -59,7 +59,7 @@ function lifeInWeeks(age) {
   const months = yearsRemaining * 12;//80 * 12
   console.log(`You have ${days} days, ${weeks} weeks, and ${months} months left.`)
 }
-lifeInWeeks(10);//You have 29200, 4160, and 960 months left.*/
+lifeInWeeks(10);//You have 29200, 4160, and 960 months left.
 
 
 function getMilk(money) {//money = input
@@ -94,4 +94,49 @@ var bmi = bmiCalculator(65, 1.8);
 
 bmi should equal 20 when it's rounded to the nearest whole number.
 
-*/
+
+
+function bmiCalculator(weight, height) {
+  const bmiTotal = weight / (height * height);
+  return bmiTotal;
+
+}
+const bmi = Math.round(bmiCalculator(65, 1.8));
+console.log(bmi);//20.0617 so 20*
+
+
+//FUNCTION TO REMOVE THE STRINGS FROM THE ARRAYS
+
+arr = [1, 2, "mango", "berry", "melon"];
+
+function removeStrings(arr) {
+  const numArr = arr.splice(0, 2);
+  return numArr;
+}
+console.log(removeStrings(arr))//Array(2) [1, 2]*/
+
+
+array = [1, "mango", "berry", "melon"]
+
+function removeStrings(array) {
+  const numArr = array.splice(0, 1);
+  return numArr;
+}
+const newArray = removeStrings(array)//Array [1]
+console.log(newArray)//Array [1] // or stored in a variable
+
+/*array = ["mango", "berry", "melon"];
+
+function removeStrings(...array) {
+  const numArr = array.splice(0, -1);
+  return numArr;
+}
+//console.log(removeStrings(...array))//Array []
+
+const newArray = removeStrings();
+console.log(newArray)*/
+
+
+
+
+
