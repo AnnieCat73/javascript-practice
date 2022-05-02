@@ -90,7 +90,7 @@ console.log(totalChange);
 
 /* If my weight is 65Kg and my height is 1.8m, I should be able to call your function like this:
 
-var bmi = bmiCalculator(65, 1.8); 
+var bmi = bmiCalculator(65, 1.8);
 
 bmi should equal 20 when it's rounded to the nearest whole number.
 
@@ -113,7 +113,7 @@ function removeStrings(arr) {
   const numArr = arr.splice(0, 2);
   return numArr;
 }
-console.log(removeStrings(arr))//Array(2) [1, 2]*/
+console.log(removeStrings(arr))//Array(2) [1, 2]
 
 
 array = [1, "mango", "berry", "melon"]
@@ -137,6 +137,15 @@ const newArray = removeStrings();
 console.log(newArray)*/
 
 
+//array, slice, splice
+
+let fruits = ["mango", "berry", "melon"];
+
+let melonToBrother = fruits.slice(2);
+console.log(melonToBrother);//Array ["melon"]
+
+const cherryAdded = fruits.splice(1, 0, "cherry");
+console.log(fruits);//Array(4) ["mango", "cherry", "berry", "melon" ]
 
 
 
