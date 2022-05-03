@@ -147,5 +147,36 @@ console.log(melonToBrother);//Array ["melon"]
 const cherryAdded = fruits.splice(1, 0, "cherry");
 console.log(fruits);//Array(4) ["mango", "cherry", "berry", "melon" ]
 
+//
+//Looping through arrays
 
+const fruitBasket = ['banana', 'pear', 'guava']
 
+// fruitBasket.length is 3
+for (let i = 0; i < fruitBasket.length; i++) {
+  console.log("There's a " + fruitBasket[i] + " in the basket")
+}
+
+// => There's a banana in the basket
+// => There's a pear in the basket
+// => There's a guava in the basket
+
+//NEGATIVE increment expression
+for (let i = fruitBasket.length - 1; i >= 0; i--) {
+  console.log("There's a " + fruitBasket[i] + " in the basket")
+}
+
+// => There's a guava in the basket
+// => There's a pear in the basket
+// => There's a banana in the basket
+
+/*for of Loop - The for...of loop is preferable to the standard for loop because it always loops through the array once.*/
+
+const fruitBasket1 = ['banana', 'pear', 'guava']
+for (let fruit of fruitBasket1) {
+  console.log("There's a " + fruit + " in the basket")
+}
+
+// => There's a banana in the basket
+// => There's a pear in the basket
+// => There's a guava in the basket
