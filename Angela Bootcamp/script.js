@@ -134,7 +134,7 @@ function removeStrings(...array) {
 //console.log(removeStrings(...array))//Array []
 
 const newArray = removeStrings();
-console.log(newArray)*/
+console.log(newArray)
 
 
 //array, slice, splice
@@ -170,7 +170,7 @@ for (let i = fruitBasket.length - 1; i >= 0; i--) {
 // => There's a pear in the basket
 // => There's a banana in the basket
 
-/*for of Loop - The for...of loop is preferable to the standard for loop because it always loops through the array once.*/
+/*for of Loop - The for...of loop is preferable to the standard for loop because it always loops through the array once.
 
 const fruitBasket1 = ['banana', 'pear', 'guava']
 for (let fruit of fruitBasket1) {
@@ -179,4 +179,17 @@ for (let fruit of fruitBasket1) {
 
 // => There's a banana in the basket
 // => There's a pear in the basket
-// => There's a guava in the basket
+// => There's a guava in the basket*/
+
+const x = 15 + 5;
+
+const y = "hi";
+
+const z = x + y;
+console.log(z)//20hi
+console.log(x + x + y)//40hi
+
+console.log(1 + 2 + "hi");//3hi
+console.log(1 + "hi");//1hi
+console.log("hi" + 1 + 2);//h12 //NBBB
+console.log("hi" + 1 + "hi"); hi1hi
