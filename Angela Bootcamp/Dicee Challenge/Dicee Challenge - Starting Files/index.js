@@ -17,7 +17,8 @@ let randomNumber2 = Math.floor(Math.random() * 6) + 1;
 //console.log(randomNumber1);
 
 // gets dice1.png to dice6.png
-let randomDiceImage = "dice" + randomNumber1 + ".png";
+//let randomDiceImage = "dice" + randomNumber1 + ".png";
+let randomDiceImage = `dice ${randomNumber1} .png`;
 
 //gets the source of the images as inside folder images/
 let randomImageSource = "images/dice" + randomNumber1 + ".png";
