@@ -24,18 +24,7 @@ Array.from(btns).forEach(btn => {
   })
 })*/
 
-//or
-
-const numberOfDrumButtons = document.querySelectorAll(".drum");
-
-for (let i = 0; i < numberOfDrumButtons.length; i++) {
-  numberOfDrumButtons[i].addEventListener("click", e => {
-    alert("I got clicked!")
-  });
-
-}
-
-//Higher Order functions and passing functions as arguments
+/*Higher Order functions and passing functions as arguments
 
 function add(num1, num2) {
   return num1 + num2;
@@ -53,7 +42,22 @@ function calculator(num1, num2, operator) {//3rd arg is function passe
   return num1 + num2;
 }
 debugger;
-calculator(4, 5, multiply);//9 or can do add etc
+calculator(4, 5, multiply);//9 or can do add etc*/
+
+
+
+const numberOfDrumButtons = document.querySelectorAll(".drum");
+
+for (let i = 0; i < numberOfDrumButtons.length; i++) {
+  numberOfDrumButtons[i].addEventListener("click", function () {
+    //console.log(this.innerHTML);//gets the button that gets clicked
+    //this.style.color = "#fff";//changes the btn you press to color #
+  });
+
+}
+
+//const audio = new Audio(`sounds/tom-1.mp3`);
+//audio.play();
 
 
 
