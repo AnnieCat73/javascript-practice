@@ -179,7 +179,7 @@ for (let fruit of fruitBasket1) {
 
 // => There's a banana in the basket
 // => There's a pear in the basket
-// => There's a guava in the basket*/
+// => There's a guava in the basket
 
 const x = 15 + 5;
 
@@ -192,4 +192,108 @@ console.log(x + x + y)//40hi
 console.log(1 + 2 + "hi");//3hi
 console.log(1 + "hi");//1hi
 console.log("hi" + 1 + 2);//h12 //NBBB
-console.log("hi" + 1 + "hi"); hi1hi
+console.log("hi" + 1 + "hi"); <hi1hi></hi1hi>*/
+
+//OBJECTS
+
+/*const houseKeeper1 = {
+  yearsOfEperience: 12,
+  name: "Jane",
+  cleaningRepertoire: ["bathromm", "lobby", "bedroom"]
+}
+
+console.log(houseKeeper1.name)*/
+
+//From this to factory of lots of housekeepers ex
+
+class HouseKeeper {
+  constructor(yearsOfEperience, name, cleaningRepertoire) {
+    this.yearsOfEperience = yearsOfEperience;
+    this.name = name;
+    this.cleaningRepertoire = cleaningRepertoire;
+  }
+}
+
+const houseKeeper1 = new HouseKeeper(12, "Jane", ["bathroom", "lobby", "bedroom"])
+
+console.log(houseKeeper1.name)//Jane
+//ANOTHER EX - but think it's old
+//Object Factory/constructor function
+//constructior function starts with CAPITAL + new
+
+function BellBoy(name, age, hasWorkPermit, languages) {
+  this.name = name;
+  this.age = age;
+  this.hasWorkPermit = hasWorkPermit;
+  this.languages = languages;
+}
+
+const bellBoy1 = new BellBoy("timmy", 19, true, ["French", "English"]);
+
+//or Skillcrush way
+
+const createOutfit = function () {
+  const outfit = {
+    shirt: "red",
+    pants: "blue",
+    isNew: false,
+    showOff: function () {
+      this.isNew = true;
+      console.log(`Show us your new ${this.shirt}!`)
+    }
+  }
+  return outfit;
+}
+console.log(createOutfit());
+
+//then can create one for each day
+const monday = createOutfit()
+monday.shirt = "white";
+monday.pants = "green"
+console.log(monday)
+
+//can also do
+
+const createTuesday = function (shirt, pants, isNew) {
+  const outfit = {
+    shirt: shirt,
+    pants: pants,
+    isNew: isNew,
+    showOff: function () {
+      this.isNew = true;
+      console.log(`Show us your new ${this.shirt}!`)
+    }
+  }
+  return outfit;
+}
+const tuesday = createTuesday("blue", "silver", true);
+console.log(tuesday)
+//Object { shirt: "blue", pants: "silver", isNew: true}
+
+//then 
+
+const outfitArray = [monday, tuesday];
+
+for (let outfit of outfitArray) {
+  for (let key in outfit) {
+    console.log(key, outfit[key]);
+  }
+}
+/*shirt white 
+pants green 
+isNew false 
+showOff 
+shirt blue 
+pants silver 
+isNew true*/
+
+for (let key in tuesday) {
+  console.log(tuesday[key])
+}//blue,silver ,true
+
+for (let key in monday) {
+  console.log(key, monday[key]);
+}
+/*shirt white 
+pants green 
+isNew false*/
