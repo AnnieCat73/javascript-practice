@@ -77,7 +77,7 @@ console.log(personYogi["name1"]);
 const { name1, age } = person;
 
 
-//Nested object properties, here company is*/
+//Nested object properties, here company is
 
 const person = {
   name: "Sleepless Yogi",
@@ -95,13 +95,65 @@ const person = {
 
 /*destructuring of the above. How to get to it
 const { company } = person;
-const { name } = company;//Google*/
+const { name } = company;//Google
 
 //How to get California
 const { company } = person;
 const { address } = company;
-console.log(address)//Object { state: "California" }
+console.log(address)//Object { state: "California" }*/
 
+//Prime numbers - if divide a number by 2 get a whole number
+
+function printPrimeNumbers(num) {
+  for (let i = 2; i < num; i++)
+    if (num % i === 0) return false;
+  return num > 1;
+}
+//NOT QUITE UNDERSTANDING
+console.log(printPrimeNumbers(2, 3, 5, 7, 11, 13, 17, 19, 23, 29))//true
+
+var prime = function () {
+  var num;
+  for (num = 0; num < 11; num++) {
+    if (num % 2 === 0) {
+      break;
+    }
+    else if (num % 3 === 0) {
+      break;
+    }
+    else if (num % 4 === 0) {
+      break;
+    }
+    else if (num % 5 === 0) {
+      break;
+    }
+    else if (num % 6 === 0) {
+      break;
+    }
+    else if (num % 7 === 0) {
+      break;
+    }
+    else if (num % 8 === 0) {
+      break;
+    }
+    else if (num % 9 === 0) {
+      break;
+    }
+    else if (num % 10 === 0) {
+      break;
+    }
+    else if (num % 11 === 0) {
+      break;
+    }
+    else if (num % 12 === 0) {
+      break;
+    }
+    else {
+      return num;
+    }
+  }
+};
+console.log(prime());
 
 
 
