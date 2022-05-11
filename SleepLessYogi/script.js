@@ -61,7 +61,46 @@ if (y <= 100) {
 
 //y is 100*/
 
+/*DATA TYPES AND OBJECT NESTING
 
+//function x {} - function data type
+
+//object example
+const personYogi = {
+  name1: "Sleepless Yogi",
+  age: 30,
+};
+
+console.log(personYogi.name1);//or
+console.log(personYogi["name1"]);
+//destructuring
+const { name1, age } = person;
+
+
+//Nested object properties, here company is*/
+
+const person = {
+  name: "Sleepless Yogi",
+  company: {
+    name: "Google",
+    address: {
+      state: "California",
+    },
+    experience: 3
+  }
+};
+
+//console.log(person.company.name);//Google]
+//console.log(person["company"]["name"]);//Google
+
+/*destructuring of the above. How to get to it
+const { company } = person;
+const { name } = company;//Google*/
+
+//How to get California
+const { company } = person;
+const { address } = company;
+console.log(address)//Object { state: "California" }
 
 
 
