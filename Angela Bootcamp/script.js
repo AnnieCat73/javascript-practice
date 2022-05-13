@@ -211,10 +211,13 @@ class HouseKeeper {
     this.yearsOfEperience = yearsOfEperience;
     this.name = name;
     this.cleaningRepertoire = cleaningRepertoire;
+    this.clean = function () {
+      alert("Cleaning in progress!");
+    }
   }
 }
-
-const houseKeeper1 = new HouseKeeper(12, "Jane", ["bathroom", "lobby", "bedroom"])
+const houseKeeper1 = new HouseKeeper(12, "Jane", ["bathroom", "lobby", "bedroom"]);
+houseKeeper1.clean();
 
 console.log(houseKeeper1.name)//Jane
 //ANOTHER EX - but think it's old
@@ -226,9 +229,12 @@ function BellBoy(name, age, hasWorkPermit, languages) {
   this.age = age;
   this.hasWorkPermit = hasWorkPermit;
   this.languages = languages;
+  this.moveSuitcases = function () {
+    alert("May I take your suitcase?");
+  }
 }
-
 const bellBoy1 = new BellBoy("timmy", 19, true, ["French", "English"]);
+bellBoy1.moveSuitcases();
 
 //or Skillcrush way
 
