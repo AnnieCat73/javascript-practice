@@ -64,6 +64,7 @@ for (let i = 0; i < numberOfDrumButtons.length; i++) {
 //don't need to listen of letters on keyboard to be pressed
 //can use window.document to listen for it//entire webpage listens
 //for it
+
 document.addEventListener("keydown", function (e) {
   //which key was pressed - use e so e.key to get a key
   //console.log(e.key)
@@ -72,7 +73,8 @@ document.addEventListener("keydown", function (e) {
 
 
 function makeSound(key) {
-
+  //const audio = new Audio(`sounds/tom-1.mp3`);
+  //audio.play();
 
   switch (key) {
     case "w":
@@ -109,10 +111,9 @@ function makeSound(key) {
   }
 }
 
+/*Callback function - because it allows us to wait for something to finish happening, for example waiting for a click event, and then the callback function gets called back and executed. The event object, e, will pass in the event that triggered the callback function. So if console.log(e) you will see what event f.ex mouse event plus all properties/methods
+Use debugger; to help to understand*/
 
-
-//const audio = new Audio(`sounds/tom-1.mp3`);
-//audio.play();
 
 
 

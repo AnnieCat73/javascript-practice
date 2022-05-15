@@ -100,7 +100,7 @@ const { name } = company;//Google
 //How to get California
 const { company } = person;
 const { address } = company;
-console.log(address)//Object { state: "California" }*/
+console.log(address)//Object { state: "California" }
 
 //Prime numbers - if divide a number by 2 get a whole number
 
@@ -153,8 +153,38 @@ var prime = function () {
     }
   }
 };
-console.log(prime());
+console.log(prime());*/
 
+
+//OPTIONAL CHAINING PROPERTY
+
+/*In real world applications objects get complicated with a lot of properties and nested properties
+Often times some properties are defined for some objects but not for others
+For example: some customers have their addresses updated on your site but some customers do not
+Accessing such undefined properties can cause errors
+These errors can be avoided using optional-chaining operator*/
+
+const student = {
+  languages: [
+    {
+      javascript: {
+        exertise: 10,
+      }
+    },
+    {
+      reactJs: null,
+    },
+  ]
+};
+
+//console.log(student.reactJs.expertise); error cannot read properties of undefined
+//SO TO FIX IT use OPTIONAL CHAINING OPERATOR ?
+
+//console.log(student.reactJS?.expertise);//undefined instead of error
+
+//console.log(student.languages[1].reactJs.expertise);//error cannot read properties of undefined SO:
+
+console.log(student.languages[1].reactJs?.expertise)//undefined
 
 
 
