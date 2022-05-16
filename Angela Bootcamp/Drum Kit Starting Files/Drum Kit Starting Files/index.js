@@ -55,6 +55,8 @@ for (let i = 0; i < numberOfDrumButtons.length; i++) {
 
     let buttonInnerHTML = this.innerHTML;
     makeSound(buttonInnerHTML);
+
+    buttonAnimation(buttonInnerHTML);
   });
 
 }
@@ -69,6 +71,7 @@ document.addEventListener("keydown", function (e) {
   //which key was pressed - use e so e.key to get a key
   //console.log(e.key)
   makeSound(e.key);
+  buttonAnimation(e.key);
 });
 
 
@@ -115,5 +118,14 @@ function makeSound(key) {
 Use debugger; to help to understand*/
 
 
+//Adding animation to buttons
 
+function buttonAnimation(currentKey) {
+  let activeButton = document.querySelector("." + currentKey); //so get class of w a d etc
+  activeButton.classList.add("pressed");
+  setTimeout(() => {
+    activeButton.classList.remove("pressed");
+  }, 100)
+
+}
 
