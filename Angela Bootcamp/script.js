@@ -300,6 +300,22 @@ for (let key in tuesday) {
 for (let key in monday) {
   console.log(key, monday[key]);
 }
-/*shirt white 
-pants green 
+/*shirt white
+pants green
 isNew false*/
+
+//Comparators and Equality
+
+function bmiCalculator(weight, height) {
+  const bmiTotal = weight / (height * height);
+  if (bmiTotal < 18.5) {
+    return `Your BMI is ${bmiTotal}, so you are underweight.`;
+  } else if (bmiTotal <= 18.5 && bmiTotal >= 24.9) {
+    return `You BMI is ${bmiTotal}, so you have normal weight!`;
+  } else `Your BMi is 4${bmiTotal}, so you are overweight!`;
+
+
+}
+bmiCalculator(65, 1.8)
+//const bmi = Math.round(bmiCalculator(65, 1.8));
+//console.log(bmi);//20.0617 so 20*
