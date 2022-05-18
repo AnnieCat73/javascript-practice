@@ -187,4 +187,19 @@ const student = {
 console.log(student.languages[1].reactJs?.expertise)//undefined
 
 
+//compound interest = P (1 + R/)^(n t) - P
 
+//principal amount (P) = 1000;
+//time invested for (t) = 5;
+//annual interest rate (R) = 5;
+//number of time interested compounded (n) = 12;
+
+/*let p = 1000;
+let t = 5;
+let r = .08;
+let n = 12;*/
+
+function calculateCompoundInterest(p, r, n, t) {
+  return p(1 + r /) ^ (n t) - p;//needs reformulating
+}
+console.log(calculateCompoundInterest(1000, .8, 12, 5))
