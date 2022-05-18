@@ -304,18 +304,13 @@ for (let key in monday) {
 pants green
 isNew false*/
 
-//Comparators and Equality
+/*The BOM and the DOM
+BOM stands for Browser Object Model while DOM stands for Document Object Model.
 
-function bmiCalculator(weight, height) {
-  const bmiTotal = weight / (height * height);
-  if (bmiTotal < 18.5) {
-    return `Your BMI is ${bmiTotal}, so you are underweight.`;
-  } else if (bmiTotal <= 18.5 && bmiTotal >= 24.9) {
-    return `You BMI is ${bmiTotal}, so you have normal weight!`;
-  } else `Your BMi is 4${bmiTotal}, so you are overweight!`;
+BOM
+BOM refers to the set of JavaScript objects browsers provide you with. It gives you the window object in JavaScript. If you open up your inspector and write console.log(window), you’ll see the list of every JavaScript method you can use.
 
+You can use any property within the window object 
 
-}
-bmiCalculator(65, 1.8)
-//const bmi = Math.round(bmiCalculator(65, 1.8));
-//console.log(bmi);//20.0617 so 20*
+window.document
+document*/
