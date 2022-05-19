@@ -97,3 +97,30 @@ const duplicateNumbersAgain = numbers.filter(function (num, index, array) {
 console.log(duplicateNumbersAgain)////Array [ 5, 10 ]
 
 
+/*Question #4:
+
+How to find the count of duplicates in an array?
+Given Input Array: [‘Banana’, ‘April’, ‘May’, ‘Mark’, ‘May’, ‘Apple’, ‘May’] 
+Expected output { 
+ App: 1, 
+ April: 1, 
+ Mark: 1, 
+ May: 3 
+} 
+
+Answer 
+This one can be really tricky and can be asked in multiple variations. The fix will be the same for both number array as well as array of strings. We will make use of the Array reduce method and using an object instance we will check if the key value is present in object if yes, increment or else return 1*/
+
+const months = ["May", "April", "May", "Mark", "May", "App"];
+const countOfMonths = months.reduce((obj, month) => {
+  if (obj[month] == undefined) {
+    obj[month] = 1;
+    return obj;
+  }
+  else {
+    obj[month]++;
+    return obj;
+  }
+
+}, {});
+console.log(countOfMonths); //Object { May: 3, April: 1, Mark: 1, App: 1 }
