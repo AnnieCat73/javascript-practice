@@ -124,3 +124,45 @@ const countOfMonths = months.reduce((obj, month) => {
 
 }, {});
 console.log(countOfMonths); //Object { May: 3, April: 1, Mark: 1, App: 1 }
+
+/*Question #5:
+How to check if a given number is an integer?
+Given Input Array 10.5 
+Expected output true 
+
+Answer 
+To check if a given variable is integer, we can make use of the 
+isNaN() method. 
+This method can also be used to check if a variable is not an integer 
+*/
+const tax = 10.5; // true value 
+const str2 = "this is false"; // false value 
+console.log(isNaN(tax));//false as in isnotanumber = false as it is
+console.log(!isNaN(tax));//true as isnotanumber saying it is so it's true 
+console.log(isNaN(str2));//true as in isnotanumber
+console.log(!isNaN(str2));//false so kind of saying it's a number
+
+console.log(Number(tax))//10.5 
+console.log(Number(str2));//nan
+
+
+/*Question #6:
+Explain the difference between Object.freeze() vs 
+const?
+
+Answer 
+const applies to bindings ("variables"). It creates an immutable binding, i.e. you cannot assign a new value to the binding. 
+
+Object.freeze works on values, and more specifically, object values. It makes an object immutable, i.e. you cannot change its properties. 
+const person = { 
+ name: "Leonardo" 
+}; 
+person = 'some'; 
+console.log(person); // Uncaught TypeError: Assignment to constant variable. 
+
+///////////////////
+let person = { 
+ name: "Leonardo" 
+}; 
+Object.freeze(person); 
+person.name = "ARC"; // Uncaught SyntaxError: Identifier 'person' has already been declared*/
