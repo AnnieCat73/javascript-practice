@@ -166,3 +166,51 @@ let person = {
 }; 
 Object.freeze(person); 
 person.name = "ARC"; // Uncaught SyntaxError: Identifier 'person' has already been declared*/
+
+/*Question #7:
+How to Sort a Number Array?
+
+By default, the sort() function sorts values as strings.
+This works well for strings ("Apple" comes before "Banana").
+However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+
+Because of this, the sort() method will produce incorrect result when sorting numbers.
+
+You can fix this by providing a compare function:
+
+Given Input Array [10, 5, 12, 8, 30, 2, 20, 101] 
+Expected output [2, 5, 8, 10, 12, 20, 30, 101] 
+Answer 
+To sort an array of numbers we will have to use a comparison method inside the sort method. */
+
+//Ascending order
+const points = [40, 100, 1, 5, 25, 10];
+points.sort(function (a, b) { return a - b });
+console.log(points); //Array(6) [ 1, 5, 10, 25, 40, 100 ]
+
+//Descending order 
+const points1 = [40, 100, 1, 5, 25, 10];
+points1.sort(function (a, b) { return b - a });
+console.log(points1);//100,40,25,10,5,1
+
+const studentIds = [10, 5, 12, 8, 30, 2, 20, 101];
+
+studentIds.sort((a, b) => {
+  return a - b;
+});
+console.log(studentIds); //Array(8) [ 2, 5, 8, 10, 12, 20, 30, 101 ]
+
+/*If not numbers array: The sort() method sorts an array alphabetically:*/
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.sort());//Array(4) [ "Apple", "Banana", "Mango", "Orange" ]
+
+/*Question #8:
+Sort a given array of strings
+Given Input Array ['Mark','Ram', 'Larry', 'Adam', 'Sita', 'Lisa']
+Expected output ["Adam", "Larry", "Lisa", "Mark", "Ram", "Sita"] 
+
+Answer 
+To sort an array of numbers we will have to use a comparison method inside the sort method*/
+const students = ['Mark', 'Ram', 'Larry', 'Adam', 'Sita', 'Lisa'];
+console.log(students.sort()); //Array(6) [ "Adam", "Larry", "Lisa", "Mark", "Ram", "Sita" ]
