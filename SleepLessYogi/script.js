@@ -162,7 +162,7 @@ console.log(prime());*/
 Often times some properties are defined for some objects but not for others
 For example: some customers have their addresses updated on your site but some customers do not
 Accessing such undefined properties can cause errors
-These errors can be avoided using optional-chaining operator*/
+These errors can be avoided using optional-chaining operator*
 
 const student = {
   languages: [
@@ -197,9 +197,56 @@ console.log(student.languages[1].reactJs?.expertise)//undefined
 /*let p = 1000;
 let t = 5;
 let r = .08;
-let n = 12;*/
+let n = 12;
 
 function calculateCompoundInterest(p, r, n, t) {
   return p(1 + r /) ^ (n t) - p;//needs reformulating
 }
-console.log(calculateCompoundInterest(1000, .8, 12, 5))
+console.log(calculateCompoundInterest(1000, .8, 12, 5))*/
+
+
+/*Switch Statements
+
+You'd want to use switch statements when there are multiple conditions you want to check. So, instead of repeating if-else, if-else - just use a simple switch statement*/
+
+let today = new Date().getDay();
+//console.log(today)//6 i.e Sat
+
+switch (today) {
+  case 6:
+    day = "Saturday";
+    break;
+  case 0:
+    day = "Sunday";
+    break;
+  default:
+    day = "Weekday";
+}
+
+console.log(day);//Saturday
+
+//For loop with break and continue
+
+for (let i = 0; i < 10; i++) {
+  console.log(i); //prints 0 -9
+}
+
+//Loop starts at 0 and exectes 10 times
+//When value of "i" is 5 - it breaks the loop
+for (let i = 0; i < 10; i++) {
+  if (i === 5) { //so prints 0 - 4
+    break;
+  }
+  console.log(i); //prints 0-4
+}
+
+//When value of "i" is 5 it skips the printing operation
+//Instead continues with the next loop iteration
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    continue;
+  }
+  console.log(i);//so actually prints 0-9
+}
+
+
