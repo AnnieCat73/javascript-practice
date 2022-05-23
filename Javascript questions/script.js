@@ -214,3 +214,36 @@ Answer
 To sort an array of numbers we will have to use a comparison method inside the sort method*/
 const students = ['Mark', 'Ram', 'Larry', 'Adam', 'Sita', 'Lisa'];
 console.log(students.sort()); //Array(6) [ "Adam", "Larry", "Lisa", "Mark", "Ram", "Sita" ]
+
+
+/*Question #9:
+How to find unique values in an array?
+Given Input Array [10, 5, 5, 10, 2, 3, 18]
+Expected output [10, 5, 2, 3, 18]
+
+Answer
+
+To find unique values in an Array we are going to use the Array filter method and check if the value is present using indexOf method.
+
+const Ids = [10, 5, 5, 10, 2, 3, 18];
+const uniqueIds = Ids.filter((e, i, a) => a.indexOf(e) == i);
+//Array(5) [ 10, 5, 2, 3, 18 ]//element,index, array
+
+console.log(uniqueIds);
+/*
+Question #10:
+How to find unique values from an Array in sorted 
+order?
+
+Given Input Array [10, 5, 12, 8, 30, 2, 20, 101] 
+Expected output [2, 5, 8, 10, 12, 20, 30, 101] 
+
+Answer 
+
+We will be using the Array filter method first and check if the element is present using the indexOf and then we will use the sort method to sort the Array elements. */
+
+const Ids = [10, 5, 5, 10, 2, 3, 18];
+const uniqueIds = Ids.filter((e, i, a) => a.indexOf(e) == i).sort((a, b) => {
+  return a - b;
+});
+console.log(uniqueIds);//Array(5) [ 2, 3, 5, 10, 18 ]
