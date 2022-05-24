@@ -250,3 +250,53 @@ for (let i = 0; i < 10; i++) {
 }
 
 
+/*This
+
+The this represents the object (or function) that “owns” the currently executing code.
+
+this keyword references current execution context
+
+Functions are objects in JavaScript. So we can change the value of this keyword for every function call
+
+The value of this depends on the object that the function is attached to
+In the below example;
+We created "person" object with some properties
+getMyAge property is a function
+That function belongs to person object
+So, this.age represents the person object's age property
+
+const person = {
+  name: "Sleepless Yogi",
+  getMyAge: function() {
+    return this.name
+  }
+}
+
+new keyword
+
+"new" keyword in JavaScript is used to create new object instance
+In the below example "Person" is a constructor function
+
+const myPerson = new Person();
+console.log(myPerson);
+console.lg(myPerson.name);//Sleepless Yogi
+
+You can use "instanceOf" keyword to check if the object is an instance of a different object
+
+function Person() {
+  console.log(this);
+  this.name = "Sleepless Yogi";
+}
+console.log(myPerson instanceof Person);// true
+console.log(typeof myPerson);//object
+console.log(typeof Person);// function
+
+Remember in JavaScript everything is an object. Function is also an object*/
+
+function Car() {
+  //console.log(this);//object
+  this.make = "Honda";
+}
+
+const myCar = new Car();
+console.log(myCar.make)//Honda

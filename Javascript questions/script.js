@@ -247,3 +247,40 @@ const uniqueIds = Ids.filter((e, i, a) => a.indexOf(e) == i).sort((a, b) => {
   return a - b;
 });
 console.log(uniqueIds);//Array(5) [ 2, 3, 5, 10, 18 ]
+
+
+/*Question #11:
+
+Find maximum value in a numbered array?
+Given Input Array [10, 5, 12, 8, 30, 2, 20, 101] 
+Expected output 101 
+
+Answer 
+To find maximum value in a numbered array, we are implementing a method  which will find Max value. Inside the method, we are making use of the Array  reduce method and for each element, we will check if the value is greater than the previous one. */
+
+const studentIds1 = [10, 5, 12, 8, 30, 2, 20, 101];
+
+function arrayMax(arr) {
+  return arr.reduce(function (previous, currentValue) {
+    return (previous > currentValue ? previous : currentValue);
+  });
+}
+console.log(arrayMax(studentIds1));//101
+
+/*Question #12:
+
+Find minimum value in a numbered array?
+
+Given Input Array [10, 5, 12, 8, 30, 2, 20, 101] 
+Expected output 2 
+Answer 
+
+To find minimum value in a numbered array, we are implementing a method which will find minimum value. Inside the method, we are making use of the Array reduce method and for each element, we will check if the value is less than the previous one.*/
+
+const studentIds2 = [10, 5, 12, 8, 30, 2, 20, 101];
+function arrayMin(arr) {
+  return arr.reduce(function (previous, value) {
+    return (previous < value ? previous : value);
+  });
+}
+console.log(arrayMin(studentIds2));//2
