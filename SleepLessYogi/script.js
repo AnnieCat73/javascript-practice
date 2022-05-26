@@ -207,7 +207,7 @@ console.log(calculateCompoundInterest(1000, .8, 12, 5))*/
 
 /*Switch Statements
 
-You'd want to use switch statements when there are multiple conditions you want to check. So, instead of repeating if-else, if-else - just use a simple switch statement*/
+You'd want to use switch statements when there are multiple conditions you want to check. So, instead of repeating if-else, if-else - just use a simple switch statement
 
 let today = new Date().getDay();
 //console.log(today)//6 i.e Sat
@@ -291,7 +291,7 @@ console.log(myPerson instanceof Person);// true
 console.log(typeof myPerson);//object
 console.log(typeof Person);// function
 
-Remember in JavaScript everything is an object. Function is also an object*/
+Remember in JavaScript everything is an object. Function is also an object
 
 function Car() {
   //console.log(this);//object
@@ -300,3 +300,13 @@ function Car() {
 
 const myCar = new Car();
 console.log(myCar.make)//Honda
+
+//Given an array of integers that can contains duplicate numbers, find numbers that occur only once.
+
+//Example 1*/
+
+array2 = [1, 2, 3];
+const output1 = array2.filter((num, index, arr) {
+  return arr.indexOf(num) === index;
+})
+console.log(output1);

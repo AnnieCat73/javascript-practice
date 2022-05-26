@@ -78,3 +78,8 @@
 .carousel__indicator.current-slide {
   background: rgba(0, 0, 0, .75);
 }
+
+/*For js so when get end/start of carousel the btn disappears*/
+.is-hidden {
+  display: none;
+}

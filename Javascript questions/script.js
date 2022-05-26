@@ -284,3 +284,4 @@ function arrayMin(arr) {
   });
 }
 console.log(arrayMin(studentIds2));//2
+
