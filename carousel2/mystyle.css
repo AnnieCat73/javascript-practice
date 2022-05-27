@@ -1,0 +1,182 @@
+:root {
+  --spacer: 1rem;
+
+  --fs-100: 1rem;
+  --fs-200: 1.2rem;
+  --fs-300: 1.3rem;
+  --fs-400: 1.4rem;
+  --fs-500: 1.5rem;
+  --fs-600: 1.6rem;
+  --fs-700: 1.7rem;
+  --fs-800: 1.8rem;
+  --fs-900: 1.9rem;
+  --fs-110: 2rem;
+  --fs-111: 2.1rem;
+  --fs-112: 2.2rem;
+  --fs-114: 2.4rem;
+  --fs-116: 2.6rem;
+  --fs-118: 2.8rem;
+  --fs-120: 3rem;
+  --fs-122: 3.2rem;
+  --fs-124: 3.4rem;
+  --fs-126: 3.6rem;
+  --fs-128: 3.8rem;
+  --fs-130: 4rem;
+  --fs-132: 4.2rem;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  --clr-primary-100: #ffffff;
+  --clr-secondary-700: #0e1111;
+  --clr-secondary-800: #0f0a33;
+
+  --clr-neutral-200: #fdf2e9;
+  --clr-neutral-300: #bcbac4;
+  --clr-neutral-400: #707d76;
+  --clr-neutral-500: #6b687b;
+  --clr-neutral-600: #848695;
+  --clr-neutral-800: #555555;
+
+  --clr-bg-200: #f1f1f1;
+  --clr-bg-300: #e2f6eb;
+
+  --clr-accent-600: #3dc37a;
+  --clr-accent-700: #edc846;
+  --clr-accent-800: #DA4A2B;
+
+  --br-100: 1rem;
+
+  --box-shadow: 0 0.25em 1.5em rgba(0, 0, 0, 0.15);
+  --box-shadow-200: 0 2.4rem 4.8rem rgba(5, 2, 2, 0.15);
+  --box-shadow-300: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --box-shadow-400: 0 0 0 0.15rem #3dc37a;
+  --box-shadow-500: 10px 10px 5px #ccc;
+
+  --color-default-state: grey;
+  --color-hover-state: rgb(107, 107, 195);
+  --color-selected-state: rgb(17, 26, 101);
+}
+
+
+/*********** RESET ************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  line-height: 1;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+dl,
+dd,
+i,
+figure {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+svg,
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/***********************/
+
+svg {
+  width: 1rem;
+
+}
+
+.carousel {
+  outline: 1px solid rebeccapurple;
+  position: relative;
+  height: 40rem;
+  width: 60%;
+  margin: 4rem auto 0 auto;
+}
+
+.carousel__track-container {
+  background-color: antiquewhite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 37.5rem;
+}
+
+.carousel__button {
+  position: absolute;
+  cursor: pointer;
+  background: none;
+  outline: 0;
+  border: 0;
+}
+
+.carousel__button--left {
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel__button--right {
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.carousel__nav {
+  background-color: #707d76;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1em;
+  height: 2.5rem;
+}
+
+.carousel__indicator {
+  height: 1em;
+  width: 1em;
+  cursor: pointer;
+  border-radius: 100px;
+  border: none;
+  display: inline-block;
+}
