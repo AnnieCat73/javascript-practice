@@ -285,3 +285,32 @@ function arrayMin(arr) {
 }
 console.log(arrayMin(studentIds2));//2
 
+/*Question #13:
+Find the average of the numbers in the numbered array?
+Given Input Array [10, 5, 12, 8, 30, 2, 20, 101] 
+Expected output 23.5 
+
+Answer 
+Using the Array reduce method, we will get the total count first, and then we will 
+get the total length of the Array. Divide the total sum with the length of the array 
+and we get the average of the numbers in the Array. */
+
+const studentIds3 = [10, 5, 12, 8, 30, 2, 20, 101];
+const arrTotal = studentIds3.reduce((a, b) => a + b, 0);
+const arrLength = studentIds.length;
+console.log(arrTotal / arrLength);//23.5
+
+
+/*Question #14:
+
+How can you uppercase the first character in a string 
+array?
+Answer 
+To capitalize the first character of every element in the Array, we will have to get  the first character using charAt method and then apply toUpperCase and finally we will concatenate all the other characters using substring(1) */
+
+const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday',
+  'saturday'];
+for (let day of days) {
+  day = day.charAt(0).toUpperCase() + day.substring(1);
+  console.log(day);
+}//Sunday, Tuesday etc
