@@ -303,10 +303,25 @@ console.log(myCar.make)//Honda
 
 //Given an array of integers that can contains duplicate numbers, find numbers that occur only once.
 
-//Example 1*/
+//Example 1
 
 array2 = [1, 2, 3];
 const output1 = array2.filter((num, index, arr) {
   return arr.indexOf(num) === index;
 })
-console.log(output1);
+console.log(output1);*/
+
+//slice 
+
+let fruits = ["mango", "berry", "melon"];
+//let newFruits = fruits.slice(0)
+//console.log(newFruits)//[ "mango", "berry", "melon" ] or can ommit 0
+
+//let newFruits = fruits.slice(-1);or 
+//let newFruits = fruits.slice(2);
+//console.log(newFruits)//melon
+
+//splice
+
+let newFruits = fruits.splice(1, 0, "cherry");
+console.log(fruits);// [ "mango", "cherry", "berry", "melon" ]
