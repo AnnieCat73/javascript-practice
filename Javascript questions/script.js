@@ -314,3 +314,30 @@ for (let day of days) {
   day = day.charAt(0).toUpperCase() + day.substring(1);
   console.log(day);
 }//Sunday, Tuesday etc
+
+
+
+/**************TO BE PRINTED BELOW HERE************************ */
+
+/*Question #15:
+How to make a sentence out of the given string array?
+
+Answer 
+We need to use the string join() method applied on the Array */
+var a = ['arc', 'tutorials'];
+var sentence = a.join(" ");
+console.log(sentence) //arc tutorials
+
+/*Question #16:
+How to check if an array contains any element of another 
+array?
+
+Answer 
+To check if the array contains elements in another array, we will make use of the 
+Array includes method to see if it includes any values from the Array.*/
+let arr1 = [1, 2, 3];
+let arr2 = [2, 3];
+let isFounded = arr1.some(ai => arr2.includes(ai));//true but ???
+let isFounded2 = arr2.includes(3);
+
+console.log(isFounded2); //true
