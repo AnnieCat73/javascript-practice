@@ -309,7 +309,7 @@ array2 = [1, 2, 3];
 const output1 = array2.filter((num, index, arr) {
   return arr.indexOf(num) === index;
 })
-console.log(output1);*/
+console.log(output1);
 
 //slice 
 
@@ -324,4 +324,7 @@ let fruits = ["mango", "berry", "melon"];
 //splice
 
 let newFruits = fruits.splice(1, 0, "cherry");
-console.log(fruits);// [ "mango", "cherry", "berry", "melon" ]
+console.log(fruits);// [ "mango", "cherry", "berry", "melon" ]*/
+
+const double = num => num * 2;
+console.log(double(5));//10
