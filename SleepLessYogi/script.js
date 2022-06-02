@@ -324,7 +324,9 @@ let fruits = ["mango", "berry", "melon"];
 //splice
 
 let newFruits = fruits.splice(1, 0, "cherry");
-console.log(fruits);// [ "mango", "cherry", "berry", "melon" ]*/
+console.log(fruits);// [ "mango", "cherry", "berry", "melon" ]
 
 const double = num => num * 2;
-console.log(double(5));//10
+console.log(double(5));//10*/
+
+
