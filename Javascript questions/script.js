@@ -43,7 +43,7 @@ houseKeeper1.clean();)*/
 How to implement class inheritance in JavaScript?
 
 Answer 
-A class can be extended by another class, and the new class will inherit all of its parent class methods. The object that initializes the child class will then be able to use methods from both classes.*/
+A class can be extended by another class, and the new class will inherit all of its parent class methods. The object that initializes the child class will then be able to use methods from both classes.*
 
 class Car {
   constructor(model, name) {
@@ -51,7 +51,7 @@ class Car {
     this.name = name;
     /*this.stop = function () {//THIS NO WORK HERE
       return "From parent stop function"
-    }*/
+    }*
   }
   stop() {
     return "From parent stop function"
@@ -84,7 +84,7 @@ Given Input Array: [10, 5, 5, 10, 2, 3, 18]
 Expected output: [5, 10] 
 
 Answer 
-To find duplicates in an array, we can make use of the Array filter method. Filter method takes 3 parameters, element, index and array on which filter is applied. Then we check for the indexOf each element and return whichever does not match with the index. */
+To find duplicates in an array, we can make use of the Array filter method. Filter method takes 3 parameters, element, index and array on which filter is applied. Then we check for the indexOf each element and return whichever does not match with the index. *
 
 const numbers = [10, 5, 5, 10, 2, 3, 18];
 
@@ -109,7 +109,7 @@ Expected output {
 } 
 
 Answer 
-This one can be really tricky and can be asked in multiple variations. The fix will be the same for both number array as well as array of strings. We will make use of the Array reduce method and using an object instance we will check if the key value is present in object if yes, increment or else return 1*/
+This one can be really tricky and can be asked in multiple variations. The fix will be the same for both number array as well as array of strings. We will make use of the Array reduce method and using an object instance we will check if the key value is present in object if yes, increment or else return 1*
 
 const months = ["May", "April", "May", "Mark", "May", "App"];
 const countOfMonths = months.reduce((obj, month) => {
@@ -134,7 +134,7 @@ Answer
 To check if a given variable is integer, we can make use of the 
 isNaN() method. 
 This method can also be used to check if a variable is not an integer 
-*/
+*
 const tax = 10.5; // true value 
 const str2 = "this is false"; // false value 
 console.log(isNaN(tax));//false as in isnotanumber = false as it is
@@ -181,7 +181,7 @@ You can fix this by providing a compare function:
 Given Input Array [10, 5, 12, 8, 30, 2, 20, 101] 
 Expected output [2, 5, 8, 10, 12, 20, 30, 101] 
 Answer 
-To sort an array of numbers we will have to use a comparison method inside the sort method. */
+To sort an array of numbers we will have to use a comparison method inside the sort method. *
 
 //Ascending order
 const points = [40, 100, 1, 5, 25, 10];
@@ -200,7 +200,8 @@ studentIds.sort((a, b) => {
 });
 console.log(studentIds); //Array(8) [ 2, 5, 8, 10, 12, 20, 30, 101 ]
 
-/*If not numbers array: The sort() method sorts an array alphabetically:*/
+/*If not numbers array: The sort() method sorts an array alphabetically:
+
 
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
 console.log(fruits.sort());//Array(4) [ "Apple", "Banana", "Mango", "Orange" ]
@@ -211,7 +212,7 @@ Given Input Array ['Mark','Ram', 'Larry', 'Adam', 'Sita', 'Lisa']
 Expected output ["Adam", "Larry", "Lisa", "Mark", "Ram", "Sita"] 
 
 Answer 
-To sort an array of numbers we will have to use a comparison method inside the sort method*/
+To sort an array of numbers we will have to use a comparison method inside the sort method
 const students = ['Mark', 'Ram', 'Larry', 'Adam', 'Sita', 'Lisa'];
 console.log(students.sort()); //Array(6) [ "Adam", "Larry", "Lisa", "Mark", "Ram", "Sita" ]
 
@@ -240,7 +241,7 @@ Expected output [2, 5, 8, 10, 12, 20, 30, 101]
 
 Answer 
 
-We will be using the Array filter method first and check if the element is present using the indexOf and then we will use the sort method to sort the Array elements. */
+We will be using the Array filter method first and check if the element is present using the indexOf and then we will use the sort method to sort the Array elements. 
 
 const Ids = [10, 5, 5, 10, 2, 3, 18];
 const uniqueIds = Ids.filter((e, i, a) => a.indexOf(e) == i).sort((a, b) => {
@@ -256,7 +257,7 @@ Given Input Array [10, 5, 12, 8, 30, 2, 20, 101]
 Expected output 101 
 
 Answer 
-To find maximum value in a numbered array, we are implementing a method  which will find Max value. Inside the method, we are making use of the Array  reduce method and for each element, we will check if the value is greater than the previous one. */
+To find maximum value in a numbered array, we are implementing a method  which will find Max value. Inside the method, we are making use of the Array  reduce method and for each element, we will check if the value is greater than the previous one. 
 
 const studentIds1 = [10, 5, 12, 8, 30, 2, 20, 101];
 
@@ -275,7 +276,7 @@ Given Input Array [10, 5, 12, 8, 30, 2, 20, 101]
 Expected output 2 
 Answer 
 
-To find minimum value in a numbered array, we are implementing a method which will find minimum value. Inside the method, we are making use of the Array reduce method and for each element, we will check if the value is less than the previous one.*/
+To find minimum value in a numbered array, we are implementing a method which will find minimum value. Inside the method, we are making use of the Array reduce method and for each element, we will check if the value is less than the previous one.
 
 const studentIds2 = [10, 5, 12, 8, 30, 2, 20, 101];
 function arrayMin(arr) {
@@ -293,7 +294,7 @@ Expected output 23.5
 Answer 
 Using the Array reduce method, we will get the total count first, and then we will 
 get the total length of the Array. Divide the total sum with the length of the array 
-and we get the average of the numbers in the Array. */
+and we get the average of the numbers in the Array. 
 
 const studentIds3 = [10, 5, 12, 8, 30, 2, 20, 101];
 const arrTotal = studentIds3.reduce((a, b) => a + b, 0);
@@ -306,7 +307,7 @@ console.log(arrTotal / arrLength);//23.5
 How can you uppercase the first character in a string 
 array?
 Answer 
-To capitalize the first character of every element in the Array, we will have to get  the first character using charAt method and then apply toUpperCase and finally we will concatenate all the other characters using substring(1) */
+To capitalize the first character of every element in the Array, we will have to get  the first character using charAt method and then apply toUpperCase and finally we will concatenate all the other characters using substring(1) 
 
 const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday',
   'saturday'];
@@ -323,7 +324,7 @@ for (let day of days) {
 How to make a sentence out of the given string array?
 
 Answer 
-We need to use the string join() method applied on the Array */
+We need to use the string join() method applied on the Array 
 var a = ['arc', 'tutorials'];
 var sentence = a.join(" ");
 console.log(sentence) //arc tutorials
@@ -334,10 +335,161 @@ array?
 
 Answer 
 To check if the array contains elements in another array, we will make use of the 
-Array includes method to see if it includes any values from the Array.*/
+Array includes method to see if it includes any values from the Array.
 let arr1 = [1, 2, 3];
 let arr2 = [2, 3];
 let isFounded = arr1.some(ai => arr2.includes(ai));//true but ???
 let isFounded2 = arr2.includes(3);
 
 console.log(isFounded2); //true
+
+/*Question #17:
+Given two strings, how can you check if the strings are 
+anagram for each other? 
+Answer 
+To sort an array of numbers we will have to use a comparison method inside the 
+sort method.
+
+var firstWord = "Mary";
+var secondWord = "Army";
+function isAnagram(first, second) {
+  var a = first.toLowerCase();
+  var b = second.toLowerCase();
+  // Sort the strings, and join the resulting array to a string. Compare the results 
+  a = a.split("").sort().join("");
+  b = b.split("").sort().join("");
+  return a === b;
+}
+console.log(isAnagram(firstWord, secondWord));//true
+
+
+Question #18:
+How can you extract a few fields from the given JSON 
+object and form a new array?
+
+Given Input const input = {
+  "students": [{
+    "studentName": "ARC Tutorials",
+    "uuid": "124748ba-6fc4f"
+  }, {
+    "studentName": "Mark",
+    "uuid": "1249b9ba-64d"
+  }, {
+    "studentName": "Lisa",
+    "uuid": "124c78da-64"
+  }, {
+    "studentName": "Ram",
+    "uuid": "124ee9da-6"
+  }]
+};
+/*
+Expected output ["ARC Tutorials", "Mark", "Lisa", "Ram"] 
+Answer 
+We will need to use the map() method, we will pass the element and then return only the required key from that element.
+const input = {
+  "students": [{
+    "studentName": "ARC Tutorials",
+    "uuid": "124748ba-6fc4f"
+  }, {
+
+    "studentName": "Mark",
+    "uuid": "1249b9ba-64d"
+  }, {
+    "studentName": "Lisa",
+    "uuid": "124c78da-64"
+  }, {
+    "studentName": "Ram",
+    "uuid": "124ee9da-6"
+  }]
+};
+var op = input.students.map(function (item) {
+  return item.studentName;
+});
+console.log(op); //Array(4) [ "ARC Tutorials", "Mark", "Lisa", "Ram" ]
+
+
+Question #19:
+Filter the given object based on certain conditions and 
+return the corresponding object? 
+Given Input Object “Select the students whose rank is more than 10” 
+const input = { 
+ "students": [{ 
+ "studentName": "ARC Tutorials", 
+ "rank": 10, 
+ "uuid": "124748ba-6fc4f" 
+ }, { 
+ "studentName": "Mark", 
+ "rank": 15, 
+ "uuid": "1249b9ba-64d" 
+ }, { 
+ "studentName": "Lisa", 
+ "rank": 30, 
+ "uuid": "124c78da-64" 
+ }, { 
+ "studentName": "Ram", 
+
+ "rank": 20, 
+ "uuid": "124ee9da-6" 
+ }] 
+}; 
+
+Expected output [{ 
+ rank: 15, 
+ studentName: "Mark", 
+ uuid: "1249b9ba-64d" 
+}, { 
+ rank: 30, 
+ studentName: "Lisa", 
+ uuid: "124c78da-64" 
+}, { 
+ rank: 20, 
+ studentName: "Ram", 
+ uuid: "124ee9da-6" 
+}] 
+
+Answer 
+We will make use of the Array filter method and using if-else conditions we will check for conditions and return the element. 
+const input = {
+  "students": [{
+    "studentName": "ARC Tutorials",
+    "rank": 10,
+    "uuid": "124748ba-6fc4f"
+  }, {
+    "studentName": "Mark",
+    "rank": 15,
+    "uuid": "1249b9ba-64d"
+  }, {
+    "studentName": "Lisa",
+    "rank": 30,
+    "uuid": "124c78da-64"
+  }, {
+    "studentName": "Ram",
+
+    "rank": 20,
+    "uuid": "124ee9da-6"
+  }]
+};
+var op = input.students.filter(function (item) {
+  if (item.rank > 10)
+    return item
+});
+console.log(op);
+//Array(3)[{… }, {… }, {… }] - as above
+
+
+Question #20:
+Given an array of strings, reverse each word in the 
+sentence?
+
+Answer 
+We will be using the string methods reverse, split and join to reverse each word in the sentence */
+var string = "Welcome to ARC Tutorials";
+// Output becomes slairotuT CRA ot emocleW 
+var reverseEntireSentence = reverseBySeparator(string, "");
+// Output becomes emocleW ot CRA slairotuT 
+var reverseEachWord = reverseBySeparator(reverseEntireSentence, " ");
+function reverseBySeparator(string, separator) {
+  return string.split(separator).reverse().join(separator);
+}
+console.log(reverseEntireSentence)//slairotuT CRA ot emocleW
+console.log(reverseEachWord)//emocleW ot CRA slairotuT
