@@ -482,7 +482,7 @@ Given an array of strings, reverse each word in the
 sentence?
 
 Answer 
-We will be using the string methods reverse, split and join to reverse each word in the sentence */
+We will be using the string methods reverse, split and join to reverse each word in the sentence 
 var string = "Welcome to ARC Tutorials";
 // Output becomes slairotuT CRA ot emocleW 
 var reverseEntireSentence = reverseBySeparator(string, "");
@@ -492,4 +492,66 @@ function reverseBySeparator(string, separator) {
   return string.split(separator).reverse().join(separator);
 }
 console.log(reverseEntireSentence)//slairotuT CRA ot emocleW
-console.log(reverseEachWord)//emocleW ot CRA slairotuT
+console.log(reverseEachWord)//emocleW ot CRA 
+
+Question #21:
+How to check if an object is present in an Array or not?
+
+Answer 
+Most modern browsers support Array method isArray, so we can use this method to determine if a given object is an Array or not.
+
+const studentIds = [10, 5, 12, 8, 30, 2, 20, 101];
+
+console.log(Array.isArray(studentIds));//true
+
+
+Question #22:
+How to empty an array?
+
+Answer 
+To empty an Array, just assign an empty [] array to the variable. 
+
+var arr1 = ['a', 'b', 'c', 'd', 'e', 'f'];
+arr1 = [];
+console.log(arr1); //Array []
+
+Question #23:
+
+What is IIFEs (Immediately Invoked Function 
+Expressions)?
+
+Answer 
+
+It’s an Immediately-Invoked Function Expression, or IIFE for short. It executes  immediately after it’s created. 
+(function IIFE() {
+  console.log("Hello!");
+})();// "Hello!
+
+
+Question #24:
+
+How do you sort and reverse an array without changing 
+the original array?
+
+Answer 
+We can use slice() to make a copy then reverse() it 
+
+var arr1 = ['a', 'b', 'c', 'd', 'e', 'f'];
+var newarray = arr1.slice().reverse();
+console.log(newarray); //Array(6) [ "f", "e", "d", "c", "b", "a" ]
+
+
+Question #25:
+Write a function to check if a given string is Palindrome 
+or not?
+Answer 
+We are going to write a custom method which includes usage of string methods like replace, toLowerCase, reverse and join 
+
+Palindrome: a word, phrase, or sequence that reads the same backwards as forwards, e.g.madam or noon.*/
+
+function isPalindrome(str) {
+  str = str.replace(/\W/g, '').toLowerCase();
+  return (str == str.split('').reverse().join(''));
+}
+//console.log(isPalindrome('teet')); // true 
+//console.log(isPalindrome('teer'));//false

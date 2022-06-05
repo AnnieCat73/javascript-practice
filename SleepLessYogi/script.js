@@ -329,4 +329,11 @@ console.log(fruits);// [ "mango", "cherry", "berry", "melon" ]
 const double = num => num * 2;
 console.log(double(5));//10*/
 
+/*Given an array of numbers write a function that finds the odd number from that */
 
+const arr = [1, 2, 3];
+const newArr = arr.find(x => x % 2); //
+console.log(newArr)//1
+
+const isOdd = arr.find(x => x % 2 === 1);
+console.log(isOdd)
