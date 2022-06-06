@@ -547,11 +547,90 @@ or not?
 Answer 
 We are going to write a custom method which includes usage of string methods like replace, toLowerCase, reverse and join 
 
-Palindrome: a word, phrase, or sequence that reads the same backwards as forwards, e.g.madam or noon.*/
+Palindrome: a word, phrase, or sequence that reads the same backwards as forwards, e.g.madam or noon.*
 
 function isPalindrome(str) {
   str = str.replace(/\W/g, '').toLowerCase();
   return (str == str.split('').reverse().join(''));
 }
 //console.log(isPalindrome('teet')); // true 
-//console.log(isPalindrome('teer'));//false
+//console.log(isPalindrome('teer'));//false*
+
+
+Question #26:
+
+How can you combine two Arrays into a third Array using 
+spread operator? 
+
+Answer 
+To combine two or more Arrays, we will use the spread operator. *
+
+const first = [1, 2]
+const second = [3, 4]
+const third = [...first, ...second]
+console.log(third);//Array(4) [ 1, 2, 3, 4 ]
+
+
+Question #27:
+
+How can you Insert an element at a specific index in an 
+Array?
+
+Answer 
+To insert an element in an Array at a specific index, we be using both spread operator and Array slice method 
+
+const original = [1, 2, 4];
+const el = 3;
+const insertAt = 2;
+
+const newArray = [...original.slice(0, insertAt), el, ...original.slice(insertAt)]
+console.log(newArray);//Array(4) [ 1, 2, 3, 4 ]
+
+
+Question #28:
+How can you Replace an element at a specific index in an 
+Array?
+
+Answer 
+
+To replace an element in an Array at a specific index, we be using both spread operator and Array slice method *
+
+const original = [1, 2, 4, 4]
+const el = 3
+const replaceAt = 2
+const newArray = [...original.slice(0, replaceAt), el, ...original.slice(replaceAt +
+  1)]
+console.log(newArray);//Array(4) [ 1, 2, 3, 4 ]
+
+
+Question #29:
+
+How can you Delete an element at a specific index in an 
+Array?
+
+Answer 
+
+To delete an element in an Array at a specific index, we be using both spread operator and Array slice method 
+
+const original = [1, 2, 'x', 3]
+
+const deleteAt = 2
+const newArray = [...original.slice(0, deleteAt), ...original.slice(deleteAt + 1)]
+console.log(newArray);//Array(3) [ 1, 2, 3 ]
+
+
+Question #30:
+
+How can you delete a specific element?
+ 
+Answer 
+To delete a specific element in an Array, we be using both spread operator and Array filter method */
+
+const original = [1, 2, 5, 3]
+const toDelete = 5
+const newArray = original.filter(item => item !== toDelete)
+console.log(newArray);//Array(3) [ 1, 2, 3 ]
+
+
+
+
