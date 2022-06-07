@@ -624,12 +624,65 @@ Question #30:
 How can you delete a specific element?
  
 Answer 
-To delete a specific element in an Array, we be using both spread operator and Array filter method */
+To delete a specific element in an Array, we be using both spread operator and Array filter method 
 
 const original = [1, 2, 5, 3]
 const toDelete = 5
 const newArray = original.filter(item => item !== toDelete)
 console.log(newArray);//Array(3) [ 1, 2, 3 ]
+
+
+Question #31: 
+
+How do you clone an Object?
+
+Answer 
+We can clone an Object using multiple ways including Object.assign method or with spread operator etc. Here we are showing you way to do with Object.assign method *
+const students = { studentId: '10', studentName: 'ARC Tutorials' };
+const cloneStudents = Object.assign({}, students)
+console.log(cloneStudents)//Object { studentId: "10", studentName: "ARC Tutorials" }
+
+
+Question #32: 
+
+How do you add an element at the beginning of an array?
+
+Answer 
+
+We can use the Array unshift method instead. We are going to show you 
+another way of adding an element at the beginning of any array using the spread operator *
+
+const original = [1, 2, 3]
+const el = 4
+const newArray = [el, ...original]
+
+console.log(newArray);//Array(4) [ 4, 1, 2, 3 ]
+
+
+Question #33: 
+
+How to remove an element from the end of the array? 
+
+Answer 
+
+For this problem, we can either use spread operator or Array splice method 
+const students = [1, 2, 3]
+const newStudentArr = students.slice(1)
+console.log(newStudentArr);//Array [ 2, 3 ]
+
+
+Question #34: 
+
+How can you split a string into an Array?
+
+Answer 
+To solve this problem, we will need to use the string split method to split each word after an empty space */
+
+const msg = "Welcome to ARC Tutorials";
+const arr = msg.split(' ');
+console.log(arr);//Array(4) [ "Welcome", "to", "ARC", "Tutorials" ]
+
+
 
 
 
