@@ -676,14 +676,71 @@ Question #34:
 How can you split a string into an Array?
 
 Answer 
-To solve this problem, we will need to use the string split method to split each word after an empty space */
+To solve this problem, we will need to use the string split method to split each word after an empty space 
 
 const msg = "Welcome to ARC Tutorials";
 const arr = msg.split(' ');
-console.log(arr);//Array(4) [ "Welcome", "to", "ARC", "Tutorials" ]
+console.log(arr);//Array(4) [ "Welcome", "to", "ARC", "Tutorials" ]*
 
 
+Question #35:
 
+How can you remove an element from the beginning of 
+the array?
+
+Answer 
+
+We will be using the Array splice method to remove an element from the 
+beginning of the Array. 
+
+const original = [1, 2, 3]
+const newArray = original.slice(0, -1);//removes last item
+console.log(newArray);//Array [ 1, 2 ]
+const newArray1 = original.shift();
+console.log(newArray1);//1
+console.log(original);//[2,3]
+
+
+Question #36:
+How can you add an element to an object?
+Answer 
+To add a new element in an Object, we make use of the spread 
+
+const original = {
+  street_address: '123 Main Street',
+  city: 'New York',
+  state: 'NY',
+  zip: '10005'
+}
+// add a new field 
+const withAdditionalInfo = {
+  ...original,
+  'street_address_2': 'Apt 456',
+}
+console.log(withAdditionalInfo);//Object { street_address: "123 Main Street", city: "New York", state: "NY", zip: "10005", street_address_2: "Apt 456" }
+
+
+Question #37:
+
+How can you replace an existing element in an object?
+
+Answer 
+
+To replace an existing element in an Object, we make use of the spread operator and just override the element in the object with the new value */
+
+const original = {
+  street_address: '123 Main Street',
+  city: 'New York',
+
+  state: 'NY',
+  zip: '10005'
+}
+//replace an existing field 
+const withReplacedZip = {
+  ...original,
+  'zip': '10005-1546',
+}
+console.log(withReplacedZip);//Object { street_address: "123 Main Street", city: "New York", state: "NY", zip: "10005-1546" }
 
 
 
