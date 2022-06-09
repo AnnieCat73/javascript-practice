@@ -726,7 +726,7 @@ How can you replace an existing element in an object?
 
 Answer 
 
-To replace an existing element in an Object, we make use of the spread operator and just override the element in the object with the new value */
+To replace an existing element in an Object, we make use of the spread operator and just override the element in the object with the new value 
 
 const original = {
   street_address: '123 Main Street',
@@ -743,4 +743,52 @@ const withReplacedZip = {
 console.log(withReplacedZip);//Object { street_address: "123 Main Street", city: "New York", state: "NY", zip: "10005-1546" }
 
 
+Question #38:
 
+How can you combine two objects?
+
+Answer 
+
+To combine two or more objects, we will need to use the spread 
+const original = {
+  street_address: '123 Main Street',
+  city: 'New York',
+  state: 'NY',
+  zip: '10005'
+}
+//replace an existing field 
+const withReplacedZip = {
+  ...original,
+  'zip_updated_code': '10005-1546',
+}
+console.log(withReplacedZip); //Object { street_address: "123 Main Street", city: "New York", state: "NY", zip: "10005", zip_updated_code: "10005-1546" }
+
+
+Question #39: 
+
+How do you write a function which can take (x) number of 
+parameters?
+
+Answer 
+
+ES6 introduced the REST operator, using which we can pass any number of 
+arguments to methods. *
+function add(...args) {
+  console.log(...args);
+}
+add(3, 4); // can take 2 arguments -// 3 4
+add(5, 6, 7, 8); // can take 4 arguments -// 5 6 7 8 
+
+
+Question #40: 
+
+Convert the given number into the exact decimal points to 
+the right side?
+
+Answer 
+
+To sort an array of numbers we will have to use a comparison method inside the sort method.  */
+
+const num = 435.78787878;
+const n = num.toFixed(2);
+console.log(n); //435.79
