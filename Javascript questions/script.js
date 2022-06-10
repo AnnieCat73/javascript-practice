@@ -787,8 +787,48 @@ the right side?
 
 Answer 
 
-To sort an array of numbers we will have to use a comparison method inside the sort method.  */
+To sort an array of numbers we will have to use a comparison method inside the sort method.  
 
 const num = 435.78787878;
 const n = num.toFixed(2);
 console.log(n); //435.79
+
+
+Question #41: 
+
+How do you return a character from a string at a specific 
+index(2)?
+
+Answer 
+
+If we want to return the character at index(2) - we will have to use string charAt method *
+
+let text = "Welcome to ARC Tutorials";
+let letter = text.charAt(2);
+console.log(letter);//l
+
+
+
+Question #42: 
+
+How do you create an Array out of a given sentence?
+
+Answer 
+To create an Array out of a given sentence, we will make use of the string split method. *
+
+var str = "Welcome to ARC Tutorials Javascript Interview Questions";
+var words = str.split(" ");
+console.log(words);//Array(7) [ "Welcome", "to", "ARC", "Tutorials", "Javascript", "Interview", "Questions" ]
+
+
+Question #43: 
+
+How do you replace a given string in the string of arrays?
+Answer 
+
+To replace a given string in the string of Arrays, we will use map method to check for each string in the Array and then use replace to check if the string is present in the string. In the below code snippet, we are trying to find the string “er” and replace it with “” */
+
+let array = ["erf,", "erfeer,rf", "erfer"];
+array = array.map(function (x) { return x.replace(/er/g, "") });
+console.log(array);//Array(3) [ "f,", "fe,rf", "f" ]
+
