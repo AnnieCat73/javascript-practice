@@ -826,9 +826,73 @@ Question #43:
 How do you replace a given string in the string of arrays?
 Answer 
 
-To replace a given string in the string of Arrays, we will use map method to check for each string in the Array and then use replace to check if the string is present in the string. In the below code snippet, we are trying to find the string “er” and replace it with “” */
+To replace a given string in the string of Arrays, we will use map method to check for each string in the Array and then use replace to check if the string is present in the string. In the below code snippet, we are trying to find the string “er” and replace it with “” *
 
 let array = ["erf,", "erfeer,rf", "erfer"];
 array = array.map(function (x) { return x.replace(/er/g, "") });
 console.log(array);//Array(3) [ "f,", "fe,rf", "f" ]
+
+
+Question #44: 
+
+How do you write an add() function using javascript 
+currying concept?
+
+Answer 
+
+Currying is a technique of evaluating a function with multiple arguments, into a sequence of functions with single/multiple arguments. *
+
+function add(x) {
+  let sum = x;
+  function resultFn(y) {
+    sum += y;
+    return resultFn;
+  }
+  resultFn.valueOf = function () {
+    return sum;
+  };
+  return resultFn;
+}
+console.log(add(2)(3).valueOf())//5
+
+
+Question #45: 
+
+Implement a groupBy method in JavaScript? 
+
+Given Input Array const movies = [ 
+ { title: "Sonic the Hedgehog", year: 2020 }, 
+ { title: "Mulan", year: 2020 }, 
+ { title: "Godzilla vs. Kong", year: 2021 }, 
+]; 
+Expected output const moviesByYear = { 
+ 2020: [ 
+ { title: "Sonic the Hedgehog", year: 2020 }, 
+ { title: "Mulan", year: 2020 }, 
+ ], 
+ 2021: [{ title: "Godzilla vs. Kong", year: 2021 }], 
+}; 
+
+Answer 
+To write a function that will group an array of objects by its key value, you need to use the array reduce() method to iterate over the array and put each array element into the right place. */
+
+function groupBy(arr, criteria) {
+  const newObj = arr.reduce(function (acc, currentValue) {
+    if (!acc[currentValue[criteria]]) {
+      acc[currentValue[criteria]] = [];
+    }
+    acc[currentValue[criteria]].push(currentValue);
+    return acc;
+  }, {});
+  return newObj;
+}
+const movies = [
+  { title: "Sonic the Hedgehog", year: 2020 },
+  { title: "Mulan", year: 2020 },
+
+  { title: "Godzilla vs. Kong", year: 2021 },
+];
+const moviesByYear = groupBy(movies, "year");
+console.log(moviesByYear);
+
 
