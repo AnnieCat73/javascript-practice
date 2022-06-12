@@ -329,7 +329,7 @@ console.log(fruits);// [ "mango", "cherry", "berry", "melon" ]
 const double = num => num * 2;
 console.log(double(5));//10*/
 
-/*Given an array of numbers write a function that finds the odd number from that */
+/*Given an array of numbers write a function that finds the odd number from that *
 
 const arr = [1, 2, 3];
 const newArr = arr.find(x => x % 2); //
@@ -337,3 +337,46 @@ console.log(newArr)//1
 
 const isOdd = arr.find(x => x % 2 === 1);
 console.log(isOdd)
+
+1. Convert the given string to an array of characters
+
+const str = "javascript";
+const arrayCharacters = str.split("");
+console.log(arrayCharacters);//Array(10) [ "j", "a", "v", "a", "s", "c", "r", "i", "p", "t" ]
+
+
+2. Can you guess? 
+
+/*const call = {
+  caller: "foo",
+  says: () => {
+    console.log(`Hi, ${this.caller}`);
+  }
+}
+call.says();//Hi, undefined AS IT'S ARROW FUNCTION/NOT ALLOWED IN METHODS
+
+const call = {
+  caller: "foo",
+  says: function () {
+    console.log(`Hi, ${this.caller}`);
+  }
+}
+call.says();//Hi, foo
+
+3. Can you guess? Solve this array equality quiz?*/
+
+const arr1 = [1, 2, 3];
+const arr2 = [2, 3, 1];
+
+console.log(arr1.sort() === arr1);//true
+console.log(arr1.sort() === arr2.sort());//false
+console.log(arr2.sort() === arr2);//true
+console.log(arr1.sort() === arr2.sort());//false
+
+//or
+console.log(
+  arr1.sort() === arr1,
+  arr1.sort() === arr2.sort(),
+  arr2.sort() === arr2,
+  arr1.sort() === arr2.sort()
+);//true, false, true false
