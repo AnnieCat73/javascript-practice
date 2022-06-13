@@ -874,7 +874,7 @@ Expected output const moviesByYear = {
 }; 
 
 Answer 
-To write a function that will group an array of objects by its key value, you need to use the array reduce() method to iterate over the array and put each array element into the right place. */
+To write a function that will group an array of objects by its key value, you need to use the array reduce() method to iterate over the array and put each array element into the right place. *
 
 function groupBy(arr, criteria) {
   const newObj = arr.reduce(function (acc, currentValue) {
@@ -896,3 +896,67 @@ const moviesByYear = groupBy(movies, "year");
 console.log(moviesByYear);
 
 
+Question #46: 
+
+Explain WeakSet in javascript with an example?
+
+Answer 
+
+Weakset contains only objects and no other type. 
+
+let obj1 = { message: "Hello world" };
+const newSet3 = new WeakSet([obj1]);
+console.log(newSet3.has(obj1)); // true 
+
+
+Question #47: 
+
+Explain WeakMap in javascript with an example?
+
+Answer 
+
+In a WeakMap, The keys and values in weakmap should always be an object. *
+
+let obj = { name: "Vivek" };
+const map3 = new WeakMap();
+
+console.log(map3.set(obj, { age: 23 }));
+//WeakMap { {…} → {…} }
+    //<entries>
+    //0: Object { name: "Vivek" } → Object { age: 23 }
+
+
+Question #48: 
+
+Explain what is Object Destructuring with an example?
+
+Answer 
+
+Object destructuring is a new way to extract elements from an object or an  array. *
+
+const hero = {
+  name: 'ARC Tutorials',
+  realName: 'Soorya'
+};
+const { name, realName } = hero;
+console.log(realName)//Soorya
+
+
+
+Question #49: 
+
+How can we generate a random alphanumeric string in 
+JavaScript?
+
+Answer 
+
+We can generate a random alphanumeric string with JavaScript by first creating  a variable that contains all the characters you want to include in the random string*/
+
+const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+const length = 9;
+let randomStr = "";
+for (let i = 0; i < length; i++) {
+  const randomNum = Math.floor(Math.random() * characters.length);
+  randomStr += characters[randomNum];
+}
+console.log(randomStr); // will be different with each execution f.ex 3a7G4L984
