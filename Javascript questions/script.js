@@ -950,7 +950,7 @@ JavaScript?
 
 Answer 
 
-We can generate a random alphanumeric string with JavaScript by first creating  a variable that contains all the characters you want to include in the random string*/
+We can generate a random alphanumeric string with JavaScript by first creating  a variable that contains all the characters you want to include in the random string
 
 const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 const length = 9;
@@ -959,4 +959,68 @@ for (let i = 0; i < length; i++) {
   const randomNum = Math.floor(Math.random() * characters.length);
   randomStr += characters[randomNum];
 }
-console.log(randomStr); // will be different with each execution f.ex 3a7G4L984
+console.log(randomStr); // will be different with each execution f.ex 3a7G4L984*
+
+
+Question #50: 
+
+How can we call a function which logs a message after 
+every 5 seconds?
+
+Answer 
+
+To call a function after 5 seconds, we can make use of the setInterval method. Using the setInterval method, we can specify the time delay and the function to be called after the time lapse.
+
+function myFunc() {
+  console.log("This function will be called with delay");
+}
+setInterval(myFunc, 5000);
+//This function will be called with delay
+/*
+
+
+Question #51: 
+
+How can we delay calling a function after 5 seconds?
+
+Answer 
+
+We can use setTimeout to delay a function call by specifying the time in milliseconds and the method to call the time interval.
+
+function myFunc() {
+  console.log('This function will be called with delay');
+}
+setTimeout(myFunc, 5000);
+//This function will be called with delay
+
+
+Question #52: 
+
+Write a function that performs binary search on a sorted 
+array?
+
+Answer 
+
+Below we are implementing a function named binarySearch which will accept an array and target value as arguments. */
+
+function binarySearch(array, targetValue) {
+  var min = 0;
+  var max = array.length - 1;
+  var guess;
+  while (min <= max) {
+    guess = Math.floor((max + min) / 2);
+    if (array[guess] === targetValue) {
+      return guess;
+    }
+    else if (array[guess] < targetValue) {
+      min = guess + 1;
+    }
+    else {
+      max = guess - 1;
+    }
+
+  }
+  return -1;
+}
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(binarySearch(arr, 6));//5
