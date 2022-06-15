@@ -1001,7 +1001,7 @@ array?
 
 Answer 
 
-Below we are implementing a function named binarySearch which will accept an array and target value as arguments. */
+Below we are implementing a function named binarySearch which will accept an array and target value as arguments. *
 
 function binarySearch(array, targetValue) {
   var min = 0;
@@ -1024,3 +1024,42 @@ function binarySearch(array, targetValue) {
 }
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 console.log(binarySearch(arr, 6));//5
+
+
+Question #53: 
+
+How can we parse a given JSON object?
+
+Answer 
+
+To sort an array of numbers we will have to use a comparison method inside the  sort method. *
+
+const json = '{"result":true, "count":42}';
+const obj = JSON.parse(json);
+console.log(obj);//Object { result: true, count: 42 }
+
+
+Question #54:
+
+How do you check whether a string contains a substring?
+
+Answer 
+
+To find if a substring exist in a string, we can use string includes method *
+
+const string = "foo";
+const substring = "oo";
+console.log(string.includes(substring)); // true
+
+Question #55: 
+
+How do I get query string values in javascript?
+
+Answer 
+
+To get query params from the URL, we can use URLSearchParams and pass the url string. */
+
+const url = new URL('https://test.com?mode=night&page=2&time=day');
+const urlSearchParams = new URLSearchParams(url.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+console.log(params);//Object { mode: "night", page: "2", time: "day" }
