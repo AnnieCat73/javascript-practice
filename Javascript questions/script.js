@@ -1057,9 +1057,51 @@ How do I get query string values in javascript?
 
 Answer 
 
-To get query params from the URL, we can use URLSearchParams and pass the url string. */
+To get query params from the URL, we can use URLSearchParams and pass the url string. *
 
 const url = new URL('https://test.com?mode=night&page=2&time=day');
 const urlSearchParams = new URLSearchParams(url.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 console.log(params);//Object { mode: "night", page: "2", time: "day" }
+
+Question #55: 
+
+How do I get query string values in javascript?
+
+Answer 
+To get query params from the URL, we can use URLSearchParams and pass the  url string. *
+
+const url = new URL('https://test.com?mode=night&page=2&time=day');
+const urlSearchParams = new URLSearchParams(url.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+console.log(params);//Object { mode: "night", page: "2", time: "day" }
+
+
+Question #56:
+
+How to create and trigger events in javascript?
+
+Answer 
+Events can be created with the Event constructor as follows: *
+
+var event = new Event('build');
+// Listen for the event. 
+elem.addEventListener('build', function (e) { /* ... * }, false);
+// Dispatch the event. 
+elem.dispatchEvent(event);???
+
+
+
+Question #57: 
+
+How to display the current date in javascript?
+
+Answer 
+In order to display the current date, first we need to create an instance of Date object and then using the methods getDate, getMonth and getYear extract the details required. */
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0! 
+var yyyy = today.getFullYear();
+today = mm + '/' + dd + '/' + yyyy;
+console.log(today);//06/15/2022
