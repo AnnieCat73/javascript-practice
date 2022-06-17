@@ -1097,7 +1097,7 @@ Question #57:
 How to display the current date in javascript?
 
 Answer 
-In order to display the current date, first we need to create an instance of Date object and then using the methods getDate, getMonth and getYear extract the details required. */
+In order to display the current date, first we need to create an instance of Date object and then using the methods getDate, getMonth and getYear extract the details required. *
 
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
@@ -1105,3 +1105,41 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 today = mm + '/' + dd + '/' + yyyy;
 console.log(today);//06/15/2022
+
+
+Question #58:
+
+How do you compare time for two dates?
+
+Answer 
+We need to extract the time using the getTime method and compare both values. *
+
+const d1 = new Date('2013-05-23');
+const d2 = new Date('2013-05-23');
+var same = d1.getTime() === d2.getTime();
+console.log(same);//true
+
+
+Question #59: 
+
+How do you check if a string starts with another string?
+
+Answer 
+
+To check if a string starts with given string, we can make use of the string startsWith method *
+let text = "Hello world, welcome to the universe.";
+const doesValueStart = text.startsWith("Hello");
+console.log(doesValueStart);//true
+
+
+
+Question #60: 
+
+How do you remove whitespaces from a given string?
+
+Answer 
+To remove whitespace from a given string, we can use the string replace method. */
+
+const str = "Welcome to ARC Tutorials";
+const removeWhiteSpace = str.replace(/\s/g, "");
+console.log(removeWhiteSpace);//WelcometoARCTutorials
