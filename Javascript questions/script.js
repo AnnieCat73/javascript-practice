@@ -1138,8 +1138,59 @@ Question #60:
 How do you remove whitespaces from a given string?
 
 Answer 
-To remove whitespace from a given string, we can use the string replace method. */
+To remove whitespace from a given string, we can use the string replace method. *
 
 const str = "Welcome to ARC Tutorials";
 const removeWhiteSpace = str.replace(/\s/g, "");
 console.log(removeWhiteSpace);//WelcometoARCTutorials
+
+
+Question #61: 
+
+How do you assign default values to variables?
+
+Answer 
+
+We can set default values using either the logical operator or Ternary operator. *
+
+let isHappyHour = false;
+// Logical Operator 
+isHappyHour = isHappyHour || true;
+console.log(isHappyHour);//true
+// Ternary 
+isHappyHour = isHappyHour ? isHappyHour : true;
+console.log(isHappyHour);//true
+
+
+Question #62: 
+
+For a given function, count the number of parameters 
+expected by a function?
+
+Answer 
+We can use length property with the name of the function and we will get the number of arguments the function can accept.*
+
+function test(a, b, c) {
+  console.log(a);
+  console.log(b);
+  console.log(c);
+}
+console.log(test.length);//3
+
+
+Question #63: 
+
+Implement a method which generates 5 random 
+numbers?
+
+Answer 
+
+We will be using the Math’s floor and random methods to generate the random numbers. */
+
+const arr = [];
+while (arr.length < 8) {
+  var r = Math.floor(Math.random() * 100) + 1;
+  if (arr.indexOf(r) === -1) arr.push(r);
+}
+console.log(arr);//Array(8) [ 100, 61, 13, 31, 65, 57, 17, 49 ]
+
