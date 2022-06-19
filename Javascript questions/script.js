@@ -1185,7 +1185,7 @@ numbers?
 
 Answer 
 
-We will be using the Math’s floor and random methods to generate the random numbers. */
+We will be using the Math’s floor and random methods to generate the random numbers. *
 
 const arr = [];
 while (arr.length < 8) {
@@ -1193,4 +1193,68 @@ while (arr.length < 8) {
   if (arr.indexOf(r) === -1) arr.push(r);
 }
 console.log(arr);//Array(8) [ 100, 61, 13, 31, 65, 57, 17, 49 ]
+
+
+Question #64: 
+
+Implement a method which generates random numbers 
+between 41 and 67 and sort them reverse?
+
+Answer 
+To generate random numbers between a minimum and maximum values, we will use Math floor and random methods. Next we will have to use the sort method for sorting and finally reverse them using the reverse method. *
+
+var arr = [];
+const min = 41;
+const max = 67;
+while (arr.length < 8) {
+  const rndInt = Math.floor(Math.random() * (max - min + 1) + min)
+  arr.push(rndInt);
+}
+console.log(arr);//Array(8) [ 63, 59, 56, 53, 49, 46, 45, 42 ]
+console.log(arr.sort())//Array(8) [ 41, 41, 43, 43, 54, 55, 63, 64 ]
+console.log(arr.reverse());//Array(8) [ 67, 66, 59, 58, 52, 48, 45, 44 ]
+
+
+Question #65: 
+
+How do you search a string for a pattern?
+
+Answer 
+
+We can perform a string search using either match method or search method. Using the search method, the result will be the index of the string matched Using the match method, we will get the string matched. Below are examples of the same. *
+
+// Approach #1 -> using search method 
+const text = "Welcome to ARC Tutorials Javascript snippet code";
+const result = text.search(/tutorial/i);//15 
+console.log(result); // returns the index of matched string 
+// Approach #2 -> using match method with regex pattern 
+const text1 = "Welcome to ARC Tutorials Javascript snippet code";
+const result1 = text.match(/tutorial/i);
+console.log(result); // returns the matched string //15
+
+
+Question #66: 
+
+How to write an Object and implement multiple function 
+chaining?
+
+Answer 
+
+We will need to make use of the “this” operator inside the object for reference. 
+
+We can write any number of methods inside the object and using this reference we can chain multiple functions. */
+
+var Obj = {
+  result: 0,
+  addNumber: function (a, b) {
+    this.result = a + b;
+    return this;
+  },
+  multiplyNumber: function (a) {
+    this.result = this.result * a;
+    return this;
+  }
+};
+Obj.addNumber(10, 20).multiplyNumber(10)
+console.log(Obj.result);//300
 
