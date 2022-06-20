@@ -1242,7 +1242,7 @@ Answer
 
 We will need to make use of the “this” operator inside the object for reference. 
 
-We can write any number of methods inside the object and using this reference we can chain multiple functions. */
+We can write any number of methods inside the object and using this reference we can chain multiple functions. *
 
 var Obj = {
   result: 0,
@@ -1258,3 +1258,52 @@ var Obj = {
 Obj.addNumber(10, 20).multiplyNumber(10)
 console.log(Obj.result);//300
 
+
+Question #67: 
+
+How do you determine whether an object is frozen or 
+not?
+
+Answer 
+
+To check if an object is freezed or not, we need to make use of the method Object.isFrozen and pass the object to check. *
+
+const Obj = {
+  result: 0
+};
+//Object.freeze(Obj); // uncomment this line to set object to freeze 
+const result = Object.isFrozen(Obj);
+console.log(result); //false
+
+
+Question #68: 
+
+How do you determine two values are the same or not 
+using an object? 
+
+Answer 
+
+To determine if two values are the same or not, we will use Object’s is method which will check if 2 values are the same and return a boolean value. *
+
+Object.is('hello', 'hello'); // truef 
+Object.is(window, window); // true 
+console.log(Object.is([], [])) // false
+
+
+Question #69: 
+
+How do you copy properties from one object to another 
+object?
+
+Answer 
+
+To copy properties from one object to another one, we will use the 
+Object.assign method. */
+
+const target = {};
+const sources = {
+  userId: 10,
+  userName: 'ARC Tutorials'
+};
+Object.assign(target, sources) // 
+console.log(target);//Object { userId: 10, userName: "ARC Tutorials" }
