@@ -380,3 +380,32 @@ console.log(
   arr2.sort() === arr2,
   arr1.sort() === arr2.sort()
 );//true, false, true false
+
+
+//Promises
+
+const chocolatePromise = () =>
+  new Promise((resolve, reject) => {
+    const dadGotAChocolate = false;
+    if (!dadGotAChocolate) {
+      reject("sorry");
+    }
+    resolve("here is your chocolate!")
+  })
+console.log(chocolatePromise());//Promise { <state>: "rejected", <reason>: "sorry" }
+
+function goToBed() {
+  chocolatePromise()
+    .then(
+      (val) => console.log(val), //sorry
+      (err) => console.log(err) //sleep...zzzz
+    )
+    .finally(
+      setTimeout(() => {
+        () => console.log("Sleep...zzzz!")
+      }, 1000)
+
+    );
+}
+
+console.log(goToBed());//Sleep...zzzz!

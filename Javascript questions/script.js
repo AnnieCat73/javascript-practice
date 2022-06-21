@@ -1298,7 +1298,7 @@ object?
 Answer 
 
 To copy properties from one object to another one, we will use the 
-Object.assign method. */
+Object.assign method. *
 
 const target = {};
 const sources = {
@@ -1307,3 +1307,63 @@ const sources = {
 };
 Object.assign(target, sources) // 
 console.log(target);//Object { userId: 10, userName: "ARC Tutorials" }
+
+
+Question #70: 
+
+How do you determine if an object is sealed or not?
+
+Answer 
+
+To determine if an object is sealed or not, we will use the Object.isSealed method. *
+
+const sources = {
+  userId: 10,
+  userName: 'ARC Tutorials'
+};
+Object.seal(sources);
+console.log(Object.isSealed(sources));//true
+
+
+Question #71: 
+
+How do you get an enumerable key and value pairs?
+
+Answer 
+To get enumerable key and value pairs from an Object, we will use the Object.entries method. *
+
+const object = {
+  a: 'Arc Tutorials',
+  b: 100
+};
+for (let [key, value] of Object.entries(object)) {
+
+  console.log(`${key}: ${value}`);
+}
+//a: Arc Tutorials script.js:1341:11
+//b: 100
+
+
+
+Question #72:
+
+What is the main difference between Object.values and 
+Object.entries method?
+
+Answer 
+
+The main difference is that the Object.values() method returns only all the own values while Object.entries() method returns an array of arrays with key and value and it works from */
+
+const object = {
+  a: 'Good morning',
+  b: 100
+};
+for (let value of Object.values(object)) {
+  console.log(`${value}`); // 
+}
+let valuesArray = Object.entries(object);
+
+for (let value of valuesArray) {//Array [ "a", "Good morning" ]
+  console.log(value);//Array [ "b", 100 ]
+}
+
