@@ -1352,7 +1352,7 @@ Object.entries method?
 
 Answer 
 
-The main difference is that the Object.values() method returns only all the own values while Object.entries() method returns an array of arrays with key and value and it works from */
+The main difference is that the Object.values() method returns only all the own values while Object.entries() method returns an array of arrays with key and value and it works from *
 
 const object = {
   a: 'Good morning',
@@ -1366,4 +1366,52 @@ let valuesArray = Object.entries(object);
 for (let value of valuesArray) {//Array [ "a", "Good morning" ]
   console.log(value);//Array [ "b", 100 ]
 }
+
+
+Question #73: 
+How can you get the list of keys of any object?
+
+Answer 
+
+To get the list of keys in an Object, we will use the Object.keys method *
+
+const user = {
+  a: 'Arc Tutorials',
+  b: 100
+};
+console.log(Object.keys(user));//Array [ "a", "b" ]
+
+
+Question #74: 
+
+How do you encode an URL?
+
+Answer 
+
+We can easily encode URLs using the built-in encodeURIComponent method. *
+
+var myUrl = "http://example.com/index.html?param=1&anotherParam=2";
+var myOtherUrl = "http://example.com/index.html?url=" +
+  encodeURIComponent(myUrl);
+console.log(myOtherUrl);
+//http://example.com/index.html?url=http%3A%2F%2Fexample.com%2Findex.html%3Fparam%3D1%26anotherParam%3D2
+
+
+
+Question #75: 
+
+How do you define property on an Object constructor?
+
+Answer 
+
+To define a new property on an Object, we can make use of 
+Object.defineProperty method */
+
+const newObject = {};
+Object.defineProperty(newObject, 'newProperty', {
+  value: 100,
+  writable: true
+});
+console.log(newObject.newProperty);//100
+
 
