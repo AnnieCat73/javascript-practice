@@ -1405,7 +1405,7 @@ How do you define property on an Object constructor?
 Answer 
 
 To define a new property on an Object, we can make use of 
-Object.defineProperty method */
+Object.defineProperty method *
 
 const newObject = {};
 Object.defineProperty(newObject, 'newProperty', {
@@ -1415,3 +1415,61 @@ Object.defineProperty(newObject, 'newProperty', {
 console.log(newObject.newProperty);//100
 
 
+Question #76: 
+
+How can you call the constructor of a parent class?
+
+Answer 
+To call the constructor of a parent class, in the child class, we need to call super method. Super method refers to the parent’s constructor or can also call parent’s 
+functions. *
+
+class Rectangle {
+  constructor(width, height) {
+    console.log("I am parent" + width + height)
+  }
+}
+class Square extends Rectangle {
+  constructor(length) {
+    super(length, length);
+    this.name = 'Square';
+  }
+  get area() {
+    return this.width * this.height;
+  }
+  set area(value) {
+    this.area = value;
+  }
+}
+const sq = new Square(10);  //I am parent1010
+
+
+Question #77:
+
+How do you check whether an object can be extendable 
+or not?
+
+Answer 
+
+To check if an object is extendable or not, we will use the Object.isExtensible method. *
+
+const sources = {
+  name: 'ARC Tutorials'
+};
+console.log(Object.isExtensible(sources)); //true
+
+
+Question #78: 
+
+How do you prevent an object from extending?
+
+Answer 
+
+To prevent an object from extending we will have to use 
+Object.preventExtensions method */
+
+const sources = {
+  name: 'ARC Tutorials'
+};
+Object.preventExtensions(sources);
+
+console.log(Object.isExtensible(sources));//false
