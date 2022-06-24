@@ -1465,7 +1465,7 @@ How do you prevent an object from extending?
 Answer 
 
 To prevent an object from extending we will have to use 
-Object.preventExtensions method */
+Object.preventExtensions method *
 
 const sources = {
   name: 'ARC Tutorials'
@@ -1473,3 +1473,54 @@ const sources = {
 Object.preventExtensions(sources);
 
 console.log(Object.isExtensible(sources));//false
+
+
+Question #79: 
+
+How do you find the Vowels?
+
+Answer 
+
+To find vowels in a given string, we will need to implement a method. The method will check for the vowels passed through an Array and using the Array includes method, we can check if the vowels are present in the <string *
+
+function findVowels(str) {
+  let count = 0
+  const vowels = ['a', 'e', 'i', 'o', 'u']
+  for (let char of str.toLowerCase()) {
+    if (vowels.includes(char)) {
+      count++
+    }
+  }
+  return count
+}
+const result = findVowels("this is some string");
+console.log(result);//5
+
+
+Question #80: 
+
+What are default values in destructuring assignment?
+
+Answer 
+
+Below is an example of how to assign default values in destructuring assignment. *
+
+const { x = 2, y = 4, z = 6 } = { x: 10 };
+console.log(x); // 10 
+console.log(y); // 4 
+console.log(z); // 6 
+
+
+
+Question #81: 
+
+How do you swap variables in destructuring assignment?
+
+Answer 
+To swap variables, we can just use the desturing assignment in the opposite way. */
+
+var x = 10, y = 20;
+[x, y] = [y, x];
+console.log(x); // 20 
+console.log(y); // 10
+
