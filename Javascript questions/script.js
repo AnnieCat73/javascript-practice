@@ -1517,10 +1517,97 @@ Question #81:
 How do you swap variables in destructuring assignment?
 
 Answer 
-To swap variables, we can just use the desturing assignment in the opposite way. */
+To swap variables, we can just use the desturing assignment in the opposite way. *
 
 var x = 10, y = 20;
 [x, y] = [y, x];
 console.log(x); // 20 
 console.log(y); // 10
 
+
+
+Question #82: 
+
+How do you combine two or more arrays?
+
+Answer 
+We can combine two or more Arrays using the Array concat method.*
+
+var veggies = ["Tomato", "Carrot", "Cabbage"];
+var fruits = ["Apple", "Orange", "Pears"];
+var veggiesAndFruits = veggies.concat(fruits);
+console.log(veggiesAndFruits); //Array(6) [ "Tomato", "Carrot", "Cabbage", "Apple", "Orange", "Pears" ]
+
+
+Question #83: 
+
+How to create a specific number of copies for a string?
+
+Answer 
+
+To repeat a string, we can use the string repeat method.*
+
+const result = "ARC Tutorials".repeat(3);
+console.log(result); // will repeat the string 3 times
+//ARC TutorialsARC TutorialsARC Tutorials
+
+
+Question #84: 
+
+What is the easiest way to convert an array to an object?
+
+Answer 
+The easiest way to convert an Array into an Object is using the rest operator. *
+
+var fruits = ["banana", "apple", "orange", "watermelon"];
+var fruitsObject = { ...fruits };
+console.log(fruitsObject);//Object { 0: "banana", 1: "apple", 2: "orange", 3: "watermelon" }
+
+
+Question #85:
+
+Verify that a function argument is a Number or not?
+
+Answer 
+
+To verify that a function argument is a number or not, we will need to pass an argument to the function. Using the isNaN, parseFloat and isFinite method we can determine if the value is number or not. *
+
+function isNumber(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+console.log(isNumber('s'));//false 
+
+
+Question #86: 
+
+
+What is the easiest way to resize an Array?
+
+Answer 
+
+The easiest way to resize an Array is by assigning a new value to the length property of the Array *
+
+var array = [1, 2, 3, 4, 5];
+console.log(array.length); // 5 
+array.length = 2;
+console.log(array.length); // 2 
+console.log(array); //Array [1,2]
+
+
+Question #87: 
+
+What's the difference between a function expression and 
+function declaration?
+
+Answer 
+The main difference between a function expression and a function declaration is the function name, which can be omitted in function expressions to create anonymous functions. */
+
+hoistedFunc();//I am hoisted
+notHoistedFunc();
+function hoistedFunc() {
+  console.log("I am hoisted");
+}
+const notHoistedFunc = function () {
+  console.log("I will not be hoisted!");
+}
+//Uncaught ReferenceError: can't access lexical declaration 'notHoistedFunc' before initialization
