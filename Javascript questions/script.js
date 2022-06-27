@@ -1600,7 +1600,7 @@ What's the difference between a function expression and
 function declaration?
 
 Answer 
-The main difference between a function expression and a function declaration is the function name, which can be omitted in function expressions to create anonymous functions. */
+The main difference between a function expression and a function declaration is the function name, which can be omitted in function expressions to create anonymous functions. *
 
 hoistedFunc();//I am hoisted
 notHoistedFunc();
@@ -1611,3 +1611,33 @@ const notHoistedFunc = function () {
   console.log("I will not be hoisted!");
 }
 //Uncaught ReferenceError: can't access lexical declaration 'notHoistedFunc' before initialization
+
+
+
+Question #88: 
+
+How to detect a mobile device with JavaScript?
+
+Answer 
+
+We will make use of the navigator object to detect the mobile devices *
+iOS: function() {
+  return navigator.userAgent.match(/iPhone|iPad/i); // check for iPhone/iPad 
+}
+
+Android: function() {
+  return navigator.userAgent.match(/Android/i); // check for Android 
+} 
+
+
+Question #89: 
+
+How to fill static values in an array?
+
+Answer 
+
+We can fill static values in an array using the fill() method in JavaScript. */
+
+var arr = ["Welcome", "to", "ARC", "Tutorials"];
+console.log(`Initial Array: ` + arr);//Initial Array: Welcome,to,ARC,Tutorials
+console.log(`Updated array ` + arr.fill("ARC Tutorials Channel", 1, 2));//Initial Array: Welcome,to,ARC,Tutorials
