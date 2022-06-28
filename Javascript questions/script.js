@@ -1636,8 +1636,23 @@ How to fill static values in an array?
 
 Answer 
 
-We can fill static values in an array using the fill() method in JavaScript. */
+We can fill static values in an array using the fill() method in JavaScript. *
 
 var arr = ["Welcome", "to", "ARC", "Tutorials"];
 console.log(`Initial Array: ` + arr);//Initial Array: Welcome,to,ARC,Tutorials
 console.log(`Updated array ` + arr.fill("ARC Tutorials Channel", 1, 2));//Initial Array: Welcome,to,ARC,Tutorials
+
+
+Question #90: 
+
+Why do we use The some() method in Arrays?
+
+Answer 
+
+The some() method checks if an array element satisfies a particular given condition. */
+
+const val = [20, 28, 45];
+function display(a) {
+  return a > 21;
+}
+console.log("Are their values greater than 21 in the array = " + val.some(display));//Are their values greater than 21 in the array = true
