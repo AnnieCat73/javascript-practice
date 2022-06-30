@@ -1649,10 +1649,43 @@ Why do we use The some() method in Arrays?
 
 Answer 
 
-The some() method checks if an array element satisfies a particular given condition. */
+The some() method checks if an array element satisfies a particular given condition. *
 
 const val = [20, 28, 45];
 function display(a) {
   return a > 21;
 }
 console.log("Are their values greater than 21 in the array = " + val.some(display));//Are their values greater than 21 in the array = true
+
+
+Question #91:
+
+How to add 15 minutes to a JavaScript Date?
+
+Answer 
+
+To add “n” number of minutes to JavaScript date object, we will need to first get the date and then using the The getMinutes() method get the current minutes in JavaScript. 
+Finally using the setMinutes() method, we will set the new value.*
+
+var date = new Date();
+console.log("Current Date and Time = " + date);//Current Date and Time = Tue Jun 28 2022 11:55:39 GMT+0100 (British Summer Time)
+date.setMinutes(date.getMinutes() + 15);
+console.log("New Date = " + date);//New Date = Tue Jun 28 2022 12:10:55 GMT+0100 (British Summer Time)
+
+
+Question #91:
+
+Explain JavaScript Promises with an example?
+
+Answer 
+
+Below is an example of a JavaScript promise. */
+
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Resolved');
+  }, 300);
+});
+myPromise
+  .then((v) => console.log(v))
+  .catch(() => console.log("Error Handling"))//Resolved
