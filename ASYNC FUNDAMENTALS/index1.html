@@ -1,0 +1,59 @@
+<html>
+<style>
+    body {
+        background-color: #ffcc00;
+        font-family: sans-serif;
+    }
+    h1 {
+        text-align: center;
+        padding-top:140px;
+        font-size: 60px;
+        margin: -15px;
+    }
+    p {
+        text-align: center;        
+        color: #907400;
+    }
+    p#btn {
+        cursor: pointer;
+    }
+    img {
+        margin: auto;
+        display: block;
+    }
+</style>
+<body>
+    <h1 id="iptext">This will be replaced with your public IP address</h1>
+    <br>
+    <p>( This is your IP address ... probably )</p>
+    <p id="btn">Show Image</p>
+    <img>
+    <script>
+        // ************************ FETCHING THE IP ADDRESS
+        // define URL
+        let url = "http://worldtimeapi.org/api/timezone/Africa/Harare";
+
+       //use the Headers interface
+        let h = new Headers();
+        h.append("Accept", "application/json");
+
+        //use the Request interface
+        let req = new Request(url, {
+            method: "GET",
+            headers: h
+        });
+
+        //define our AJAX fetch request
+        fetch(req)
+            .then((response) => {
+                return response.json();//or 
+            })
+            .then((JSObject) => { //or JSON DATA
+                document.getElementById('iptext').innerHTML = JSObject.client_ip;
+            })
+            .catch((err) => {
+                console.log("Oops, there was a network error!")
+            })
+    </script>
+</body>
+</html>
