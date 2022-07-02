@@ -1679,7 +1679,7 @@ Explain JavaScript Promises with an example?
 
 Answer 
 
-Below is an example of a JavaScript promise. */
+Below is an example of a JavaScript promise. *
 
 const myPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -1689,3 +1689,23 @@ const myPromise = new Promise((resolve, reject) => {
 myPromise
   .then((v) => console.log(v))
   .catch(() => console.log("Error Handling"))//Resolved
+
+
+
+Question #92: 
+
+
+Explain JavaScript Promises with an example?
+
+Answer 
+
+Below is an example of a JavaScript promise. */
+
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Resolved');
+  }, 300);
+});
+myPromise
+  .then((v) => console.log(v))
+  .catch(() => console.log("Error Handling"))
