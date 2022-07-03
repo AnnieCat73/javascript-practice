@@ -1699,7 +1699,7 @@ Explain JavaScript Promises with an example?
 
 Answer 
 
-Below is an example of a JavaScript promise. */
+Below is an example of a JavaScript promise. *
 
 const myPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -1709,3 +1709,37 @@ const myPromise = new Promise((resolve, reject) => {
 myPromise
   .then((v) => console.log(v))
   .catch(() => console.log("Error Handling"))
+
+
+Question #93: 
+Which keyword can be used to deploy inheritance in 
+ES6?
+
+Answer 
+
+The extends keyword is used to implement inheritance in the ES6 language.*/
+
+class Classroom {
+  constructor(students) {
+    this.students = students;
+  }
+  room() {
+    console.log('This class has ' + this.students + ' students');
+  }
+}//This class has 40 students
+
+class sectionA extends Classroom {
+  constructor(students) {
+    super(students);
+  }
+  sec() {
+
+    console.log('section A');//section A
+  }
+}
+
+let secA = new sectionA(40);
+
+secA.room();
+secA.sec();
+
