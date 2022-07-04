@@ -1717,7 +1717,7 @@ ES6?
 
 Answer 
 
-The extends keyword is used to implement inheritance in the ES6 language.*/
+The extends keyword is used to implement inheritance in the ES6 language.*
 
 class Classroom {
   constructor(students) {
@@ -1742,4 +1742,25 @@ let secA = new sectionA(40);
 
 secA.room();
 secA.sec();
+
+
+Question #94: 
+
+What is the difference between for..of and for..in?
+
+Answer 
+
+for in: runs over an object's enumerable property names. 
+for of: (new in ES6) takes an object-specific iterator and loops through the data it generates. 
+
+Both the for..of and for..in commands iterate over lists, but the results they return are different: for..in returns a list of keys on the object being iterated, whereas for..of returns a list of values of the object's numeric attributes. */
+
+let arr = [3, 4, 5];
+for (let i in arr) {
+  console.log(i); // "0", "1", "2", 
+}
+for (let i of arr) {
+  console.log(i); // "3", "4", "5" 
+}
+
 
