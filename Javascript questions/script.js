@@ -1753,7 +1753,7 @@ Answer
 for in: runs over an object's enumerable property names. 
 for of: (new in ES6) takes an object-specific iterator and loops through the data it generates. 
 
-Both the for..of and for..in commands iterate over lists, but the results they return are different: for..in returns a list of keys on the object being iterated, whereas for..of returns a list of values of the object's numeric attributes. */
+Both the for..of and for..in commands iterate over lists, but the results they return are different: for..in returns a list of keys on the object being iterated, whereas for..of returns a list of values of the object's numeric attributes. *
 
 let arr = [3, 4, 5];
 for (let i in arr) {
@@ -1764,3 +1764,21 @@ for (let i of arr) {
 }
 
 
+Question #94: 
+
+What is the difference between for..of and for..in?
+
+Answer 
+
+for in: runs over an object's enumerable property names. 
+for of: (new in ES6) takes an object-specific iterator and loops through the data it generates. 
+
+Both the for..of and for..in commands iterate over lists, but the results they return are different: for..in returns a list of keys on the object being iterated, whereas for..of returns a list of values of the object's numeric attributes. */
+
+let arr = [3, 4, 5];
+for (let i in arr) {
+  console.log(i); // "0", "1", "2", 
+}
+for (let i of arr) {
+  console.log(i); // "3", "4", "5" 
+}
