@@ -1791,6 +1791,25 @@ How to set a property in localStorage?
 
 Answer 
 
-Below is the snippet to set a property in localStorage */
+Below is the snippet to set a property in localStorage *
 
 window.localStorage.setItem("grade", "One"); 
+
+
+Question #96: 
+
+Give a list of the various ways using which an HTML 
+element can be accessed within a JavaScript code?
+
+Answer 
+
+Below are some of the methods using which we can access the HTML elements within JavaScript code.
+
+getElementById(‘idname’): Using this method, you can get an element by the ID name of the element.
+
+getElementsByClass(‘classname’): Using this method, you can get all elements which have a given classname.
+
+getElementsByTagName(‘tagname’): Using this method, you can get all elements which have a given tag name. 
+
+querySelector(): The querySelector() function takes the css style selector and returns the first selected element 
+
