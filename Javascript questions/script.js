@@ -1813,3 +1813,19 @@ getElementsByTagName(‘tagname’): Using this method, you can get all elements
 
 querySelector(): The querySelector() function takes the css style selector and returns the first selected element 
 
+
+
+Question #97: 
+
+
+State the difference between Apply and Call?
+
+Answer 
+
+The call() method helps to call a function which has a given ‘this’ value and the arguments which are individually provided
+
+fun.call(thisArg[, arg1[, arg2[, …]]]) 
+
+The apply() method is used to call a function which has a given ‘this’ value but the arguments are presented as an array
+fun.apply(thisArg, [argsArray]) 
+
