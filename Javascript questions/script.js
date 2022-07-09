@@ -1829,3 +1829,18 @@ fun.call(thisArg[, arg1[, arg2[, …]]])
 The apply() method is used to call a function which has a given ‘this’ value but the arguments are presented as an array
 fun.apply(thisArg, [argsArray]) 
 
+
+Question #98: 
+
+What is the difference between undefined and not defined 
+in JavaScript?
+
+Answer 
+
+In JavaScript, if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error var name is not defined 
+If a variable that is neither declared nor defined, when we try to reference such a variable we'd get the result not defined*/
+
+var x; // declaring x 
+console.log(x); //output: undefined 
+console.log(y); // Output: ReferenceError: y is not defined 
+
