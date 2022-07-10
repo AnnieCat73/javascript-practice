@@ -1838,9 +1838,33 @@ in JavaScript?
 Answer 
 
 In JavaScript, if you try to use a variable that doesn't exist and has not been declared, then JavaScript will throw an error var name is not defined 
-If a variable that is neither declared nor defined, when we try to reference such a variable we'd get the result not defined*/
+If a variable that is neither declared nor defined, when we try to reference such a variable we'd get the result not defined*
 
 var x; // declaring x 
 console.log(x); //output: undefined 
 console.log(y); // Output: ReferenceError: y is not defined 
+
+
+Question #99: 
+
+Explain Closure in JavaScript with an example?
+
+Answer 
+
+Closure means that an inner function always has access to the vars and parameters of its outer function, even after the outer function has returned.
+
+In the below example, return InnerFunction; returns InnerFunction from OuterFunction when you call OuterFunction(). A variable innerFunc referenced the InnerFunction() only, not the OuterFunction(). So now, when you call 
+innerFunc(), it can still access outerVariable which is declared in OuterFunction(). 
+
+This is called Closure */
+
+function OuterFunction() {
+  var outerVariable = 100;
+  function InnerFunction() {
+    console.log(outerVariable);
+  }
+  return InnerFunction;
+}
+var innerFunc = OuterFunction();
+innerFunc(); // 100 
 
