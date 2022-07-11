@@ -1856,7 +1856,7 @@ Closure means that an inner function always has access to the vars and parameter
 In the below example, return InnerFunction; returns InnerFunction from OuterFunction when you call OuterFunction(). A variable innerFunc referenced the InnerFunction() only, not the OuterFunction(). So now, when you call 
 innerFunc(), it can still access outerVariable which is declared in OuterFunction(). 
 
-This is called Closure */
+This is called Closure *
 
 function OuterFunction() {
   var outerVariable = 100;
@@ -1867,4 +1867,25 @@ function OuterFunction() {
 }
 var innerFunc = OuterFunction();
 innerFunc(); // 100 
+
+
+
+Question #100: 
+
+How to calculate the length of an associative array using 
+JavaScript?
+
+Answer 
+
+We can calculate the length in different ways. In the below snippet, we are calculating the length using the Object’s keys method. *
+
+const arr = {
+  "apple": 10,
+  "grapes": 20
+};
+
+const length = Object.keys(arr).length;
+console.log(length);//2
+
+
 
