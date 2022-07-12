@@ -1888,4 +1888,25 @@ const length = Object.keys(arr).length;
 console.log(length);//2
 
 
+Question #101: 
 
+Explain JavaScript promise.all with an example?
+
+Answer 
+
+Whenever we need to wait for all promises, that time we will make use of Promise.all(). The callback is executed only when all the states are successful.then()If one fails, execute it.catch(). */
+
+var p1 = Promise.resolve(1)
+var p2 = Promise.resolve(2)
+var p3 = Promise.resolve(3)
+let pro = Promise.all([p1, p2, p3])
+  .then(res => {
+    console.log(res) // [1, 2, 3] 
+  })
+  .catch(err => {
+    console.log("Failed")
+  })
+console.log(pro)
+
+//Promise { <state>: "fulfilled", <value>: undefined }
+//Array(3) [ 1, 2, 3 ]
