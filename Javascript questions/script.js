@@ -1894,7 +1894,7 @@ Explain JavaScript promise.all with an example?
 
 Answer 
 
-Whenever we need to wait for all promises, that time we will make use of Promise.all(). The callback is executed only when all the states are successful.then()If one fails, execute it.catch(). */
+Whenever we need to wait for all promises, that time we will make use of Promise.all(). The callback is executed only when all the states are successful.then()If one fails, execute it.catch(). *
 
 var p1 = Promise.resolve(1)
 var p2 = Promise.resolve(2)
@@ -1910,3 +1910,29 @@ console.log(pro)
 
 //Promise { <state>: "fulfilled", <value>: undefined }
 //Array(3) [ 1, 2, 3 ]
+
+
+Question #102: 
+
+Explain Promise.race with an example?
+
+Answer 
+
+Promise.race()It is also used to receive a set of asynchronous tasks, and then execute them in parallel. Only the result of the fastest asynchronous operation is 
+retained. Other methods are still executing, but the execution result will be discarded */
+
+var p1 = new Promise(function (resolve, reject) {
+  setTimeout(reject, 500, "one");
+});
+var p2 = new Promise(function (resolve, reject) {
+  setTimeout(resolve, 100, "two");
+});
+Promise.race([p1, p2])
+  .then(res => {
+    console.log('then', res)
+  })
+  .catch(err => {
+    console.log('catch', err) // `catch error` 
+    return err
+  })
+//then two
