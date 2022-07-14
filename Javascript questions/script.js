@@ -1919,7 +1919,7 @@ Explain Promise.race with an example?
 Answer 
 
 Promise.race()It is also used to receive a set of asynchronous tasks, and then execute them in parallel. Only the result of the fastest asynchronous operation is 
-retained. Other methods are still executing, but the execution result will be discarded */
+retained. Other methods are still executing, but the execution result will be discarded *
 
 var p1 = new Promise(function (resolve, reject) {
   setTimeout(reject, 500, "one");
@@ -1936,3 +1936,17 @@ Promise.race([p1, p2])
     return err
   })
 //then two
+
+
+Question #103: 
+
+Give an example of an Anonymous function?
+
+Answer 
+
+As the name states, it is a function without a name. They are declared during runtime dynamically using a function operator since it offers more flexibility than a declarator.*/
+
+var display = function () {
+  console.log("Anonymous Function is declared");
+}
+display();//Anonymous Function is declared
