@@ -1944,9 +1944,30 @@ Give an example of an Anonymous function?
 
 Answer 
 
-As the name states, it is a function without a name. They are declared during runtime dynamically using a function operator since it offers more flexibility than a declarator.*/
+As the name states, it is a function without a name. They are declared during runtime dynamically using a function operator since it offers more flexibility than a declarator.*
 
 var display = function () {
   console.log("Anonymous Function is declared");
 }
 display();//Anonymous Function is declared
+
+
+
+Question #104: 
+
+What is Prototype Property? Explain with an Example.
+
+Answer 
+
+Prototype property is usually used for implementing inheritance. Every function has one, by default the value of which is null. Methods and properties are added to the prototype to make it available to the instances. */
+
+function Rectangle(x, y) {
+  this.x = x;
+  this.y = y;
+}
+Rectangle.prototype.perimeter = function () {
+  return 2 * (this.x + this.y);
+}
+var rectangle = new Rectangle(4, 3);
+console.log(rectangle.perimeter()); // outputs '14' 
+
