@@ -1959,7 +1959,7 @@ What is Prototype Property? Explain with an Example.
 
 Answer 
 
-Prototype property is usually used for implementing inheritance. Every function has one, by default the value of which is null. Methods and properties are added to the prototype to make it available to the instances. */
+Prototype property is usually used for implementing inheritance. Every function has one, by default the value of which is null. Methods and properties are added to the prototype to make it available to the instances. *
 
 function Rectangle(x, y) {
   this.x = x;
@@ -1970,4 +1970,22 @@ Rectangle.prototype.perimeter = function () {
 }
 var rectangle = new Rectangle(4, 3);
 console.log(rectangle.perimeter()); // outputs '14' 
+
+
+
+Question #105:
+
+
+Explain function hoisting with an example?
+
+Answer
+
+Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. 
+Hoisted functions can be used before their declaration. As you can see, the JavaScript interpreter allows you to use the function before the point at which it was declared in the source code. This is extremely useful as the function can be 
+called before defining it. One can then define the function anywhere in the program code *
+Func_Hoisted(); // function called before definition 
+function Func_Hoisted() {
+  console.log("This function is hoisted!");//This function is hoisted!
+}
+
 
