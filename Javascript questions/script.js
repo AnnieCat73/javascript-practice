@@ -1995,7 +1995,7 @@ How to implement Bubble sort in JavaScript?
 
 Answer 
 
-The below given code snippet will perform Array sorting using the bubble sort algorithm. */
+The below given code snippet will perform Array sorting using the bubble sort algorithm. *
 
 function bblSort(arr) {
 
@@ -2022,3 +2022,23 @@ function bblSort(arr) {
 // This is our unsorted array 
 var arr = [234, 43, 55, 63, 5, 6, 235, 547];
 bblSort(arr);
+
+
+
+
+Question #107: 
+
+How to find prime numbers in an Array?
+
+Answer 
+
+The below code snippet will find all the prime numbers in a given Array. */
+
+var numArray = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+numArray = numArray.filter((number) => {
+  for (var i = 2; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) return false;
+  }
+  return true;
+});
+console.log(numArray);//Array(4) [ 2, 3, 5, 7 ]
