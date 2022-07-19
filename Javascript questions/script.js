@@ -2032,7 +2032,7 @@ How to find prime numbers in an Array?
 
 Answer 
 
-The below code snippet will find all the prime numbers in a given Array. */
+The below code snippet will find all the prime numbers in a given Array. *
 
 var numArray = [2, 3, 4, 5, 6, 7, 8, 9, 10]
 numArray = numArray.filter((number) => {
@@ -2042,3 +2042,23 @@ numArray = numArray.filter((number) => {
   return true;
 });
 console.log(numArray);//Array(4) [ 2, 3, 5, 7 ]
+
+
+Question #108: 
+
+How to generate fibonacci series in JavaScript?
+
+Answer 
+
+Below code snippet will generate fibonacci series in JavaScript. */
+
+var i;
+var fib = []; // Initialize array! 
+fib[0] = 0;
+fib[1] = 1;
+for (i = 2; i <= 10; i++) {
+  // Next fibonacci number = previous + one before previous 
+
+  fib[i] = fib[i - 2] + fib[i - 1];
+  console.log(fib[i]);// 1 2 3 4 5 8 13 21 34 55
+}
