@@ -2050,7 +2050,7 @@ How to generate fibonacci series in JavaScript?
 
 Answer 
 
-Below code snippet will generate fibonacci series in JavaScript. */
+Below code snippet will generate fibonacci series in JavaScript. 
 
 var i;
 var fib = []; // Initialize array! 
@@ -2062,3 +2062,7 @@ for (i = 2; i <= 10; i++) {
   fib[i] = fib[i - 2] + fib[i - 1];
   console.log(fib[i]);// 1 2 3 4 5 8 13 21 34 55
 }
+
+
+
+*/
