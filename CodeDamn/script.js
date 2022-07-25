@@ -8,7 +8,7 @@ function performMath(number1, number2, operation) {
 
   }
 }
-console.log(performMath(4, 2, '*'));//8*/
+console.log(performMath(4, 2, '*'));//8*
 
 
 
@@ -65,7 +65,17 @@ const obj3 = {
   ...obj2
 }
 
-console.log(obj3)//Object { name: "mehul", age: "22" }
+console.log(obj3)//Object { name: "mehul", age: "22" }*/
 
+
+
+const promiseObject = fetch('/data.json');
+
+promiseObject.then(response => {
+  const promiseObject = response.json()
+  promiseObject.then(data => {
+    console.log(data)
+  })
+})
 
 
