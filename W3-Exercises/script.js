@@ -35,3 +35,9 @@ console.log(`Current Time : ${hour}${prepend} : ${minute} : ${second}`);
 
 //Today is : Monday. script.js:8:9
 //Current Time : 6 AM  : 16 : 5
+
+function reverse_a_number(n) {
+  n = n + "";
+  return n.split("").reverse().join("");
+}
+console.log(Number(reverse_a_number(32243)));
