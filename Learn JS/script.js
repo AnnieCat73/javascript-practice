@@ -83,3 +83,62 @@ function multiply(num3, num4) {
   return num3 * num4;
 }
 console.log(multiply(67, 89));//5963
+
+
+/*Whether you’d like an implicit return
+Arrow functions automatically create a return statement if two conditions are present:
+
+You write only one line of code in the function
+That line of code is not enclosed in curly braces ({})
+This implicit return feature lets you reduce three lines of code into a single line.*/
+
+// 3 lines of code with a normal function
+const sumNormal = function (num1, num2) {
+  return num1 + num2
+}
+
+// Can be replaced with one line of code with an arrow function
+const sumArrow = (num1, num2) => num1 + num2
+
+
+const ten = () => 5 + 5;
+console.log(ten());//10
+
+const result = ten();
+console.log(result)
+
+const eleven = _ => 6 + 5;
+console.log(eleven());//11
+
+const logs = pet => `My ${pet}'s name is Noozie!`;
+console.log(logs('cat'));//My cat's name is Noozie!
+
+const add3 = (num6, num7) => num6 + num7;
+console.log(add3(6, 8));//14
+//or
+const add4 = (num8, num9) => {
+  return num8 + num9;
+}
+console.log(add4(6, 8));//14
+
+const multiply10 = (num10, num11) => num10 * num11;
+console.log(multiply10(5, 5));//25
+//or
+const multiply11 = (num12, num13) => {
+  return num12 * num13;
+}
+console.log(multiply11(5, 5));//25
+
+
+/*Objects
+
+An object is data that contains key-value pairs.
+
+You can create objects by writing these key-value pairs within curly braces. If you intend to create multiple key-value pairs, you need to separate each pair with commas, like this:*/
+
+const anObject = {
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3',
+  // ...
+}
