@@ -87,3 +87,14 @@ console.log(dig(dog, 'message'));
 //some data script.js:84:9
 //undefined script.js:85:9
 //https://images.dog.ceo/breeds/african/n02116738_1105.jpg
+
+
+/*Write a JavaScript program to remove specified elements from the left of a given array of elements.*/
+
+function remove_from_left(arr, n = 1) {
+  return arr.slice(n);
+}
+console.log(remove_from_left([1, 2, 3]));//Array [ 2, 3 ]
+console.log(remove_from_left([1, 2, 3], 1));//Array [ 2, 3 ]
+console.log(remove_from_left([1, 2, 3], 2));//Array [ 3 ]
+console.log(remove_from_left([1, 2, 3], 4));//Array []
