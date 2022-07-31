@@ -14,3 +14,14 @@ function validatePasswordsMatch(password, password2) {
     displayError(password2, 'Passwords do not match');
   }
 }
+
+//Show inpute error message
+function displayError(input, message) {
+  const small = form.querySelector('small');
+  small.innerText = message;
+}
+
+//check length
+function validateLength(input, min, max) {
+
+}

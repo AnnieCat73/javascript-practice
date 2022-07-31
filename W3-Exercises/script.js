@@ -98,3 +98,11 @@ console.log(remove_from_left([1, 2, 3]));//Array [ 2, 3 ]
 console.log(remove_from_left([1, 2, 3], 1));//Array [ 2, 3 ]
 console.log(remove_from_left([1, 2, 3], 2));//Array [ 3 ]
 console.log(remove_from_left([1, 2, 3], 4));//Array []
+
+
+//Write a JavaScript program to decapitalize the first letter of a string.
+
+const decapitalize = ([first, ...rest], upperRest = false) =>
+  first.toLowerCase() + (upperRest ? rest.join('').toUpperCase() : rest.join(''));
+console.log(decapitalize('W3resource'))
+console.log(decapitalize('Red', true));//rED
