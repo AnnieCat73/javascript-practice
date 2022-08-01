@@ -142,3 +142,138 @@ const anObject = {
   key3: 'value3',
   // ...
 }
+
+
+/*Each key gives you a reference to a value. If you imagine an English dictionary, the keys are the words while the values are the definition of each word.*/
+
+const dictionary = {
+  dream: "a series of thoughts, images, and sensations occurring in a person's mind during sleep",
+  happy: "feeling or showing pleasure or contentment",
+  // ...
+}
+
+/*or
+
+For example, you can observe the device you’re using to read this lesson. What device is this? What’s its size? What’s its operating system?*/
+
+const macbook = {
+  operatingSystem: 'macOS Sierra',
+  screenResolution: '2880x1800',
+  screenSize: '15.4 inch',
+  usbPorts: 2,
+  storage: '512gb',
+  // ... Other specs
+}
+
+//Objects can contain any value that’s valid in JavaScript. 
+
+const anObject1 = {
+  string: 'Yay',
+  number: 1,
+  boolean: true,
+  anotherObject: {},
+  aFunction: function () { }, // more on functions later
+  anArray: [] // more on array in a future lesson
+}
+
+//Object keys are called properties. To get the value of a property.
+//The first method is through the dot notation
+
+const macbookStorage1 = macbook.storage
+console.log(macbookStorage1) // 512gb
+
+//The second method is through the bracket notation
+
+const macbookStorage2 = macbook['storage']
+console.log(macbookStorage2) // 512gb
+
+/*You’ll only use the bracket notation in special occasions where the dot notation doesn’t work. These special occasions include:*/
+
+//1 When your property name is an invalid identifier
+
+/*When you declare variables?
+
+It must be one word
+It must consist only of letters, numbers or underscores (0-9, a-z, A-Z, _)
+It cannot begin with a number
+It cannot be any of these reserved keywords
+Anything that follows these four rules is a valid identifier. Anything that doesn’t follow these rules is an invalid identifier*/
+
+const objWithInvalidIdentifier = {
+  'First Name': 'Zell'
+}
+
+//const firstName = objWithInvalidIdentifier.First Name // Syntax Error: Unexpected identifier ie two words here so
+const firstName2 = objWithInvalidIdentifier['First Name'] // Zell
+
+
+/*2 When you need to get the value of a property through a variable
+
+Let’s say you stored the property to search in a variable called propertyToGet.*/
+
+const propertyToGet = 'storage'
+/*You can’t use the dot notation to get propertyToGet because the macbook doesn’t contain a property called propertyToGet.*/
+
+const storageWithDotNotation = macbook.propertyToGet
+console.log(storageWithDotNotation) // undefined
+/*To use propertyToGet, you need to use the bracket notation.*/
+
+const macbookStorage3 = macbook[propertyToGet]
+/*Here, JavaScript replaces propertyToGet with the variable you inserted, which means this happens:*/
+
+const macbookStorage4 = macbook['storage']
+console.log(macbookStorage4) // 512gb
+
+//Deleting properties
+
+delete macbook.storage
+
+//Methods
+
+const macbook5 = {
+  playMusic: function () {
+    /* some code to play music */
+  }
+}
+
+// Calling a method with the dot notation
+macbook5.playMusic()
+
+// Calling a method with the bracket notation
+macbook5['playMusic']()
+
+
+//You can also add arguments to methods, just like normal functions:
+
+const greeter = {
+  sayHello: function (name) {
+    console.log('Hello ' + name + '!')
+  }
+}
+
+greeter.sayHello('Zell')
+// Hello Zell!
+
+const emptyObject = {
+  name: 'Harry',
+  'hairy legs': true,
+  surName: 'DontKnow',
+  myName: function () {
+    console.log(`my name is ${this.name} ${this.surName}! What's yours?`);
+  },
+  add5: function (num20, num21) {
+    console.log(num20 + num21);
+  }
+}
+
+console.log(emptyObject.name)
+console.log(emptyObject['hairy legs']);//true
+emptyObject.surName = "Windsor";
+console.log(emptyObject.surName)//Windsor
+emptyObject['name'] = "William";
+console.log(emptyObject.name)//William
+emptyObject.myName()//my name is William Windsor! What's yours?
+emptyObject.add5(6, 9);//15
+
+//if/else statements
+

@@ -106,3 +106,17 @@ const decapitalize = ([first, ...rest], upperRest = false) =>
   first.toLowerCase() + (upperRest ? rest.join('').toUpperCase() : rest.join(''));
 console.log(decapitalize('W3resource'))
 console.log(decapitalize('Red', true));//rED
+
+//Write a JavaScript program to test the first character of a string is uppercase or not.
+
+function upper_case(str) {
+  regexp = /^[A-Z]/;
+  if (regexp.test(str)) {
+    console.log("String's first character is uppercase");
+  }
+  else {
+    console.log("String's first character is not uppercase");
+  }
+}
+upper_case('Abcd');//String's first character is uppercase
+upper_case('abcd');//String's first character is not uppercase
