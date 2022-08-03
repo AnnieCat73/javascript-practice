@@ -138,3 +138,14 @@ else
   else {
     console.log("The values " + num1 + " and " + num2 + " are equal.");
   }
+
+
+//Write a JavaScript program to convert a value to a safe integer.
+
+const toSafeInteger = num =>
+  Math.round(Math.max(Math.min(num, Number.MAX_SAFE_INTEGER), Number.MIN_SAFE_INTEGER));
+console.log(toSafeInteger('5.2'));//5
+console.log(toSafeInteger('5.52'));//6
+console.log(toSafeInteger(Infinity)); //9007199254740991
+
+
