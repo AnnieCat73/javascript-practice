@@ -174,3 +174,21 @@ decToBho = function (n, base) {
 console.log(decToBho(120, 'B'));//1111000
 console.log(decToBho(120, 'H'));//78
 console.log(decToBho(120, 'O'));//170
+
+
+//Write a JavaScript function to generate a random integer.
+
+rand = function (min, max) {
+  if (min == null && max == null)
+    return 0;
+
+  if (max == null) {
+    max = min;
+    min = 0;
+  }
+  return min + Math.floor(Math.random() * (max - min + 1));
+};
+console.log(rand(20, 1));//7
+console.log(rand(1, 10));//2
+console.log(rand(6));//5
+console.log(rand());//0
