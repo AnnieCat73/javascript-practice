@@ -192,3 +192,14 @@ console.log(rand(20, 1));//7
 console.log(rand(1, 10));//2
 console.log(rand(6));//5
 console.log(rand());//0
+
+//Write a JavaScript function to find the lowest value in an array.
+
+function min(input) {
+  if (toString.call(input) !== "[object Array]")
+    return false;
+  return Math.min.apply(null, input);
+}
+
+console.log(min([12, 34, 56, 1]));//1
+console.log(min([-12, -34, 0, -56, -1]));//-56
