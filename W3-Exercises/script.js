@@ -203,3 +203,15 @@ function min(input) {
 
 console.log(min([12, 34, 56, 1]));//1
 console.log(min([-12, -34, 0, -56, -1]));//-56
+
+
+//Write a JavaScript program to get the width and height of the window (any time the window is resized).
+
+
+function getSize() {
+  var w = document.documentElement.clientWidth;
+  var h = document.documentElement.clientHeight;
+
+  // put the result into a h1 tag
+  document.getElementById('wh').innerHTML = "<h1>Width: " + w + " â€¢ Height: " + h + "</h1>";
+}
