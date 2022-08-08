@@ -215,3 +215,16 @@ function getSize() {
   // put the result into a h1 tag
   document.getElementById('wh').innerHTML = "<h1>Width: " + w + " â€¢ Height: " + h + "</h1>";
 }
+
+
+//Write a JavaScript function to format a number up to specified decimal places.
+
+function decimals(n, d) {
+  if ((typeof n !== 'number') || (typeof d !== 'number'))
+    return false;
+  n = parseFloat(n) || 0;
+  return n.toFixed(d);
+}
+console.log(decimals(2.100212, 2));//2.10
+console.log(decimals(2.100212, 3));//2.100
+console.log(decimals(2100, 2));//2100.00
