@@ -193,6 +193,17 @@ console.log(rand(1, 10));//2
 console.log(rand(6));//5
 console.log(rand());//0
 
+//Write a JavaScript function to find the highest value in an array.
+
+function max(input) {
+  if (toString.call(input) !== "[object Array]")
+    return false;
+  return Math.max.apply(null, input);
+}
+
+console.log(max([12, 34, 56, 1]));//56
+console.log(max([-12, -34, 0, -56, -1]));//0
+
 //Write a JavaScript function to find the lowest value in an array.
 
 function min(input) {
