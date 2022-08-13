@@ -304,3 +304,27 @@ function is_email(str) {
 
 console.log(is_email("admin@example.com"));//true
 console.log(is_email("mysite@.org.org "));//false
+
+
+/*Write a JavaScript function to get the values of First and Last name of the following form.
+
+<head>
+<meta charset=utf-8 />
+<title>Return first and last name from a form - w3resource</title> 
+</head><body>
+<form id="form1" onsubmit="getFormvalue()">
+First name: <input type="text" name="fname" value="David"><br>
+Last name: <input type="text" name="lname" value="Beckham"><br>
+<input type="submit" value="Submit">
+</form>
+</body>
+*/
+
+function getFormvalue() {
+  var x = document.getElementById("form1");
+  for (var i = 0; i < x.length; i++) {
+    if (x.elements[i].value != 'Submit') {
+      console.log(x.elements[i].value);
+    }
+  }
+}//David Beckham
