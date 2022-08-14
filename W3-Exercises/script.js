@@ -328,3 +328,18 @@ function getFormvalue() {
     }
   }
 }//David Beckham
+
+
+//Write a JavaScript program that works as a trim function (string) using regular expression.
+
+function Trim(str) {
+  let result;
+  if (typeof str === 'string') {
+    result = str.replace(/^\s+|\s+$/g, '');
+    return result;
+  }
+  else {
+    return false;
+  }
+}
+console.log(Trim(' w3resource '));//w3resource
