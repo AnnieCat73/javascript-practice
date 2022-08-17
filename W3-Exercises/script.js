@@ -380,3 +380,25 @@ function is_url(str) {
 console.log(is_url("http://www.example.com"));//true
 console.log(is_url("https://www.example.com"));//true
 console.log(is_url("www.example.com"));//false
+
+
+
+//Write a JavaScript function to check whether a given value is alpha numeric or not.
+
+function is_alphaNumeric(str) {
+  regexp = /^[A-Za-z0-9]+$/;
+
+  if (regexp.test(str)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+console.log(is_alphaNumeric("37828sad"));//true
+
+console.log(is_alphaNumeric("3243#$sew"));//false
+
+
+//
