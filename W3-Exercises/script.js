@@ -455,3 +455,21 @@ function is_hexadecimal(str) {
 console.log(is_hexadecimal("ffffff"));//true
 
 console.log(is_hexadecimal("fz5500"));//false
+
+
+//Write a JavaScript function to check whether a given value is hexcolor value or not. 
+
+function is_hexcolor(str) {
+  regexp = /^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/;
+
+  if (regexp.test(str)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+console.log(is_hexcolor("#444"));//true
+
+console.log(is_hexcolor("#3333"));//false
