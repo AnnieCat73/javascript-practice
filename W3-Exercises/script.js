@@ -436,3 +436,22 @@ function is_ukPostCode(str) {
 console.log(is_ukPostCode("B294HJ"));//true
 
 console.log(is_ukPostCode("7892"));//false
+
+
+//Write a JavaScript function to check whether a given value is hexadecimal value or not.
+
+
+function is_hexadecimal(str) {
+  regexp = /^[0-9a-fA-F]+$/;
+
+  if (regexp.test(str)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+console.log(is_hexadecimal("ffffff"));//true
+
+console.log(is_hexadecimal("fz5500"));//false
