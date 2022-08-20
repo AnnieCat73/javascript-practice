@@ -473,3 +473,27 @@ function is_hexcolor(str) {
 console.log(is_hexcolor("#444"));//true
 
 console.log(is_hexcolor("#3333"));//false
+
+
+//Write a JavaScript function to check whether a given value represents a domain or not
+
+function is_domain(str) {
+  regexp = /^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,6}$/i;
+
+  if (regexp.test(str)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+console.log(is_domain('www.example.com'));//true
+
+console.log(is_domain('www.npm.co.uk'));//true
+
+console.log(is_domain('http://www.example.com'));//false
+
+console.log(is_domain('https://www.example.com'));//false
+
+console.log(is_domain('www.example.com'));//true
