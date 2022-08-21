@@ -517,3 +517,21 @@ console.log(is_html(''));//false
 console.log(is_html(''));//false
 
 console.log(is_html('.selector'));//false
+
+
+//Write a JavaScript function to check a given value contains alpha, dash and underscore. 
+
+function is_alphaDash(str) {
+  regexp = /^[a-z0-9_\-]+$/i;
+
+  if (regexp.test(str)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+console.log(is_alphaDash('12-133'));//true
+
+console.log(is_alphaDash('100_23'));//true
