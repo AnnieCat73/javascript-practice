@@ -497,3 +497,23 @@ console.log(is_domain('http://www.example.com'));//false
 console.log(is_domain('https://www.example.com'));//false
 
 console.log(is_domain('www.example.com'));//true
+
+
+//Write a JavaScript function to check whether a given value is html or not.
+
+function is_html(str) {
+  regexp = /<([a-z]+) *[^/]*?>/;
+
+  if (regexp.test(str)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+console.log(is_html(''));//false
+
+console.log(is_html(''));//false
+
+console.log(is_html('.selector'));//false
