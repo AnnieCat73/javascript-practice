@@ -548,3 +548,14 @@ function thousands_separators(num) {
 console.log(thousands_separators(1000));//1,000
 console.log(thousands_separators(10000.23));//10,000.23
 console.log(thousands_separators(100000));//100,000
+
+
+//Write a JavaScript function to validate whether a given value type is boolean or not. 
+
+function is_boolean(value) {
+  return value === true || value === false || toString.call(value) === '[object Boolean]';
+}
+
+console.log(is_boolean(true));//true
+
+console.log(is_boolean('bar'));//false
