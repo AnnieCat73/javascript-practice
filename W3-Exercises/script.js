@@ -559,3 +559,14 @@ function is_boolean(value) {
 console.log(is_boolean(true));//true
 
 console.log(is_boolean('bar'));//false
+
+
+//Write a JavaScript function to validate whether a given value type is error or not.
+
+function is_Error(input) {
+  return input instanceof Error || toString.call(input) === '[object Error]';
+}
+
+console.log(is_Error(new Error('foo')));//true
+console.log(is_Error(100));//false
+console.log(is_Error('foo'));//false
