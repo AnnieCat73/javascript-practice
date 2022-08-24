@@ -570,3 +570,14 @@ function is_Error(input) {
 console.log(is_Error(new Error('foo')));//true
 console.log(is_Error(100));//false
 console.log(is_Error('foo'));//false
+
+
+//Write a JavaScript function to validate whether a given value type is NaN or not.
+
+function is_nan(val) {
+  return val !== val;
+}
+
+console.log(is_nan(NaN));//true
+
+console.log(is_nan('bar'));//false
