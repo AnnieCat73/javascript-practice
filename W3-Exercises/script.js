@@ -581,3 +581,14 @@ function is_nan(val) {
 console.log(is_nan(NaN));//true
 
 console.log(is_nan('bar'));//false
+
+
+//Write a JavaScript function to validate whether a given value type is null or not.
+
+function is_null(val) {
+  return val === null;
+}
+
+console.log(is_null(null));//true
+
+console.log(is_null('bar'));//false
