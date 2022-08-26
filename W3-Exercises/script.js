@@ -592,3 +592,16 @@ function is_null(val) {
 console.log(is_null(null));//true
 
 console.log(is_null('bar'));//false
+
+
+//Write a JavaScript function to validate whether a given value is number or not.
+
+function is_number(value) {
+  return !isNaN(value) && toString.call(value) === '[object Number]';
+}
+
+console.log(is_number(NaN));//false
+
+console.log(is_number(42.32));//true
+
+console.log(is_number(72));//true
