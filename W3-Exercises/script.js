@@ -605,3 +605,18 @@ console.log(is_number(NaN));//false
 console.log(is_number(42.32));//true
 
 console.log(is_number(72));//true
+
+
+// Write a JavaScript function to validate whether a given value is object or not
+
+function is_object(value) {
+  var datatype = typeof value;
+  return datatype === 'function' || datatype === 'object' && !!value;
+}
+
+console.log(is_object({ name: 'Robert' }));//true
+
+console.log(is_object('bar'));//false
+
+console.log(is_object(72));//false
+
