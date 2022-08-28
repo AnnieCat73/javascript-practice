@@ -634,3 +634,15 @@ console.log(is_object('bar'));//false
 
 console.log(is_object(72));//false
 
+
+//Write a JavaScript function to validate whether a given value type is pure json object or not. 
+
+function is_json(value) {
+  return toString.call(value) === '[object Object]';
+}
+
+console.log(is_json({ name: 'Robert' }));//true
+
+console.log(is_json('bar'));//false
+
+console.log(is_json(72));//false
