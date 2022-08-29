@@ -646,3 +646,16 @@ console.log(is_json({ name: 'Robert' }));//true
 console.log(is_json('bar'));//false
 
 console.log(is_json(72));//false
+
+
+//Write a JavaScript function to validate whether a given value is RegExp or not. 
+
+function is_regexp(value) {
+  return toString.call(value) === '[object RegExp]';
+}
+
+console.log(is_regexp(/test/));//true
+
+console.log(is_regexp('bar'));//false
+
+console.log(is_regexp(72));//false
