@@ -700,3 +700,21 @@ function thousands_separators(num) {
 console.log(thousands_separators(1000));//1,000
 console.log(thousands_separators(10000.23));//10,000,23
 console.log(thousands_separators(100000));//100,000
+
+//Write a JavaScript program that accept two integers and display the larger.
+
+var num1, num2;
+num1 = window.prompt("Input the First integer", "0");
+num2 = window.prompt("Input the second integer", "0");
+
+if (parseInt(num1, 10) > parseInt(num2, 10)) {
+  console.log("The larger of " + num1 + " and " + num2 + " is " + num1 + ".");
+}
+else
+  if (parseInt(num2, 10) > parseInt(num1, 10)) {
+    console.log("The larger of " + num1 + " and " + num2 + " is " + num2 + ".");
+  }
+  else {
+    console.log("The values " + num1 + " and " + num2 + " are equal.");
+  }
+
