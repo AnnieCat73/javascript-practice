@@ -960,4 +960,26 @@ while (cnt-- > 0) {
 }
 console.log('First 5 happy numbers are : ' + f5);
 
-//First 5 happy numbers are : 1, 7, 10, 13, 19, 
+//First 5 happy numbers are : 1, 7, 10, 13, 19,
+
+
+//Write a JavaScript program to find the armstrong numbers of 3 digits.
+
+function three_digit_armstrong_number() {
+  for (var i = 1; i < 10; ++i) {
+    for (var j = 0; j < 10; ++j) {
+      for (var k = 0; k < 10; ++k) {
+        var pow = (Math.pow(i, 3) + Math.pow(j, 3) + Math.pow(k, 3));
+        var plus = (i * 100 + j * 10 + k);
+        if (pow == plus) {
+          console.log(pow);
+        }
+      }
+    }
+  }
+}
+three_digit_armstrong_number();
+//153
+//370
+//371
+//407
