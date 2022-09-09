@@ -1027,3 +1027,12 @@ is_array = function (input) {
 };
 console.log(is_array('w3resource'));//false
 console.log(is_array([1, 2, 4, 0]));//true
+
+
+//Write a JavaScript function to clone an array. 
+
+array_Clone = function (arra1) {
+  return arra1.slice(0);
+};
+console.log(array_Clone([1, 2, 4, 0]));//Array(4) [ 1, 2, 4, 0 ]
+console.log(array_Clone([1, 2, [4, 0]]));//Array(3) [ 1, 2, (2) […] ]
