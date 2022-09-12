@@ -1060,3 +1060,11 @@ console.log(last([7, 9, 0, -2]));//-2
 console.log(last([7, 9, 0, -2], 3));//[9,0,-2]
 console.log(last([7, 9, 0, -2], 6));//[7,9,0,-2]
 
+
+//Write a simple JavaScript program to join all elements of the following array into a string.
+
+myColor = ["Red", "Green", "White", "Black"];
+console.log(myColor.toString());//Red,Green,White,Black
+console.log(myColor.join());//Red,Green,White,Black
+console.log(myColor.join('+'));//Red+Green+White+Black
+
