@@ -1037,13 +1037,13 @@ array_Clone = function (arra1) {
 console.log(array_Clone([1, 2, 4, 0]));//Array(4) [ 1, 2, 4, 0 ]
 console.log(array_Clone([1, 2, [4, 0]]));//Array(3) [ 1, 2, (2) […] ]
 
-//Write a JavaScript function to get the first element of an array. Passing a parameter 'n' will return the first 'n' elements of the array.
+/*Write a JavaScript function to get the first element of an array. Passing a parameter 'n' will return the first 'n' elements of the array.
 
 console.log(first([7, 9, 0, -2]));//7
 console.log(first([], 3));//[]
 console.log(first([7, 9, 0, -2], 3));//[7, 9, 0]
 console.log(first([7, 9, 0, -2], 6));//[7, 9, 0, -2]
-console.log(first([7, 9, 0, -2], -3));//[]
+console.log(first([7, 9, 0, -2], -3));//[]*/
 
 
 //Write a JavaScript function to get the last element of an array. Passing a parameter 'n' will return the last 'n' elements of the array.
@@ -1083,4 +1083,31 @@ for (var x = 1; x < str.length; x++) {
   }
 }
 console.log(result.join(''));
+
+
+//Write a JavaScript program to sort the items of an array.
+
+var arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
+var arr2 = [];
+var min = arr1[0];
+var pos;
+max = arr1[0];
+for (i = 0; i < arr1.length; i++) {
+  if (max < arr1[i]) max = arr1[i];
+}
+
+for (var i = 0; i < arr1.length; i++) {
+  for (var j = 0; j < arr1.length; j++) {
+    if (arr1[j] != "x") {
+      if (min > arr1[j]) {
+        min = arr1[j];
+        pos = j;
+      }
+    }
+  }
+  arr2[i] = min;
+  arr1[pos] = "x";
+  min = max;
+}
+console.log(arr2);//Array(9) [ -4, -3, 1, 2, 3, 5, 6, 7, 8 ]
 
