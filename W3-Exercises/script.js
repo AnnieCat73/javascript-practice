@@ -1234,5 +1234,32 @@ console.log(Mynum);//[1,2,2,4,5,4,7,8,7,3,6]
 console.log(result);//["1","2","3","4","5","6","7","8"]
 
 
+//Write a JavaScript program to find the leap years in a given range of years.
+
+function leap_year_range(st_year, end_year) {
+  var year_range = [];
+  for (var i = st_year; i <= end_year; i++) {
+    year_range.push(i);
+  }
+  var new_array = [];
+
+  year_range.forEach(
+    function (year) {
+      if (test_LeapYear(year))
+        new_array.push(year);
+    });
+
+  return new_array;
+}
+
+function test_LeapYear(year) {
+  if ((year % 4 === 0 && year % 100 !== 0) || (year % 100 === 0 && year % 400 === 0)) {
+    return year;
+  } else {
+    return false;
+  }
+}
+
+console.log(leap_year_range(2000, 2012));//[2000,2004,2008,2012]
 
 
