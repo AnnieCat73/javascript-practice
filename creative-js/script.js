@@ -41,4 +41,7 @@ for (let name of names) {
 
 names.forEach(function (name, index) {
   console.log(name, index);
-}) 
+})
+
+
+//
