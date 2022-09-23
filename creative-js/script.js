@@ -44,4 +44,28 @@ names.forEach(function (name, index) {
 })
 
 
-//
+//FUNCTIONS
+
+function max(num1 = 0, num2 = 0) {
+  num1 + num2;
+}
+max(); // if don't pass any params or just one can set default values
+
+
+//for loops
+
+for (let i = 0; i < 100; i++) {//so run from 0-99
+
+  if (i === 20) {
+    console.log("You hit 20!");
+    continue;//so will keep going after hit 20
+    break;//stop after 20
+  }
+  console.log(i);
+}
+
+const texts = ['Singing', 'Watching', 'Cats', 'Dogs']
+
+for (let i = 0; i < texts.length; i++) {
+  console.log(texts[i]);
+}
