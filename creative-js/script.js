@@ -69,3 +69,27 @@ const texts = ['Singing', 'Watching', 'Cats', 'Dogs']
 for (let i = 0; i < texts.length; i++) {
   console.log(texts[i]);
 }
+
+
+//switch
+
+const text = 'kiwi';//so default runs
+let fruitNr = 0;
+
+switch (text) {
+  case 'banana':
+    console.log('I love bananas!');
+    fruitNr = 1;
+    break;
+  case 'apple':
+    console.log(`I don't like apples!`);
+    fruitNr = 2;
+    break;
+  case 'avocado':
+    console.log(`What fruit is this?`)
+    fruitNr = 3;
+    break;
+  default:
+    console.log(`What fruit is that?`)
+    break;
+}
