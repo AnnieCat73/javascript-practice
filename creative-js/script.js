@@ -93,3 +93,6 @@ switch (text) {
     console.log(`What fruit is that?`)
     break;
 }
+
+
+//Scope
