@@ -21,8 +21,17 @@ const user = {
 console.log(user.name);
 user.greet();
 
+//for in
+for (let x in user) {
+  console.log(x); //names, age, married etc only get the keys
+}
 
-//forEach, for Of instead of for
+//if need values
+console.log(user.age)//25 or
+console.log(user[x]);
+
+
+/////forEach, for Of instead of for
 
 const names = ['Sally', 'Punk']
 
@@ -42,6 +51,13 @@ for (let name of names) {
 names.forEach(function (name, index) {
   console.log(name, index);
 })
+
+/*while - if this values to true the computer not like it
+let i = 20;
+while (i < 30) {
+  console.log(i);
+  i++;
+}*/
 
 
 //FUNCTIONS
@@ -71,6 +87,8 @@ for (let i = 0; i < texts.length; i++) {
 }
 
 
+
+
 //switch
 
 const text = 'kiwi';//so default runs
@@ -94,5 +112,8 @@ switch (text) {
     break;
 }
 
+//Guess game
 
-//Scope
+function guessGame() {
+  let randomNr = Math.floor(Math.random() * 11); //number between 1 - 10
+}
