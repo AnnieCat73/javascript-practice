@@ -117,3 +117,19 @@ switch (text) {
 function guessGame() {
   let randomNr = Math.floor(Math.random() * 11); //number between 1 - 10
 }
+
+
+//Nodelist vs html collection
+
+const collectionItems = document.getElementsByClassName("item");
+const nodeItems = document.querySelectorAll(".item");
+
+//getElementByTagname/ById,ByClassName returns an html collection and can only hold node items
+
+//queryselectorAll returns a node list but can hold different node types: nodetext, nodecomments - <!--sjfjd-->
+
+//both can use for loops, for(let item of ManyItems){}
+
+//nodelist you can also use forEach butnot for collection
+
+
