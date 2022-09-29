@@ -124,7 +124,19 @@ function guessGame() {
 const collectionItems = document.getElementsByClassName("item");
 const nodeItems = document.querySelectorAll(".item");
 
-//getElementByTagname/ById,ByClassName returns an html collection and can only hold node items
+/*getElementByTagname/ById,ByClassName returns an html collection and can only hold node items
+A live html collection will update itself.
+
+const collectionItems = document.getElementsByClassName("item");
+const todoList = document.getElementById('todo-list');//it's the parent
+const newItem = document.createElement('li');
+newItem.classList.add('item');
+todoList.appendChild(newItem);
+
+
+With querySelector it's static so not update itself even though it looks good on screen. Behind the scene not so. BUT with querySelector can do f.ex
+const items = todoList.children; Adding children solves the problem!*/
+
 
 //queryselectorAll returns a node list but can hold different node types: nodetext, nodecomments - <!--sjfjd-->
 
