@@ -1412,3 +1412,13 @@ console.log(getDaysInMonth(2, 2012));//29
 console.log(getDaysInMonth(9, 2012));//30
 console.log(getDaysInMonth(12, 2012));//31
 
+
+//Write a JavaScript function to get the month name from a particular date.
+
+var month_name = function (dt) {
+  mlist = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  return mlist[dt.getMonth()];
+};
+console.log(month_name(new Date("10/11/2009")));//October
+console.log(month_name(new Date("11/13/2014")));//November
+
