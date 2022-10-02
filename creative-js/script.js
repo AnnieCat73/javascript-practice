@@ -145,3 +145,12 @@ const items = todoList.children; Adding children solves the problem!*/
 //nodelist you can also use forEach butnot for collection
 
 
+//EVENT BUBBLING from 10m mark
+
+for (item of items) {
+  item.addEventListener('click', deleteItem)
+}
+
+function deleteItem() {
+
+}

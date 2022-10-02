@@ -1434,3 +1434,11 @@ var compare_dates = function (date1, date2) {
 console.log(compare_dates(new Date('11/14/2013 00:00'), new Date('11/14/2013 00:00')));//Date1 = Date2
 console.log(compare_dates(new Date('11/14/2013 00:01'), new Date('11/14/2013 00:00')));//Date1 > Date2
 console.log(compare_dates(new Date('11/14/2013 00:00'), new Date('11/14/2013 00:01')));//Date2 > Date1
+
+
+// Write a JavaScript function to add specified minutes to a Date object. 
+
+var add_minutes = function (dt, minutes) {
+  return new Date(dt.getTime() + minutes * 60000);
+}
+console.log(add_minutes(new Date(2014, 10, 2), 30).toString());//Sun Nov 02 2014 00:30:00 GMT+0000 (Greenwich Mean Time)
