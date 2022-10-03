@@ -154,3 +154,27 @@ for (item of items) {
 function deleteItem() {
 
 }
+
+
+//Local storage - allows you to save stuff - stays there -all strings
+localStorage.setItem('todo', 'Feed the cat')
+
+//how to get rid of local storage data - all strings
+localStorage.clear();
+
+//how to get it back
+const user1 = localStorage.getItem('user1');
+
+const todoList = ['feed the cat', 'wash', 'listen to music']; //or as objects
+const todoList1 = {
+  todo2: 'feed cat',
+  todo3: 'feed myself'
+}
+
+localStorage.setItem('todos', JSON.stringify(todoList));
+const retrieved = JSON.parse(localStorage.getItem('todos'));
+
+
+
+//Session storage - data gets lost after close browser
+sessionStorage.setItem('todoList', 'session feeding cat');
