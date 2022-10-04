@@ -1469,3 +1469,13 @@ var is_weekend = function (date1) {
 console.log(is_weekend('Nov 15, 2014'));//weekend
 console.log(is_weekend('Nov 16, 2014'));//weekend
 console.log(is_weekend('Nov 17, 2014'));//undefined
+
+
+//Write a JavaScript function to get the last day of a month.
+
+var lastday = function (y, m) {
+  return new Date(y, m + 1, 0).getDate();
+}
+console.log(lastday(2014, 0));//31
+console.log(lastday(2014, 1));//28
+console.log(lastday(2014, 11));//31
