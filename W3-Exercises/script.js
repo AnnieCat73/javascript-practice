@@ -1454,3 +1454,18 @@ var date_diff_indays = function (date1, date2) {
 }
 console.log(date_diff_indays('04/02/2014', '11/04/2014'));//216
 console.log(date_diff_indays('12/02/2014', '11/04/2014'));//-28
+
+
+//Write a JavaScript function to test whether a date is a weekend.
+
+var is_weekend = function (date1) {
+  var dt = new Date(date1);
+
+  if (dt.getDay() == 6 || dt.getDay() == 0) {
+    return "weekend";
+  }
+}
+
+console.log(is_weekend('Nov 15, 2014'));//weekend
+console.log(is_weekend('Nov 16, 2014'));//weekend
+console.log(is_weekend('Nov 17, 2014'));//undefined
