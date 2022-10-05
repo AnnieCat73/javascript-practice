@@ -20,8 +20,8 @@ function addTodo(e) {
   todoDiv.classList.add('todo');
   //create li
   const newTodo = document.createElement('li');
-  newTodo.innerText = 'hey';
-  newTodo.classList.add('todoItem');
+  newTodo.innerText = todoInput.value;
+  newTodo.classList.add('todo-item');
   todoDiv.appendChild(newTodo);
   //Check mark button
   const completedButton = document.createElement('button');
@@ -31,11 +31,12 @@ function addTodo(e) {
   //Check trash button
   const trashButton = document.createElement('button');
   trashButton.innerHTML = `<i class="fas fa-trash"></i>`;
-  trashButton.classList.add("complete-btn");
+  trashButton.classList.add("trash-btn");
   todoDiv.appendChild(trashButton);
   //Append to list (ul)
   todoList.appendChild(todoDiv);
-
+  //clear Todo input value
+  todoInput.value = "";
 
 
 }
