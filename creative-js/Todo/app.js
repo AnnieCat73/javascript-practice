@@ -9,6 +9,7 @@ const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 
 todoButton.addEventListener("click", addTodo);
+todoList.addEventListener("click", deleteTodo);
 
 function addTodo(e) {
   e.preventDefault();
@@ -30,6 +31,7 @@ function addTodo(e) {
   todoList.appendChild(completedButton);
 
 }
+
 
 /*Event Listeners
 document.addEventListener("DOMContentLoaded", getTodos);
