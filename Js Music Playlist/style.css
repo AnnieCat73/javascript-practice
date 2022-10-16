@@ -120,6 +120,7 @@ h1 {
   right: 15px;
   top: 30px;
   font-size: 16px;
+  color: #fff;
 }
 
 .master-play {
@@ -199,4 +200,34 @@ h1 {
 .master-play h5 .subtitle {
   font-size: 11px;
   color: #4c5262
+}
+
+.master-play .icon {
+  font-size: 20px;
+  color: #fff;
+  margin: 0px 20px 0px 40px;
+}
+
+.master-play .icon .bi {
+  cursor: pointer;
+  outline: none;
+}
+
+.master-play .icon .bi:nth-child(2) {
+  border: 1px solid rgb(105, 105, 170, .1);
+  border-radius: 50%;
+  padding: 1px 3px 0px 6px;
+  margin: 0px 5px;
+  transition: .3s linear;
+}
+
+.master-play span {
+  color: #fff;
+  width: 32px;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.master-play #currentStart {
+  margin: 0px 0px 0px 20px;
 }
