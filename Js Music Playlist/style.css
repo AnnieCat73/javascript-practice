@@ -273,7 +273,6 @@ h1 {
 }
 
 .master-play .bar input {
-
   position: absolute;
   width: 100%;
   top: -6px;
@@ -282,4 +281,77 @@ h1 {
   z-index: 9999999;
   transition: 3s linear;
   opacity: 0;
+}
+
+.master-play .vol {
+  position: relative;
+  width: 100px;
+  height: 2px;
+  margin-left: 50px;
+  background: rgb(105, 105, 170, .1);
+}
+
+.master-play .vol .bi {
+  position: absolute;
+  color: #fff;
+  font-size: 25px;
+  top: -17px;
+  left: -30px;
+}
+
+.master-play .vol input {
+  position: absolute;
+  width: 100%;
+  top: -10px;
+  left: 0;
+  cursor: pointer;
+  z-index: 9999999;
+  transition: 3s linear;
+  opacity: 0;
+}
+
+.master-play .vol .vol-bar {
+  position: absolute;
+  background: #36e2ec;
+  width: 0%;
+  height: 100%;
+  top: 0;
+}
+
+.master-play .vol .dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #36e2ec;
+  border-radius: 50%;
+  left: 0%;
+  top: -1px;
+  transition: 1s linear;
+}
+
+.master-play .vol .dot::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #36e2ec;
+  border-radius: 50%;
+  left: -5px;
+  top: -5px;
+  transition: 1s linear;
+  box-shadow: inset 0px 0px 3px #36e2ec;
+}
+
+.song-side {
+  z-index: 2;
+}
+
+.song-side nav {
+  width: 90%;
+  height: 10%;
+  margin: auto;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
