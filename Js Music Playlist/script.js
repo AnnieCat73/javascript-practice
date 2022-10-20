@@ -1,4 +1,4 @@
-const music = new Audio('vande.mp3');
+const music = new Audio('audio/Pray - Anno Domini Beats.mp3');
 //music.play();
 
 //Create Array
@@ -65,4 +65,32 @@ masterPlay.addEventListener('click', () => {
   }
 
 })
+
+const makeAllPlays = () => {
+  Array.from(document.querySelector('.playListPlay')).forEach((element) => {
+
+    element.classList.add('bi-play-circle-fill');
+    element.classList.remove('bi-pause-circle-fill');
+
+  })
+
+}
+
+
+
+let index = 0;
+
+
+Array.from(document.querySelector('.playListPlay')).forEach((element) => {
+  element.addEventListener('click', (e) => {
+    index = e.target.id;
+    makeAllPlays();
+    e.target.classList.remove('bi-play-circle-fill');
+    e.target.classList.add('bi-pause-circle-fill');
+    music.src = `audio/${index}.mp3`;
+    music.play();
+  })
+})
+
+
 
