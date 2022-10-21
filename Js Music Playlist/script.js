@@ -79,8 +79,10 @@ const makeAllPlays = () => {
 
 
 let index = 0;
-
-
+//May not need to usee
+let posterMasterPlay = document.getElementById('poster-master-play');
+let title = document.getElementById('title');
+//
 Array.from(document.querySelector('.playListPlay')).forEach((element) => {
   element.addEventListener('click', (e) => {
     index = e.target.id;
@@ -89,8 +91,29 @@ Array.from(document.querySelector('.playListPlay')).forEach((element) => {
     e.target.classList.add('bi-pause-circle-fill');
     music.src = `audio/${index}.mp3`;
     music.play();
+    //May not use
+    posterMasterPlay.src = `img/${index}.jpg`;
+    let songTitle = songs.filter((ele) => {
+      return ele.id == index;
+    })
+    songTitle.forEach(ele => {
+      let { songName } = ele;
+      title.innerHTML = songName;
+    })
+    masterPlay.classList.add('bi-play-fill');
+    masterPlay.classList.remove('bi-pause-fill');
+    wave.classList.remove('active2');
+    music.addEventListener('ended', () => {
+      masterPlay.classList.add('bi-pause-fill');
+      masterPlay.classList.remove('bi-pause-fill');
+      wave.classList.remove('active2');
+    })
+    //
+
   })
 })
+
+
 
 
 
