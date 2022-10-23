@@ -116,6 +116,9 @@ Array.from(document.querySelector('.playListPlay')).forEach((element) => {
 
 let currentStart = document.getElementById('currentStart');
 let currentEnd = document.getElementById('currentEnd');
+let seek = document.getElementById('seek');
+let bar2 = document.getElementById('bar2');
+let dot = document.getElementsByClassName('dot')[0];
 
 
 music.addEventListener('timeupdate', () => {
@@ -135,4 +138,20 @@ music.addEventListener('timeupdate', () => {
     sec1 = `0${sec1}`;
   }
   currentStart.innerText = `${min1}:${sec1}`;
+
+  let progressbar = parseInt((music.currentTime / music.duration) * 100);
+  seek.value = progressbar;
+  let seekbar = seek.value;
+  bar2.style.width = `${seekbar}%`;
+  dot.style.left = `${seekbar}%`;
+})
+
+seek.addEventListener('change', () => {
+  music.currentTime = seek.value * music.duration / 100;
+})
+
+music.addEventListener('ended', () => {
+  masterPlay.classList.add('bi-play-fill');
+  masterPlay.classList.remove('bi-pause-fill');
+  wave.classList.remove('active2');
 })
