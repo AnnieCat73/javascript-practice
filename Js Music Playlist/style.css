@@ -246,6 +246,7 @@ h1 {
   width: 0%;
   height: 100%;
   top: 0;
+  transition: 1s linear;
 }
 
 .master-play .bar .dot {
@@ -316,6 +317,7 @@ h1 {
   width: 0%;
   height: 100%;
   top: 0;
+  transition: 1s linear;
 }
 
 .master-play .vol .dot {
