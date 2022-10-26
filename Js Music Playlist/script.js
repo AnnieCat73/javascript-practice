@@ -198,5 +198,28 @@ back.addEventListener("click", () => {
   makeAllPlays();
   document.getElementById(`${index}`).classList.remove("bi-play-fill");
   document.getElementById(`${index}`).classList.add("bi-pause-fill");
-  makeAllBackground();
+  //makeAllBackgrounds();
+});
+
+next.addEventListener("click", () => {
+  index -= 0;
+  index += 1;
+  if (index > Array.from(document.getElementsByClassName("song-item")).length) {
+    index = 1;
+  }
+  music.src = `audio/${index}.mp3`;
+  music.play();
+  //May not use
+  posterMasterPlay.src = `img/${index}.jpg`;
+  let songTitle = songs.filter((ele) => {
+    return ele.id == index;
+  });
+  songTitle.forEach((ele) => {
+    let { songName } = ele;
+    title.innerHTML = songName;
+  });
+  makeAllPlays();
+  document.getElementById(`${index}`).classList.remove("bi-play-fill");
+  document.getElementById(`${index}`).classList.add("bi-pause-fill");
+  //makeAllBackgrounds();
 });
