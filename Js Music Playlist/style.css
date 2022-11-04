@@ -25,7 +25,7 @@ body {
 }
 
 header {
-  width: 85%;
+  width: 40%;/*85*/
   height: 95%;
   border: 1px solid #fff;
   display: flex;
@@ -44,7 +44,7 @@ header .menu-side, header .song-side {
 }
 
 header .song-side {
-  width: 75%;
+  width: 20%;/*75%*/
   background: #0b1320;
 }
 
@@ -288,13 +288,13 @@ header .master-play #currentStart {
   margin: 0px 0px 0px 20px;
 }
 
-header .master-play .bar {
+/*header .master-play .bar {
   position: relative;
   width: 43%;
   height: 2px;
   background-color: rgb(105, 105, 170, .1);
   margin: 0px 15px 0px 10px;
-}
+}*/
 
 header .master-play .bar .bar2 {
   position: absolute;
@@ -483,17 +483,18 @@ header .song-side nav {
   font-size: 16px;
   color: #fff;
 }
-
+*/
 .master-play {
   display: flex;
   align-items: center;
   padding: 0px 20px;
+  width: 30rem;
 }
 
 .master-play .wave {
   width: 30px;
   height: 30px;
-  /*border: 1px solid #fff;*
+  /*border: 1px solid #fff;*/
   padding-bottom: 5px;
   display: flex;
   align-items: flex-end;
@@ -510,15 +511,15 @@ header .song-side nav {
 
 .master-play .wave .wave1:nth-child(2) {
   height: 13px;
-  /*animation-delay: .4s;*
+  /*animation-delay: .4s;*/
 }
 
 .master-play .wave .wave1:nth-child(3) {
   height: 8px;
-  /*animation-delay: .8s;*
+  /*animation-delay: .8s;*/
 }
 
-/*Javascript class wave*
+/*Javascript class wave*/
 .master-play .active2 .wave1 {
   animation: wave .5s linear infinite;
 }
@@ -704,7 +705,7 @@ header .song-side nav {
   transition: 1s linear;
   box-shadow: inset 0px 0px 3px #36e2ec;
 }
-
+/*
 .song-side {
   z-index: 2;
 }
