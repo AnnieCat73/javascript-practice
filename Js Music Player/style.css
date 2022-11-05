@@ -32,3 +32,88 @@ header {
   overflow: hidden;
 }
 
+header .menu-side, .song-side {
+  position: relative;
+  width: 25%;
+  height: 90%;
+  /*border: 1px solid #fff;*/
+  background-color: #111727;
+  box-shadow: 5px 0px 2px #090f1f;
+  color: #fff;
+}
+
+
+header .song-side {
+  width: 75%;
+  background: #0b1320;
+}
+
+header .master-play {
+  width: 100%;
+  height: 10%;
+  background: #111727;
+  box-shadow: 0px 3px 8px #090f1f;
+}
+
+header .menu-side h1 {
+  font-size: 20px;
+  margin: 15px 0px 0px 20px;
+  font-weight: 500;
+  
+}
+
+header .menu-side .playlist {
+  margin: 40px 0px 0px 20px;
+}
+
+header .menu-side .playlist h4 {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 10px;
+  color: #4c5262;
+  transition: .3s linear;
+}
+
+header .menu-side .playlist h4:hover {
+  color: #fff;
+}
+
+header .menu-side .playlist h4 span{
+  position: relative;
+  margin-right: 35px;
+  
+}
+
+header .menu-side .playlist h4 span::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border: 2px solid #4c5262;
+  border-radius: 50%;
+  top: -4px;
+  transition: .3s linear;
+}
+
+header .menu-side .playlist h4:hover span::before {
+  border: 2px solid #fff;
+  
+}
+
+/*
+header .menu-side .playlist h4 .bi {
+  display: none;
+}
+header .menu-side .playlist .active {
+  color: #36e2ec;
+}
+header .menu-side .playlist .active span {
+  display: none;
+}
+header .menu-side .playlist .active .bi {
+  display: flex;
+  margin-right: 30px;
+}*/
