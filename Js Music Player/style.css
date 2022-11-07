@@ -256,3 +256,93 @@ header .master-play h5 .subtitle {
   font-size: 11px;
   color: #4c5262;
 }
+
+header .master-play .icon {
+  font-size: 20px;
+  color: #fff;
+  margin: 0px 20px 0px 40px;
+}
+
+header .master-play .icon .bi {
+  cursor: pointer;
+  outline: none;
+}
+
+header .master-play .icon .bi:nth-child(2) {
+  border: 1px solid rgb(105, 105, 170, .1);
+  border-radius: 50%;
+  padding: 1px 3px 0px 6px;
+  margin: 0px 5px;
+  transition: .3s linear;
+}
+
+header .master-play span {
+  color: #fff;
+  width: 32px;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+header .master-play #currentStart {
+  margin: 0px 0px 0px 20px;
+}
+
+header .master-play .bar {
+  position: relative;
+  width: 43%;
+  height: 2px;
+  background-color: rgb(105, 105, 170, .1);
+  margin: 0px 15px 0px 10px;
+}
+
+header .master-play .bar .bar2 {
+  position: absolute;
+  background: #36e2ec;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  transition: 1s linear;
+}
+
+header .master-play .bar .dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: #36e2ec;
+  border-radius: 50%;
+  left: 0%;
+  top: -1px;
+  transition: 1s linear;
+}
+
+header .master-play .bar .dot::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #36e2ec;
+  border-radius: 50%;
+  left: -6px;
+  top: -6px;
+  transition: 1s linear;
+  box-shadow: inset 0px 0px 3px #36e2ec;
+}
+
+header .master-play .bar input {
+  position: absolute;
+  width: 100%;
+  top: -6px;
+  left: 0;
+  cursor: pointer;
+  z-index: 9999999;
+  transition: 3s linear;
+  opacity: 0;
+}
+
+header .master-play .vol {
+  position: relative;
+  width: 100px;
+  height: 2px;
+  margin-left: 50px;
+  background: rgb(105, 105, 170, .1);
+}
