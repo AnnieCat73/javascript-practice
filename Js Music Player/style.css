@@ -655,3 +655,38 @@ header .song-side .popular-artists .h4 .bi {
 header .song-side .popular-artists .h4 .bi:hover {
   color: #fff;
 }
+
+header .song-side .popular-artists .items {
+  display: flex;
+}
+header .song-side .popular-artists .item {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+}
+header .song-side .popular-artists .item::-webkit-scrollbar {
+  display: none;
+
+}
+header .song-side .popular-artists .item li {
+  list-style-type: none;
+  position: relative;
+  min-width: 60px;
+  height: 60px;
+  /*background-color: #fff;*/
+  border-radius: 50%;
+  margin-right: 20px;
+  cursor: pointer;
+  
+}
+header .song-side .popular-artists .item li img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  
+}
