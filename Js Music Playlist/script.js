@@ -7,37 +7,37 @@ const songs = [
   {
     id: "1",
     songName: `On My Way <br>
-    <p class="subtitle">Cat</p>`,
+    <div class="subtitle">Cat</div>`,
     poster: "images/edgar-nKC772R_qog-unsplash (1).jpg",
   },
   {
     id: "2",
     songName: `Silly Love Songs <br>
-    <p class="subtitle">Alan Walker</p>`,
+    <div class="subtitle">Alan Walker</div>`,
     poster: "images/pexels-jonathan-borba-3076516.jpg",
   },
   {
     id: "3",
     songName: `Hello <br>
-    <p class="subtitle">Alan Walker</p>`,
+    <div class="subtitle">Alan Walker</div>`,
     poster: "images/pexels-karolina-grabowska-4498553.jpg",
   },
   {
     id: "4",
     songName: `Fade <br>
-    <p class="subtitle">Alan Walker</p>`,
+    <div class="subtitle">Alan Walker</div>`,
     poster: "images/16104017791582534645-128.png",
   },
   {
     id: "5",
     songName: `Shout <br>
-    <p class="subtitle">Alan Walker</p>`,
+    <div class="subtitle">Alan Walker</div>`,
     poster: "images/kike-vega-F2qh3yjz6Jk-unsplash.jpg",
   },
   {
     id: "6",
     songName: `Kittycat <br>
-    <p class="subtitle">Alan Walker</p>`,
+    <div class="subtitle">Alan Walker</div>`,
     poster: "images/edgar-nKC772R_qog-unsplash (1).jpg",
   },
 ];
