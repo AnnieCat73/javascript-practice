@@ -101,6 +101,7 @@ Array.from(document.getElementsByClassName("song-item")).forEach(
     element.getElementsByTagName("h5")[0].innerHTML = songs[i].songName;
   }
 );
+//Play song at bottom??
 
 let masterPlay = document.getElementById("masterPlay");
 let wave = document.getElementsByClassName("wave")[0];
@@ -117,4 +118,41 @@ masterPlay.addEventListener("click", () => {
     masterPlay.classList.remove("bi-pause-fill");
     wave.classList.remove("active2");
   }
+});
+
+const makeAllPlays = () => {
+  Array.from(document.querySelectorAll(".playListPlay")).forEach((element) => {
+    element.classList.add("bi-play-circle-fill");
+    element.classList.remove("bi-pause-circle-fill");
+  });
+};
+
+let index = 0;
+Array.from(document.querySelectorAll(".playListPlay")).forEach((element) => {
+  element.addEventListener("click", (e) => {
+    index = e.target.id;
+    makeAllPlays();
+    e.target.classList.remove("bi-play-circle-fill");
+    e.target.classList.add("bi-pause-circle-fill");
+    music.src = `audio/${index}.mp3`;
+
+    //*May not use
+    //posterMasterPlay.src = `img/${index}.jpg`;
+    music.play();
+    /*let songTitle = songs.filter((ele) => {
+      return ele.id == index;
+    });
+    songTitle.forEach((ele) => {
+      let { songName } = ele;
+      title.innerHTML = songName;
+    });
+    masterPlay.classList.remove("bi-play-fill");
+    masterPlay.classList.add("bi-pause-fill");
+    wave.classList.add("active2");
+    music.addEventListener("ended", () => {
+      masterPlay.classList.add("bi-pause-fill");
+      masterPlay.classList.remove("bi-pause-fill");
+      wave.classList.remove("active2");
+    });*/
+  });
 });

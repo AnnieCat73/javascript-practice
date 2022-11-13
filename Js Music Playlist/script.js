@@ -78,7 +78,7 @@ let index = 0;
 let posterMasterPlay = document.getElementById("poster-master-play");
 let title = document.getElementById("title");
 //
-Array.from(document.querySelector(".playListPlay")).forEach((element) => {
+Array.from(document.querySelectorAll(".playListPlay")).forEach((element) => {
   element.addEventListener("click", (e) => {
     index = e.target.id;
     makeAllPlays();
