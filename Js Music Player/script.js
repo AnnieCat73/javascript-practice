@@ -128,6 +128,10 @@ const makeAllPlays = () => {
 };
 
 let index = 0;
+/**/
+let posterMasterPlay = document.getElementById("poster-master-play");
+let title = document.getElementById("title");
+/** */
 Array.from(document.querySelectorAll(".playListPlay")).forEach((element) => {
   element.addEventListener("click", (e) => {
     index = e.target.id;
@@ -137,7 +141,7 @@ Array.from(document.querySelectorAll(".playListPlay")).forEach((element) => {
     music.src = `audio/${index}.mp3`;
 
     //*May not use
-    //posterMasterPlay.src = `img/${index}.jpg`;
+    posterMasterPlay.src = `images/${index}.jpg`;
     music.play();
     /*let songTitle = songs.filter((ele) => {
       return ele.id == index;
