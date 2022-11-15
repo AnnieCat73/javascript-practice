@@ -139,11 +139,12 @@ Array.from(document.querySelectorAll(".playListPlay")).forEach((element) => {
     e.target.classList.remove("bi-play-circle-fill");
     e.target.classList.add("bi-pause-circle-fill");
     music.src = `audio/${index}.mp3`;
+    music.src = ``;
 
     //*May not use
-    posterMasterPlay.src = `images/${index}.jpg`;
+    posterMasterPlay.src = `/images/${index}.jpg`;
     music.play();
-    /*let songTitle = songs.filter((ele) => {
+    let songTitle = songs.filter((ele) => {
       return ele.id == index;
     });
     songTitle.forEach((ele) => {
@@ -157,6 +158,6 @@ Array.from(document.querySelectorAll(".playListPlay")).forEach((element) => {
       masterPlay.classList.add("bi-pause-fill");
       masterPlay.classList.remove("bi-pause-fill");
       wave.classList.remove("active2");
-    });*/
+    });
   });
 });
